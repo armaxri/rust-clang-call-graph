@@ -237,6 +237,8 @@ pub enum ClangAstElementType {
     WeakImportAttr,
     WeakRefAttr,
     WhileStmt,
+    Overrides,
+    CopyAssignment,
 }
 
 impl ClangAstElementType {

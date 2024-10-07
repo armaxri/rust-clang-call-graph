@@ -89,24 +89,53 @@ impl<'a> ClangAstParserImpl {
             return None;
         }
 
-        let decl_type = ClangAstElementType::from_str(&parts[0].to_string());
-        parts.remove(0);
-        let hex_str = parts[0];
-        parts.remove(0);
-        let range = self.get_range(&mut parts);
-        let remaining_parts = parts.join(" ");
-        if let Ok(hex_value) = u64::from_str_radix(&hex_str[2..], 16) {
+        // This is a very rare case only seen with Overrides so far.
+        if parts[0].ends_with(":") {
+            let decl_type =
+                ClangAstElementType::from_str(&parts[0][..parts[0].len() - 1].to_string());
+            if parts.len() > 1 {
+                parts.remove(0);
+                parts.remove(0);
+            }
+            parts.pop();
+
+            let remaining_parts = parts.join(" ");
+
             let file = self.files.last().unwrap();
             return Some(Box::new(ClangAstElement::new(
                 decl_type,
-                hex_value,
+                0,
                 file.clone(),
-                range,
+                Range::new(0, 0, 0, 0),
                 remaining_parts,
             )));
         }
 
-        None
+        let decl_type = ClangAstElementType::from_str(&parts[0].to_string());
+        parts.remove(0);
+
+        let id = if parts[0].starts_with("0x") {
+            if let Ok(hex_value) = u64::from_str_radix(&parts[0][2..], 16) {
+                parts.remove(0);
+                hex_value
+            } else {
+                0
+            }
+        } else {
+            0
+        };
+
+        let range = self.get_range(&mut parts);
+        let remaining_parts = parts.join(" ");
+
+        let file = self.files.last().unwrap();
+        return Some(Box::new(ClangAstElement::new(
+            decl_type,
+            id,
+            file.clone(),
+            range,
+            remaining_parts,
+        )));
     }
 
     fn get_ast_element_with_depth(
@@ -437,6 +466,52 @@ mod tests {
         assert_eq!(element.range.end.column, 14);
         assert_eq!(element.inner.len(), 0);
         assert_eq!(element.attributes, "col:14 argc 'int'");
+    }
+
+    #[test]
+    fn parse_ast_element_structures_without_id() {
+        let process = DummyProcess::new();
+        let mut parser = ClangAstParserImpl::new(Box::new(process));
+
+        let  element = parser
+            .parse_ast_element("CopyAssignment non_trivial has_const_param needs_overload_resolution implicit_has_const_param")
+            .unwrap();
+        assert_eq!(element.element_type, ClangAstElementType::CopyAssignment);
+        assert_eq!(element.element_id, 0x0);
+        assert_eq!(element.file.as_ref(), "");
+        assert_eq!(element.range.start.line, 0);
+        assert_eq!(element.range.start.column, 0);
+        assert_eq!(element.range.end.line, 0);
+        assert_eq!(element.range.end.column, 0);
+        assert_eq!(element.inner.len(), 0);
+        assert_eq!(
+            element.attributes,
+            "non_trivial has_const_param needs_overload_resolution implicit_has_const_param"
+        );
+    }
+
+    #[test]
+    fn parse_ast_element_packed_structures() {
+        let process = DummyProcess::new();
+        let mut parser = ClangAstParserImpl::new(Box::new(process));
+
+        let element = parser
+            .parse_ast_element(
+                "Overrides: [ 0x14bf3dce8 __shared_count::~__shared_count 'void () noexcept' ]",
+            )
+            .unwrap();
+        assert_eq!(element.element_type, ClangAstElementType::Overrides);
+        assert_eq!(element.element_id, 0x0);
+        assert_eq!(element.file.as_ref(), "");
+        assert_eq!(element.range.start.line, 0);
+        assert_eq!(element.range.start.column, 0);
+        assert_eq!(element.range.end.line, 0);
+        assert_eq!(element.range.end.column, 0);
+        assert_eq!(element.inner.len(), 0);
+        assert_eq!(
+            element.attributes,
+            "0x14bf3dce8 __shared_count::~__shared_count 'void () noexcept'"
+        );
     }
 
     #[test]
