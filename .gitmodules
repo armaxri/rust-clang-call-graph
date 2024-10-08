@@ -1,0 +1,3 @@
+[submodule "tests/playground/externalResources/googletest"]
+	path = tests/playground/externalResources/googletest
+	url = git@github.com:google/googletest.git

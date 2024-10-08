@@ -1,22 +1,22 @@
 use std::collections::VecDeque;
+use std::rc::Rc;
 
 use super::super::location::range::Range;
-use super::clang_ast_element_type::ClangAstElementType;
 
 pub struct ClangAstElement {
-    pub element_type: ClangAstElementType,
+    pub element_type: String,
     pub element_id: u64,
-    pub file: Box<String>,
+    pub file: Rc<String>,
     pub range: Range,
-    pub inner: Box<VecDeque<Box<ClangAstElement>>>,
+    pub inner: VecDeque<ClangAstElement>,
     pub attributes: String,
 }
 
 impl ClangAstElement {
     pub fn new<'a>(
-        element_type: ClangAstElementType,
+        element_type: String,
         element_id: u64,
-        file: Box<String>,
+        file: Rc<String>,
         range: Range,
         attributes: String,
     ) -> ClangAstElement {
@@ -25,7 +25,7 @@ impl ClangAstElement {
             element_id,
             file,
             range,
-            inner: Box::new(VecDeque::new()),
+            inner: VecDeque::new(),
             attributes,
         }
     }

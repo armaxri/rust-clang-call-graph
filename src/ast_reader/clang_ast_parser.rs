@@ -1,35 +1,37 @@
 use std::collections::VecDeque;
+use std::rc::Rc;
 
-use super::super::super::location::position::Position;
-use super::super::super::location::range::Range;
-use super::super::super::process::Process;
-use super::super::clang_ast_element::ClangAstElement;
-use super::super::clang_ast_element_type::ClangAstElementType;
+use super::super::location::position::Position;
+use super::super::location::range::Range;
+use super::super::process::Process;
+use super::clang_ast_element::ClangAstElement;
+
+pub trait ClangAstParser {
+    fn parse_ast(&mut self) -> Option<VecDeque<ClangAstElement>>;
+}
 
 pub struct ClangAstParserImpl {
     process: Box<dyn Process>,
-    ast: Box<VecDeque<Box<ClangAstElement>>>,
-    files: Vec<Box<String>>,
+    files: Vec<Rc<String>>,
     last_seen_line: u32,
 }
 
-impl<'a> ClangAstParserImpl {
+impl ClangAstParserImpl {
     pub fn new(process: Box<dyn Process>) -> Self {
         let mut parser_impl = ClangAstParserImpl {
             process,
-            ast: Box::new(VecDeque::new()),
             files: Vec::new(),
             last_seen_line: 0,
         };
 
-        parser_impl.files.push(Box::new("".to_string()));
+        parser_impl.files.push(Rc::new("".to_string()));
 
         parser_impl
     }
 }
 
-impl<'a> super::ClangAstParser for ClangAstParserImpl {
-    fn parse_ast(&mut self) -> bool {
+impl ClangAstParser for ClangAstParserImpl {
+    fn parse_ast(&mut self) -> Option<VecDeque<ClangAstElement>> {
         if self.process.process() == false
             || self.process.has_next_line() == false
             || !self
@@ -38,30 +40,28 @@ impl<'a> super::ClangAstParser for ClangAstParserImpl {
                 .starts_with("TranslationUnitDecl")
         {
             // TODO: Add error handling here.
-            return false;
+            return None;
         }
+
+        let mut ast: VecDeque<ClangAstElement> = VecDeque::new();
+
+        self.last_seen_line = 0;
+        self.files.clear();
+        self.files.push(Rc::new("".to_string()));
 
         if self.process.has_next_line() {
-            let mut ast = std::mem::take(&mut self.ast);
             self.parse_ast_line(1, &mut ast);
-            self.ast = ast;
         }
 
-        return true;
-    }
-
-    fn get_ast(
-        &self,
-    ) -> &Box<VecDeque<Box<crate::ast_reader::clang_ast_element::ClangAstElement>>> {
-        return &self.ast;
+        return Some(ast);
     }
 }
 
-impl<'a> ClangAstParserImpl {
+impl ClangAstParserImpl {
     fn parse_ast_line(
         &mut self,
         current_parse_depth: usize,
-        parent_vec: &mut Box<VecDeque<Box<ClangAstElement>>>,
+        parent_vec: &mut VecDeque<ClangAstElement>,
     ) {
         while self.process.has_next_line() {
             let line = self.process.fetch_next_line();
@@ -83,16 +83,15 @@ impl<'a> ClangAstParserImpl {
         }
     }
 
-    fn parse_ast_element(&mut self, line: &'a str) -> Option<Box<ClangAstElement>> {
+    fn parse_ast_element(&mut self, line: &str) -> Option<ClangAstElement> {
         let mut parts: Vec<&str> = line.split_whitespace().collect();
-        if parts.len() < 3 {
+        if parts.len() < 2 {
             return None;
         }
 
         // This is a very rare case only seen with Overrides so far.
         if parts[0].ends_with(":") {
-            let decl_type =
-                ClangAstElementType::from_str(&parts[0][..parts[0].len() - 1].to_string());
+            let decl_type = &parts[0][..parts[0].len() - 1].to_string();
             if parts.len() > 1 {
                 parts.remove(0);
                 parts.remove(0);
@@ -102,16 +101,16 @@ impl<'a> ClangAstParserImpl {
             let remaining_parts = parts.join(" ");
 
             let file = self.files.last().unwrap();
-            return Some(Box::new(ClangAstElement::new(
-                decl_type,
+            return Some(ClangAstElement::new(
+                decl_type.to_string(),
                 0,
-                file.clone(),
+                Rc::clone(&file),
                 Range::new(0, 0, 0, 0),
                 remaining_parts,
-            )));
+            ));
         }
 
-        let decl_type = ClangAstElementType::from_str(&parts[0].to_string());
+        let decl_type = &parts[0].to_string();
         parts.remove(0);
 
         let id = if parts[0].starts_with("0x") {
@@ -127,21 +126,17 @@ impl<'a> ClangAstParserImpl {
 
         let range = self.get_range(&mut parts);
         let remaining_parts = parts.join(" ");
-
         let file = self.files.last().unwrap();
-        return Some(Box::new(ClangAstElement::new(
-            decl_type,
+        return Some(ClangAstElement::new(
+            decl_type.to_string(),
             id,
-            file.clone(),
+            Rc::clone(&file),
             range,
             remaining_parts,
-        )));
+        ));
     }
 
-    fn get_ast_element_with_depth(
-        &mut self,
-        line: &String,
-    ) -> (usize, Option<Box<ClangAstElement>>) {
+    fn get_ast_element_with_depth(&mut self, line: &String) -> (usize, Option<ClangAstElement>) {
         let ast_element_depth = get_string_element_start(&line);
         let ast_element = self.parse_ast_element(&line[(ast_element_depth + 1)..]);
 
@@ -208,7 +203,7 @@ impl<'a> ClangAstParserImpl {
         if element.starts_with("<") && element.ends_with(",") {
             let parts: Vec<&str> = element[1..element.len() - 1].split(':').collect();
             if parts.len() == 3 {
-                self.files.push(Box::new(parts[0].to_string()));
+                self.files.push(Rc::new(parts[0].to_string()));
 
                 if let Ok(line) = parts[1].parse::<u32>() {
                     if let Ok(col) = parts[2].parse::<u32>() {
@@ -282,10 +277,12 @@ mod tests {
         );
         process.add_line("  `-BuiltinType 0x11d8493f0 'unsigned __int128'".to_string());
         let mut parser = ClangAstParserImpl::new(Box::new(process));
-        assert_eq!(parser.parse_ast(), true);
-        assert_eq!(parser.get_ast().len(), 2);
-        assert_eq!(parser.get_ast()[0].inner.len(), 1);
-        assert_eq!(parser.get_ast()[1].inner.len(), 1);
+        let ast = parser.parse_ast();
+        assert_eq!(ast.is_some(), true);
+        let ast = ast.unwrap();
+        assert_eq!(ast.len(), 2);
+        assert_eq!(ast[0].inner.len(), 1);
+        assert_eq!(ast[1].inner.len(), 1);
     }
 
     #[test]
@@ -367,10 +364,7 @@ mod tests {
         let mut element = parser
             .parse_ast_element("TranslationUnitDecl 0x7f8b1b0b3e00 <<invalid sloc>> <invalid sloc>")
             .unwrap();
-        assert_eq!(
-            element.element_type,
-            ClangAstElementType::TranslationUnitDecl
-        );
+        assert_eq!(element.element_type, "TranslationUnitDecl");
         assert_eq!(element.element_id, 0x7f8b1b0b3e00);
         assert_eq!(element.file.as_ref(), "");
         assert_eq!(element.range.start.line, 0);
@@ -383,7 +377,7 @@ mod tests {
         element = parser
             .parse_ast_element("BuiltinType 0x11d849790 '__clang_svint32x2_t'")
             .unwrap();
-        assert_eq!(element.element_type, ClangAstElementType::BuiltinType);
+        assert_eq!(element.element_type, "BuiltinType");
         assert_eq!(element.element_id, 0x11d849790);
         assert_eq!(element.file.as_ref(), "");
         assert_eq!(element.range.start.line, 0);
@@ -402,10 +396,7 @@ mod tests {
         let mut element = parser
             .parse_ast_element("TranslationUnitDecl 0x7f8b1b0b3e00 <<invalid sloc>> <invalid sloc>")
             .unwrap();
-        assert_eq!(
-            element.element_type,
-            ClangAstElementType::TranslationUnitDecl
-        );
+        assert_eq!(element.element_type, "TranslationUnitDecl");
         assert_eq!(element.element_id, 0x7f8b1b0b3e00);
         assert_eq!(element.file.as_ref(), "");
         assert_eq!(element.range.start.line, 0);
@@ -418,7 +409,7 @@ mod tests {
         element = parser
             .parse_ast_element("FunctionDecl 0x11d905360 </Users/xxx/git/vscode-clang-call-graph/src/test/backendSuite/walkerTests/actualTests/cStyleTests/declInHeaderAndTwoCpps/header.h:1:1, col:27> col:5 used add 'int (int, int)'")
             .unwrap();
-        assert_eq!(element.element_type, ClangAstElementType::FunctionDecl);
+        assert_eq!(element.element_type, "FunctionDecl");
         assert_eq!(element.element_id, 0x11d905360);
         assert_eq!(element.file.as_ref(), "/Users/xxx/git/vscode-clang-call-graph/src/test/backendSuite/walkerTests/actualTests/cStyleTests/declInHeaderAndTwoCpps/header.h");
         assert_eq!(element.range.start.line, 1);
@@ -431,7 +422,7 @@ mod tests {
         element = parser
             .parse_ast_element("ParmVarDecl 0x11d905208 <col:9, col:13> col:13 val1 'int'")
             .unwrap();
-        assert_eq!(element.element_type, ClangAstElementType::ParmVarDecl);
+        assert_eq!(element.element_type, "ParmVarDecl");
         assert_eq!(element.element_id, 0x11d905208);
         assert_eq!(element.file.as_ref(), "/Users/xxx/git/vscode-clang-call-graph/src/test/backendSuite/walkerTests/actualTests/cStyleTests/declInHeaderAndTwoCpps/header.h");
         assert_eq!(element.range.start.line, 1);
@@ -444,7 +435,7 @@ mod tests {
         element = parser
             .parse_ast_element("FunctionDecl 0x11d9056c0 </Users/xxx/git/vscode-clang-call-graph/src/test/backendSuite/walkerTests/actualTests/cStyleTests/declInHeaderAndTwoCpps/main.cpp:3:1, line:6:1> line:3:5 main 'int (int, char **)'")
             .unwrap();
-        assert_eq!(element.element_type, ClangAstElementType::FunctionDecl);
+        assert_eq!(element.element_type, "FunctionDecl");
         assert_eq!(element.element_id, 0x11d9056c0);
         assert_eq!(element.file.as_ref(), "/Users/xxx/git/vscode-clang-call-graph/src/test/backendSuite/walkerTests/actualTests/cStyleTests/declInHeaderAndTwoCpps/main.cpp");
         assert_eq!(element.range.start.line, 3);
@@ -457,7 +448,7 @@ mod tests {
         element = parser
             .parse_ast_element("ParmVarDecl 0x11d905478 <col:10, col:14> col:14 argc 'int'")
             .unwrap();
-        assert_eq!(element.element_type, ClangAstElementType::ParmVarDecl);
+        assert_eq!(element.element_type, "ParmVarDecl");
         assert_eq!(element.element_id, 0x11d905478);
         assert_eq!(element.file.as_ref(), "/Users/xxx/git/vscode-clang-call-graph/src/test/backendSuite/walkerTests/actualTests/cStyleTests/declInHeaderAndTwoCpps/main.cpp");
         assert_eq!(element.range.start.line, 3);
@@ -476,7 +467,7 @@ mod tests {
         let  element = parser
             .parse_ast_element("CopyAssignment non_trivial has_const_param needs_overload_resolution implicit_has_const_param")
             .unwrap();
-        assert_eq!(element.element_type, ClangAstElementType::CopyAssignment);
+        assert_eq!(element.element_type, "CopyAssignment");
         assert_eq!(element.element_id, 0x0);
         assert_eq!(element.file.as_ref(), "");
         assert_eq!(element.range.start.line, 0);
@@ -491,6 +482,23 @@ mod tests {
     }
 
     #[test]
+    fn parse_ast_element_minimal_structure() {
+        let process = DummyProcess::new();
+        let mut parser = ClangAstParserImpl::new(Box::new(process));
+
+        let element = parser.parse_ast_element("TemplateArgument expr").unwrap();
+        assert_eq!(element.element_type, "TemplateArgument");
+        assert_eq!(element.element_id, 0x0);
+        assert_eq!(element.file.as_ref(), "");
+        assert_eq!(element.range.start.line, 0);
+        assert_eq!(element.range.start.column, 0);
+        assert_eq!(element.range.end.line, 0);
+        assert_eq!(element.range.end.column, 0);
+        assert_eq!(element.inner.len(), 0);
+        assert_eq!(element.attributes, "expr");
+    }
+
+    #[test]
     fn parse_ast_element_packed_structures() {
         let process = DummyProcess::new();
         let mut parser = ClangAstParserImpl::new(Box::new(process));
@@ -500,7 +508,7 @@ mod tests {
                 "Overrides: [ 0x14bf3dce8 __shared_count::~__shared_count 'void () noexcept' ]",
             )
             .unwrap();
-        assert_eq!(element.element_type, ClangAstElementType::Overrides);
+        assert_eq!(element.element_type, "Overrides");
         assert_eq!(element.element_id, 0x0);
         assert_eq!(element.file.as_ref(), "");
         assert_eq!(element.range.start.line, 0);
@@ -519,8 +527,10 @@ mod tests {
         let mut process = DummyProcess::new();
         process.add_line("TranslationUnitDecl".to_string());
         let mut parser = ClangAstParserImpl::new(Box::new(process));
-        assert_eq!(parser.parse_ast(), true);
-        assert_eq!(parser.get_ast().len(), 0);
+        let ast = parser.parse_ast();
+        assert_eq!(ast.is_some(), true);
+        let ast = ast.unwrap();
+        assert_eq!(ast.len(), 0);
     }
 
     #[test]
@@ -528,6 +538,7 @@ mod tests {
         let mut process = DummyProcess::new();
         process.add_line("test".to_string());
         let mut parser = ClangAstParserImpl::new(Box::new(process));
-        assert_eq!(parser.parse_ast(), false);
+        let ast = parser.parse_ast();
+        assert_eq!(ast.is_some(), false);
     }
 }

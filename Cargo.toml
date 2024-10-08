@@ -4,5 +4,5 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-strum = "0.26.3"
-strum_macros = "0.26.4"
+clap = { version = "4.5.20", features = ["derive"] }
+json_compilation_db = "1.0.1"
