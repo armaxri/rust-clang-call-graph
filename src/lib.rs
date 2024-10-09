@@ -1,4 +1,4 @@
-use std::{fs::File, io::BufReader, path::PathBuf, time::Instant};
+use std::{path::PathBuf, time::Instant};
 
 use ast_reader::{
     clang_ast_parser::{ClangAstParser, ClangAstParserImpl},
