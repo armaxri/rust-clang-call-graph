@@ -32,8 +32,7 @@ impl ClangAstParserImpl {
 
 impl ClangAstParser for ClangAstParserImpl {
     fn parse_ast(&mut self) -> Option<VecDeque<ClangAstElement>> {
-        if self.process.process() == false
-            || self.process.has_next_line() == false
+        if self.process.has_next_line() == false
             || !self
                 .process
                 .get_next_line()
