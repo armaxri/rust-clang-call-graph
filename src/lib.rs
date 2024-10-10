@@ -34,12 +34,26 @@ pub fn dry_run_ast_parser(compile_commands_json: &PathBuf) {
 
         let mut terminal_process =
             Box::new(TerminalProcess::new(clang_compile2ast_call(&entry.command)));
-        if !terminal_process.process() {
+
+        let elapsed_compiler = sub_timer.elapsed();
+
+        if !terminal_process.process() || !terminal_process.has_next_line() {
             println!("Error processing file: {}", entry.file);
             continue;
         }
 
-        let elapsed_compiler = sub_timer.elapsed();
+        while !terminal_process
+            .fetch_next_line()
+            .starts_with("TranslationUnitDecl")
+            && terminal_process.has_next_line()
+        {
+            terminal_process.get_next_line();
+        }
+
+        if !terminal_process.has_next_line() {
+            println!("Process didn't return AST output. File: {}", entry.file);
+            continue;
+        }
 
         sub_timer = Instant::now();
 
