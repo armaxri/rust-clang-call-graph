@@ -11,3 +11,23 @@ pub struct VirtualFuncCall {
     pub qual_type: String,
     pub range: Range,
 }
+
+pub const VIRTUAL_FUNC_CALL_SQL_CREATE_TABLE: &str = "
+CREATE TABLE virtual_func_calls (
+    id                   INTEGER PRIMARY KEY AUTOINCREMENT,
+    name                 TEXT NOT NULL,
+    qualified_name       TEXT NOT NULL,
+    base_qualified_name  TEXT NOT NULL,
+    qual_type            TEXT NOT NULL,
+    range_start_line     INTEGER,
+    range_start_column   INTEGER,
+    range_end_line       INTEGER,
+    range_end_column     INTEGER,
+
+    func_impl_id         INTEGER NULL,
+    virtual_func_impl_id INTEGER NULL,
+
+    FOREIGN KEY (func_impl_id) REFERENCES func_impls(id),
+    FOREIGN KEY (virtual_func_impl_id) REFERENCES virtual_func_impls(id)
+)
+";
