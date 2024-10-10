@@ -7,12 +7,12 @@ use super::virtual_func_call::VirtualFuncCall;
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct FuncImpl {
-    pub name: String,
-    pub qualified_name: String,
-    pub qual_type: String,
-    pub range: Range,
-    pub func_calls: Vec<FuncCall>,
-    pub virtual_func_calls: Vec<VirtualFuncCall>,
+    name: String,
+    qualified_name: String,
+    qual_type: String,
+    range: Range,
+    func_calls: Vec<FuncCall>,
+    virtual_func_calls: Vec<VirtualFuncCall>,
 }
 
 pub const FUNC_IMPL_SQL_CREATE_TABLE: &str = "

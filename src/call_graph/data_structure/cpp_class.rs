@@ -8,13 +8,13 @@ use super::virtual_func_impl::VirtualFuncImpl;
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct CppClass {
-    pub name: String,
-    pub parent_classes: Vec<String>,
-    pub classes: Vec<CppClass>,
-    pub func_decls: Vec<FuncDecl>,
-    pub func_impls: Vec<FuncImpl>,
-    pub virtual_func_decls: Vec<VirtualFuncDecl>,
-    pub virtual_func_impls: Vec<VirtualFuncImpl>,
+    name: String,
+    parent_classes: Vec<String>,
+    classes: Vec<CppClass>,
+    func_decls: Vec<FuncDecl>,
+    func_impls: Vec<FuncImpl>,
+    virtual_func_decls: Vec<VirtualFuncDecl>,
+    virtual_func_impls: Vec<VirtualFuncImpl>,
 }
 
 pub const CPP_CLASS_SQL_CREATE_TABLE: &str = "
