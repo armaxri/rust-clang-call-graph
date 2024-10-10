@@ -32,8 +32,7 @@ impl ClangAstParserImpl {
 
 impl ClangAstParser for ClangAstParserImpl {
     fn parse_ast(&mut self) -> Option<VecDeque<ClangAstElement>> {
-        if self.process.process() == false
-            || self.process.has_next_line() == false
+        if self.process.has_next_line() == false
             || !self
                 .process
                 .get_next_line()
@@ -91,7 +90,7 @@ impl ClangAstParserImpl {
 
         // This is a very rare case only seen with Overrides so far.
         if parts[0].ends_with(":") {
-            let decl_type = &parts[0][..parts[0].len() - 1].to_string();
+            let decl_type = &parts[0][..parts[0].len() - 1];
             if parts.len() > 1 {
                 parts.remove(0);
                 parts.remove(0);
@@ -136,7 +135,7 @@ impl ClangAstParserImpl {
         ));
     }
 
-    fn get_ast_element_with_depth(&mut self, line: &String) -> (usize, Option<ClangAstElement>) {
+    fn get_ast_element_with_depth(&mut self, line: &str) -> (usize, Option<ClangAstElement>) {
         let ast_element_depth = get_string_element_start(&line);
         let ast_element = self.parse_ast_element(&line[(ast_element_depth + 1)..]);
 
@@ -246,7 +245,7 @@ impl ClangAstParserImpl {
     }
 }
 
-fn get_string_element_start(line: &String) -> usize {
+fn get_string_element_start(line: &str) -> usize {
     match line.find('-') {
         Some(index) => return index,
         None => return 0,

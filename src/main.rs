@@ -27,8 +27,7 @@ struct NewDatabaseArgs {
 fn main() {
     let cli = Cli::parse();
 
-    // You can check for the existence of subcommands, and if found use their
-    // matches just as you would the top level cmd
+    // Check more examples later https://docs.rs/clap/latest/clap/_derive/_tutorial/chapter_0/index.html
     match &cli.command {
         Commands::NewDatabase(args) => match &args.compile_commands_json {
             Some(compile_commands_json) => {
