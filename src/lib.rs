@@ -4,7 +4,9 @@ use ast_reader::{
     clang_ast_parser::{ClangAstParser, ClangAstParserImpl},
     compile_commands_reader::read_compile_commands_json_file,
 };
-use process::{clang_compile2ast_call::clang_compile2ast_call, terminal_process::TerminalProcess};
+use process::{
+    clang_compile2ast_call::clang_compile2ast_call, terminal_process::TerminalProcess, Process,
+};
 
 pub mod ast_reader;
 pub mod location;
@@ -30,11 +32,10 @@ pub fn dry_run_ast_parser(compile_commands_json: &PathBuf) {
         let timer = Instant::now();
         let mut sub_timer = Instant::now();
 
-        let mut terminal_process = Box::new(TerminalProcess::new(clang_compile2ast_call(
-            &entry.command,
-        )));
+        let mut terminal_process =
+            Box::new(TerminalProcess::new(clang_compile2ast_call(&entry.command)));
         if !terminal_process.process() {
-            println!("Error processing file: {}", entry.file.display());
+            println!("Error processing file: {}", entry.file);
             continue;
         }
 
@@ -52,11 +53,7 @@ pub fn dry_run_ast_parser(compile_commands_json: &PathBuf) {
 
         println!(
             "Read {} AST Elements {:?} total, {:?} compiler and {:?} parsing of File: {}",
-            ast_element_count,
-            elapsed,
-            elapsed_compiler,
-            elapsed_parser,
-            entry.file
+            ast_element_count, elapsed, elapsed_compiler, elapsed_parser, entry.file
         );
     }
 
