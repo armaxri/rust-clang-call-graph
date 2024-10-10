@@ -1,6 +1,5 @@
 pub mod cpp_class;
 pub mod cpp_file;
-pub mod database_json;
 pub mod func_call;
 pub mod func_decl;
 pub mod func_impl;

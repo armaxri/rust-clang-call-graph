@@ -16,7 +16,7 @@ pub struct VirtualFuncImpl {
     pub virtual_func_calls: Vec<VirtualFuncCall>,
 }
 
-pub const VIRTUAL_FUNC_DECL_SQL_CREATE_TABLE: &str = "
+pub const VIRTUAL_FUNC_IMPL_SQL_CREATE_TABLE: &str = "
 CREATE TABLE virtual_func_impls (
     id                  INTEGER PRIMARY KEY AUTOINCREMENT,
     name                TEXT NOT NULL,

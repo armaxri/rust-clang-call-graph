@@ -1,7 +1,7 @@
 use serde::Deserialize;
 use serde::Serialize;
 
-use super::{cpp_file::CppFile, hpp_file::HppFile};
+use super::super::data_structure::{cpp_file::CppFile, hpp_file::HppFile};
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct DatabaseJson {

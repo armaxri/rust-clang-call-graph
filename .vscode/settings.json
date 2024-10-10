@@ -3,5 +3,5 @@
   "editor.formatOnSave": true,
   "cSpell.diagnosticLevel": "Hint",
   "cSpell.enableFiletypes": ["*"],
-  "cSpell.words": ["AUTOINCREMENT", "Deque", "fn", "impls"]
+  "cSpell.words": ["AUTOINCREMENT", "Deque", "fn", "impls", "rusqlite", "serde"]
 }
