@@ -42,3 +42,8 @@ CREATE TABLE cpp_classes_2_cpp_classes (
     FOREIGN KEY (child_class_id) REFERENCES cpp_classes(id)
 )
 ";
+
+pub fn create_database_tables(db_connection: &rusqlite::Connection) {
+    let _ = db_connection.execute_batch(CPP_CLASS_SQL_CREATE_TABLE);
+    let _ = db_connection.execute_batch(CPP_CLASS_2_CLASS_SQL_CREATE_TABLE);
+}

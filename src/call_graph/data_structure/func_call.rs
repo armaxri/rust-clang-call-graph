@@ -29,3 +29,7 @@ CREATE TABLE func_calls (
     FOREIGN KEY (virtual_func_impl_id) REFERENCES virtual_func_impls(id)
 )
 ";
+
+pub fn create_database_tables(db_connection: &rusqlite::Connection) {
+    let _ = db_connection.execute_batch(FUNC_CALL_SQL_CREATE_TABLE);
+}

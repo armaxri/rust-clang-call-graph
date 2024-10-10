@@ -46,3 +46,9 @@ CREATE TABLE hpp_files_2_hpp_files (
     FOREIGN KEY (hpp_file_id) REFERENCES hpp_files (id)
 )
 ";
+
+pub fn create_database_tables(db_connection: &rusqlite::Connection) {
+    let _ = db_connection.execute_batch(HPP_FILE_SQL_CREATE_TABLE);
+    let _ = db_connection.execute_batch(CPP_FILE_2_HPP_FILE_SQL_CREATE_TABLE);
+    let _ = db_connection.execute_batch(HPP_FILE_2_HPP_FILE_SQL_CREATE_TABLE);
+}

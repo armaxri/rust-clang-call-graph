@@ -3,18 +3,8 @@ use std::path::PathBuf;
 use rusqlite::Connection;
 
 use crate::call_graph::data_structure::{
-    cpp_class::{CPP_CLASS_2_CLASS_SQL_CREATE_TABLE, CPP_CLASS_SQL_CREATE_TABLE},
-    cpp_file::CPP_FILE_SQL_CREATE_TABLE,
-    func_call::FUNC_CALL_SQL_CREATE_TABLE,
-    func_decl::FUNC_DECL_SQL_CREATE_TABLE,
-    func_impl::FUNC_IMPL_SQL_CREATE_TABLE,
-    hpp_file::{
-        CPP_FILE_2_HPP_FILE_SQL_CREATE_TABLE, HPP_FILE_2_HPP_FILE_SQL_CREATE_TABLE,
-        HPP_FILE_SQL_CREATE_TABLE,
-    },
-    virtual_func_call::VIRTUAL_FUNC_CALL_SQL_CREATE_TABLE,
-    virtual_func_decl::VIRTUAL_FUNC_DECL_SQL_CREATE_TABLE,
-    virtual_func_impl::VIRTUAL_FUNC_IMPL_SQL_CREATE_TABLE,
+    cpp_class, cpp_file, func_call, func_decl, func_impl, hpp_file, virtual_func_call,
+    virtual_func_decl, virtual_func_impl,
 };
 
 pub fn reset_database(file: &PathBuf) {
@@ -24,18 +14,15 @@ pub fn reset_database(file: &PathBuf) {
 
     let db_connection = Connection::open(file).unwrap();
 
-    let _ = db_connection.execute(CPP_CLASS_SQL_CREATE_TABLE, ());
-    let _ = db_connection.execute(CPP_CLASS_2_CLASS_SQL_CREATE_TABLE, ());
-    let _ = db_connection.execute(CPP_FILE_SQL_CREATE_TABLE, ());
-    let _ = db_connection.execute(FUNC_CALL_SQL_CREATE_TABLE, ());
-    let _ = db_connection.execute(FUNC_DECL_SQL_CREATE_TABLE, ());
-    let _ = db_connection.execute(FUNC_IMPL_SQL_CREATE_TABLE, ());
-    let _ = db_connection.execute(HPP_FILE_SQL_CREATE_TABLE, ());
-    let _ = db_connection.execute(CPP_FILE_2_HPP_FILE_SQL_CREATE_TABLE, ());
-    let _ = db_connection.execute(HPP_FILE_2_HPP_FILE_SQL_CREATE_TABLE, ());
-    let _ = db_connection.execute(VIRTUAL_FUNC_CALL_SQL_CREATE_TABLE, ());
-    let _ = db_connection.execute(VIRTUAL_FUNC_DECL_SQL_CREATE_TABLE, ());
-    let _ = db_connection.execute(VIRTUAL_FUNC_IMPL_SQL_CREATE_TABLE, ());
+    cpp_class::create_database_tables(&db_connection);
+    cpp_file::create_database_tables(&db_connection);
+    func_call::create_database_tables(&db_connection);
+    func_decl::create_database_tables(&db_connection);
+    func_impl::create_database_tables(&db_connection);
+    hpp_file::create_database_tables(&db_connection);
+    virtual_func_call::create_database_tables(&db_connection);
+    virtual_func_decl::create_database_tables(&db_connection);
+    virtual_func_impl::create_database_tables(&db_connection);
 
     db_connection.close().unwrap();
 }

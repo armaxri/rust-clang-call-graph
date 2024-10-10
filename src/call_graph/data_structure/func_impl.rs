@@ -35,3 +35,7 @@ CREATE TABLE func_impls (
     FOREIGN KEY (cpp_class_id) REFERENCES cpp_classes(id)
 )
 ";
+
+pub fn create_database_tables(db_connection: &rusqlite::Connection) {
+    let _ = db_connection.execute_batch(FUNC_IMPL_SQL_CREATE_TABLE);
+}

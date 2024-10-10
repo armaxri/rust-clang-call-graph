@@ -23,3 +23,7 @@ CREATE TABLE cpp_files (
     last_analyzed INTEGER
 )
 ";
+
+pub fn create_database_tables(db_connection: &rusqlite::Connection) {
+    let _ = db_connection.execute_batch(CPP_FILE_SQL_CREATE_TABLE);
+}
