@@ -3,5 +3,5 @@
   "editor.formatOnSave": true,
   "cSpell.diagnosticLevel": "Hint",
   "cSpell.enableFiletypes": ["*"],
-  "cSpell.words": ["Deque", "fn"]
+  "cSpell.words": ["Deque", "fn", "impls"]
 }

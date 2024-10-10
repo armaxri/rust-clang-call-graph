@@ -156,6 +156,8 @@ version = "0.1.0"
 dependencies = [
  "clap",
  "json_compilation_db",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]

@@ -6,6 +6,7 @@ use process::{
 };
 
 pub mod ast_reader;
+pub mod call_graph;
 pub mod location;
 pub mod process;
 
