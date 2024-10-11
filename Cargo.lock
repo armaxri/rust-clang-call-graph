@@ -116,17 +116,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "49f1f14873335454500d59611f1cf4a4b0f786f9ac11f4312a78e4cf2566695b"
 
 [[package]]
-name = "json_compilation_db"
-version = "1.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "11f8461f6067e4d8debc7919bc3c45d6b5b6ff1c73a466c02c27da9aaac17738"
-dependencies = [
- "serde",
- "serde_json",
- "shell-words",
-]
-
-[[package]]
 name = "memchr"
 version = "2.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -155,7 +144,8 @@ name = "rust-clang-call-graph"
 version = "0.1.0"
 dependencies = [
  "clap",
- "json_compilation_db",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
@@ -195,12 +185,6 @@ dependencies = [
  "ryu",
  "serde",
 ]
-
-[[package]]
-name = "shell-words"
-version = "1.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "24188a676b6ae68c3b2cb3a01be17fbf7240ce009799bb56d5b1409051e78fde"
 
 [[package]]
 name = "strsim"
