@@ -41,7 +41,7 @@ pub fn dry_run_ast_parser(compile_commands_json: &PathBuf) {
             println!("Error code returned while processing file {}", entry.file);
         }
 
-        if !terminal_process.process() || !terminal_process.has_next_line() {
+        if !terminal_process.has_next_line() {
             println!("Error processing file: {}", entry.file);
             continue;
         }
