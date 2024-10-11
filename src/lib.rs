@@ -37,6 +37,10 @@ pub fn dry_run_ast_parser(compile_commands_json: &PathBuf) {
 
         let elapsed_compiler = sub_timer.elapsed();
 
+        if !terminal_process.process() {
+            println!("Error code returned while processing file {}", entry.file);
+        }
+
         if !terminal_process.process() || !terminal_process.has_next_line() {
             println!("Error processing file: {}", entry.file);
             continue;
@@ -66,11 +70,21 @@ pub fn dry_run_ast_parser(compile_commands_json: &PathBuf) {
         let ast_element_count = if ast.is_some() { ast.unwrap().len() } else { 0 };
 
         println!(
-            "Read {} AST Elements {:?} total, {:?} compiler and {:?} parsing of File: {}",
-            ast_element_count, elapsed, elapsed_compiler, elapsed_parser, entry.file
+            "Read {} AST Elements {} total, {} compiler and {} parsing of File: {}",
+            ast_element_count,
+            duration2str(elapsed),
+            duration2str(elapsed_compiler),
+            duration2str(elapsed_parser),
+            entry.file
         );
     }
 
     let elapsed_all = start_time_all.elapsed();
     println!("Elapsed time: {:?}", elapsed_all);
+}
+
+fn duration2str(duration: std::time::Duration) -> String {
+    let secs = duration.as_secs();
+    let millis = duration.subsec_millis();
+    format!("{}.{:02}s", secs, millis)
 }
