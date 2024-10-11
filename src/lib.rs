@@ -35,11 +35,11 @@ pub fn dry_run_ast_parser(compile_commands_json: &PathBuf) {
         let mut terminal_process =
             Box::new(TerminalProcess::new(clang_compile2ast_call(&entry.command)));
 
-        let elapsed_compiler = sub_timer.elapsed();
-
         if !terminal_process.process() {
             println!("Error code returned while processing file {}", entry.file);
         }
+
+        let elapsed_compiler = sub_timer.elapsed();
 
         if !terminal_process.has_next_line() {
             println!("Error processing file: {}", entry.file);
