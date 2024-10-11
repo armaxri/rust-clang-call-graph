@@ -7,7 +7,7 @@ use super::virtual_func_call::VirtualFuncCall;
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct VirtualFuncImpl {
-    id: i64,
+    id: u64,
 
     name: String,
     qualified_name: String,

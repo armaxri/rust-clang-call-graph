@@ -5,7 +5,7 @@ use super::helper::range::Range;
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct FuncDecl {
-    id: i64,
+    id: u64,
 
     name: String,
     qualified_name: String,

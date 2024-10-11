@@ -8,7 +8,7 @@ use super::virtual_func_impl::VirtualFuncImpl;
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct CppClass {
-    id: i64,
+    id: u64,
 
     name: String,
     parent_classes: Vec<String>,
