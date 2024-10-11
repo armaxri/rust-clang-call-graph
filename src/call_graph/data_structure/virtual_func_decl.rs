@@ -1,10 +1,12 @@
 use serde::Deserialize;
 use serde::Serialize;
 
-    use super::helper::range::Range;
+use super::helper::range::Range;
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct VirtualFuncDecl {
+    id: i64,
+
     name: String,
     qualified_name: String,
     base_qualified_name: String,

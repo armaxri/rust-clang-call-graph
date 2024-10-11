@@ -1,11 +1,12 @@
 use serde::Deserialize;
 use serde::Serialize;
 
-use super::helper::location::Location;
 use super::helper::range::Range;
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct FuncCall {
+    id: i64,
+
     name: String,
     qualified_name: String,
     qual_type: String,

@@ -5,6 +5,8 @@ use super::helper::range::Range;
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct FuncDecl {
+    id: i64,
+
     name: String,
     qualified_name: String,
     qual_type: String,

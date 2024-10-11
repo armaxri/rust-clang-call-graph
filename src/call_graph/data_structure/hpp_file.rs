@@ -8,6 +8,8 @@ use super::virtual_func_impl::VirtualFuncImpl;
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct HppFile {
+    id: i64,
+
     name: String,
     last_analyzed: i64,
     classes: Vec<CppClass>,

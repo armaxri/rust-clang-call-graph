@@ -2,11 +2,13 @@ use serde::Deserialize;
 use serde::Serialize;
 
 use super::func_call::FuncCall;
-    use super::helper::range::Range;
+use super::helper::range::Range;
 use super::virtual_func_call::VirtualFuncCall;
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct FuncImpl {
+    id: i64,
+
     name: String,
     qualified_name: String,
     qual_type: String,
