@@ -3,12 +3,12 @@ use serde::Serialize;
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct Location {
-    pub line: usize,
-    pub column: usize,
+    pub line: i64,
+    pub column: i64,
 }
 
 impl Location {
-    pub fn new(line: usize, column: usize) -> Self {
+    pub fn new(line: i64, column: i64) -> Self {
         Location { line, column }
     }
 

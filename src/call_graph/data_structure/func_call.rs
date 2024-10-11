@@ -1,7 +1,8 @@
 use serde::Deserialize;
 use serde::Serialize;
 
-use super::range::Range;
+use super::helper::location::Location;
+use super::helper::range::Range;
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct FuncCall {
