@@ -84,8 +84,19 @@ impl ClangAstParserImpl {
 
     fn parse_ast_element(&mut self, line: &str) -> Option<ClangAstElement> {
         let mut parts: Vec<&str> = line.split_whitespace().collect();
-        if parts.len() < 2 {
+        if parts.len() == 0 {
             return None;
+        }
+
+        if parts.len() == 1 {
+            let file = self.files.last().unwrap();
+            return Some(ClangAstElement::new(
+                parts[0].to_string(),
+                0,
+                Rc::clone(&file),
+                Range::new(0, 0, 0, 0),
+                "".to_string(),
+            ));
         }
 
         // This is a very rare case only seen with Overrides so far.
@@ -495,6 +506,23 @@ mod tests {
         assert_eq!(element.range.end.column, 0);
         assert_eq!(element.inner.len(), 0);
         assert_eq!(element.attributes, "expr");
+    }
+
+    #[test]
+    fn parse_ast_one_element_structure() {
+        let process = DummyProcess::new();
+        let mut parser = ClangAstParserImpl::new(Box::new(process));
+
+        let element = parser.parse_ast_element("TemplateArgument").unwrap();
+        assert_eq!(element.element_type, "TemplateArgument");
+        assert_eq!(element.element_id, 0x0);
+        assert_eq!(element.file.as_ref(), "");
+        assert_eq!(element.range.start.line, 0);
+        assert_eq!(element.range.start.column, 0);
+        assert_eq!(element.range.end.line, 0);
+        assert_eq!(element.range.end.column, 0);
+        assert_eq!(element.inner.len(), 0);
+        assert_eq!(element.attributes, "");
     }
 
     #[test]
