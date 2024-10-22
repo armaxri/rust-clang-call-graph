@@ -1,0 +1,37 @@
+{
+  "cpp_files": [
+    {
+      "name": "main.cpp",
+      "last_analyzed": 1718379292081,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": []
+    }
+  ],
+  "hpp_files": [
+    {
+      "name": "firstHeader.hpp",
+      "last_analyzed": 1718379292081,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_files": [
+        "secondHeader.hpp",
+        "main.cpp"
+      ]
+    },
+    {
+      "name": "secondHeader.hpp",
+      "last_analyzed": 1718379292081,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_files": [
+        "main.cpp"
+      ]
+    }
+  ]
+}

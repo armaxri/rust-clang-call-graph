@@ -14,6 +14,13 @@ impl Range {
         Range { start, end }
     }
 
+    pub fn create(start_line: i64, start_column: i64, end_line: i64, end_column: i64) -> Self {
+        Range {
+            start: Location::new(start_line, start_column),
+            end: Location::new(end_line, end_column),
+        }
+    }
+
     pub fn is_location_within_range(&self, location: &Location) -> bool {
         if location.is_location_same_or_after(&self.start)
             && self.end.is_location_same_or_after(location)

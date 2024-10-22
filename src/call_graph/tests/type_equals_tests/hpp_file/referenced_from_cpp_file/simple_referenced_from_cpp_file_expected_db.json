@@ -1,0 +1,25 @@
+{
+  "cpp_files": [
+    {
+      "name": "base.cpp",
+      "last_analyzed": 1718379292081,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": []
+    }
+  ],
+  "hpp_files": [
+    {
+      "name": "base.hpp",
+      "last_analyzed": 1718379292081,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_files": [
+        "base.cpp"
+      ]
+    }
+  ]
+}

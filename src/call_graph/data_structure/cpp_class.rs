@@ -1,22 +1,270 @@
+use std::cell::RefCell;
+use std::rc::Rc;
+
+use rusqlite::params;
 use serde::Deserialize;
 use serde::Serialize;
 
+use super::super::database::database_sqlite_internal::DatabaseSqliteInternal;
+use super::super::function_search::function_occurrence::FunctionOccurrence;
 use super::func_decl::FuncDecl;
 use super::func_impl::FuncImpl;
+use super::helper::virtual_func_creation_args::VirtualFuncCreationArgs;
 use super::virtual_func_decl::VirtualFuncDecl;
 use super::virtual_func_impl::VirtualFuncImpl;
+use super::MainDeclLocation;
+use super::MatchingFuncs;
+use super::VirtualFuncBasics;
 
-#[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
+#[derive(Deserialize, Serialize, Debug, Clone, Eq)]
 pub struct CppClass {
     id: u64,
+    #[serde(skip)]
+    db_connection: Option<DatabaseSqliteInternal>,
 
     name: String,
     parent_classes: Vec<String>,
-    classes: Vec<CppClass>,
-    func_decls: Vec<FuncDecl>,
-    func_impls: Vec<FuncImpl>,
-    virtual_func_decls: Vec<VirtualFuncDecl>,
-    virtual_func_impls: Vec<VirtualFuncImpl>,
+    classes: Vec<Rc<RefCell<CppClass>>>,
+    func_decls: Vec<Rc<RefCell<FuncDecl>>>,
+    func_impls: Vec<Rc<RefCell<FuncImpl>>>,
+    virtual_func_decls: Vec<Rc<RefCell<VirtualFuncDecl>>>,
+    virtual_func_impls: Vec<Rc<RefCell<VirtualFuncImpl>>>,
+}
+
+impl PartialEq for CppClass {
+    fn eq(&self, other: &Self) -> bool {
+        return self.id == other.id
+            && self.name == other.name
+            && self.parent_classes == other.parent_classes
+            && self.classes == other.classes
+            && self.func_decls == other.func_decls
+            && self.func_impls == other.func_impls
+            && self.virtual_func_decls == other.virtual_func_decls
+            && self.virtual_func_impls == other.virtual_func_impls;
+    }
+}
+
+impl MatchingFuncs for CppClass {
+    fn get_matching_funcs(&self, _: super::helper::location::Location) -> Vec<FunctionOccurrence> {
+        todo!()
+    }
+}
+
+impl MainDeclLocation for CppClass {
+    fn get_name(&self) -> &str {
+        &self.name
+    }
+
+    fn get_db_connection(&self) -> Option<DatabaseSqliteInternal> {
+        self.db_connection.clone()
+    }
+
+    fn get_id(&self) -> (Option<u64>, Option<u64>, Option<u64>) {
+        (None, None, Some(self.id))
+    }
+
+    fn get_classes(&mut self) -> &mut Vec<Rc<RefCell<CppClass>>> {
+        &mut self.classes
+    }
+
+    fn get_func_decls(&mut self) -> &mut Vec<Rc<RefCell<FuncDecl>>> {
+        &mut self.func_decls
+    }
+
+    fn get_func_impls(&mut self) -> &mut Vec<Rc<RefCell<FuncImpl>>> {
+        &mut self.func_impls
+    }
+
+    fn get_virtual_func_impls(&mut self) -> &mut Vec<Rc<RefCell<VirtualFuncImpl>>> {
+        &mut self.virtual_func_impls
+    }
+}
+
+impl CppClass {
+    pub fn new(id: u64, db_connection: Option<DatabaseSqliteInternal>, name: String) -> Self {
+        let mut new_class = Self {
+            id,
+            db_connection,
+            name,
+            parent_classes: Vec::new(),
+            classes: Vec::new(),
+            func_decls: Vec::new(),
+            func_impls: Vec::new(),
+            virtual_func_decls: Vec::new(),
+            virtual_func_impls: Vec::new(),
+        };
+
+        if new_class.db_connection.is_some() {
+            new_class.read_parent_classes();
+
+            new_class.classes = CppClass::get_cpp_classes(
+                &new_class.db_connection.as_ref().unwrap(),
+                (None, None, Some(id)),
+            );
+
+            new_class.func_decls = FuncDecl::get_func_decls(
+                new_class.db_connection.as_ref().unwrap(),
+                (None, None, Some(new_class.id)),
+            );
+            new_class.func_impls = FuncImpl::get_func_impls(
+                new_class.db_connection.as_ref().unwrap(),
+                (None, None, Some(new_class.id)),
+            );
+            new_class.virtual_func_decls = VirtualFuncDecl::get_virtual_func_decls(
+                new_class.db_connection.as_ref().unwrap(),
+                (None, None, Some(new_class.id)),
+            );
+            new_class.virtual_func_impls = VirtualFuncImpl::get_virtual_func_impls(
+                new_class.db_connection.as_ref().unwrap(),
+                (None, None, Some(new_class.id)),
+            );
+        }
+
+        new_class
+    }
+
+    pub fn create_cpp_class(
+        db_connection: &DatabaseSqliteInternal,
+        class_name: &str,
+        parent_id: (Option<u64>, Option<u64>, Option<u64>),
+    ) -> Self {
+        let mut stmt = db_connection
+            .db
+            .prepare(
+                "
+            INSERT INTO cpp_classes (class_name, cpp_file_id, hpp_file_id, cpp_class_id)
+            VALUES (?, ?, ?, ?)",
+            )
+            .unwrap();
+        stmt.execute(params![class_name, parent_id.0, parent_id.1, parent_id.2])
+            .unwrap();
+
+        let id = db_connection.db.last_insert_rowid();
+        Self::new(
+            id as u64,
+            Some(db_connection.clone()),
+            class_name.to_string(),
+        )
+    }
+
+    pub fn get_cpp_classes(
+        db_connection: &DatabaseSqliteInternal,
+        parent_id: (Option<u64>, Option<u64>, Option<u64>),
+    ) -> Vec<Rc<RefCell<CppClass>>> {
+        let mut stmt = db_connection
+            .db
+            .prepare(
+                "
+            SELECT id, class_name
+            FROM cpp_classes
+            WHERE cpp_file_id = ? OR hpp_file_id = ? OR cpp_class_id = ?",
+            )
+            .unwrap();
+        let cpp_classes_iter = stmt
+            .query_map(params![parent_id.0, parent_id.1, parent_id.2], |row| {
+                Ok(Rc::new(RefCell::new(CppClass::new(
+                    row.get(0).unwrap(),
+                    Some(db_connection.clone()),
+                    row.get(1).unwrap(),
+                ))))
+            })
+            .unwrap();
+
+        cpp_classes_iter
+            .map(|cpp_class| cpp_class.unwrap())
+            .collect()
+    }
+
+    fn read_parent_classes(&mut self) {
+        let mut stmt = self
+            .db_connection
+            .as_ref()
+            .unwrap()
+            .db
+            .prepare(
+                "
+            SELECT parent_class_id
+            FROM cpp_classes_2_cpp_classes
+            WHERE child_class_id = ?",
+            )
+            .unwrap();
+        let parent_classes_iter = stmt
+            .query_map(params![self.id], |row| {
+                Ok(row.get::<_, usize>(0).unwrap() as usize)
+            })
+            .unwrap();
+
+        for parent_id in parent_classes_iter.map(|parent_class_id| parent_class_id.unwrap()) {
+            let parent_class =
+                Self::get_class_from_id(self.db_connection.as_ref().unwrap(), parent_id as u64);
+            match parent_class {
+                Some(parent_class) => self
+                    .parent_classes
+                    .push(parent_class.get_name().to_string()),
+                None => panic!("Parent class not found"),
+            }
+        }
+    }
+
+    fn get_class_from_id(db_connection: &DatabaseSqliteInternal, id: u64) -> Option<Self> {
+        let mut stmt = db_connection
+            .db
+            .prepare(
+                "
+            SELECT class_name
+            FROM cpp_classes
+            WHERE id = ?",
+            )
+            .unwrap();
+        let mut rows = stmt.query(params![id]).unwrap();
+
+        if let Some(row) = rows.next().unwrap() {
+            Some(Self::new(
+                id,
+                Some(db_connection.clone()),
+                row.get(0).unwrap(),
+            ))
+        } else {
+            None
+        }
+    }
+
+    pub fn get_virtual_func_decls(&mut self) -> &mut Vec<Rc<RefCell<VirtualFuncDecl>>> {
+        &mut self.virtual_func_decls
+    }
+
+    pub fn add_virtual_func_decl(
+        &mut self,
+        creation_args: VirtualFuncCreationArgs,
+    ) -> Rc<RefCell<VirtualFuncDecl>> {
+        let new_virtual_func_decl =
+            Rc::new(RefCell::new(VirtualFuncDecl::create_virtual_func_decl(
+                &self.get_db_connection().unwrap(),
+                &creation_args,
+                self.get_id(),
+            )));
+        self.get_virtual_func_decls().push(new_virtual_func_decl);
+        self.get_virtual_func_decls().last().unwrap().clone()
+    }
+
+    pub fn get_or_add_virtual_func_decl(
+        &mut self,
+        creation_args: VirtualFuncCreationArgs,
+    ) -> Rc<RefCell<VirtualFuncDecl>> {
+        if self
+            .get_virtual_func_decls()
+            .iter()
+            .any(|c| c.borrow().equals_virtual_func_creation_args(&creation_args))
+        {
+            self.get_virtual_func_decls()
+                .iter()
+                .find(|c| c.borrow().equals_virtual_func_creation_args(&creation_args))
+                .unwrap()
+                .clone()
+        } else {
+            self.add_virtual_func_decl(creation_args)
+        }
+    }
 }
 
 pub const CPP_CLASS_SQL_CREATE_TABLE: &str = "
@@ -28,9 +276,9 @@ CREATE TABLE cpp_classes (
     hpp_file_id  INTEGER NULL,
     cpp_class_id INTEGER NULL,
 
-    FOREIGN KEY (cpp_file_id) REFERENCES cpp_files(id),
-    FOREIGN KEY (hpp_file_id) REFERENCES hpp_files(id),
-    FOREIGN KEY (cpp_class_id) REFERENCES cpp_classes(id)
+    FOREIGN KEY (cpp_file_id) REFERENCES cpp_files(id) ON DELETE CASCADE,
+    FOREIGN KEY (hpp_file_id) REFERENCES hpp_files(id) ON DELETE CASCADE,
+    FOREIGN KEY (cpp_class_id) REFERENCES cpp_classes(id) ON DELETE CASCADE
 )
 ";
 
@@ -40,12 +288,14 @@ CREATE TABLE cpp_classes_2_cpp_classes (
     child_class_id  INTEGER,
 
     PRIMARY KEY (parent_class_id, child_class_id),
-    FOREIGN KEY (parent_class_id) REFERENCES cpp_classes(id),
-    FOREIGN KEY (child_class_id) REFERENCES cpp_classes(id)
+    FOREIGN KEY (parent_class_id) REFERENCES cpp_classes(id) ON DELETE CASCADE,
+    FOREIGN KEY (child_class_id) REFERENCES cpp_classes(id) ON DELETE CASCADE
 )
 ";
 
-pub fn create_database_tables(db_connection: &rusqlite::Connection) {
-    let _ = db_connection.execute_batch(CPP_CLASS_SQL_CREATE_TABLE);
-    let _ = db_connection.execute_batch(CPP_CLASS_2_CLASS_SQL_CREATE_TABLE);
+pub fn create_database_tables(db_connection: &DatabaseSqliteInternal) {
+    let _ = db_connection.db.execute_batch(CPP_CLASS_SQL_CREATE_TABLE);
+    let _ = db_connection
+        .db
+        .execute_batch(CPP_CLASS_2_CLASS_SQL_CREATE_TABLE);
 }

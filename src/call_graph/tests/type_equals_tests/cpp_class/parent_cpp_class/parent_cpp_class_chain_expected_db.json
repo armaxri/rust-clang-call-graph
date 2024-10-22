@@ -1,0 +1,45 @@
+{
+  "cpp_files": [
+    {
+      "name": "parent_cpp_class_chain.json",
+      "last_analyzed": 1718319198314,
+      "classes": [
+        {
+          "name": "GrandParentClass",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "name": "ParentClass",
+          "parent_classes": [
+            "GrandParentClass"
+          ],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "name": "ChildClass",
+          "parent_classes": [
+            "ParentClass"
+          ],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        }
+      ],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": []
+    }
+  ],
+  "hpp_files": []
+}

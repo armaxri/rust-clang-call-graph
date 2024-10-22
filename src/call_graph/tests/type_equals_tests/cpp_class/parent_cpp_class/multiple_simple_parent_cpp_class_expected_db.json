@@ -1,0 +1,64 @@
+{
+  "cpp_files": [
+    {
+      "name": "multiple_simple_parent_cpp_class.json",
+      "last_analyzed": 1718318678987,
+      "classes": [
+        {
+          "name": "ParentClass1",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "name": "ParentClass2",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "name": "ParentClass3",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "name": "ParentClass4",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "name": "ChildClass",
+          "parent_classes": [
+            "ParentClass1",
+            "ParentClass2",
+            "ParentClass3",
+            "ParentClass4"
+          ],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        }
+      ],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": []
+    }
+  ],
+  "hpp_files": []
+}
