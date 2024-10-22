@@ -1,0 +1,44 @@
+{
+  "cpp_files": [
+    {
+      "id": 1,
+      "name": "simple_func_impl.json",
+      "last_analyzed": 1714317242704,
+      "classes": [
+        {
+          "id": 1,
+          "name": "FooClass",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [
+            {
+              "id": 1,
+              "name": "add",
+              "qualified_name": "__ZN3foo3addEii",
+              "qual_type": "int (int, int)",
+              "range": {
+                "start": {
+                  "line": 11,
+                  "column": 5
+                },
+                "end": {
+                  "line": 11,
+                  "column": 8
+                }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
+            }
+          ],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        }
+      ],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": []
+    }
+  ],
+  "hpp_files": []
+}

@@ -15,10 +15,19 @@ struct Cli {
 enum Commands {
     /// Create a new call graph database
     NewDatabase(NewDatabaseArgs),
+    /// Make a dry run of the AST parser
+    DryRun(DryRunArgs),
 }
 
 #[derive(Args)]
 struct NewDatabaseArgs {
+    /// The SQLite database file to create
+    #[arg(short, long, value_name = "FILE")]
+    database_path: PathBuf,
+}
+
+#[derive(Args)]
+struct DryRunArgs {
     /// The compile_commands.json file to use
     #[arg(short, long, value_name = "FILE")]
     compile_commands_json: Option<PathBuf>,
@@ -29,7 +38,7 @@ fn main() {
 
     // Check more examples later https://docs.rs/clap/latest/clap/_derive/_tutorial/chapter_0/index.html
     match &cli.command {
-        Commands::NewDatabase(args) => match &args.compile_commands_json {
+        Commands::DryRun(args) => match &args.compile_commands_json {
             Some(compile_commands_json) => {
                 if !compile_commands_json.exists() {
                     println!(
@@ -49,5 +58,11 @@ fn main() {
                 println!("No compile_commands_json file specified");
             }
         },
+        Commands::NewDatabase(new_database_args) => {
+            println!(
+                "Creating new database at: {}",
+                new_database_args.database_path.display()
+            );
+        }
     }
 }

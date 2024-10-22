@@ -1,0 +1,14 @@
+{
+  "cpp_files": [
+    {
+      "id": 1,
+      "name": "cpp_test.cpp",
+      "last_analyzed": 22222222,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": []
+    }
+  ],
+  "hpp_files": []
+}

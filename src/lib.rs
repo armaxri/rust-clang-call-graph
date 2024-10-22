@@ -9,6 +9,9 @@ use process::{
 };
 
 pub mod ast_reader;
+pub mod call_graph;
+#[macro_use]
+pub mod macros;
 pub mod location;
 pub mod process;
 

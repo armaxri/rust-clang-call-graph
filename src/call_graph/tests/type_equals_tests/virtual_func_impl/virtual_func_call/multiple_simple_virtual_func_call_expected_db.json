@@ -1,0 +1,183 @@
+{
+  "cpp_files": [
+    {
+      "id": 1,
+      "name": "multiple_simple_virtual_func_call.json",
+      "last_analyzed": 1714317242704,
+      "classes": [
+        {
+          "id": 1,
+          "name": "FooClass",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [
+            {
+              "id": 1,
+              "name": "add",
+              "qualified_name": "__ZN3foo3addEii",
+              "base_qualified_name": "__ZN3foo3addEii",
+              "qual_type": "int (int, int)",
+              "range": {
+                "start": {
+                  "line": 11,
+                  "column": 5
+                },
+                "end": {
+                  "line": 11,
+                  "column": 8
+                }
+              }
+            },
+            {
+              "id": 2,
+              "name": "sub",
+              "qualified_name": "__ZN3foo3subEii",
+              "base_qualified_name": "__ZN3foo3subEii",
+              "qual_type": "int (int, int)",
+              "range": {
+                "start": {
+                  "line": 12,
+                  "column": 5
+                },
+                "end": {
+                  "line": 12,
+                  "column": 8
+                }
+              }
+            },
+            {
+              "id": 3,
+              "name": "multiply",
+              "qualified_name": "__ZN3foo3multiplyEii",
+              "base_qualified_name": "__ZN3foo3multiplyEii",
+              "qual_type": "int (int, int)",
+              "range": {
+                "start": {
+                  "line": 13,
+                  "column": 5
+                },
+                "end": {
+                  "line": 13,
+                  "column": 13
+                }
+              }
+            },
+            {
+              "id": 4,
+              "name": "divide",
+              "qualified_name": "__ZN3foo3divideEii",
+              "base_qualified_name": "__ZN3foo3divideEii",
+              "qual_type": "int (int, int)",
+              "range": {
+                "start": {
+                  "line": 14,
+                  "column": 5
+                },
+                "end": {
+                  "line": 14,
+                  "column": 11
+                }
+              }
+            }
+          ],
+          "virtual_func_impls": [
+            {
+              "id": 1,
+              "name": "foo",
+              "qualified_name": "_foo",
+              "base_qualified_name": "",
+              "qual_type": "int (int, char **)",
+              "range": {
+                "start": {
+                  "line": 5,
+                  "column": 4
+                },
+                "end": {
+                  "line": 5,
+                  "column": 9
+                }
+              },
+              "func_calls": [],
+              "virtual_func_calls": [
+                {
+                  "id": 1,
+                  "name": "add",
+                  "qualified_name": "__ZN3foo3addEii",
+                  "base_qualified_name": "__ZN3foo3addEii",
+                  "qual_type": "int (int, int)",
+                  "range": {
+                    "start": {
+                      "line": 11,
+                      "column": 5
+                    },
+                    "end": {
+                      "line": 11,
+                      "column": 8
+                    }
+                  }
+                },
+                {
+                  "id": 2,
+                  "name": "sub",
+                  "qualified_name": "__ZN3foo3subEii",
+                  "base_qualified_name": "__ZN3foo3subEii",
+                  "qual_type": "int (int, int)",
+                  "range": {
+                    "start": {
+                      "line": 12,
+                      "column": 5
+                    },
+                    "end": {
+                      "line": 12,
+                      "column": 8
+                    }
+                  }
+                },
+                {
+                  "id": 3,
+                  "name": "multiply",
+                  "qualified_name": "__ZN3foo3multiplyEii",
+                  "base_qualified_name": "__ZN3foo3multiplyEii",
+                  "qual_type": "int (int, int)",
+                  "range": {
+                    "start": {
+                      "line": 13,
+                      "column": 5
+                    },
+                    "end": {
+                      "line": 13,
+                      "column": 13
+                    }
+                  }
+                },
+                {
+                  "id": 4,
+                  "name": "divide",
+                  "qualified_name": "__ZN3foo3divideEii",
+                  "base_qualified_name": "__ZN3foo3divideEii",
+                  "qual_type": "int (int, int)",
+                  "range": {
+                    "start": {
+                      "line": 14,
+                      "column": 5
+                    },
+                    "end": {
+                      "line": 14,
+                      "column": 11
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": []
+    }
+  ],
+  "hpp_files": []
+}

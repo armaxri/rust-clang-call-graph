@@ -1,0 +1,66 @@
+{
+  "cpp_files": [
+    {
+      "id": 1,
+      "name": "simple_cpp_class.json",
+      "last_analyzed": 1714317242704,
+      "classes": [
+        {
+          "id": 1,
+          "name": "BarClass",
+          "parent_classes": [],
+          "classes": [
+            {
+              "id": 2,
+              "name": "FooClassA",
+              "parent_classes": [],
+              "classes": [],
+              "func_decls": [],
+              "func_impls": [],
+              "virtual_func_decls": [],
+              "virtual_func_impls": []
+            },
+            {
+              "id": 3,
+              "name": "FooClassB",
+              "parent_classes": [],
+              "classes": [],
+              "func_decls": [],
+              "func_impls": [],
+              "virtual_func_decls": [],
+              "virtual_func_impls": []
+            },
+            {
+              "id": 4,
+              "name": "FooClassC",
+              "parent_classes": [],
+              "classes": [],
+              "func_decls": [],
+              "func_impls": [],
+              "virtual_func_decls": [],
+              "virtual_func_impls": []
+            },
+            {
+              "id": 5,
+              "name": "FooClassD",
+              "parent_classes": [],
+              "classes": [],
+              "func_decls": [],
+              "func_impls": [],
+              "virtual_func_decls": [],
+              "virtual_func_impls": []
+            }
+          ],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        }
+      ],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": []
+    }
+  ],
+  "hpp_files": []
+}
