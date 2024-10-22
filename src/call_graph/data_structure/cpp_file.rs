@@ -169,7 +169,7 @@ impl CppFile {
             VALUES (?, ?)",
             )
             .unwrap();
-        let result = stmt.execute(params![name, time,]);
+        let result = stmt.insert(params![name, time,]);
 
         Rc::new(RefCell::new(CppFile::new(
             result.unwrap() as u64,

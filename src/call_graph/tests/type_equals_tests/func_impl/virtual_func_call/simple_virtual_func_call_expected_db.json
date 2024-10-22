@@ -1,10 +1,12 @@
 {
   "cpp_files": [
     {
+      "id": 1,
       "name": "simple_virtual_func_call.json",
       "last_analyzed": 1714317242704,
       "classes": [
         {
+          "id": 1,
           "name": "FooClass",
           "parent_classes": [],
           "classes": [],
@@ -12,6 +14,7 @@
           "func_impls": [],
           "virtual_func_decls": [
             {
+              "id": 1,
               "base_qualified_name": "__ZN3foo3addEii",
               "name": "add",
               "qualified_name": "__ZN3foo3addEii",
@@ -34,8 +37,9 @@
       "func_decls": [],
       "func_impls": [
         {
-          "name": "main",
-          "qualified_name": "_main",
+          "id": 1,
+          "name": "foo",
+          "qualified_name": "_foo",
           "qual_type": "int (int, char **)",
           "range": {
             "start": {
@@ -50,6 +54,7 @@
           "func_calls": [],
           "virtual_func_calls": [
             {
+              "id": 1,
               "base_qualified_name": "__ZN3foo3addEii",
               "name": "add",
               "qualified_name": "__ZN3foo3addEii",

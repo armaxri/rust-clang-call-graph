@@ -29,7 +29,8 @@
           "virtual_func_calls": []
         }
       ],
-      "referenced_from_files": []
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": []
     }
   ]
 }

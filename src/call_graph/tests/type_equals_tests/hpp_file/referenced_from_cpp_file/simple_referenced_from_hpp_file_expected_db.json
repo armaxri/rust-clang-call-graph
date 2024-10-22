@@ -1,6 +1,7 @@
 {
   "cpp_files": [
     {
+      "id": 1,
       "name": "main.cpp",
       "last_analyzed": 1718379292081,
       "classes": [],
@@ -11,25 +12,30 @@
   ],
   "hpp_files": [
     {
+      "id": 1,
       "name": "firstHeader.hpp",
       "last_analyzed": 1718379292081,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
       "virtual_func_impls": [],
-      "referenced_from_files": [
-        "secondHeader.hpp",
+      "referenced_from_header_files": [
+        "secondHeader.hpp"
+      ],
+      "referenced_from_source_files": [
         "main.cpp"
       ]
     },
     {
+      "id": 2,
       "name": "secondHeader.hpp",
       "last_analyzed": 1718379292081,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
       "virtual_func_impls": [],
-      "referenced_from_files": [
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
         "main.cpp"
       ]
     }

@@ -84,7 +84,7 @@ impl FuncDecl {
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             )
             .unwrap();
-        let result = stmt.execute(params![
+        let result = stmt.insert(params![
             args.name.clone(),
             args.qualified_name.clone(),
             args.qualified_type.clone(),

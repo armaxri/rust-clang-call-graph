@@ -1,6 +1,7 @@
 {
   "cpp_files": [
     {
+      "id": 1,
       "name": "base.cpp",
       "last_analyzed": 1718379292081,
       "classes": [],
@@ -11,13 +12,15 @@
   ],
   "hpp_files": [
     {
+      "id": 1,
       "name": "base.hpp",
       "last_analyzed": 1718379292081,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
       "virtual_func_impls": [],
-      "referenced_from_files": [
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
         "base.cpp"
       ]
     }

@@ -1,10 +1,12 @@
 {
   "cpp_files": [
     {
+      "id": 1,
       "name": "multiple_simple_parent_cpp_class.json",
       "last_analyzed": 1718318678987,
       "classes": [
         {
+          "id": 1,
           "name": "ParentClass1",
           "parent_classes": [],
           "classes": [],
@@ -14,6 +16,7 @@
           "virtual_func_impls": []
         },
         {
+          "id": 2,
           "name": "ParentClass2",
           "parent_classes": [],
           "classes": [],
@@ -23,6 +26,7 @@
           "virtual_func_impls": []
         },
         {
+          "id": 3,
           "name": "ParentClass3",
           "parent_classes": [],
           "classes": [],
@@ -32,6 +36,7 @@
           "virtual_func_impls": []
         },
         {
+          "id": 4,
           "name": "ParentClass4",
           "parent_classes": [],
           "classes": [],
@@ -41,6 +46,7 @@
           "virtual_func_impls": []
         },
         {
+          "id": 5,
           "name": "ChildClass",
           "parent_classes": [
             "ParentClass1",

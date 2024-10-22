@@ -136,12 +136,10 @@ impl CppClass {
             VALUES (?, ?, ?, ?)",
             )
             .unwrap();
-        stmt.execute(params![class_name, parent_id.0, parent_id.1, parent_id.2])
-            .unwrap();
+        let result = stmt.insert(params![class_name, parent_id.0, parent_id.1, parent_id.2]);
 
-        let id = db_connection.db.last_insert_rowid();
         Self::new(
-            id as u64,
+            result.unwrap() as u64,
             Some(db_connection.clone()),
             class_name.to_string(),
         )
@@ -200,13 +198,16 @@ impl CppClass {
             match parent_class {
                 Some(parent_class) => self
                     .parent_classes
-                    .push(parent_class.get_name().to_string()),
+                    .push(parent_class.borrow().get_name().to_string()),
                 None => panic!("Parent class not found"),
             }
         }
     }
 
-    fn get_class_from_id(db_connection: &DatabaseSqliteInternal, id: u64) -> Option<Self> {
+    fn get_class_from_id(
+        db_connection: &DatabaseSqliteInternal,
+        id: u64,
+    ) -> Option<Rc<RefCell<Self>>> {
         let mut stmt = db_connection
             .db
             .prepare(
@@ -219,11 +220,11 @@ impl CppClass {
         let mut rows = stmt.query(params![id]).unwrap();
 
         if let Some(row) = rows.next().unwrap() {
-            Some(Self::new(
+            Some(Rc::new(RefCell::new(Self::new(
                 id,
                 Some(db_connection.clone()),
                 row.get(0).unwrap(),
-            ))
+            ))))
         } else {
             None
         }
@@ -264,6 +265,66 @@ impl CppClass {
         } else {
             self.add_virtual_func_decl(creation_args)
         }
+    }
+
+    pub fn get_parent_classes(&self) -> Vec<Rc<RefCell<CppClass>>> {
+        let mut parent_classes = Vec::new();
+        let mut stmt = self
+            .db_connection
+            .as_ref()
+            .unwrap()
+            .db
+            .prepare(
+                "
+            SELECT parent_class_id
+            FROM cpp_classes_2_cpp_classes
+            WHERE child_class_id = ?",
+            )
+            .unwrap();
+        let parent_classes_iter = stmt
+            .query_map(params![self.id], |row| {
+                Ok(row.get::<_, usize>(0).unwrap() as usize)
+            })
+            .unwrap();
+
+        for parent_id in parent_classes_iter.map(|parent_class_id| parent_class_id.unwrap()) {
+            let parent_class =
+                Self::get_class_from_id(self.db_connection.as_ref().unwrap(), parent_id as u64);
+            match parent_class {
+                Some(parent_class) => parent_classes.push(parent_class),
+                None => panic!("Parent class not found"),
+            }
+        }
+        parent_classes
+    }
+
+    pub fn get_parent_classes_names(&self) -> Vec<String> {
+        self.parent_classes.clone()
+    }
+
+    pub fn add_parent_class(&mut self, parent_class: &Rc<RefCell<CppClass>>) {
+        if self
+            .parent_classes
+            .iter()
+            .any(|parent_class_name| parent_class_name == &parent_class.borrow().name)
+        {
+            return;
+        }
+
+        let mut stmt = self
+            .db_connection
+            .as_ref()
+            .unwrap()
+            .db
+            .prepare(
+                "
+            INSERT INTO cpp_classes_2_cpp_classes (parent_class_id, child_class_id)
+            VALUES (?, ?)",
+            )
+            .unwrap();
+        stmt.insert(params![parent_class.borrow().id, self.id])
+            .unwrap();
+        self.parent_classes.push(parent_class.borrow().name.clone());
     }
 }
 

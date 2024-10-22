@@ -8,6 +8,7 @@ use serde::Serialize;
 use super::super::database::database_sqlite_internal::DatabaseSqliteInternal;
 use super::super::function_search::function_occurrence::FunctionOccurrence;
 use super::cpp_class::CppClass;
+use super::cpp_file::CppFile;
 use super::func_decl::FuncDecl;
 use super::func_impl::FuncImpl;
 use super::virtual_func_impl::VirtualFuncImpl;
@@ -27,7 +28,8 @@ pub struct HppFile {
     func_decls: Vec<Rc<RefCell<FuncDecl>>>,
     func_impls: Vec<Rc<RefCell<FuncImpl>>>,
     virtual_func_impls: Vec<Rc<RefCell<VirtualFuncImpl>>>,
-    referenced_from_files: Vec<String>,
+    referenced_from_header_files: Vec<String>,
+    referenced_from_source_files: Vec<String>,
 }
 
 impl PartialEq for HppFile {
@@ -38,7 +40,8 @@ impl PartialEq for HppFile {
             && self.func_decls == other.func_decls
             && self.func_impls == other.func_impls
             && self.virtual_func_impls == other.virtual_func_impls
-            && self.referenced_from_files == other.referenced_from_files;
+            && self.referenced_from_header_files == other.referenced_from_header_files
+            && self.referenced_from_source_files == other.referenced_from_source_files;
     }
 }
 
@@ -124,10 +127,14 @@ impl HppFile {
             func_decls: Vec::new(),
             func_impls: Vec::new(),
             virtual_func_impls: Vec::new(),
-            referenced_from_files: Vec::new(),
+            referenced_from_header_files: Vec::new(),
+            referenced_from_source_files: Vec::new(),
         };
 
         if hpp_file.db_connection.is_some() {
+            hpp_file.read_referenced_from_header_files();
+            hpp_file.read_referenced_from_source_files();
+
             hpp_file.classes = CppClass::get_cpp_classes(
                 &hpp_file.db_connection.as_ref().unwrap(),
                 (None, Some(id), None),
@@ -171,7 +178,7 @@ impl HppFile {
             VALUES (?, ?)",
             )
             .unwrap();
-        let result = stmt.execute(params![name, time,]);
+        let result = stmt.insert(params![name, time,]);
 
         Rc::new(RefCell::new(HppFile::new(
             result.unwrap() as u64,
@@ -246,6 +253,109 @@ impl HppFile {
             WHERE id = ?",
             params![self.id],
         );
+    }
+
+    pub fn get_referenced_from_header_files(&self) -> Vec<String> {
+        self.referenced_from_header_files.clone()
+    }
+
+    pub fn add_referenced_from_header_file(&mut self, file: &Rc<RefCell<HppFile>>) {
+        if self
+            .referenced_from_header_files
+            .contains(&file.borrow().name)
+        {
+            return;
+        }
+
+        let mut stmt = self
+            .db_connection
+            .as_ref()
+            .unwrap()
+            .db
+            .prepare(
+                "
+            INSERT INTO hpp_files_2_hpp_files (current_hpp_file_id, hpp_file_id)
+            VALUES (?, ?)",
+            )
+            .unwrap();
+        stmt.insert(params![self.id, file.borrow().id]).unwrap();
+
+        self.referenced_from_header_files
+            .push(file.borrow().name.clone());
+    }
+
+    fn read_referenced_from_header_files(&mut self) {
+        let mut stmt = self
+            .db_connection
+            .as_ref()
+            .unwrap()
+            .db
+            .prepare(
+                "
+            SELECT h.file_name
+            FROM hpp_files AS h
+            JOIN hpp_files_2_hpp_files AS h2h ON h.id = h2h.hpp_file_id
+            WHERE h2h.current_hpp_file_id = ?",
+            )
+            .unwrap();
+        let mut rows = stmt.query(params![self.id]).unwrap();
+
+        while let Ok(Some(row)) = rows.next() {
+            let file_name: String = row.get(0).unwrap();
+            self.referenced_from_header_files.push(file_name);
+        }
+    }
+
+    pub fn get_referenced_from_source_files(&self) -> Vec<String> {
+        self.referenced_from_source_files.clone()
+    }
+
+    pub fn add_referenced_from_source_file(&mut self, file: &Rc<RefCell<CppFile>>) {
+        if self
+            .referenced_from_source_files
+            .contains(&file.borrow().get_name().to_string())
+        {
+            return;
+        }
+
+        let mut stmt = self
+            .db_connection
+            .as_ref()
+            .unwrap()
+            .db
+            .prepare(
+                "
+            INSERT INTO cpp_files_2_hpp_files (cpp_file_id, hpp_file_id)
+            VALUES (?, ?)",
+            )
+            .unwrap();
+        stmt.insert(params![file.borrow().get_id().0.unwrap(), self.id])
+            .unwrap();
+
+        self.referenced_from_source_files
+            .push(file.borrow().get_name().to_string());
+    }
+
+    fn read_referenced_from_source_files(&mut self) {
+        let mut stmt = self
+            .db_connection
+            .as_ref()
+            .unwrap()
+            .db
+            .prepare(
+                "
+            SELECT c.file_name
+            FROM cpp_files AS c
+            JOIN cpp_files_2_hpp_files AS c2h ON c.id = c2h.cpp_file_id
+            WHERE c2h.hpp_file_id = ?",
+            )
+            .unwrap();
+        let mut rows = stmt.query(params![self.id]).unwrap();
+
+        while let Ok(Some(row)) = rows.next() {
+            let file_name: String = row.get(0).unwrap();
+            self.referenced_from_source_files.push(file_name);
+        }
     }
 }
 

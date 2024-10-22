@@ -74,7 +74,8 @@
       ],
       "func_impls": [],
       "virtual_func_impls": [],
-      "referenced_from_files": []
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": []
     }
   ]
 }

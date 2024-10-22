@@ -96,7 +96,7 @@ impl VirtualFuncDecl {
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             )
             .unwrap();
-        let result = stmt.execute(params![
+        let result = stmt.insert(params![
             args.name.clone(),
             args.qualified_name.clone(),
             args.base_qualified_name.clone(),
