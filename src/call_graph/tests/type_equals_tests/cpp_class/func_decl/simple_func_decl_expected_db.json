@@ -15,6 +15,7 @@
               "id": 1,
               "name": "add",
               "qualified_name": "__ZN3foo3addEii",
+              "base_qualified_name": null,
               "qual_type": "int (int, int)",
               "range": {
                 "start": {
@@ -25,7 +26,9 @@
                   "line": 11,
                   "column": 8
                 }
-              }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
             }
           ],
           "func_impls": [],

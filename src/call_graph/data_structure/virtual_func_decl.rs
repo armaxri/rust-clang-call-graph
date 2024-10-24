@@ -2,85 +2,15 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 use rusqlite::params;
-use serde::Deserialize;
-use serde::Serialize;
 
 use super::super::database::database_sqlite_internal::DatabaseSqliteInternal;
+use super::func_structure::FuncMentionType;
+use super::func_structure::FuncStructure;
 use super::helper::location::Location;
 use super::helper::range::Range;
 use super::helper::virtual_func_creation_args::VirtualFuncCreationArgs;
-use super::FuncBasics;
-use super::VirtualFuncBasics;
 
-#[derive(Deserialize, Serialize, Debug, Clone, Eq)]
-pub struct VirtualFuncDecl {
-    id: u64,
-    #[serde(skip)]
-    _db_connection: Option<DatabaseSqliteInternal>,
-
-    name: String,
-    qualified_name: String,
-    base_qualified_name: String,
-    qual_type: String,
-    range: Range,
-}
-
-impl PartialEq for VirtualFuncDecl {
-    fn eq(&self, other: &Self) -> bool {
-        return self.id == other.id
-            && self.name == other.name
-            && self.qualified_name == other.qualified_name
-            && self.base_qualified_name == other.base_qualified_name
-            && self.qual_type == other.qual_type
-            && self.range == other.range;
-    }
-}
-
-impl FuncBasics for VirtualFuncDecl {
-    fn get_name(&self) -> &str {
-        &self.name
-    }
-
-    fn get_qualified_name(&self) -> &str {
-        &self.qualified_name
-    }
-
-    fn get_qual_type(&self) -> &str {
-        &self.qual_type
-    }
-
-    fn get_range(&self) -> &Range {
-        &self.range
-    }
-}
-
-impl VirtualFuncBasics for VirtualFuncDecl {
-    fn get_base_qualified_name(&self) -> &str {
-        &self.base_qualified_name
-    }
-}
-
-impl VirtualFuncDecl {
-    pub fn new(
-        id: u64,
-        db_connection: Option<DatabaseSqliteInternal>,
-        name: String,
-        qualified_name: String,
-        base_qualified_name: String,
-        qual_type: String,
-        range: Range,
-    ) -> Self {
-        Self {
-            id,
-            _db_connection: db_connection,
-            name,
-            qualified_name,
-            base_qualified_name,
-            qual_type,
-            range,
-        }
-    }
-
+impl FuncStructure {
     pub fn create_virtual_func_decl(
         db_connection: &DatabaseSqliteInternal,
         args: &VirtualFuncCreationArgs,
@@ -110,21 +40,22 @@ impl VirtualFuncDecl {
             parent_id.2,
         ]);
 
-        VirtualFuncDecl::new(
+        FuncStructure::new(
             result.unwrap() as u64,
             Some(db_connection.clone()),
             args.name.clone(),
             args.qualified_name.clone(),
-            args.base_qualified_name.clone(),
+            Some(args.base_qualified_name.clone()),
             args.qualified_type.clone(),
             args.range.clone(),
+            Some(FuncMentionType::VirtualFuncDecl),
         )
     }
 
     pub fn get_virtual_func_decls(
         db_connection: &DatabaseSqliteInternal,
         parent_id: (Option<u64>, Option<u64>, Option<u64>),
-    ) -> Vec<Rc<RefCell<VirtualFuncDecl>>> {
+    ) -> Vec<Rc<RefCell<FuncStructure>>> {
         let mut stmt = db_connection
             .db
             .prepare(
@@ -141,12 +72,12 @@ impl VirtualFuncDecl {
 
         let mut virtual_func_decls = Vec::new();
         while let Some(row) = rows.next().unwrap() {
-            virtual_func_decls.push(Rc::new(RefCell::new(VirtualFuncDecl::new(
+            virtual_func_decls.push(Rc::new(RefCell::new(FuncStructure::new(
                 row.get(0).unwrap(),
                 Some(db_connection.clone()),
                 row.get(1).unwrap(),
                 row.get(2).unwrap(),
-                row.get(3).unwrap(),
+                Some(row.get(3).unwrap()),
                 row.get(4).unwrap(),
                 Range {
                     start: Location {
@@ -158,6 +89,7 @@ impl VirtualFuncDecl {
                         column: row.get(8).unwrap(),
                     },
                 },
+                Some(FuncMentionType::VirtualFuncDecl),
             ))));
         }
 

@@ -6,12 +6,8 @@ use serde::Deserialize;
 use serde::Serialize;
 
 use super::super::database::database_sqlite_internal::DatabaseSqliteInternal;
-use super::super::function_search::function_occurrence::FunctionOccurrence;
-use super::func_decl::FuncDecl;
-use super::func_impl::FuncImpl;
+use super::func_structure::FuncStructure;
 use super::helper::virtual_func_creation_args::VirtualFuncCreationArgs;
-use super::virtual_func_decl::VirtualFuncDecl;
-use super::virtual_func_impl::VirtualFuncImpl;
 use super::MainDeclLocation;
 use super::MatchingFuncs;
 use super::VirtualFuncBasics;
@@ -25,10 +21,10 @@ pub struct CppClass {
     name: String,
     parent_classes: Vec<String>,
     classes: Vec<Rc<RefCell<CppClass>>>,
-    func_decls: Vec<Rc<RefCell<FuncDecl>>>,
-    func_impls: Vec<Rc<RefCell<FuncImpl>>>,
-    virtual_func_decls: Vec<Rc<RefCell<VirtualFuncDecl>>>,
-    virtual_func_impls: Vec<Rc<RefCell<VirtualFuncImpl>>>,
+    func_decls: Vec<Rc<RefCell<FuncStructure>>>,
+    func_impls: Vec<Rc<RefCell<FuncStructure>>>,
+    virtual_func_decls: Vec<Rc<RefCell<FuncStructure>>>,
+    virtual_func_impls: Vec<Rc<RefCell<FuncStructure>>>,
 }
 
 impl PartialEq for CppClass {
@@ -45,7 +41,10 @@ impl PartialEq for CppClass {
 }
 
 impl MatchingFuncs for CppClass {
-    fn get_matching_funcs(&self, _: super::helper::location::Location) -> Vec<FunctionOccurrence> {
+    fn get_matching_funcs(
+        &self,
+        _: super::helper::location::Location,
+    ) -> Vec<Rc<RefCell<FuncStructure>>> {
         todo!()
     }
 }
@@ -67,15 +66,15 @@ impl MainDeclLocation for CppClass {
         &mut self.classes
     }
 
-    fn get_func_decls(&mut self) -> &mut Vec<Rc<RefCell<FuncDecl>>> {
+    fn get_func_decls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>> {
         &mut self.func_decls
     }
 
-    fn get_func_impls(&mut self) -> &mut Vec<Rc<RefCell<FuncImpl>>> {
+    fn get_func_impls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>> {
         &mut self.func_impls
     }
 
-    fn get_virtual_func_impls(&mut self) -> &mut Vec<Rc<RefCell<VirtualFuncImpl>>> {
+    fn get_virtual_func_impls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>> {
         &mut self.virtual_func_impls
     }
 }
@@ -102,19 +101,19 @@ impl CppClass {
                 (None, None, Some(id)),
             );
 
-            new_class.func_decls = FuncDecl::get_func_decls(
+            new_class.func_decls = FuncStructure::get_func_decls(
                 new_class.db_connection.as_ref().unwrap(),
                 (None, None, Some(new_class.id)),
             );
-            new_class.func_impls = FuncImpl::get_func_impls(
+            new_class.func_impls = FuncStructure::get_func_impls(
                 new_class.db_connection.as_ref().unwrap(),
                 (None, None, Some(new_class.id)),
             );
-            new_class.virtual_func_decls = VirtualFuncDecl::get_virtual_func_decls(
+            new_class.virtual_func_decls = FuncStructure::get_virtual_func_decls(
                 new_class.db_connection.as_ref().unwrap(),
                 (None, None, Some(new_class.id)),
             );
-            new_class.virtual_func_impls = VirtualFuncImpl::get_virtual_func_impls(
+            new_class.virtual_func_impls = FuncStructure::get_virtual_func_impls(
                 new_class.db_connection.as_ref().unwrap(),
                 (None, None, Some(new_class.id)),
             );
@@ -230,20 +229,19 @@ impl CppClass {
         }
     }
 
-    pub fn get_virtual_func_decls(&mut self) -> &mut Vec<Rc<RefCell<VirtualFuncDecl>>> {
+    pub fn get_virtual_func_decls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>> {
         &mut self.virtual_func_decls
     }
 
     pub fn add_virtual_func_decl(
         &mut self,
         creation_args: VirtualFuncCreationArgs,
-    ) -> Rc<RefCell<VirtualFuncDecl>> {
-        let new_virtual_func_decl =
-            Rc::new(RefCell::new(VirtualFuncDecl::create_virtual_func_decl(
-                &self.get_db_connection().unwrap(),
-                &creation_args,
-                self.get_id(),
-            )));
+    ) -> Rc<RefCell<FuncStructure>> {
+        let new_virtual_func_decl = Rc::new(RefCell::new(FuncStructure::create_virtual_func_decl(
+            &self.get_db_connection().unwrap(),
+            &creation_args,
+            self.get_id(),
+        )));
         self.get_virtual_func_decls().push(new_virtual_func_decl);
         self.get_virtual_func_decls().last().unwrap().clone()
     }
@@ -251,7 +249,7 @@ impl CppClass {
     pub fn get_or_add_virtual_func_decl(
         &mut self,
         creation_args: VirtualFuncCreationArgs,
-    ) -> Rc<RefCell<VirtualFuncDecl>> {
+    ) -> Rc<RefCell<FuncStructure>> {
         if self
             .get_virtual_func_decls()
             .iter()

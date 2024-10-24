@@ -28,7 +28,9 @@
                   "column": 8
                 }
               },
-              "base_qualified_name": "__ZN3foo3addEii"
+              "base_qualified_name": "__ZN3foo3addEii",
+              "func_calls": [],
+              "virtual_func_calls": []
             },
             {
               "id": 2,
@@ -45,7 +47,9 @@
                   "column": 8
                 }
               },
-              "base_qualified_name": "__ZN3foo3subEii"
+              "base_qualified_name": "__ZN3foo3subEii",
+              "func_calls": [],
+              "virtual_func_calls": []
             },
             {
               "id": 3,
@@ -62,7 +66,9 @@
                   "column": 13
                 }
               },
-              "base_qualified_name": "__ZN3foo3multiplyEii"
+              "base_qualified_name": "__ZN3foo3multiplyEii",
+              "func_calls": [],
+              "virtual_func_calls": []
             },
             {
               "id": 4,
@@ -79,7 +85,9 @@
                   "column": 11
                 }
               },
-              "base_qualified_name": "__ZN3foo3divideEii"
+              "base_qualified_name": "__ZN3foo3divideEii",
+              "func_calls": [],
+              "virtual_func_calls": []
             }
           ],
           "virtual_func_impls": []
@@ -119,7 +127,9 @@
                   "line": 11,
                   "column": 8
                 }
-              }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
             },
             {
               "id": 2,
@@ -136,7 +146,9 @@
                   "line": 12,
                   "column": 8
                 }
-              }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
             },
             {
               "id": 3,
@@ -153,7 +165,9 @@
                   "line": 13,
                   "column": 13
                 }
-              }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
             },
             {
               "id": 4,
@@ -170,7 +184,9 @@
                   "line": 14,
                   "column": 11
                 }
-              }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
             }
           ]
         }

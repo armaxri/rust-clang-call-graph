@@ -28,7 +28,9 @@
                   "line": 11,
                   "column": 8
                 }
-              }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
             }
           ],
           "virtual_func_impls": []
@@ -68,7 +70,9 @@
                   "line": 20,
                   "column": 10
                 }
-              }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
             }
           ]
         }

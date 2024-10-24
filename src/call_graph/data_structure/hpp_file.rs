@@ -6,12 +6,9 @@ use serde::Deserialize;
 use serde::Serialize;
 
 use super::super::database::database_sqlite_internal::DatabaseSqliteInternal;
-use super::super::function_search::function_occurrence::FunctionOccurrence;
 use super::cpp_class::CppClass;
 use super::cpp_file::CppFile;
-use super::func_decl::FuncDecl;
-use super::func_impl::FuncImpl;
-use super::virtual_func_impl::VirtualFuncImpl;
+use super::func_structure::FuncStructure;
 use super::File;
 use super::MainDeclLocation;
 use super::MatchingFuncs;
@@ -25,9 +22,9 @@ pub struct HppFile {
     name: String,
     last_analyzed: i64,
     classes: Vec<Rc<RefCell<CppClass>>>,
-    func_decls: Vec<Rc<RefCell<FuncDecl>>>,
-    func_impls: Vec<Rc<RefCell<FuncImpl>>>,
-    virtual_func_impls: Vec<Rc<RefCell<VirtualFuncImpl>>>,
+    func_decls: Vec<Rc<RefCell<FuncStructure>>>,
+    func_impls: Vec<Rc<RefCell<FuncStructure>>>,
+    virtual_func_impls: Vec<Rc<RefCell<FuncStructure>>>,
     referenced_from_header_files: Vec<String>,
     referenced_from_source_files: Vec<String>,
 }
@@ -49,7 +46,7 @@ impl MatchingFuncs for HppFile {
     fn get_matching_funcs(
         &self,
         _location: super::helper::location::Location,
-    ) -> Vec<FunctionOccurrence> {
+    ) -> Vec<Rc<RefCell<FuncStructure>>> {
         todo!()
     }
 }
@@ -71,15 +68,15 @@ impl MainDeclLocation for HppFile {
         &mut self.classes
     }
 
-    fn get_func_decls(&mut self) -> &mut Vec<Rc<RefCell<FuncDecl>>> {
+    fn get_func_decls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>> {
         &mut self.func_decls
     }
 
-    fn get_func_impls(&mut self) -> &mut Vec<Rc<RefCell<FuncImpl>>> {
+    fn get_func_impls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>> {
         &mut self.func_impls
     }
 
-    fn get_virtual_func_impls(&mut self) -> &mut Vec<Rc<RefCell<VirtualFuncImpl>>> {
+    fn get_virtual_func_impls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>> {
         &mut self.virtual_func_impls
     }
 }
@@ -140,15 +137,15 @@ impl HppFile {
                 (None, Some(id), None),
             );
 
-            hpp_file.func_decls = FuncDecl::get_func_decls(
+            hpp_file.func_decls = FuncStructure::get_func_decls(
                 hpp_file.db_connection.as_ref().unwrap(),
                 (None, Some(hpp_file.id), None),
             );
-            hpp_file.func_impls = FuncImpl::get_func_impls(
+            hpp_file.func_impls = FuncStructure::get_func_impls(
                 hpp_file.db_connection.as_ref().unwrap(),
                 (None, Some(hpp_file.id), None),
             );
-            hpp_file.virtual_func_impls = VirtualFuncImpl::get_virtual_func_impls(
+            hpp_file.virtual_func_impls = FuncStructure::get_virtual_func_impls(
                 hpp_file.db_connection.as_ref().unwrap(),
                 (None, Some(hpp_file.id), None),
             );

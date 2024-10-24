@@ -6,11 +6,8 @@ use serde::Deserialize;
 use serde::Serialize;
 
 use super::super::database::database_sqlite_internal::DatabaseSqliteInternal;
-use super::super::function_search::function_occurrence::FunctionOccurrence;
 use super::cpp_class::CppClass;
-use super::func_decl::FuncDecl;
-use super::func_impl::FuncImpl;
-use super::virtual_func_impl::VirtualFuncImpl;
+use super::func_structure::FuncStructure;
 use super::File;
 use super::MainDeclLocation;
 use super::MatchingFuncs;
@@ -24,9 +21,9 @@ pub struct CppFile {
     name: String,
     last_analyzed: i64,
     classes: Vec<Rc<RefCell<CppClass>>>,
-    func_decls: Vec<Rc<RefCell<FuncDecl>>>,
-    func_impls: Vec<Rc<RefCell<FuncImpl>>>,
-    virtual_func_impls: Vec<Rc<RefCell<VirtualFuncImpl>>>,
+    func_decls: Vec<Rc<RefCell<FuncStructure>>>,
+    func_impls: Vec<Rc<RefCell<FuncStructure>>>,
+    virtual_func_impls: Vec<Rc<RefCell<FuncStructure>>>,
 }
 
 impl PartialEq for CppFile {
@@ -44,7 +41,7 @@ impl MatchingFuncs for CppFile {
     fn get_matching_funcs(
         &self,
         _location: super::helper::location::Location,
-    ) -> Vec<FunctionOccurrence> {
+    ) -> Vec<Rc<RefCell<FuncStructure>>> {
         todo!()
     }
 }
@@ -66,15 +63,15 @@ impl MainDeclLocation for CppFile {
         &mut self.classes
     }
 
-    fn get_func_decls(&mut self) -> &mut Vec<Rc<RefCell<FuncDecl>>> {
+    fn get_func_decls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>> {
         &mut self.func_decls
     }
 
-    fn get_func_impls(&mut self) -> &mut Vec<Rc<RefCell<FuncImpl>>> {
+    fn get_func_impls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>> {
         &mut self.func_impls
     }
 
-    fn get_virtual_func_impls(&mut self) -> &mut Vec<Rc<RefCell<VirtualFuncImpl>>> {
+    fn get_virtual_func_impls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>> {
         &mut self.virtual_func_impls
     }
 }
@@ -131,15 +128,15 @@ impl CppFile {
                 (Some(id), None, None),
             );
 
-            cpp_file.func_decls = FuncDecl::get_func_decls(
+            cpp_file.func_decls = FuncStructure::get_func_decls(
                 cpp_file.db_connection.as_ref().unwrap(),
                 (Some(cpp_file.id), None, None),
             );
-            cpp_file.func_impls = FuncImpl::get_func_impls(
+            cpp_file.func_impls = FuncStructure::get_func_impls(
                 cpp_file.db_connection.as_ref().unwrap(),
                 (Some(cpp_file.id), None, None),
             );
-            cpp_file.virtual_func_impls = VirtualFuncImpl::get_virtual_func_impls(
+            cpp_file.virtual_func_impls = FuncStructure::get_virtual_func_impls(
                 cpp_file.db_connection.as_ref().unwrap(),
                 (Some(cpp_file.id), None, None),
             );
