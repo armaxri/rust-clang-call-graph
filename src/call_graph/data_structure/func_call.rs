@@ -3,12 +3,13 @@ use std::rc::Rc;
 
 use rusqlite::params;
 
+use crate::location::position::Position;
+use crate::location::range::Range;
+
 use super::super::database::database_sqlite_internal::DatabaseSqliteInternal;
 use super::func_structure::FuncMentionType;
 use super::func_structure::FuncStructure;
 use super::helper::func_creation_args::FuncCreationArgs;
-use super::helper::location::Location;
-use super::helper::range::Range;
 use super::FuncBasics;
 
 impl FuncStructure {
@@ -76,8 +77,8 @@ impl FuncStructure {
                     None,
                     row.get(3).unwrap(),
                     Range::new(
-                        Location::new(row.get(4).unwrap(), row.get(5).unwrap()),
-                        Location::new(row.get(6).unwrap(), row.get(7).unwrap()),
+                        Position::new(row.get(4).unwrap(), row.get(5).unwrap()),
+                        Position::new(row.get(6).unwrap(), row.get(7).unwrap()),
                     ),
                     Some(FuncMentionType::FuncCall),
                 ))
@@ -122,8 +123,8 @@ impl FuncStructure {
                         None,
                         row.get(3).unwrap(),
                         Range::new(
-                            Location::new(row.get(4).unwrap(), row.get(5).unwrap()),
-                            Location::new(row.get(6).unwrap(), row.get(7).unwrap()),
+                            Position::new(row.get(4).unwrap(), row.get(5).unwrap()),
+                            Position::new(row.get(6).unwrap(), row.get(7).unwrap()),
                         ),
                         Some(FuncMentionType::FuncCall),
                     ))

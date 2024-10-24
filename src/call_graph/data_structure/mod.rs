@@ -3,9 +3,10 @@ use std::{cell::RefCell, rc::Rc};
 use cpp_class::CppClass;
 use func_structure::{FuncMentionType, FuncStructure};
 use helper::{
-    func_creation_args::FuncCreationArgs, location::Location, range::Range,
-    virtual_func_creation_args::VirtualFuncCreationArgs,
+    func_creation_args::FuncCreationArgs, virtual_func_creation_args::VirtualFuncCreationArgs,
 };
+
+use crate::location::{position::Position, range::Range};
 
 use super::database::database_sqlite_internal::DatabaseSqliteInternal;
 
@@ -22,7 +23,7 @@ pub mod virtual_func_decl;
 pub mod virtual_func_impl;
 
 pub trait MatchingFuncs {
-    fn get_matching_funcs(&self, location: Location) -> Vec<Rc<RefCell<FuncStructure>>>;
+    fn get_matching_funcs(&self, position: Position) -> Vec<Rc<RefCell<FuncStructure>>>;
 }
 
 pub trait FuncBasics {
@@ -35,7 +36,7 @@ pub trait FuncBasics {
 
     fn get_func_type(&self) -> Option<FuncMentionType>;
 
-    fn matches_location(&self, location: Location) -> bool;
+    fn matches_position(&self, position: Position) -> bool;
 
     fn equals_func_creation_args(&self, func_creation_args: &FuncCreationArgs) -> bool;
 }
@@ -69,19 +70,19 @@ pub trait FuncImplBasics: FuncBasics + MatchingFuncs {
         virtual_func_call: &VirtualFuncCreationArgs,
     ) -> Rc<RefCell<FuncStructure>>;
 
-    fn get_matching_funcs(&self, _location: Location) -> Rc<RefCell<FuncStructure>>;
+    fn get_matching_funcs(&self, _position: Position) -> Rc<RefCell<FuncStructure>>;
     /*
     let mut matching_funcs = Vec::new();
-    if self.matches_location(location) {
+    if self.matches_position(position) {
         matching_funcs.push(Box::new(&self));
     }
     for func_call in self.get_func_calls() {
-        if func_call.matches_location(location) {
+        if func_call.matches_position(position) {
             matching_funcs.push(Box::new(func_call));
         }
     }
     for virtual_func_call in self.get_virtual_func_calls() {
-        if virtual_func_call.matches_location(location) {
+        if virtual_func_call.matches_position(position) {
             matching_funcs.push(Box::new(virtual_func_call.clone()));
         }
     }
@@ -90,7 +91,7 @@ pub trait FuncImplBasics: FuncBasics + MatchingFuncs {
 }
 
 // impl MatchingFuncs for dyn FuncImplBasics {
-//     fn get_matching_funcs(&self, location: Location) -> Vec<FunctionOccurrence> {
+//     fn get_matching_funcs(&self, position: Position) -> Vec<FunctionOccurrence> {
 //         todo!()
 //     }
 // }
@@ -99,7 +100,7 @@ pub trait InFile {
     fn get_file_id(&self) -> Option<u64>;
 }
 
-pub trait MainDeclLocation: MatchingFuncs {
+pub trait MainDeclPosition: MatchingFuncs {
     fn get_name(&self) -> &str;
 
     fn get_db_connection(&self) -> Option<DatabaseSqliteInternal>;
@@ -229,12 +230,12 @@ pub trait MainDeclLocation: MatchingFuncs {
         todo!()
     }
 
-    fn get_matching_funcs(&self, _location: Location) -> Vec<Rc<RefCell<FuncStructure>>> {
+    fn get_matching_funcs(&self, _position: Position) -> Vec<Rc<RefCell<FuncStructure>>> {
         todo!()
     }
 }
 
-pub trait File: MainDeclLocation {
+pub trait File: MainDeclPosition {
     fn get_includes(&self) -> Vec<Rc<dyn File>>;
 
     fn get_last_analyzed(&self) -> i64;
