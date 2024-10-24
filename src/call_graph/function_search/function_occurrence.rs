@@ -1,3 +1,4 @@
+/*
 use std::{cell::RefCell, rc::Rc};
 
 use crate::call_graph::{
@@ -19,3 +20,4 @@ pub struct FunctionOccurrence {
     pub virtual_func_impl: Rc<RefCell<VirtualFuncImpl>>,
     pub virtual_func_call: Rc<RefCell<VirtualFuncCall>>,
 }
+*/

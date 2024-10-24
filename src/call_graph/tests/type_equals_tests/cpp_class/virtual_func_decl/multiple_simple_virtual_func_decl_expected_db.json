@@ -28,7 +28,9 @@
                   "column": 8
                 }
               },
-              "base_qualified_name": "__ZN3foo3addEii"
+              "base_qualified_name": "__ZN3foo3addEii",
+              "func_calls": [],
+              "virtual_func_calls": []
             },
             {
               "id": 2,
@@ -45,7 +47,9 @@
                   "column": 8
                 }
               },
-              "base_qualified_name": "__ZN3foo3subEii"
+              "base_qualified_name": "__ZN3foo3subEii",
+              "func_calls": [],
+              "virtual_func_calls": []
             },
             {
               "id": 3,
@@ -62,7 +66,9 @@
                   "column": 13
                 }
               },
-              "base_qualified_name": "__ZN3foo8multiplyEii"
+              "base_qualified_name": "__ZN3foo8multiplyEii",
+              "func_calls": [],
+              "virtual_func_calls": []
             },
             {
               "id": 4,
@@ -79,7 +85,9 @@
                   "column": 11
                 }
               },
-              "base_qualified_name": "__ZN3foo6divideEii"
+              "base_qualified_name": "__ZN3foo6divideEii",
+              "func_calls": [],
+              "virtual_func_calls": []
             }
           ],
           "virtual_func_impls": []
