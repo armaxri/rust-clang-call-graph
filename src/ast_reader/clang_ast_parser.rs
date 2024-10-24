@@ -13,7 +13,7 @@ pub trait ClangAstParser {
 pub struct ClangAstParserImpl {
     process: Box<dyn Process>,
     files: Vec<Rc<String>>,
-    last_seen_line: u32,
+    last_seen_line: usize,
 }
 
 impl ClangAstParserImpl {
@@ -94,7 +94,7 @@ impl ClangAstParserImpl {
                 parts[0].to_string(),
                 0,
                 Rc::clone(&file),
-                Range::new(0, 0, 0, 0),
+                Range::create(0, 0, 0, 0),
                 "".to_string(),
             ));
         }
@@ -115,7 +115,7 @@ impl ClangAstParserImpl {
                 decl_type.to_string(),
                 0,
                 Rc::clone(&file),
-                Range::new(0, 0, 0, 0),
+                Range::create(0, 0, 0, 0),
                 remaining_parts,
             ));
         }
@@ -155,7 +155,7 @@ impl ClangAstParserImpl {
 
     fn get_range(&mut self, elements: &mut Vec<&str>) -> Range {
         if elements.len() < 1 || elements[0].starts_with("<<") {
-            return Range::new(0, 0, 0, 0);
+            return Range::create(0, 0, 0, 0);
         }
 
         if elements[0].starts_with("<col:") && elements[0].ends_with(">") {
@@ -163,15 +163,15 @@ impl ClangAstParserImpl {
                 .strip_prefix("<col:")
                 .and_then(|s| s.strip_suffix('>'))
             {
-                if let Ok(col) = col_str.parse::<u32>() {
+                if let Ok(col) = col_str.parse::<usize>() {
                     elements.remove(0);
-                    return Range::new(self.last_seen_line, col, self.last_seen_line, col);
+                    return Range::create(self.last_seen_line, col, self.last_seen_line, col);
                 }
             }
         }
 
         if elements.len() < 2 {
-            return Range::new(0, 0, 0, 0);
+            return Range::create(0, 0, 0, 0);
         }
 
         if elements[0].starts_with("<") && elements[0].ends_with(",") && elements[1].ends_with(">")
@@ -180,10 +180,10 @@ impl ClangAstParserImpl {
             let end = self.get_second_range_element(&elements[1]);
             elements.remove(0);
             elements.remove(0);
-            return Range::new(start.line, start.column, end.line, end.column);
+            return Range::create(start.line, start.column, end.line, end.column);
         }
 
-        Range::new(0, 0, 0, 0)
+        Range::create(0, 0, 0, 0)
     }
 
     fn get_first_range_element(&mut self, element: &str) -> Position {
@@ -192,7 +192,7 @@ impl ClangAstParserImpl {
                 .strip_prefix("<col:")
                 .and_then(|s| s.strip_suffix(','))
             {
-                if let Ok(col) = col_str.parse::<u32>() {
+                if let Ok(col) = col_str.parse::<usize>() {
                     return Position::new(self.last_seen_line, col);
                 }
             }
@@ -201,8 +201,8 @@ impl ClangAstParserImpl {
         if element.starts_with("<line:") && element.ends_with(",") {
             let parts: Vec<&str> = element[6..element.len() - 1].split(':').collect();
             if parts.len() == 2 {
-                if let Ok(line) = parts[0].parse::<u32>() {
-                    if let Ok(col) = parts[1].parse::<u32>() {
+                if let Ok(line) = parts[0].parse::<usize>() {
+                    if let Ok(col) = parts[1].parse::<usize>() {
                         self.last_seen_line = line;
                         return Position::new(line, col);
                     }
@@ -215,8 +215,8 @@ impl ClangAstParserImpl {
             if parts.len() == 3 {
                 self.files.push(Rc::new(parts[0].to_string()));
 
-                if let Ok(line) = parts[1].parse::<u32>() {
-                    if let Ok(col) = parts[2].parse::<u32>() {
+                if let Ok(line) = parts[1].parse::<usize>() {
+                    if let Ok(col) = parts[2].parse::<usize>() {
                         self.last_seen_line = line;
                         return Position::new(line, col);
                     }
@@ -231,10 +231,10 @@ impl ClangAstParserImpl {
         if element.starts_with("line:") && element.ends_with(">") {
             let parts: Vec<&str> = element[0..element.len() - 1].split(':').collect();
             if parts.len() == 3 {
-                if let Ok(line) = parts[1].parse::<u32>() {
+                if let Ok(line) = parts[1].parse::<usize>() {
                     // The second part should not store the line number for reuse.
                     // self.last_seen_line = line;
-                    if let Ok(col) = parts[2].parse::<u32>() {
+                    if let Ok(col) = parts[2].parse::<usize>() {
                         return Position::new(line, col);
                     }
                 }
@@ -246,7 +246,7 @@ impl ClangAstParserImpl {
                 .strip_prefix("col:")
                 .and_then(|s| s.strip_suffix('>'))
             {
-                if let Ok(col) = col_str.parse::<u32>() {
+                if let Ok(col) = col_str.parse::<usize>() {
                     return Position::new(self.last_seen_line, col);
                 }
             }
