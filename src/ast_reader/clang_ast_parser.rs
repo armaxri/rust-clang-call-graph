@@ -135,6 +135,12 @@ impl ClangAstParserImpl {
         };
 
         let range = self.get_range(&mut parts);
+
+        // May add this later as another element.
+        if parts.len() > 0 && (parts[0].starts_with("col:") || parts[0].starts_with("line:")) {
+            parts.remove(0);
+        }
+
         let remaining_parts = parts.join(" ");
         let file = self.files.last().unwrap();
         return Some(ClangAstElement::new(
@@ -427,7 +433,7 @@ mod tests {
         assert_eq!(element.range.end.line, 1);
         assert_eq!(element.range.end.column, 27);
         assert_eq!(element.inner.len(), 0);
-        assert_eq!(element.attributes, "col:5 used add 'int (int, int)'");
+        assert_eq!(element.attributes, "used add 'int (int, int)'");
 
         element = parser
             .parse_ast_element("ParmVarDecl 0x11d905208 <col:9, col:13> col:13 val1 'int'")
@@ -440,7 +446,7 @@ mod tests {
         assert_eq!(element.range.end.line, 1);
         assert_eq!(element.range.end.column, 13);
         assert_eq!(element.inner.len(), 0);
-        assert_eq!(element.attributes, "col:13 val1 'int'");
+        assert_eq!(element.attributes, "val1 'int'");
 
         element = parser
             .parse_ast_element("FunctionDecl 0x11d9056c0 </Users/xxx/git/vscode-clang-call-graph/src/test/backendSuite/walkerTests/actualTests/cStyleTests/declInHeaderAndTwoCpps/main.cpp:3:1, line:6:1> line:3:5 main 'int (int, char **)'")
@@ -453,7 +459,7 @@ mod tests {
         assert_eq!(element.range.end.line, 6);
         assert_eq!(element.range.end.column, 1);
         assert_eq!(element.inner.len(), 0);
-        assert_eq!(element.attributes, "line:3:5 main 'int (int, char **)'");
+        assert_eq!(element.attributes, "main 'int (int, char **)'");
 
         element = parser
             .parse_ast_element("ParmVarDecl 0x11d905478 <col:10, col:14> col:14 argc 'int'")
@@ -466,7 +472,7 @@ mod tests {
         assert_eq!(element.range.end.line, 3);
         assert_eq!(element.range.end.column, 14);
         assert_eq!(element.inner.len(), 0);
-        assert_eq!(element.attributes, "col:14 argc 'int'");
+        assert_eq!(element.attributes, "argc 'int'");
     }
 
     #[test]
