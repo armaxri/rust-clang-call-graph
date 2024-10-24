@@ -3,11 +3,12 @@ use std::rc::Rc;
 
 use rusqlite::params;
 
+use crate::location::position::Position;
+use crate::location::range::Range;
+
 use super::super::database::database_sqlite_internal::DatabaseSqliteInternal;
 use super::func_structure::FuncMentionType;
 use super::func_structure::FuncStructure;
-use super::helper::location::Location;
-use super::helper::range::Range;
 use super::helper::virtual_func_creation_args::VirtualFuncCreationArgs;
 use super::FuncBasics;
 
@@ -77,8 +78,8 @@ impl FuncStructure {
                     Some(row.get(3).unwrap()),
                     row.get(4).unwrap(),
                     Range::new(
-                        Location::new(row.get(5).unwrap(), row.get(6).unwrap()),
-                        Location::new(row.get(7).unwrap(), row.get(8).unwrap()),
+                        Position::new(row.get(5).unwrap(), row.get(6).unwrap()),
+                        Position::new(row.get(7).unwrap(), row.get(8).unwrap()),
                     ),
                     Some(FuncMentionType::VirtualFuncCall),
                 ))
@@ -123,8 +124,8 @@ impl FuncStructure {
                         Some(row.get(3).unwrap()),
                         row.get(4).unwrap(),
                         Range::new(
-                            Location::new(row.get(5).unwrap(), row.get(6).unwrap()),
-                            Location::new(row.get(7).unwrap(), row.get(8).unwrap()),
+                            Position::new(row.get(5).unwrap(), row.get(6).unwrap()),
+                            Position::new(row.get(7).unwrap(), row.get(8).unwrap()),
                         ),
                         Some(FuncMentionType::VirtualFuncCall),
                     ))

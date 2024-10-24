@@ -5,10 +5,10 @@ use serde::Deserialize;
 use serde::Serialize;
 
 use crate::call_graph::database::database_sqlite_internal::DatabaseSqliteInternal;
+use crate::location::position::Position;
+use crate::location::range::Range;
 
 use super::helper::func_creation_args::FuncCreationArgs;
-use super::helper::location::Location;
-use super::helper::range::Range;
 use super::helper::virtual_func_creation_args::VirtualFuncCreationArgs;
 use super::FuncBasics;
 use super::FuncImplBasics;
@@ -146,8 +146,8 @@ impl FuncBasics for FuncStructure {
         self.func_type.clone()
     }
 
-    fn matches_location(&self, location: Location) -> bool {
-        self.get_range().is_location_within_range(&location)
+    fn matches_position(&self, position: Position) -> bool {
+        self.get_range().is_position_within_range(&position)
     }
 
     fn equals_func_creation_args(&self, func_creation_args: &FuncCreationArgs) -> bool {
@@ -257,13 +257,13 @@ impl FuncImplBasics for FuncStructure {
         }
     }
 
-    fn get_matching_funcs(&self, _location: Location) -> Rc<RefCell<FuncStructure>> {
+    fn get_matching_funcs(&self, _position: Position) -> Rc<RefCell<FuncStructure>> {
         todo!()
     }
 }
 
 impl MatchingFuncs for FuncStructure {
-    fn get_matching_funcs(&self, _location: Location) -> Vec<Rc<RefCell<FuncStructure>>> {
+    fn get_matching_funcs(&self, _position: Position) -> Vec<Rc<RefCell<FuncStructure>>> {
         todo!()
     }
 }

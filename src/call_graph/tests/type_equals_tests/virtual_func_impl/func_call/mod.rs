@@ -4,14 +4,15 @@ mod tests {
         call_graph::{
             data_structure::{
                 helper::{
-                    func_creation_args::FuncCreationArgs, range::Range,
+                    func_creation_args::FuncCreationArgs,
                     virtual_func_creation_args::VirtualFuncCreationArgs,
                 },
-                FuncBasics, FuncImplBasics, MainDeclLocation,
+                FuncBasics, FuncImplBasics, MainDeclPosition,
             },
             database::{database_content::DatabaseContent, database_sqlite::DatabaseSqlite},
         },
         file_in_directory, func_file_in_directory,
+        location::range::Range,
     };
 
     #[test]
@@ -273,7 +274,7 @@ mod tests {
     }
 
     #[test]
-    fn test_no_equality_with_wrong_location() {
+    fn test_no_equality_with_wrong_position() {
         let database_sqlite =
             DatabaseSqlite::create_database(&func_file_in_directory!("db").into(), true);
 

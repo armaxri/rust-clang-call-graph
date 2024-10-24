@@ -1,4 +1,4 @@
-use super::range::Range;
+use crate::location::range::Range;
 
 pub struct FuncCreationArgs {
     pub name: String,

@@ -3,12 +3,12 @@ mod tests {
     use crate::{
         call_graph::{
             data_structure::{
-                helper::{func_creation_args::FuncCreationArgs, location::Location, range::Range},
-                File, MainDeclLocation,
+                helper::func_creation_args::FuncCreationArgs, File, MainDeclPosition,
             },
             database::{database_content::DatabaseContent, database_sqlite::DatabaseSqlite},
         },
         file_in_directory, func_file_in_directory,
+        location::{position::Position, range::Range},
     };
 
     #[test]
@@ -66,7 +66,7 @@ mod tests {
             "add",
             "__ZN3foo3addEii",
             "int (int, int)",
-            Range::new(Location::new(11, 5), Location::new(11, 8)),
+            Range::new(Position::new(11, 5), Position::new(11, 8)),
         ));
 
         let sqlite_content = database_sqlite.get_db_content();
@@ -89,7 +89,7 @@ mod tests {
             "add",
             "__ZN3foo3addEii",
             "int (int, int)",
-            Range::new(Location::new(11, 5), Location::new(11, 8)),
+            Range::new(Position::new(11, 5), Position::new(11, 8)),
         ));
 
         let sqlite_content = database_sqlite.get_db_content();

@@ -1,14 +1,13 @@
 #[cfg(test)]
 mod tests {
+
+    use crate::location::position::Position;
+    use crate::location::range::Range;
     use crate::{
         call_graph::{
             data_structure::{
-                cpp_file::CppFile,
-                helper::{
-                    location::Location, range::Range,
-                    virtual_func_creation_args::VirtualFuncCreationArgs,
-                },
-                FuncImplBasics, MainDeclLocation, VirtualFuncBasics,
+                cpp_file::CppFile, helper::virtual_func_creation_args::VirtualFuncCreationArgs,
+                FuncImplBasics, MainDeclPosition, VirtualFuncBasics,
             },
             database::database_sqlite::create_in_memory_database,
         },
@@ -29,7 +28,7 @@ mod tests {
                 qualified_name: "func2call".to_string(),
                 base_qualified_name: "func2call".to_string(),
                 qualified_type: "int".to_string(),
-                range: Range::new(Location::new(1, 2), Location::new(1, 10)),
+                range: Range::new(Position::new(1, 2), Position::new(1, 10)),
             });
 
         let func_impl = cpp_class
@@ -39,14 +38,14 @@ mod tests {
                 qualified_name: "func".to_string(),
                 base_qualified_name: "func".to_string(),
                 qualified_type: "int".to_string(),
-                range: Range::new(Location::new(3, 2), Location::new(3, 10)),
+                range: Range::new(Position::new(3, 2), Position::new(3, 10)),
             });
 
         let func_call_args = &func2call
             .borrow()
             .convert_virtual_func2virtual_func_creation_args4call(&Range::new(
-                Location::new(2, 2),
-                Location::new(2, 10),
+                Position::new(2, 2),
+                Position::new(2, 10),
             ));
 
         let func = func_impl
@@ -62,7 +61,7 @@ mod tests {
         println!("{:?}", serde_json::to_string_pretty(&file));
 
         /* TODO
-        let matches = cpp_class.borrow().get_matching_funcs(Location::new(2, 5));
+        let matches = cpp_class.borrow().get_matching_funcs(Position::new(2, 5));
 
         assert_eq!(matches.len(), 1);
         assert_eq!(matches[0].virtual_func_call, func);

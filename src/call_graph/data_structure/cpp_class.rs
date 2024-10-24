@@ -5,10 +5,12 @@ use rusqlite::params;
 use serde::Deserialize;
 use serde::Serialize;
 
+use crate::location::position::Position;
+
 use super::super::database::database_sqlite_internal::DatabaseSqliteInternal;
 use super::func_structure::FuncStructure;
 use super::helper::virtual_func_creation_args::VirtualFuncCreationArgs;
-use super::MainDeclLocation;
+use super::MainDeclPosition;
 use super::MatchingFuncs;
 use super::VirtualFuncBasics;
 
@@ -41,15 +43,12 @@ impl PartialEq for CppClass {
 }
 
 impl MatchingFuncs for CppClass {
-    fn get_matching_funcs(
-        &self,
-        _: super::helper::location::Location,
-    ) -> Vec<Rc<RefCell<FuncStructure>>> {
+    fn get_matching_funcs(&self, _: Position) -> Vec<Rc<RefCell<FuncStructure>>> {
         todo!()
     }
 }
 
-impl MainDeclLocation for CppClass {
+impl MainDeclPosition for CppClass {
     fn get_name(&self) -> &str {
         &self.name
     }
