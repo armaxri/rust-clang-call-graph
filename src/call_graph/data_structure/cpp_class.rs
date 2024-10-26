@@ -57,7 +57,11 @@ impl MainDeclPosition for CppClass {
         self.db_connection.clone()
     }
 
-    fn get_id(&self) -> (Option<u64>, Option<u64>, Option<u64>) {
+    fn get_id(&self) -> u64 {
+        self.id
+    }
+
+    fn get_main_decl_position_id(&self) -> (Option<u64>, Option<u64>, Option<u64>) {
         (None, None, Some(self.id))
     }
 
@@ -239,7 +243,7 @@ impl CppClass {
         let new_virtual_func_decl = Rc::new(RefCell::new(FuncStructure::create_virtual_func_decl(
             &self.get_db_connection().unwrap(),
             &creation_args,
-            self.get_id(),
+            self.get_main_decl_position_id(),
         )));
         self.get_virtual_func_decls().push(new_virtual_func_decl);
         self.get_virtual_func_decls().last().unwrap().clone()

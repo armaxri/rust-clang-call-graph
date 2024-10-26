@@ -27,7 +27,10 @@
           "func_calls": [],
           "virtual_func_calls": []
         }
-      ]
+      ],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [],
+      "file_is_header": false
     }
   ],
   "hpp_files": []

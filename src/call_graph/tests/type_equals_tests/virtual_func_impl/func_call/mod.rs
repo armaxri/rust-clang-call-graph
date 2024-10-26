@@ -238,9 +238,7 @@ mod tests {
         let database_sqlite =
             DatabaseSqlite::create_database(&func_file_in_directory!("db").into(), true);
 
-        let cpp_file: std::rc::Rc<
-            std::cell::RefCell<crate::call_graph::data_structure::cpp_file::CppFile>,
-        > = database_sqlite.get_or_add_cpp_file("simple_func_call.json");
+        let cpp_file = database_sqlite.get_or_add_cpp_file("simple_func_call.json");
         let func_decl = cpp_file.borrow_mut().add_func_decl(FuncCreationArgs {
             name: "multiply".to_string(),
             qualified_name: "__ZN3foo3addEii".to_string(),

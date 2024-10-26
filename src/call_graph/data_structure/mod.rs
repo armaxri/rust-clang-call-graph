@@ -12,6 +12,7 @@ use super::database::database_sqlite_internal::DatabaseSqliteInternal;
 
 pub mod cpp_class;
 pub mod cpp_file;
+pub mod file_structure;
 pub mod func_call;
 pub mod func_decl;
 pub mod func_impl;
@@ -104,14 +105,15 @@ pub trait MainDeclPosition: MatchingFuncs {
     fn get_name(&self) -> &str;
 
     fn get_db_connection(&self) -> Option<DatabaseSqliteInternal>;
-    fn get_id(&self) -> (Option<u64>, Option<u64>, Option<u64>);
+    fn get_id(&self) -> u64;
+    fn get_main_decl_position_id(&self) -> (Option<u64>, Option<u64>, Option<u64>);
 
     fn get_classes(&mut self) -> &mut Vec<Rc<RefCell<CppClass>>>;
     fn add_class(&mut self, class_name: &str) -> Rc<RefCell<CppClass>> {
         let new_class = Rc::new(RefCell::new(CppClass::create_cpp_class(
             &self.get_db_connection().unwrap(),
             class_name,
-            self.get_id(),
+            self.get_main_decl_position_id(),
         )));
         self.get_classes().push(new_class);
         self.get_classes().last_mut().unwrap().clone()
@@ -138,7 +140,7 @@ pub trait MainDeclPosition: MatchingFuncs {
         let new_func_decl = Rc::new(RefCell::new(FuncStructure::create_func_decl(
             &self.get_db_connection().unwrap(),
             &creation_args,
-            self.get_id(),
+            self.get_main_decl_position_id(),
         )));
         self.get_func_decls().push(new_func_decl);
         self.get_func_decls().last_mut().unwrap().clone()
@@ -167,7 +169,7 @@ pub trait MainDeclPosition: MatchingFuncs {
         let new_func_impl = Rc::new(RefCell::new(FuncStructure::create_func_impl(
             &self.get_db_connection().unwrap(),
             &creation_args,
-            self.get_id(),
+            self.get_main_decl_position_id(),
         )));
         self.get_func_impls().push(new_func_impl);
         self.get_func_impls().last_mut().unwrap().clone()
@@ -199,7 +201,7 @@ pub trait MainDeclPosition: MatchingFuncs {
         let new_virtual_func_impl = Rc::new(RefCell::new(FuncStructure::create_virtual_func_impl(
             &self.get_db_connection().unwrap(),
             &creation_args,
-            self.get_id(),
+            self.get_main_decl_position_id(),
         )));
         self.get_virtual_func_impls().push(new_virtual_func_impl);
         self.get_virtual_func_impls().last_mut().unwrap().clone()
@@ -240,12 +242,5 @@ pub trait File: MainDeclPosition {
 
     fn get_last_analyzed(&self) -> i64;
     fn set_last_analyzed(&mut self, last_analyzed: i64);
-    fn just_analyzed(&mut self) {
-        self.set_last_analyzed(
-            std::time::SystemTime::now()
-                .duration_since(std::time::UNIX_EPOCH)
-                .unwrap()
-                .as_secs() as i64,
-        );
-    }
+    fn just_analyzed(&mut self);
 }
