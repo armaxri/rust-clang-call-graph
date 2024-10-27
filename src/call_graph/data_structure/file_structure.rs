@@ -7,7 +7,9 @@ use crate::{
     location::position::Position,
 };
 
-use super::{cpp_class::CppClass, func_structure::FuncStructure, MainDeclPosition, MatchingFuncs};
+use super::{
+    cpp_class::CppClass, func_structure::FuncStructure, FuncBasics, MainDeclPosition, MatchingFuncs,
+};
 
 #[derive(Deserialize, Serialize, Debug, Clone, Eq)]
 pub struct FileStructure {
@@ -44,10 +46,31 @@ impl PartialEq for FileStructure {
 impl MatchingFuncs for FileStructure {
     fn get_matching_funcs(
         &self,
-        _position: Position,
+        position: &Position,
         results: &mut Vec<Rc<RefCell<FuncStructure>>>,
     ) {
-        todo!()
+        for cpp_class in self.classes.iter() {
+            cpp_class.borrow().get_matching_funcs(position, results);
+        }
+        for func_decl in self.func_decls.iter() {
+            if func_decl.borrow().matches_position(position) {
+                results.push(func_decl.clone());
+            }
+        }
+        for func_impl in self.func_impls.iter() {
+            if func_impl.borrow().matches_position(position) {
+                results.push(func_impl.clone());
+            }
+            func_impl.borrow().get_matching_funcs(position, results);
+        }
+        for virtual_func_impl in self.virtual_func_impls.iter() {
+            if virtual_func_impl.borrow().matches_position(position) {
+                results.push(virtual_func_impl.clone());
+            }
+            virtual_func_impl
+                .borrow()
+                .get_matching_funcs(position, results);
+        }
     }
 }
 

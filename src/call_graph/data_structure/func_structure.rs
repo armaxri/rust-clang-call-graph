@@ -146,7 +146,7 @@ impl FuncBasics for FuncStructure {
         self.func_type.clone()
     }
 
-    fn matches_position(&self, position: Position) -> bool {
+    fn matches_position(&self, position: &Position) -> bool {
         self.get_range().is_position_within_range(&position)
     }
 
@@ -256,18 +256,23 @@ impl FuncImplBasics for FuncStructure {
             self.add_virtual_func_call(virtual_func_call)
         }
     }
-
-    fn get_matching_funcs(&self, _position: Position) -> Rc<RefCell<FuncStructure>> {
-        todo!()
-    }
 }
 
 impl MatchingFuncs for FuncStructure {
     fn get_matching_funcs(
         &self,
-        _position: Position,
+        position: &Position,
         results: &mut Vec<Rc<RefCell<FuncStructure>>>,
     ) {
-        todo!()
+        for func_call in self.func_calls.iter() {
+            if func_call.borrow().matches_position(position) {
+                results.push(func_call.clone());
+            }
+        }
+        for virtual_func_call in self.virtual_func_calls.iter() {
+            if virtual_func_call.borrow().matches_position(position) {
+                results.push(virtual_func_call.clone());
+            }
+        }
     }
 }

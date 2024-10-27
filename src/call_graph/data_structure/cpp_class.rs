@@ -10,6 +10,7 @@ use crate::location::position::Position;
 use super::super::database::database_sqlite_internal::DatabaseSqliteInternal;
 use super::func_structure::FuncStructure;
 use super::helper::virtual_func_creation_args::VirtualFuncCreationArgs;
+use super::FuncBasics;
 use super::MainDeclPosition;
 use super::MatchingFuncs;
 use super::VirtualFuncBasics;
@@ -43,8 +44,38 @@ impl PartialEq for CppClass {
 }
 
 impl MatchingFuncs for CppClass {
-    fn get_matching_funcs(&self, _: Position, results: &mut Vec<Rc<RefCell<FuncStructure>>>) {
-        todo!()
+    fn get_matching_funcs(
+        &self,
+        position: &Position,
+        results: &mut Vec<Rc<RefCell<FuncStructure>>>,
+    ) {
+        for cpp_class in self.classes.iter() {
+            cpp_class.borrow().get_matching_funcs(position, results);
+        }
+        for func_decl in self.func_decls.iter() {
+            if func_decl.borrow().matches_position(position) {
+                results.push(func_decl.clone());
+            }
+        }
+        for func_impl in self.func_impls.iter() {
+            if func_impl.borrow().matches_position(position) {
+                results.push(func_impl.clone());
+            }
+            func_impl.borrow().get_matching_funcs(position, results);
+        }
+        for virtual_func_decl in self.virtual_func_decls.iter() {
+            if virtual_func_decl.borrow().matches_position(position) {
+                results.push(virtual_func_decl.clone());
+            }
+        }
+        for virtual_func_impl in self.virtual_func_impls.iter() {
+            if virtual_func_impl.borrow().matches_position(position) {
+                results.push(virtual_func_impl.clone());
+            }
+            virtual_func_impl
+                .borrow()
+                .get_matching_funcs(position, results);
+        }
     }
 }
 

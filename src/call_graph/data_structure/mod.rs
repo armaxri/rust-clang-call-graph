@@ -1,7 +1,6 @@
 use std::{cell::RefCell, rc::Rc};
 
 use cpp_class::CppClass;
-use file_structure::FileStructure;
 use func_structure::{FuncMentionType, FuncStructure};
 use helper::{
     func_creation_args::FuncCreationArgs, virtual_func_creation_args::VirtualFuncCreationArgs,
@@ -25,7 +24,11 @@ pub mod virtual_func_decl;
 pub mod virtual_func_impl;
 
 pub trait MatchingFuncs {
-    fn get_matching_funcs(&self, position: Position, results: &mut Vec<Rc<RefCell<FuncStructure>>>);
+    fn get_matching_funcs(
+        &self,
+        position: &Position,
+        results: &mut Vec<Rc<RefCell<FuncStructure>>>,
+    );
 }
 
 pub trait FuncBasics {
@@ -38,7 +41,7 @@ pub trait FuncBasics {
 
     fn get_func_type(&self) -> Option<FuncMentionType>;
 
-    fn matches_position(&self, position: Position) -> bool;
+    fn matches_position(&self, position: &Position) -> bool;
 
     fn equals_func_creation_args(&self, func_creation_args: &FuncCreationArgs) -> bool;
 }
@@ -71,32 +74,7 @@ pub trait FuncImplBasics: FuncBasics + MatchingFuncs {
         &mut self,
         virtual_func_call: &VirtualFuncCreationArgs,
     ) -> Rc<RefCell<FuncStructure>>;
-
-    fn get_matching_funcs(&self, _position: Position) -> Rc<RefCell<FuncStructure>>;
-    /*
-    let mut matching_funcs = Vec::new();
-    if self.matches_position(position) {
-        matching_funcs.push(Box::new(&self));
-    }
-    for func_call in self.get_func_calls() {
-        if func_call.matches_position(position) {
-            matching_funcs.push(Box::new(func_call));
-        }
-    }
-    for virtual_func_call in self.get_virtual_func_calls() {
-        if virtual_func_call.matches_position(position) {
-            matching_funcs.push(Box::new(virtual_func_call.clone()));
-        }
-    }
-    matching_funcs
-    */
 }
-
-// impl MatchingFuncs for dyn FuncImplBasics {
-//     fn get_matching_funcs(&self, position: Position) -> Vec<FunctionOccurrence> {
-//         todo!()
-//     }
-// }
 
 pub trait InFile {
     fn get_file_id(&self) -> Option<u64>;
@@ -230,10 +208,6 @@ pub trait MainDeclPosition: MatchingFuncs {
         todo!()
     }
     fn find_virtual_func_impl(&self, _func: &dyn FuncBasics) -> Option<Rc<RefCell<FuncStructure>>> {
-        todo!()
-    }
-
-    fn get_matching_funcs(&self, _position: Position) -> Vec<Rc<RefCell<FuncStructure>>> {
         todo!()
     }
 }
