@@ -108,7 +108,7 @@ mod tests {
         let timestamp1 = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
             .unwrap()
-            .as_secs() as i64;
+            .as_secs() as usize;
 
         std::thread::sleep(std::time::Duration::from_secs(1));
 
@@ -117,7 +117,7 @@ mod tests {
         let timestamp2 = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
             .unwrap()
-            .as_secs() as i64;
+            .as_secs() as usize;
 
         assert!(hpp_file.borrow().get_last_analyzed() > timestamp1);
         assert!(hpp_file.borrow().get_last_analyzed() < timestamp2);
@@ -129,7 +129,7 @@ mod tests {
         let timestamp3 = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
             .unwrap()
-            .as_secs() as i64;
+            .as_secs() as usize;
 
         assert!(hpp_file.borrow().get_last_analyzed() > timestamp2);
         assert!(hpp_file.borrow().get_last_analyzed() < timestamp3);

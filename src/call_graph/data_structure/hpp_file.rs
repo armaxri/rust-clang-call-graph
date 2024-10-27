@@ -11,14 +11,14 @@ impl FileStructure {
     pub fn create_hpp_file(
         db_connection: &DatabaseSqliteInternal,
         name: &str,
-        last_analyzed: Option<i64>,
+        last_analyzed: Option<usize>,
     ) -> Rc<RefCell<FileStructure>> {
         let time = match last_analyzed {
             Some(time) => time,
             None => std::time::SystemTime::now()
                 .duration_since(std::time::UNIX_EPOCH)
                 .unwrap()
-                .as_secs() as i64,
+                .as_secs() as usize,
         };
 
         let mut stmt = db_connection
@@ -57,7 +57,7 @@ impl FileStructure {
 
         if let Ok(Some(row)) = rows.next() {
             let id: u64 = row.get(0).unwrap();
-            let last_analyzed: i64 = row.get(1).unwrap();
+            let last_analyzed: usize = row.get(1).unwrap();
 
             Some(Rc::new(RefCell::new(FileStructure::new(
                 id,
@@ -88,7 +88,7 @@ impl FileStructure {
         while let Ok(Some(row)) = rows.next() {
             let id: u64 = row.get(0).unwrap();
             let name: String = row.get(1).unwrap();
-            let last_analyzed: i64 = row.get(2).unwrap();
+            let last_analyzed: usize = row.get(2).unwrap();
 
             hpp_files.push(Rc::new(RefCell::new(FileStructure::new(
                 id,
@@ -102,7 +102,7 @@ impl FileStructure {
         hpp_files
     }
 
-    pub fn set_last_analyzed_inner_hpp(&self, last_analyzed: i64) {
+    pub fn set_last_analyzed_inner_hpp(&self, last_analyzed: usize) {
         let binding = self.get_db_connection();
         let mut stmt = binding
             .as_ref()

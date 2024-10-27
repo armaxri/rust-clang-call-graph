@@ -18,7 +18,7 @@ pub struct FileStructure {
     db_connection: Option<DatabaseSqliteInternal>,
 
     name: String,
-    last_analyzed: i64,
+    last_analyzed: usize,
     classes: Vec<Rc<RefCell<CppClass>>>,
     func_decls: Vec<Rc<RefCell<FuncStructure>>>,
     func_impls: Vec<Rc<RefCell<FuncStructure>>>,
@@ -117,7 +117,7 @@ impl FileStructure {
         id: u64,
         db_connection: Option<DatabaseSqliteInternal>,
         name: String,
-        last_analyzed: i64,
+        last_analyzed: usize,
         file_is_header: bool,
     ) -> Self {
         let mut file_structure = Self {
@@ -208,11 +208,11 @@ impl FileStructure {
         todo!()
     }
 
-    pub fn get_last_analyzed(&self) -> i64 {
+    pub fn get_last_analyzed(&self) -> usize {
         self.last_analyzed
     }
 
-    pub fn set_last_analyzed(&mut self, last_analyzed: i64) {
+    pub fn set_last_analyzed(&mut self, last_analyzed: usize) {
         if self.file_is_header {
             self.set_last_analyzed_inner_hpp(last_analyzed);
         } else {
@@ -226,7 +226,7 @@ impl FileStructure {
             std::time::SystemTime::now()
                 .duration_since(std::time::UNIX_EPOCH)
                 .unwrap()
-                .as_secs() as i64,
+                .as_secs() as usize,
         );
     }
 }
