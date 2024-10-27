@@ -263,7 +263,11 @@ impl FuncImplBasics for FuncStructure {
 }
 
 impl MatchingFuncs for FuncStructure {
-    fn get_matching_funcs(&self, _position: Position) -> Vec<Rc<RefCell<FuncStructure>>> {
+    fn get_matching_funcs(
+        &self,
+        _position: Position,
+        results: &mut Vec<Rc<RefCell<FuncStructure>>>,
+    ) {
         todo!()
     }
 }

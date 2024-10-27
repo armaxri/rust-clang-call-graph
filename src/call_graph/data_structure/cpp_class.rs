@@ -43,7 +43,7 @@ impl PartialEq for CppClass {
 }
 
 impl MatchingFuncs for CppClass {
-    fn get_matching_funcs(&self, _: Position) -> Vec<Rc<RefCell<FuncStructure>>> {
+    fn get_matching_funcs(&self, _: Position, results: &mut Vec<Rc<RefCell<FuncStructure>>>) {
         todo!()
     }
 }

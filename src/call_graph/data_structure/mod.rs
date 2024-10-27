@@ -24,7 +24,7 @@ pub mod virtual_func_decl;
 pub mod virtual_func_impl;
 
 pub trait MatchingFuncs {
-    fn get_matching_funcs(&self, position: Position) -> Vec<Rc<RefCell<FuncStructure>>>;
+    fn get_matching_funcs(&self, position: Position, results: &mut Vec<Rc<RefCell<FuncStructure>>>);
 }
 
 pub trait FuncBasics {
