@@ -2,9 +2,7 @@
 mod tests {
     use crate::{
         call_graph::{
-            data_structure::{
-                helper::func_creation_args::FuncCreationArgs, File, MainDeclPosition,
-            },
+            data_structure::{helper::func_creation_args::FuncCreationArgs, MainDeclPosition},
             database::{database_content::DatabaseContent, database_sqlite::DatabaseSqlite},
         },
         file_in_directory, func_file_in_directory,

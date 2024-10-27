@@ -7,9 +7,7 @@ use crate::{
     location::position::Position,
 };
 
-use super::{
-    cpp_class::CppClass, func_structure::FuncStructure, File, MainDeclPosition, MatchingFuncs,
-};
+use super::{cpp_class::CppClass, func_structure::FuncStructure, MainDeclPosition, MatchingFuncs};
 
 #[derive(Deserialize, Serialize, Debug, Clone, Eq)]
 pub struct FileStructure {
@@ -88,34 +86,6 @@ impl MainDeclPosition for FileStructure {
 
     fn get_virtual_func_impls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>> {
         &mut self.virtual_func_impls
-    }
-}
-
-impl File for FileStructure {
-    fn get_includes(&self) -> Vec<Rc<dyn File>> {
-        todo!()
-    }
-
-    fn get_last_analyzed(&self) -> i64 {
-        self.last_analyzed
-    }
-
-    fn set_last_analyzed(&mut self, last_analyzed: i64) {
-        if self.file_is_header {
-            self.set_last_analyzed_inner_hpp(last_analyzed);
-        } else {
-            self.set_last_analyzed_inner_cpp(last_analyzed);
-        }
-        self.last_analyzed = last_analyzed;
-    }
-
-    fn just_analyzed(&mut self) {
-        self.set_last_analyzed(
-            std::time::SystemTime::now()
-                .duration_since(std::time::UNIX_EPOCH)
-                .unwrap()
-                .as_secs() as i64,
-        );
     }
 }
 
@@ -209,5 +179,31 @@ impl FileStructure {
 
     pub fn get_referenced_from_header_files_mut(&mut self) -> &mut Vec<String> {
         &mut self.referenced_from_header_files
+    }
+
+    pub fn get_includes(&self) -> Vec<Rc<RefCell<FileStructure>>> {
+        todo!()
+    }
+
+    pub fn get_last_analyzed(&self) -> i64 {
+        self.last_analyzed
+    }
+
+    pub fn set_last_analyzed(&mut self, last_analyzed: i64) {
+        if self.file_is_header {
+            self.set_last_analyzed_inner_hpp(last_analyzed);
+        } else {
+            self.set_last_analyzed_inner_cpp(last_analyzed);
+        }
+        self.last_analyzed = last_analyzed;
+    }
+
+    pub fn just_analyzed(&mut self) {
+        self.set_last_analyzed(
+            std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap()
+                .as_secs() as i64,
+        );
     }
 }

@@ -1,6 +1,7 @@
 use std::{cell::RefCell, rc::Rc};
 
 use cpp_class::CppClass;
+use file_structure::FileStructure;
 use func_structure::{FuncMentionType, FuncStructure};
 use helper::{
     func_creation_args::FuncCreationArgs, virtual_func_creation_args::VirtualFuncCreationArgs,
@@ -235,12 +236,4 @@ pub trait MainDeclPosition: MatchingFuncs {
     fn get_matching_funcs(&self, _position: Position) -> Vec<Rc<RefCell<FuncStructure>>> {
         todo!()
     }
-}
-
-pub trait File: MainDeclPosition {
-    fn get_includes(&self) -> Vec<Rc<dyn File>>;
-
-    fn get_last_analyzed(&self) -> i64;
-    fn set_last_analyzed(&mut self, last_analyzed: i64);
-    fn just_analyzed(&mut self);
 }
