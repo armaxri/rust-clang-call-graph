@@ -8,17 +8,17 @@ mod tests {
 
     use rust_clang_call_graph::{
         ast_reader::compile_commands_reader::read_compile_commands_json_file,
-        dry_run_ast_parser,
         process::{
             clang_compile2ast_call::clang_compile2ast_call, terminal_process::TerminalProcess,
             Process,
         },
+        run_ast_parser,
     };
 
     #[test]
     fn dry_run_ast_parser_test() {
         let compile_commands_json = PathBuf::from("tests/playground/compile_commands.json");
-        dry_run_ast_parser(&compile_commands_json);
+        run_ast_parser(&compile_commands_json, None);
     }
 
     #[test]
