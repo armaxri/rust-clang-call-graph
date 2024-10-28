@@ -3,12 +3,12 @@ use std::{path::PathBuf, rc::Rc};
 
 use rusqlite::Connection;
 
+use crate::call_graph::data_structure::file_structure::FileStructure;
 use crate::call_graph::data_structure::{
     cpp_class, cpp_file, func_call, func_decl, func_impl, hpp_file, virtual_func_call,
     virtual_func_decl, virtual_func_impl,
 };
 
-use super::super::data_structure::{cpp_file::CppFile, hpp_file::HppFile};
 use super::database_content::DatabaseContent;
 use super::database_sqlite_internal::DatabaseSqliteInternal;
 
@@ -54,22 +54,22 @@ impl DatabaseSqlite {
         self.db_connection.clone()
     }
 
-    pub fn get_cpp_files(&self) -> Vec<Rc<RefCell<CppFile>>> {
-        CppFile::get_cpp_files(&self.db_connection.as_ref().unwrap())
+    pub fn get_cpp_files(&self) -> Vec<Rc<RefCell<FileStructure>>> {
+        FileStructure::get_cpp_files(&self.db_connection.as_ref().unwrap())
     }
     pub fn has_cpp_file(&self, name: &str) -> bool {
         self.get_cpp_file(name).is_some()
     }
-    pub fn get_cpp_file(&self, name: &str) -> Option<Rc<RefCell<CppFile>>> {
-        CppFile::get_cpp_file(&self.db_connection.as_ref().unwrap(), name)
+    pub fn get_cpp_file(&self, name: &str) -> Option<Rc<RefCell<FileStructure>>> {
+        FileStructure::get_cpp_file(&self.db_connection.as_ref().unwrap(), name)
     }
-    pub fn get_or_add_cpp_file(&self, name: &str) -> Rc<RefCell<CppFile>> {
+    pub fn get_or_add_cpp_file(&self, name: &str) -> Rc<RefCell<FileStructure>> {
         let cpp_file = self.get_cpp_file(name);
         if let Some(cpp_file) = cpp_file {
             return cpp_file;
         }
 
-        CppFile::create_cpp_file(&self.db_connection.as_ref().unwrap(), name, None)
+        FileStructure::create_cpp_file(&self.db_connection.as_ref().unwrap(), name, None)
     }
     pub fn remove_cpp_file_and_depending_content(&self, name: &str) {
         let cpp_file = self.get_cpp_file(name);
@@ -80,22 +80,22 @@ impl DatabaseSqlite {
         }
     }
 
-    pub fn get_hpp_files(&self) -> Vec<Rc<RefCell<HppFile>>> {
-        HppFile::get_hpp_files(&self.db_connection.as_ref().unwrap())
+    pub fn get_hpp_files(&self) -> Vec<Rc<RefCell<FileStructure>>> {
+        FileStructure::get_hpp_files(&self.db_connection.as_ref().unwrap())
     }
     pub fn has_hpp_file(&self, name: &str) -> bool {
         self.get_hpp_file(name).is_some()
     }
-    pub fn get_hpp_file(&self, name: &str) -> Option<Rc<RefCell<HppFile>>> {
-        HppFile::get_hpp_file(&self.db_connection.as_ref().unwrap(), name)
+    pub fn get_hpp_file(&self, name: &str) -> Option<Rc<RefCell<FileStructure>>> {
+        FileStructure::get_hpp_file(&self.db_connection.as_ref().unwrap(), name)
     }
-    pub fn get_or_add_hpp_file(&self, name: &str) -> Rc<RefCell<HppFile>> {
+    pub fn get_or_add_hpp_file(&self, name: &str) -> Rc<RefCell<FileStructure>> {
         let hpp_file = self.get_hpp_file(name);
         if let Some(hpp_file) = hpp_file {
             return hpp_file;
         }
 
-        HppFile::create_hpp_file(&self.db_connection.as_ref().unwrap(), name, None)
+        FileStructure::create_hpp_file(&self.db_connection.as_ref().unwrap(), name, None)
     }
     pub fn remove_hpp_file_and_depending_content(&self, name: &str) {
         let hpp_file = self.get_hpp_file(name);

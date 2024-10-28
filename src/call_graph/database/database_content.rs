@@ -4,16 +4,19 @@ use std::rc::Rc;
 use serde::Deserialize;
 use serde::Serialize;
 
-use super::super::data_structure::{cpp_file::CppFile, hpp_file::HppFile};
+use crate::call_graph::data_structure::file_structure::FileStructure;
 
 #[derive(Deserialize, Serialize, Debug, Clone, PartialEq, Eq)]
 pub struct DatabaseContent {
-    pub cpp_files: Vec<Rc<RefCell<CppFile>>>,
-    pub hpp_files: Vec<Rc<RefCell<HppFile>>>,
+    pub cpp_files: Vec<Rc<RefCell<FileStructure>>>,
+    pub hpp_files: Vec<Rc<RefCell<FileStructure>>>,
 }
 
 impl DatabaseContent {
-    pub fn new(cpp_files: Vec<Rc<RefCell<CppFile>>>, hpp_files: Vec<Rc<RefCell<HppFile>>>) -> Self {
+    pub fn new(
+        cpp_files: Vec<Rc<RefCell<FileStructure>>>,
+        hpp_files: Vec<Rc<RefCell<FileStructure>>>,
+    ) -> Self {
         DatabaseContent {
             cpp_files: cpp_files,
             hpp_files: hpp_files,

@@ -10,6 +10,7 @@ use crate::location::position::Position;
 use super::super::database::database_sqlite_internal::DatabaseSqliteInternal;
 use super::func_structure::FuncStructure;
 use super::helper::virtual_func_creation_args::VirtualFuncCreationArgs;
+use super::FuncBasics;
 use super::MainDeclPosition;
 use super::MatchingFuncs;
 use super::VirtualFuncBasics;
@@ -43,8 +44,38 @@ impl PartialEq for CppClass {
 }
 
 impl MatchingFuncs for CppClass {
-    fn get_matching_funcs(&self, _: Position) -> Vec<Rc<RefCell<FuncStructure>>> {
-        todo!()
+    fn get_matching_funcs(
+        &self,
+        position: &Position,
+        results: &mut Vec<Rc<RefCell<FuncStructure>>>,
+    ) {
+        for cpp_class in self.classes.iter() {
+            cpp_class.borrow().get_matching_funcs(position, results);
+        }
+        for func_decl in self.func_decls.iter() {
+            if func_decl.borrow().matches_position(position) {
+                results.push(func_decl.clone());
+            }
+        }
+        for func_impl in self.func_impls.iter() {
+            if func_impl.borrow().matches_position(position) {
+                results.push(func_impl.clone());
+            }
+            func_impl.borrow().get_matching_funcs(position, results);
+        }
+        for virtual_func_decl in self.virtual_func_decls.iter() {
+            if virtual_func_decl.borrow().matches_position(position) {
+                results.push(virtual_func_decl.clone());
+            }
+        }
+        for virtual_func_impl in self.virtual_func_impls.iter() {
+            if virtual_func_impl.borrow().matches_position(position) {
+                results.push(virtual_func_impl.clone());
+            }
+            virtual_func_impl
+                .borrow()
+                .get_matching_funcs(position, results);
+        }
     }
 }
 
@@ -57,7 +88,11 @@ impl MainDeclPosition for CppClass {
         self.db_connection.clone()
     }
 
-    fn get_id(&self) -> (Option<u64>, Option<u64>, Option<u64>) {
+    fn get_id(&self) -> u64 {
+        self.id
+    }
+
+    fn get_main_decl_position_id(&self) -> (Option<u64>, Option<u64>, Option<u64>) {
         (None, None, Some(self.id))
     }
 
@@ -239,7 +274,7 @@ impl CppClass {
         let new_virtual_func_decl = Rc::new(RefCell::new(FuncStructure::create_virtual_func_decl(
             &self.get_db_connection().unwrap(),
             &creation_args,
-            self.get_id(),
+            self.get_main_decl_position_id(),
         )));
         self.get_virtual_func_decls().push(new_virtual_func_decl);
         self.get_virtual_func_decls().last().unwrap().clone()

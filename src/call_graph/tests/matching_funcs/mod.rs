@@ -1,9 +1,3 @@
 mod cpp_class;
 mod cpp_file;
-mod func_call;
-mod func_decl;
-mod func_impl;
 mod hpp_file;
-mod virtual_func_call;
-mod virtual_func_decl;
-mod virtual_func_impl;

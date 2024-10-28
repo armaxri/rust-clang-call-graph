@@ -290,9 +290,7 @@ mod tests {
         let database_sqlite =
             DatabaseSqlite::create_database(&func_file_in_directory!("db").into(), true);
 
-        let cpp_file: std::rc::Rc<
-            std::cell::RefCell<crate::call_graph::data_structure::cpp_file::CppFile>,
-        > = database_sqlite.get_or_add_cpp_file("simple_virtual_func_call.json");
+        let cpp_file = database_sqlite.get_or_add_cpp_file("simple_virtual_func_call.json");
         let cpp_class = cpp_file.borrow_mut().add_class("FooClass");
         let func_decl = cpp_class
             .borrow_mut()

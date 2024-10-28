@@ -12,6 +12,7 @@ use super::database::database_sqlite_internal::DatabaseSqliteInternal;
 
 pub mod cpp_class;
 pub mod cpp_file;
+pub mod file_structure;
 pub mod func_call;
 pub mod func_decl;
 pub mod func_impl;
@@ -23,7 +24,11 @@ pub mod virtual_func_decl;
 pub mod virtual_func_impl;
 
 pub trait MatchingFuncs {
-    fn get_matching_funcs(&self, position: Position) -> Vec<Rc<RefCell<FuncStructure>>>;
+    fn get_matching_funcs(
+        &self,
+        position: &Position,
+        results: &mut Vec<Rc<RefCell<FuncStructure>>>,
+    );
 }
 
 pub trait FuncBasics {
@@ -36,7 +41,7 @@ pub trait FuncBasics {
 
     fn get_func_type(&self) -> Option<FuncMentionType>;
 
-    fn matches_position(&self, position: Position) -> bool;
+    fn matches_position(&self, position: &Position) -> bool;
 
     fn equals_func_creation_args(&self, func_creation_args: &FuncCreationArgs) -> bool;
 }
@@ -69,32 +74,7 @@ pub trait FuncImplBasics: FuncBasics + MatchingFuncs {
         &mut self,
         virtual_func_call: &VirtualFuncCreationArgs,
     ) -> Rc<RefCell<FuncStructure>>;
-
-    fn get_matching_funcs(&self, _position: Position) -> Rc<RefCell<FuncStructure>>;
-    /*
-    let mut matching_funcs = Vec::new();
-    if self.matches_position(position) {
-        matching_funcs.push(Box::new(&self));
-    }
-    for func_call in self.get_func_calls() {
-        if func_call.matches_position(position) {
-            matching_funcs.push(Box::new(func_call));
-        }
-    }
-    for virtual_func_call in self.get_virtual_func_calls() {
-        if virtual_func_call.matches_position(position) {
-            matching_funcs.push(Box::new(virtual_func_call.clone()));
-        }
-    }
-    matching_funcs
-    */
 }
-
-// impl MatchingFuncs for dyn FuncImplBasics {
-//     fn get_matching_funcs(&self, position: Position) -> Vec<FunctionOccurrence> {
-//         todo!()
-//     }
-// }
 
 pub trait InFile {
     fn get_file_id(&self) -> Option<u64>;
@@ -104,14 +84,15 @@ pub trait MainDeclPosition: MatchingFuncs {
     fn get_name(&self) -> &str;
 
     fn get_db_connection(&self) -> Option<DatabaseSqliteInternal>;
-    fn get_id(&self) -> (Option<u64>, Option<u64>, Option<u64>);
+    fn get_id(&self) -> u64;
+    fn get_main_decl_position_id(&self) -> (Option<u64>, Option<u64>, Option<u64>);
 
     fn get_classes(&mut self) -> &mut Vec<Rc<RefCell<CppClass>>>;
     fn add_class(&mut self, class_name: &str) -> Rc<RefCell<CppClass>> {
         let new_class = Rc::new(RefCell::new(CppClass::create_cpp_class(
             &self.get_db_connection().unwrap(),
             class_name,
-            self.get_id(),
+            self.get_main_decl_position_id(),
         )));
         self.get_classes().push(new_class);
         self.get_classes().last_mut().unwrap().clone()
@@ -138,7 +119,7 @@ pub trait MainDeclPosition: MatchingFuncs {
         let new_func_decl = Rc::new(RefCell::new(FuncStructure::create_func_decl(
             &self.get_db_connection().unwrap(),
             &creation_args,
-            self.get_id(),
+            self.get_main_decl_position_id(),
         )));
         self.get_func_decls().push(new_func_decl);
         self.get_func_decls().last_mut().unwrap().clone()
@@ -167,7 +148,7 @@ pub trait MainDeclPosition: MatchingFuncs {
         let new_func_impl = Rc::new(RefCell::new(FuncStructure::create_func_impl(
             &self.get_db_connection().unwrap(),
             &creation_args,
-            self.get_id(),
+            self.get_main_decl_position_id(),
         )));
         self.get_func_impls().push(new_func_impl);
         self.get_func_impls().last_mut().unwrap().clone()
@@ -199,7 +180,7 @@ pub trait MainDeclPosition: MatchingFuncs {
         let new_virtual_func_impl = Rc::new(RefCell::new(FuncStructure::create_virtual_func_impl(
             &self.get_db_connection().unwrap(),
             &creation_args,
-            self.get_id(),
+            self.get_main_decl_position_id(),
         )));
         self.get_virtual_func_impls().push(new_virtual_func_impl);
         self.get_virtual_func_impls().last_mut().unwrap().clone()
@@ -228,24 +209,5 @@ pub trait MainDeclPosition: MatchingFuncs {
     }
     fn find_virtual_func_impl(&self, _func: &dyn FuncBasics) -> Option<Rc<RefCell<FuncStructure>>> {
         todo!()
-    }
-
-    fn get_matching_funcs(&self, _position: Position) -> Vec<Rc<RefCell<FuncStructure>>> {
-        todo!()
-    }
-}
-
-pub trait File: MainDeclPosition {
-    fn get_includes(&self) -> Vec<Rc<dyn File>>;
-
-    fn get_last_analyzed(&self) -> i64;
-    fn set_last_analyzed(&mut self, last_analyzed: i64);
-    fn just_analyzed(&mut self) {
-        self.set_last_analyzed(
-            std::time::SystemTime::now()
-                .duration_since(std::time::UNIX_EPOCH)
-                .unwrap()
-                .as_secs() as i64,
-        );
     }
 }

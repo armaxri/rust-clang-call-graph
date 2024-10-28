@@ -2,9 +2,7 @@
 mod tests {
     use crate::{
         call_graph::{
-            data_structure::{
-                helper::func_creation_args::FuncCreationArgs, File, MainDeclPosition,
-            },
+            data_structure::{helper::func_creation_args::FuncCreationArgs, MainDeclPosition},
             database::{database_content::DatabaseContent, database_sqlite::DatabaseSqlite},
         },
         file_in_directory, func_file_in_directory,
@@ -110,7 +108,7 @@ mod tests {
         let timestamp1 = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
             .unwrap()
-            .as_secs() as i64;
+            .as_secs() as usize;
 
         std::thread::sleep(std::time::Duration::from_secs(1));
 
@@ -119,7 +117,7 @@ mod tests {
         let timestamp2 = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
             .unwrap()
-            .as_secs() as i64;
+            .as_secs() as usize;
 
         assert!(cpp_file.borrow().get_last_analyzed() > timestamp1);
         assert!(cpp_file.borrow().get_last_analyzed() < timestamp2);
@@ -131,7 +129,7 @@ mod tests {
         let timestamp3 = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
             .unwrap()
-            .as_secs() as i64;
+            .as_secs() as usize;
 
         assert!(cpp_file.borrow().get_last_analyzed() > timestamp2);
         assert!(cpp_file.borrow().get_last_analyzed() < timestamp3);
