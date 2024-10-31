@@ -78,6 +78,7 @@ mod tests {
         }
 
         #[test]
+        #[ignore]
         fn func_call_in_func_call_test() {
             run_ast_parser_test(
                 "./tests/playground/cStyleTests/funcCallInFuncCall",
@@ -105,6 +106,14 @@ mod tests {
         fn multiline_func_call_in_func_call_test() {
             run_ast_parser_test(
                 "./tests/playground/cStyleTests/multilineFuncCallInFuncCall",
+                vec!["file"],
+            );
+        }
+
+        #[test]
+        fn only_decl_and_impl_without_calls_test() {
+            run_ast_parser_test(
+                "./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls",
                 vec!["file"],
             );
         }

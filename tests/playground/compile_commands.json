@@ -72,6 +72,12 @@
     "output": "./tests/playground/cStyleTests/multilineFuncCallInFuncCall/file.o"
   },
   {
+    "directory": "./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/",
+    "command": "clang++ -I./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/ -c ./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/file.cpp -o ./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/file.o -std=c++20",
+    "file": "./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/file.cpp",
+    "output": "./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/file.o"
+  },
+  {
     "directory": "./tests/playground/cStyleTests/printf/",
     "command": "clang++ -I./tests/playground/cStyleTests/printf/ -c ./tests/playground/cStyleTests/printf/file.cpp -o ./tests/playground/cStyleTests/printf/file.o -std=c++20",
     "file": "./tests/playground/cStyleTests/printf/file.cpp",

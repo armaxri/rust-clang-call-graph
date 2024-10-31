@@ -1,0 +1,76 @@
+{
+  "cpp_files": [
+    {
+      "id": 1,
+      "name": "./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/file.cpp",
+      "last_analyzed": 1730334268,
+      "classes": [],
+      "func_decls": [
+        {
+          "id": 1,
+          "name": "add",
+          "qualified_name": "add 'int (int, int)'",
+          "base_qualified_name": null,
+          "qual_type": "'int (int, int)'",
+          "range": {
+            "start": {
+              "line": 1,
+              "column": 1
+            },
+            "end": {
+              "line": 1,
+              "column": 35
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 2,
+          "name": "mult",
+          "qualified_name": "mult 'int (int, int)'",
+          "base_qualified_name": null,
+          "qual_type": "'int (int, int)'",
+          "range": {
+            "start": {
+              "line": 3,
+              "column": 1
+            },
+            "end": {
+              "line": 3,
+              "column": 29
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        }
+      ],
+      "func_impls": [
+        {
+          "id": 1,
+          "name": "mult",
+          "qualified_name": "mult 'int (int, int)'",
+          "base_qualified_name": null,
+          "qual_type": "'int (int, int)'",
+          "range": {
+            "start": {
+              "line": 5,
+              "column": 1
+            },
+            "end": {
+              "line": 5,
+              "column": 29
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        }
+      ],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [],
+      "file_is_header": false
+    }
+  ],
+  "hpp_files": []
+}
