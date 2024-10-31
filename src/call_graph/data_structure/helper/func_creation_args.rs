@@ -1,5 +1,6 @@
 use crate::location::range::Range;
 
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct FuncCreationArgs {
     pub name: String,
     pub qualified_name: String,
