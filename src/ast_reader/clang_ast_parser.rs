@@ -171,7 +171,7 @@ impl ClangAstParserImpl {
             {
                 if let Ok(col) = col_str.parse::<usize>() {
                     elements.remove(0);
-                    return Range::create(self.last_seen_line, col, self.last_seen_line, col);
+                    return Range::create(self.last_seen_line, col, self.last_seen_line, col + 1);
                 }
             }
         }
@@ -186,7 +186,7 @@ impl ClangAstParserImpl {
             let end = self.get_second_range_element(&elements[1]);
             elements.remove(0);
             elements.remove(0);
-            return Range::create(start.line, start.column, end.line, end.column);
+            return Range::create(start.line, start.column, end.line, end.column + 1);
         }
 
         Range::create(0, 0, 0, 0)
@@ -431,7 +431,7 @@ mod tests {
         assert_eq!(element.range.start.line, 1);
         assert_eq!(element.range.start.column, 1);
         assert_eq!(element.range.end.line, 1);
-        assert_eq!(element.range.end.column, 27);
+        assert_eq!(element.range.end.column, 28);
         assert_eq!(element.inner.len(), 0);
         assert_eq!(element.attributes, "used add 'int (int, int)'");
 
@@ -444,7 +444,7 @@ mod tests {
         assert_eq!(element.range.start.line, 1);
         assert_eq!(element.range.start.column, 9);
         assert_eq!(element.range.end.line, 1);
-        assert_eq!(element.range.end.column, 13);
+        assert_eq!(element.range.end.column, 14);
         assert_eq!(element.inner.len(), 0);
         assert_eq!(element.attributes, "val1 'int'");
 
@@ -457,7 +457,7 @@ mod tests {
         assert_eq!(element.range.start.line, 3);
         assert_eq!(element.range.start.column, 1);
         assert_eq!(element.range.end.line, 6);
-        assert_eq!(element.range.end.column, 1);
+        assert_eq!(element.range.end.column, 2);
         assert_eq!(element.inner.len(), 0);
         assert_eq!(element.attributes, "main 'int (int, char **)'");
 
@@ -470,7 +470,7 @@ mod tests {
         assert_eq!(element.range.start.line, 3);
         assert_eq!(element.range.start.column, 10);
         assert_eq!(element.range.end.line, 3);
-        assert_eq!(element.range.end.column, 14);
+        assert_eq!(element.range.end.column, 15);
         assert_eq!(element.inner.len(), 0);
         assert_eq!(element.attributes, "argc 'int'");
     }
