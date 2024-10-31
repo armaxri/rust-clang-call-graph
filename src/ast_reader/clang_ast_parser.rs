@@ -93,6 +93,8 @@ impl ClangAstParserImpl {
             return Some(ClangAstElement::new(
                 parts[0].to_string(),
                 0,
+                0,
+                0,
                 Rc::clone(&file),
                 Range::create(0, 0, 0, 0),
                 "".to_string(),
@@ -114,6 +116,8 @@ impl ClangAstParserImpl {
             return Some(ClangAstElement::new(
                 decl_type.to_string(),
                 0,
+                0,
+                0,
                 Rc::clone(&file),
                 Range::create(0, 0, 0, 0),
                 remaining_parts,
@@ -123,8 +127,8 @@ impl ClangAstParserImpl {
         let decl_type = &parts[0].to_string();
         parts.remove(0);
 
-        let id = if parts[0].starts_with("0x") {
-            if let Ok(hex_value) = u64::from_str_radix(&parts[0][2..], 16) {
+        let id: usize = if parts[0].starts_with("0x") {
+            if let Ok(hex_value) = usize::from_str_radix(&parts[0][2..], 16) {
                 parts.remove(0);
                 hex_value
             } else {
@@ -133,6 +137,28 @@ impl ClangAstParserImpl {
         } else {
             0
         };
+
+        let mut parent_element_id: usize = 0;
+        if parts[0] == "parent" {
+            parts.remove(0);
+            if parts[0].starts_with("0x") {
+                if let Ok(hex_value) = usize::from_str_radix(&parts[0][2..], 16) {
+                    parts.remove(0);
+                    parent_element_id = hex_value as usize;
+                }
+            }
+        }
+
+        let mut prev_element_id: usize = 0;
+        if parts[0] == "prev" {
+            parts.remove(0);
+            if parts[0].starts_with("0x") {
+                if let Ok(hex_value) = usize::from_str_radix(&parts[0][2..], 16) {
+                    parts.remove(0);
+                    prev_element_id = hex_value as usize;
+                }
+            }
+        }
 
         let range = self.get_range(&mut parts);
 
@@ -146,6 +172,8 @@ impl ClangAstParserImpl {
         return Some(ClangAstElement::new(
             decl_type.to_string(),
             id,
+            parent_element_id,
+            prev_element_id,
             Rc::clone(&file),
             range,
             remaining_parts,
@@ -573,5 +601,25 @@ mod tests {
         let mut parser = ClangAstParserImpl::new(Box::new(process));
         let ast = parser.parse_ast();
         assert_eq!(ast.is_some(), false);
+    }
+
+    #[test]
+    fn parse_ast_element_with_func_prev() {
+        let process = DummyProcess::new();
+        let mut parser = ClangAstParserImpl::new(Box::new(process));
+
+        let  element = parser
+            .parse_ast_element("FunctionDecl 0x15591de00 prev 0x155904b98 <line:5:1, line:7:1> line:5:5 mult 'int (int, int)'")
+            .unwrap();
+        assert_eq!(element.element_type, "FunctionDecl");
+        assert_eq!(element.element_id, 0x15591de00);
+        assert_eq!(element.prev_element_id, 0x155904b98);
+        assert_eq!(element.file.as_ref(), "");
+        assert_eq!(element.range.start.line, 5);
+        assert_eq!(element.range.start.column, 1);
+        assert_eq!(element.range.end.line, 7);
+        assert_eq!(element.range.end.column, 2);
+        assert_eq!(element.inner.len(), 0);
+        assert_eq!(element.attributes, "mult 'int (int, int)'");
     }
 }
