@@ -78,7 +78,6 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn func_call_in_func_call_test() {
             run_ast_parser_test(
                 "./tests/playground/cStyleTests/funcCallInFuncCall",
