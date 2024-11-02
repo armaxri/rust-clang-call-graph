@@ -1,20 +1,27 @@
-use std::{cell::RefCell, collections::VecDeque, rc::Rc};
+use std::{
+    cell::RefCell,
+    collections::{HashMap, VecDeque},
+    rc::Rc,
+};
 
 use crate::{
     ast_reader::clang_ast_element::ClangAstElement,
     call_graph::{
         data_structure::{
-            file_structure::FileStructure, helper::func_creation_args::FuncCreationArgs,
+            file_structure::FileStructure, func_structure::FuncStructure,
+            helper::func_creation_args::FuncCreationArgs, FuncBasics, FuncImplBasics,
             MainDeclPosition,
         },
         database::database_sqlite::DatabaseSqlite,
     },
+    location::range::Range,
 };
 
 struct ClangAstWalkerInternal {
     pub db: Rc<RefCell<DatabaseSqlite>>,
     pub file_path: String,
     pub current_file: Rc<RefCell<FileStructure>>,
+    pub known_func_decls_and_impls: HashMap<usize, Rc<RefCell<FuncStructure>>>,
 }
 
 pub fn walk_ast_2_func_call_db(
@@ -30,6 +37,7 @@ pub fn walk_ast_2_func_call_db(
         db: db,
         file_path: file_path.to_string(),
         current_file: main_file.clone(),
+        known_func_decls_and_impls: HashMap::new(),
     };
 
     for ast_element in parsed_ast {
@@ -69,17 +77,75 @@ fn handle_function_decl(ast_element: &ClangAstElement, walker: &mut ClangAstWalk
 
     match compound_stmt {
         Some(_compound_stmt) => {
-            let mut _func_impl = walker
+            let func_impl = walker
                 .current_file
                 .borrow_mut()
                 .get_or_add_func_impl(func_creation_args);
+            walker
+                .known_func_decls_and_impls
+                .insert(ast_element.element_id, func_impl.clone());
+
+            for inner_element in &ast_element.inner {
+                walk_func_impl_inner(inner_element, &func_impl, walker, &ast_element.range);
+            }
         }
         None => {
-            walker
-                .current_file
-                .borrow_mut()
-                .get_or_add_func_decl(func_creation_args);
+            walker.known_func_decls_and_impls.insert(
+                ast_element.element_id,
+                walker
+                    .current_file
+                    .borrow_mut()
+                    .get_or_add_func_decl(func_creation_args),
+            );
         }
+    }
+}
+
+fn walk_func_impl_inner(
+    ast_element: &ClangAstElement,
+    func_impl: &Rc<RefCell<FuncStructure>>,
+    walker: &mut ClangAstWalkerInternal,
+    current_range: &Range,
+) {
+    let mut used_current_range = current_range;
+    match ast_element.element_type.as_str() {
+        "DeclRefExpr" => {
+            let splitted_attributes: Vec<&str> = ast_element.attributes.split(" ").collect();
+            let func_keyword_index = splitted_attributes
+                .iter()
+                .position(|&attr| attr == "Function");
+            match func_keyword_index {
+                Some(index) => {
+                    if splitted_attributes.len() >= index + 1
+                        && splitted_attributes[index + 1].starts_with("0x")
+                    {
+                        if let Ok(hex_value) =
+                            usize::from_str_radix(&splitted_attributes[index + 1][2..], 16)
+                        {
+                            let func_decl_id = hex_value as usize;
+                            let func_decl = walker
+                                .known_func_decls_and_impls
+                                .get(&func_decl_id)
+                                .expect("Could not find function decl");
+                            func_impl.borrow_mut().get_or_add_func_call(
+                                &func_decl
+                                    .borrow()
+                                    .convert_func2func_creation_args4call(used_current_range),
+                            );
+                        }
+                    }
+                }
+                None => {}
+            }
+        }
+        "CallExpr" => {
+            used_current_range = &ast_element.range;
+        }
+        _ => {}
+    }
+
+    for inner_element in &ast_element.inner {
+        walk_func_impl_inner(inner_element, func_impl, walker, used_current_range);
     }
 }
 

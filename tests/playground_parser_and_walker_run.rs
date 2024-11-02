@@ -102,7 +102,6 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn multiline_func_call_in_func_call_test() {
             run_ast_parser_test(
                 "./tests/playground/cStyleTests/multilineFuncCallInFuncCall",
