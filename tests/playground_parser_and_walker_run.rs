@@ -69,10 +69,9 @@ mod tests {
         use super::*;
 
         #[test]
-        #[ignore]
         fn decl_in_header_and_2_cpps_test() {
             run_ast_parser_test(
-                "./tests/playground/cStyleTests/funcCallInFuncCall",
+                "./tests/playground/cStyleTests/declInHeaderAndTwoCpps",
                 vec!["impl", "main"],
             );
         }
