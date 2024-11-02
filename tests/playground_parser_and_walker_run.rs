@@ -122,7 +122,6 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn simple_decl_in_header_impl_in_header_and_one_cpp_test() {
             run_ast_parser_test(
                 "./tests/playground/cStyleTests/simpleDeclInHeaderImplInHeaderAndOneCpp",
