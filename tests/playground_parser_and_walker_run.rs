@@ -85,7 +85,6 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn funcs_test() {
             run_ast_parser_test("./tests/playground/cStyleTests/funcs", vec!["file"]);
         }

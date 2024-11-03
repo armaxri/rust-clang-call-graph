@@ -58,22 +58,50 @@ pub fn walk_ast_2_func_call_db(
             current_file_name_str = walker.current_file.borrow().get_name().to_string();
         }
 
-        handle_ast_element(&ast_element, &mut walker);
+        handle_ast_element(&ast_element, &mut walker, "");
     }
 }
 
-fn handle_ast_element(ast_element: &ClangAstElement, walker: &mut ClangAstWalkerInternal) {
+fn handle_ast_element(
+    ast_element: &ClangAstElement,
+    walker: &mut ClangAstWalkerInternal,
+    name_prefix: &str,
+) {
     match ast_element.element_type.as_str() {
         "FunctionDecl" => {
-            handle_function_decl(ast_element, walker);
+            handle_function_decl(ast_element, walker, name_prefix);
+        }
+        "NamespaceDecl" => {
+            handle_namespace_decl(ast_element, walker, name_prefix);
         }
         _ => {}
     }
 }
 
-fn handle_function_decl(ast_element: &ClangAstElement, walker: &mut ClangAstWalkerInternal) {
+fn handle_namespace_decl(
+    ast_element: &ClangAstElement,
+    walker: &mut ClangAstWalkerInternal,
+    name_prefix: &str,
+) {
+    let namespace_str = ast_element.attributes.split(" ").last().unwrap();
+    let new_name_prefix = if name_prefix == "" {
+        format!("{}::", namespace_str)
+    } else {
+        format!("{}::{}::", name_prefix, namespace_str)
+    };
+
+    for inner_element in &ast_element.inner {
+        handle_ast_element(inner_element, walker, &new_name_prefix);
+    }
+}
+
+fn handle_function_decl(
+    ast_element: &ClangAstElement,
+    walker: &mut ClangAstWalkerInternal,
+    name_prefix: &str,
+) {
     let compound_stmt = get_compound_stmt(ast_element);
-    let func_creation_args = ast_element.create_func_creation_args();
+    let func_creation_args = ast_element.create_func_creation_args(name_prefix);
 
     match compound_stmt {
         Some(_compound_stmt) => {
@@ -126,7 +154,11 @@ fn walk_func_impl_inner(
                             let func_decl = walker
                                 .known_func_decls_and_impls
                                 .get(&func_decl_id)
-                                .expect("Could not find function decl");
+                                .expect(&format!(
+                                    "Could not find function decl with id 0x{:x}",
+                                    func_decl_id
+                                ));
+
                             func_impl.borrow_mut().get_or_add_func_call(
                                 &func_decl
                                     .borrow()
@@ -159,7 +191,7 @@ fn get_compound_stmt(ast_element: &ClangAstElement) -> Option<&ClangAstElement> 
 }
 
 impl ClangAstElement {
-    fn create_func_creation_args(&self) -> FuncCreationArgs {
+    fn create_func_creation_args(&self, name_prefix: &str) -> FuncCreationArgs {
         let splitted_attributes: Vec<&str> = self.attributes.split(" ").collect();
         let start_index = get_in_function_qual_type_start_index(&splitted_attributes);
         let end_index = get_in_function_qual_type_end_index(&splitted_attributes);
@@ -168,9 +200,13 @@ impl ClangAstElement {
 
         FuncCreationArgs::new(
             splitted_attributes[start_index - 1],
-            splitted_attributes[start_index - 1..end_index + 1]
-                .join(" ")
-                .as_str(),
+            &format!(
+                "{}{}",
+                name_prefix,
+                splitted_attributes[start_index - 1..end_index + 1]
+                    .join(" ")
+                    .as_str()
+            ),
             qualified_type[1..qualified_type.len() - 1]
                 .to_string()
                 .as_str(),
@@ -241,7 +277,7 @@ mod tests {
             inner: VecDeque::new(),
             attributes: "add 'int (int, int)'".to_string(),
         };
-        let converted_args = input.create_func_creation_args();
+        let converted_args = input.create_func_creation_args("");
 
         let expected_args = FuncCreationArgs {
             name: "add".to_string(),
@@ -265,7 +301,7 @@ mod tests {
             inner: VecDeque::new(),
             attributes: "used add 'int (int, int)'".to_string(),
         };
-        let converted_args = input.create_func_creation_args();
+        let converted_args = input.create_func_creation_args("");
 
         let expected_args = FuncCreationArgs {
             name: "add".to_string(),
@@ -289,7 +325,7 @@ mod tests {
             inner: VecDeque::new(),
             attributes: "add 'int (int, int)' extern".to_string(),
         };
-        let converted_args = input.create_func_creation_args();
+        let converted_args = input.create_func_creation_args("");
 
         let expected_args = FuncCreationArgs {
             name: "add".to_string(),
