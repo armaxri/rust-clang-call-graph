@@ -90,7 +90,6 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn funcs_with_headers_test() {
             run_ast_parser_test(
                 "./tests/playground/cStyleTests/funcsWithHeaders",

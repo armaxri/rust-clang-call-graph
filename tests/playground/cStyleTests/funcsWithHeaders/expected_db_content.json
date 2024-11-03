@@ -1,0 +1,150 @@
+{
+  "cpp_files": [
+    {
+      "id": 1,
+      "name": "./tests/playground/cStyleTests/funcsWithHeaders/file.cpp",
+      "last_analyzed": 1730594275,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [
+        {
+          "id": 2,
+          "name": "mult",
+          "qualified_name": "mult 'int (int, int)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, int)",
+          "range": {
+            "start": {
+              "line": 3,
+              "column": 1
+            },
+            "end": {
+              "line": 11,
+              "column": 2
+            }
+          },
+          "func_calls": [
+            {
+              "id": 1,
+              "name": "add",
+              "qualified_name": "foo::add 'int (int, int)'",
+              "base_qualified_name": null,
+              "qual_type": "int (int, int)",
+              "range": {
+                "start": {
+                  "line": 8,
+                  "column": 18
+                },
+                "end": {
+                  "line": 8,
+                  "column": 40
+                }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
+            }
+          ],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 3,
+          "name": "add",
+          "qualified_name": "foo::add 'int (int, int)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, int)",
+          "range": {
+            "start": {
+              "line": 16,
+              "column": 1
+            },
+            "end": {
+              "line": 19,
+              "column": 2
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        }
+      ],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [],
+      "file_is_header": false
+    }
+  ],
+  "hpp_files": [
+    {
+      "id": 1,
+      "name": "./tests/playground/cStyleTests/funcsWithHeaders/file.h",
+      "last_analyzed": 1730594275,
+      "classes": [],
+      "func_decls": [
+        {
+          "id": 1,
+          "name": "mult",
+          "qualified_name": "mult 'int (int, int)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, int)",
+          "range": {
+            "start": {
+              "line": 3,
+              "column": 1
+            },
+            "end": {
+              "line": 3,
+              "column": 29
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 2,
+          "name": "add",
+          "qualified_name": "foo::add 'int (int, int)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, int)",
+          "range": {
+            "start": {
+              "line": 13,
+              "column": 1
+            },
+            "end": {
+              "line": 13,
+              "column": 28
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        }
+      ],
+      "func_impls": [
+        {
+          "id": 1,
+          "name": "divide",
+          "qualified_name": "divide 'int (int, int)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, int)",
+          "range": {
+            "start": {
+              "line": 5,
+              "column": 1
+            },
+            "end": {
+              "line": 8,
+              "column": 2
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        }
+      ],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/funcsWithHeaders/file.cpp"
+      ],
+      "file_is_header": true
+    }
+  ]
+}
