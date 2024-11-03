@@ -114,7 +114,6 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn printf_test() {
             run_ast_parser_test("./tests/playground/cStyleTests/printf", vec!["file"]);
         }

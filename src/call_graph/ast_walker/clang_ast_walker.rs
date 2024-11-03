@@ -74,7 +74,11 @@ fn handle_ast_element(
         "NamespaceDecl" => {
             handle_namespace_decl(ast_element, walker, name_prefix);
         }
-        _ => {}
+        _ => {
+            for inner_element in &ast_element.inner {
+                handle_ast_element(inner_element, walker, name_prefix);
+            }
+        }
     }
 }
 
