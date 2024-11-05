@@ -42,6 +42,30 @@
     "output": "./tests/playground/simpleCppClasses/inheritedVirtualMethod/file.o"
   },
   {
+    "directory": "./tests/playground/simpleCppClasses/finalMethod/",
+    "command": "clang++ -I./tests/playground/simpleCppClasses/finalMethod/ -c ./tests/playground/simpleCppClasses/finalMethod/file.cpp -o ./tests/playground/simpleCppClasses/finalMethod/file.o -std=c++20",
+    "file": "./tests/playground/simpleCppClasses/finalMethod/file.cpp",
+    "output": "./tests/playground/simpleCppClasses/finalMethod/file.o"
+  },
+  {
+    "directory": "./tests/playground/simpleCppClasses/inheritanceChain/",
+    "command": "clang++ -I./tests/playground/simpleCppClasses/inheritanceChain/ -c ./tests/playground/simpleCppClasses/inheritanceChain/file.cpp -o ./tests/playground/simpleCppClasses/inheritanceChain/file.o -std=c++20",
+    "file": "./tests/playground/simpleCppClasses/inheritanceChain/file.cpp",
+    "output": "./tests/playground/simpleCppClasses/inheritanceChain/file.o"
+  },
+  {
+    "directory": "./tests/playground/simpleCppClasses/parentClassInNamespace/",
+    "command": "clang++ -I./tests/playground/simpleCppClasses/parentClassInNamespace/ -c ./tests/playground/simpleCppClasses/parentClassInNamespace/file.cpp -o ./tests/playground/simpleCppClasses/parentClassInNamespace/file.o -std=c++20",
+    "file": "./tests/playground/simpleCppClasses/parentClassInNamespace/file.cpp",
+    "output": "./tests/playground/simpleCppClasses/parentClassInNamespace/file.o"
+  },
+  {
+    "directory": "./tests/playground/simpleCppClasses/twoParentClasses/",
+    "command": "clang++ -I./tests/playground/simpleCppClasses/twoParentClasses/ -c ./tests/playground/simpleCppClasses/twoParentClasses/file.cpp -o ./tests/playground/simpleCppClasses/twoParentClasses/file.o -std=c++20",
+    "file": "./tests/playground/simpleCppClasses/twoParentClasses/file.cpp",
+    "output": "./tests/playground/simpleCppClasses/twoParentClasses/file.o"
+  },
+  {
     "directory": "./tests/playground/simpleCppClasses/staticMethod/",
     "command": "clang++ -I./tests/playground/simpleCppClasses/staticMethod/ -c ./tests/playground/simpleCppClasses/staticMethod/file.cpp -o ./tests/playground/simpleCppClasses/staticMethod/file.o -std=c++20",
     "file": "./tests/playground/simpleCppClasses/staticMethod/file.cpp",
@@ -70,6 +94,12 @@
     "command": "clang++ -I./tests/playground/cStyleTests/multilineFuncCallInFuncCall/ -c ./tests/playground/cStyleTests/multilineFuncCallInFuncCall/file.cpp -o ./tests/playground/cStyleTests/multilineFuncCallInFuncCall/file.o -std=c++20",
     "file": "./tests/playground/cStyleTests/multilineFuncCallInFuncCall/file.cpp",
     "output": "./tests/playground/cStyleTests/multilineFuncCallInFuncCall/file.o"
+  },
+  {
+    "directory": "./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/",
+    "command": "clang++ -I./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/ -c ./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/file.cpp -o ./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/file.o -std=c++20",
+    "file": "./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/file.cpp",
+    "output": "./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/file.o"
   },
   {
     "directory": "./tests/playground/cStyleTests/printf/",

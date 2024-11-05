@@ -9,7 +9,7 @@ use crate::location::position::Position;
 use crate::location::range::Range;
 
 use super::helper::func_creation_args::FuncCreationArgs;
-use super::helper::virtual_func_creation_args::VirtualFuncCreationArgs;
+
 use super::FuncBasics;
 use super::FuncImplBasics;
 use super::MatchingFuncs;
@@ -121,6 +121,7 @@ impl FuncBasics for FuncStructure {
         FuncCreationArgs {
             name: self.get_name().to_string(),
             qualified_name: self.get_qualified_name().to_string(),
+            base_qualified_name: self.base_qualified_name.clone(),
             qualified_type: self.get_qual_type().to_string(),
             range: call_range.clone(),
         }
@@ -162,11 +163,11 @@ impl VirtualFuncBasics for FuncStructure {
     fn convert_virtual_func2virtual_func_creation_args4call(
         &self,
         call_range: &Range,
-    ) -> VirtualFuncCreationArgs {
-        VirtualFuncCreationArgs {
+    ) -> FuncCreationArgs {
+        FuncCreationArgs {
             name: self.get_name().to_string(),
             qualified_name: self.get_qualified_name().to_string(),
-            base_qualified_name: self.get_base_qualified_name().to_string(),
+            base_qualified_name: Some(self.get_base_qualified_name().to_string()),
             qualified_type: self.get_qual_type().to_string(),
             range: call_range.clone(),
         }
@@ -176,13 +177,11 @@ impl VirtualFuncBasics for FuncStructure {
         self.base_qualified_name.as_ref().unwrap()
     }
 
-    fn equals_virtual_func_creation_args(
-        &self,
-        func_creation_args: &VirtualFuncCreationArgs,
-    ) -> bool {
+    fn equals_virtual_func_creation_args(&self, func_creation_args: &FuncCreationArgs) -> bool {
         self.get_name() == func_creation_args.name
             && self.get_qualified_name() == func_creation_args.qualified_name
-            && self.get_base_qualified_name() == func_creation_args.base_qualified_name
+            && Some(self.get_base_qualified_name().to_string())
+                == func_creation_args.base_qualified_name
             && self.get_qual_type() == func_creation_args.qualified_type
             && self.get_range() == &func_creation_args.range
     }
@@ -193,6 +192,10 @@ impl FuncImplBasics for FuncStructure {
         &mut self.func_calls
     }
     fn add_func_call(&mut self, func_call: &FuncCreationArgs) -> Rc<RefCell<FuncStructure>> {
+        if func_call.is_virtual() {
+            self.add_virtual_func_call(func_call);
+        }
+
         let new_func_call = Rc::new(RefCell::new(FuncStructure::create_func_call(
             self.db_connection.as_ref().unwrap(),
             &func_call,
@@ -204,6 +207,10 @@ impl FuncImplBasics for FuncStructure {
         self.get_func_calls().last().unwrap().clone()
     }
     fn get_or_add_func_call(&mut self, func_call: &FuncCreationArgs) -> Rc<RefCell<FuncStructure>> {
+        if func_call.is_virtual() {
+            return self.get_or_add_virtual_func_call(func_call);
+        }
+
         if self
             .get_func_calls()
             .iter()
@@ -224,8 +231,12 @@ impl FuncImplBasics for FuncStructure {
     }
     fn add_virtual_func_call(
         &mut self,
-        virtual_func_call: &VirtualFuncCreationArgs,
+        virtual_func_call: &FuncCreationArgs,
     ) -> Rc<RefCell<FuncStructure>> {
+        if !virtual_func_call.is_virtual() {
+            self.add_func_call(virtual_func_call);
+        }
+
         let new_virtual_func_call = Rc::new(RefCell::new(FuncStructure::create_virtual_func_call(
             self.db_connection.as_ref().unwrap(),
             &virtual_func_call,
@@ -238,8 +249,12 @@ impl FuncImplBasics for FuncStructure {
     }
     fn get_or_add_virtual_func_call(
         &mut self,
-        virtual_func_call: &VirtualFuncCreationArgs,
+        virtual_func_call: &FuncCreationArgs,
     ) -> Rc<RefCell<FuncStructure>> {
+        if !virtual_func_call.is_virtual() {
+            return self.get_or_add_func_call(virtual_func_call);
+        }
+
         if self.get_virtual_func_calls().iter().any(|c| {
             c.borrow()
                 .equals_virtual_func_creation_args(&virtual_func_call)

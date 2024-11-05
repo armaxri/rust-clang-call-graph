@@ -1,0 +1,2150 @@
+{
+  "cpp_files": [
+    {
+      "id": 1,
+      "name": "./tests/playground/cStyleTests/printf/file.cpp",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [
+        {
+          "id": 2,
+          "name": "main",
+          "qualified_name": "main 'int (int, char **)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, char **)",
+          "range": {
+            "start": {
+              "line": 3,
+              "column": 1
+            },
+            "end": {
+              "line": 7,
+              "column": 2
+            }
+          },
+          "func_calls": [
+            {
+              "id": 2,
+              "name": "printf",
+              "qualified_name": "printf 'int (const char *, ...)'",
+              "base_qualified_name": null,
+              "qual_type": "int (const char *, ...)",
+              "range": {
+                "start": {
+                  "line": 5,
+                  "column": 5
+                },
+                "end": {
+                  "line": 5,
+                  "column": 28
+                }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
+            }
+          ],
+          "virtual_func_calls": []
+        }
+      ],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [],
+      "file_is_header": false
+    }
+  ],
+  "hpp_files": [
+    {
+      "id": 1,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 2,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/_types.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 3,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 4,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h",
+      "last_analyzed": 1730679583,
+      "classes": [
+        {
+          "id": 1,
+          "name": "__darwin_pthread_handler_rec",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 2,
+          "name": "_opaque_pthread_attr_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 3,
+          "name": "_opaque_pthread_cond_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 4,
+          "name": "_opaque_pthread_condattr_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 5,
+          "name": "_opaque_pthread_mutex_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 6,
+          "name": "_opaque_pthread_mutexattr_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 7,
+          "name": "_opaque_pthread_once_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 8,
+          "name": "_opaque_pthread_rwlock_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 9,
+          "name": "_opaque_pthread_rwlockattr_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 10,
+          "name": "_opaque_pthread_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        }
+      ],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 5,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 6,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int8_t.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 7,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int16_t.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 8,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int32_t.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 9,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int64_t.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 10,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int8_t.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 11,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int16_t.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 12,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int32_t.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 13,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int64_t.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 14,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/types.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 15,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_intptr_t.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 16,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 17,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_va_list.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 18,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 19,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [
+        {
+          "id": 1,
+          "name": "renameat",
+          "qualified_name": "renameat 'int (int, const char *, int, const char *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, const char *, int, const char *)",
+          "range": {
+            "start": {
+              "line": 47,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 2,
+          "name": "renamex_np",
+          "qualified_name": "renamex_np 'int (const char *, const char *, unsigned int)'",
+          "base_qualified_name": null,
+          "qual_type": "int (const char *, const char *, unsigned int)",
+          "range": {
+            "start": {
+              "line": 51,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 3,
+          "name": "renameatx_np",
+          "qualified_name": "renameatx_np 'int (int, const char *, int, const char *, unsigned int)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, const char *, int, const char *, unsigned int)",
+          "range": {
+            "start": {
+              "line": 52,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 4,
+          "name": "clearerr",
+          "qualified_name": "clearerr 'void (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "void (FILE *)",
+          "range": {
+            "start": {
+              "line": 134,
+              "column": 1
+            },
+            "end": {
+              "line": 134,
+              "column": 23
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 5,
+          "name": "fclose",
+          "qualified_name": "fclose 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 135,
+              "column": 1
+            },
+            "end": {
+              "line": 135,
+              "column": 20
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 6,
+          "name": "feof",
+          "qualified_name": "feof 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 136,
+              "column": 1
+            },
+            "end": {
+              "line": 136,
+              "column": 18
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 7,
+          "name": "ferror",
+          "qualified_name": "ferror 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 137,
+              "column": 1
+            },
+            "end": {
+              "line": 137,
+              "column": 20
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 8,
+          "name": "fflush",
+          "qualified_name": "fflush 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 138,
+              "column": 1
+            },
+            "end": {
+              "line": 138,
+              "column": 20
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 9,
+          "name": "fgetc",
+          "qualified_name": "fgetc 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 139,
+              "column": 1
+            },
+            "end": {
+              "line": 139,
+              "column": 19
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 10,
+          "name": "fgetpos",
+          "qualified_name": "fgetpos 'int (FILE *, fpos_t *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *, fpos_t *)",
+          "range": {
+            "start": {
+              "line": 140,
+              "column": 1
+            },
+            "end": {
+              "line": 140,
+              "column": 42
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 11,
+          "name": "fgets",
+          "qualified_name": "fgets 'char *(char *, int, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "char *(char *, int, FILE *)",
+          "range": {
+            "start": {
+              "line": 141,
+              "column": 1
+            },
+            "end": {
+              "line": 141,
+              "column": 44
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 12,
+          "name": "fopen",
+          "qualified_name": "fopen 'FILE *(const char *, const char *)'",
+          "base_qualified_name": null,
+          "qual_type": "FILE *(const char *, const char *)",
+          "range": {
+            "start": {
+              "line": 145,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 13,
+          "name": "fprintf",
+          "qualified_name": "fprintf 'int (FILE *, const char *, ...)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *, const char *, ...)",
+          "range": {
+            "start": {
+              "line": 147,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 14,
+          "name": "fputc",
+          "qualified_name": "fputc 'int (int, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, FILE *)",
+          "range": {
+            "start": {
+              "line": 148,
+              "column": 1
+            },
+            "end": {
+              "line": 148,
+              "column": 24
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 15,
+          "name": "fputs",
+          "qualified_name": "fputs 'int (const char *, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (const char *, FILE *)",
+          "range": {
+            "start": {
+              "line": 149,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 16,
+          "name": "fread",
+          "qualified_name": "fread 'size_t (void *, size_t, size_t, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "size_t (void *, size_t, size_t, FILE *)",
+          "range": {
+            "start": {
+              "line": 150,
+              "column": 1
+            },
+            "end": {
+              "line": 150,
+              "column": 99
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 17,
+          "name": "freopen",
+          "qualified_name": "freopen 'FILE *(const char *, const char *, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "FILE *(const char *, const char *, FILE *)",
+          "range": {
+            "start": {
+              "line": 151,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 18,
+          "name": "fscanf",
+          "qualified_name": "fscanf 'int (FILE *, const char *, ...)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *, const char *, ...)",
+          "range": {
+            "start": {
+              "line": 153,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 19,
+          "name": "fseek",
+          "qualified_name": "fseek 'int (FILE *, long, int)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *, long, int)",
+          "range": {
+            "start": {
+              "line": 154,
+              "column": 1
+            },
+            "end": {
+              "line": 154,
+              "column": 30
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 20,
+          "name": "fsetpos",
+          "qualified_name": "fsetpos 'int (FILE *, const fpos_t *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *, const fpos_t *)",
+          "range": {
+            "start": {
+              "line": 155,
+              "column": 1
+            },
+            "end": {
+              "line": 155,
+              "column": 37
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 21,
+          "name": "ftell",
+          "qualified_name": "ftell 'long (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "long (FILE *)",
+          "range": {
+            "start": {
+              "line": 156,
+              "column": 1
+            },
+            "end": {
+              "line": 156,
+              "column": 20
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 22,
+          "name": "fwrite",
+          "qualified_name": "fwrite 'size_t (const void *, size_t, size_t, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "size_t (const void *, size_t, size_t, FILE *)",
+          "range": {
+            "start": {
+              "line": 157,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 23,
+          "name": "getc",
+          "qualified_name": "getc 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 158,
+              "column": 1
+            },
+            "end": {
+              "line": 158,
+              "column": 18
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 24,
+          "name": "getchar",
+          "qualified_name": "getchar 'int ()'",
+          "base_qualified_name": null,
+          "qual_type": "int ()",
+          "range": {
+            "start": {
+              "line": 159,
+              "column": 1
+            },
+            "end": {
+              "line": 159,
+              "column": 19
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 25,
+          "name": "gets",
+          "qualified_name": "gets 'char *(char *)'",
+          "base_qualified_name": null,
+          "qual_type": "char *(char *)",
+          "range": {
+            "start": {
+              "line": 218,
+              "column": 33
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 26,
+          "name": "perror",
+          "qualified_name": "perror 'void (const char *)'",
+          "base_qualified_name": null,
+          "qual_type": "void (const char *)",
+          "range": {
+            "start": {
+              "line": 166,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 27,
+          "name": "printf",
+          "qualified_name": "printf 'int (const char *, ...)'",
+          "base_qualified_name": null,
+          "qual_type": "int (const char *, ...)",
+          "range": {
+            "start": {
+              "line": 167,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 28,
+          "name": "putc",
+          "qualified_name": "putc 'int (int, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, FILE *)",
+          "range": {
+            "start": {
+              "line": 168,
+              "column": 1
+            },
+            "end": {
+              "line": 168,
+              "column": 23
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 29,
+          "name": "putchar",
+          "qualified_name": "putchar 'int (int)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int)",
+          "range": {
+            "start": {
+              "line": 169,
+              "column": 1
+            },
+            "end": {
+              "line": 169,
+              "column": 18
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 30,
+          "name": "puts",
+          "qualified_name": "puts 'int (const char *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (const char *)",
+          "range": {
+            "start": {
+              "line": 170,
+              "column": 1
+            },
+            "end": {
+              "line": 170,
+              "column": 24
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 31,
+          "name": "remove",
+          "qualified_name": "remove 'int (const char *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (const char *)",
+          "range": {
+            "start": {
+              "line": 171,
+              "column": 1
+            },
+            "end": {
+              "line": 171,
+              "column": 26
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 32,
+          "name": "rename",
+          "qualified_name": "rename 'int (const char *, const char *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (const char *, const char *)",
+          "range": {
+            "start": {
+              "line": 172,
+              "column": 1
+            },
+            "end": {
+              "line": 172,
+              "column": 51
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 33,
+          "name": "rewind",
+          "qualified_name": "rewind 'void (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "void (FILE *)",
+          "range": {
+            "start": {
+              "line": 173,
+              "column": 1
+            },
+            "end": {
+              "line": 173,
+              "column": 21
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 34,
+          "name": "scanf",
+          "qualified_name": "scanf 'int (const char *, ...)'",
+          "base_qualified_name": null,
+          "qual_type": "int (const char *, ...)",
+          "range": {
+            "start": {
+              "line": 174,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 35,
+          "name": "setbuf",
+          "qualified_name": "setbuf 'void (FILE *, char *)'",
+          "base_qualified_name": null,
+          "qual_type": "void (FILE *, char *)",
+          "range": {
+            "start": {
+              "line": 175,
+              "column": 1
+            },
+            "end": {
+              "line": 175,
+              "column": 51
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 36,
+          "name": "setvbuf",
+          "qualified_name": "setvbuf 'int (FILE *, char *, int, size_t)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *, char *, int, size_t)",
+          "range": {
+            "start": {
+              "line": 176,
+              "column": 1
+            },
+            "end": {
+              "line": 176,
+              "column": 64
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 37,
+          "name": "sprintf",
+          "qualified_name": "sprintf 'int (char *, const char *, ...)'",
+          "base_qualified_name": null,
+          "qual_type": "int (char *, const char *, ...)",
+          "range": {
+            "start": {
+              "line": 323,
+              "column": 41
+            },
+            "end": {
+              "line": 408,
+              "column": 63
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 38,
+          "name": "sscanf",
+          "qualified_name": "sscanf 'int (const char *, const char *, ...)'",
+          "base_qualified_name": null,
+          "qual_type": "int (const char *, const char *, ...)",
+          "range": {
+            "start": {
+              "line": 184,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 39,
+          "name": "tmpfile",
+          "qualified_name": "tmpfile 'FILE *()'",
+          "base_qualified_name": null,
+          "qual_type": "FILE *()",
+          "range": {
+            "start": {
+              "line": 185,
+              "column": 1
+            },
+            "end": {
+              "line": 185,
+              "column": 20
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 40,
+          "name": "tmpnam",
+          "qualified_name": "tmpnam 'char *(char *)'",
+          "base_qualified_name": null,
+          "qual_type": "char *(char *)",
+          "range": {
+            "start": {
+              "line": 323,
+              "column": 41
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 41,
+          "name": "ungetc",
+          "qualified_name": "ungetc 'int (int, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, FILE *)",
+          "range": {
+            "start": {
+              "line": 193,
+              "column": 1
+            },
+            "end": {
+              "line": 193,
+              "column": 25
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 42,
+          "name": "vfprintf",
+          "qualified_name": "vfprintf 'int (FILE *, const char *, va_list)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *, const char *, va_list)",
+          "range": {
+            "start": {
+              "line": 194,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 43,
+          "name": "vprintf",
+          "qualified_name": "vprintf 'int (const char *, va_list)'",
+          "base_qualified_name": null,
+          "qual_type": "int (const char *, va_list)",
+          "range": {
+            "start": {
+              "line": 195,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 44,
+          "name": "vsprintf",
+          "qualified_name": "vsprintf 'int (char *, const char *, va_list)'",
+          "base_qualified_name": null,
+          "qual_type": "int (char *, const char *, va_list)",
+          "range": {
+            "start": {
+              "line": 323,
+              "column": 41
+            },
+            "end": {
+              "line": 408,
+              "column": 63
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 45,
+          "name": "ctermid",
+          "qualified_name": "ctermid 'char *(char *)'",
+          "base_qualified_name": null,
+          "qual_type": "char *(char *)",
+          "range": {
+            "start": {
+              "line": 31,
+              "column": 1
+            },
+            "end": {
+              "line": 31,
+              "column": 25
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 46,
+          "name": "fdopen",
+          "qualified_name": "fdopen 'FILE *(int, const char *)'",
+          "base_qualified_name": null,
+          "qual_type": "FILE *(int, const char *)",
+          "range": {
+            "start": {
+              "line": 220,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 47,
+          "name": "fileno",
+          "qualified_name": "fileno 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 222,
+              "column": 1
+            },
+            "end": {
+              "line": 222,
+              "column": 20
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 48,
+          "name": "pclose",
+          "qualified_name": "pclose 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 233,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 49,
+          "name": "popen",
+          "qualified_name": "popen 'FILE *(const char *, const char *)'",
+          "base_qualified_name": null,
+          "qual_type": "FILE *(const char *, const char *)",
+          "range": {
+            "start": {
+              "line": 237,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 53,
+          "name": "flockfile",
+          "qualified_name": "flockfile 'void (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "void (FILE *)",
+          "range": {
+            "start": {
+              "line": 289,
+              "column": 1
+            },
+            "end": {
+              "line": 289,
+              "column": 24
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 54,
+          "name": "ftrylockfile",
+          "qualified_name": "ftrylockfile 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 290,
+              "column": 1
+            },
+            "end": {
+              "line": 290,
+              "column": 26
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 55,
+          "name": "funlockfile",
+          "qualified_name": "funlockfile 'void (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "void (FILE *)",
+          "range": {
+            "start": {
+              "line": 291,
+              "column": 1
+            },
+            "end": {
+              "line": 291,
+              "column": 26
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 56,
+          "name": "getc_unlocked",
+          "qualified_name": "getc_unlocked 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 292,
+              "column": 1
+            },
+            "end": {
+              "line": 292,
+              "column": 27
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 57,
+          "name": "getchar_unlocked",
+          "qualified_name": "getchar_unlocked 'int ()'",
+          "base_qualified_name": null,
+          "qual_type": "int ()",
+          "range": {
+            "start": {
+              "line": 293,
+              "column": 1
+            },
+            "end": {
+              "line": 293,
+              "column": 28
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 58,
+          "name": "putc_unlocked",
+          "qualified_name": "putc_unlocked 'int (int, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, FILE *)",
+          "range": {
+            "start": {
+              "line": 294,
+              "column": 1
+            },
+            "end": {
+              "line": 294,
+              "column": 32
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 59,
+          "name": "putchar_unlocked",
+          "qualified_name": "putchar_unlocked 'int (int)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int)",
+          "range": {
+            "start": {
+              "line": 295,
+              "column": 1
+            },
+            "end": {
+              "line": 295,
+              "column": 27
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 60,
+          "name": "getw",
+          "qualified_name": "getw 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 299,
+              "column": 1
+            },
+            "end": {
+              "line": 299,
+              "column": 18
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 61,
+          "name": "putw",
+          "qualified_name": "putw 'int (int, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, FILE *)",
+          "range": {
+            "start": {
+              "line": 300,
+              "column": 1
+            },
+            "end": {
+              "line": 300,
+              "column": 23
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 62,
+          "name": "tempnam",
+          "qualified_name": "tempnam 'char *(const char *, const char *)'",
+          "base_qualified_name": null,
+          "qual_type": "char *(const char *, const char *)",
+          "range": {
+            "start": {
+              "line": 323,
+              "column": 41
+            },
+            "end": {
+              "line": 751,
+              "column": 85
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 63,
+          "name": "fseeko",
+          "qualified_name": "fseeko 'int (FILE *, off_t, int)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *, off_t, int)",
+          "range": {
+            "start": {
+              "line": 330,
+              "column": 1
+            },
+            "end": {
+              "line": 330,
+              "column": 59
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 64,
+          "name": "ftello",
+          "qualified_name": "ftello 'off_t (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "off_t (FILE *)",
+          "range": {
+            "start": {
+              "line": 331,
+              "column": 1
+            },
+            "end": {
+              "line": 331,
+              "column": 31
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 65,
+          "name": "snprintf",
+          "qualified_name": "snprintf 'int (char *, size_t, const char *, ...)'",
+          "base_qualified_name": null,
+          "qual_type": "int (char *, size_t, const char *, ...)",
+          "range": {
+            "start": {
+              "line": 337,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 66,
+          "name": "vfscanf",
+          "qualified_name": "vfscanf 'int (FILE *, const char *, va_list)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *, const char *, va_list)",
+          "range": {
+            "start": {
+              "line": 338,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 67,
+          "name": "vscanf",
+          "qualified_name": "vscanf 'int (const char *, va_list)'",
+          "base_qualified_name": null,
+          "qual_type": "int (const char *, va_list)",
+          "range": {
+            "start": {
+              "line": 339,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 68,
+          "name": "vsnprintf",
+          "qualified_name": "vsnprintf 'int (char *, size_t, const char *, va_list)'",
+          "base_qualified_name": null,
+          "qual_type": "int (char *, size_t, const char *, va_list)",
+          "range": {
+            "start": {
+              "line": 340,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 69,
+          "name": "vsscanf",
+          "qualified_name": "vsscanf 'int (const char *, const char *, va_list)'",
+          "base_qualified_name": null,
+          "qual_type": "int (const char *, const char *, va_list)",
+          "range": {
+            "start": {
+              "line": 341,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 70,
+          "name": "dprintf",
+          "qualified_name": "dprintf 'int (int, const char *, ...)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, const char *, ...)",
+          "range": {
+            "start": {
+              "line": 355,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 71,
+          "name": "vdprintf",
+          "qualified_name": "vdprintf 'int (int, const char *, va_list)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, const char *, va_list)",
+          "range": {
+            "start": {
+              "line": 356,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 72,
+          "name": "getdelim",
+          "qualified_name": "getdelim 'ssize_t (char **, size_t *, int, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "ssize_t (char **, size_t *, int, FILE *)",
+          "range": {
+            "start": {
+              "line": 357,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 73,
+          "name": "getline",
+          "qualified_name": "getline 'ssize_t (char **, size_t *, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "ssize_t (char **, size_t *, FILE *)",
+          "range": {
+            "start": {
+              "line": 358,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 74,
+          "name": "fmemopen",
+          "qualified_name": "fmemopen 'FILE *(void *, size_t, const char *)'",
+          "base_qualified_name": null,
+          "qual_type": "FILE *(void *, size_t, const char *)",
+          "range": {
+            "start": {
+              "line": 359,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 75,
+          "name": "open_memstream",
+          "qualified_name": "open_memstream 'FILE *(char **, size_t *)'",
+          "base_qualified_name": null,
+          "qual_type": "FILE *(char **, size_t *)",
+          "range": {
+            "start": {
+              "line": 360,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 76,
+          "name": "asprintf",
+          "qualified_name": "asprintf 'int (char **, const char *, ...)'",
+          "base_qualified_name": null,
+          "qual_type": "int (char **, const char *, ...)",
+          "range": {
+            "start": {
+              "line": 373,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 77,
+          "name": "ctermid_r",
+          "qualified_name": "ctermid_r 'char *(char *)'",
+          "base_qualified_name": null,
+          "qual_type": "char *(char *)",
+          "range": {
+            "start": {
+              "line": 374,
+              "column": 1
+            },
+            "end": {
+              "line": 374,
+              "column": 24
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 78,
+          "name": "fgetln",
+          "qualified_name": "fgetln 'char *(FILE *, size_t *)'",
+          "base_qualified_name": null,
+          "qual_type": "char *(FILE *, size_t *)",
+          "range": {
+            "start": {
+              "line": 375,
+              "column": 1
+            },
+            "end": {
+              "line": 375,
+              "column": 31
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 79,
+          "name": "fmtcheck",
+          "qualified_name": "fmtcheck 'const char *(const char *, const char *)'",
+          "base_qualified_name": null,
+          "qual_type": "const char *(const char *, const char *)",
+          "range": {
+            "start": {
+              "line": 119,
+              "column": 25
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 80,
+          "name": "fpurge",
+          "qualified_name": "fpurge 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 377,
+              "column": 1
+            },
+            "end": {
+              "line": 377,
+              "column": 20
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 81,
+          "name": "setbuffer",
+          "qualified_name": "setbuffer 'void (FILE *, char *, int)'",
+          "base_qualified_name": null,
+          "qual_type": "void (FILE *, char *, int)",
+          "range": {
+            "start": {
+              "line": 378,
+              "column": 1
+            },
+            "end": {
+              "line": 378,
+              "column": 37
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 82,
+          "name": "setlinebuf",
+          "qualified_name": "setlinebuf 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 379,
+              "column": 1
+            },
+            "end": {
+              "line": 379,
+              "column": 24
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 83,
+          "name": "vasprintf",
+          "qualified_name": "vasprintf 'int (char **, const char *, va_list)'",
+          "base_qualified_name": null,
+          "qual_type": "int (char **, const char *, va_list)",
+          "range": {
+            "start": {
+              "line": 380,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 84,
+          "name": "funopen",
+          "qualified_name": "funopen 'FILE *(const void *, int (* _Nullable)(void *, char *, int), int (* _Nullable)(void *, const char *, int), fpos_t (* _Nullable)(void *, fpos_t, int), int (* _Nullable)(void *))'",
+          "base_qualified_name": null,
+          "qual_type": "FILE *(const void *, int (* _Nullable)(void *, char *, int), int (* _Nullable)(void *, const char *, int), fpos_t (* _Nullable)(void *, fpos_t, int), int (* _Nullable)(void *))",
+          "range": {
+            "start": {
+              "line": 386,
+              "column": 1
+            },
+            "end": {
+              "line": 390,
+              "column": 44
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        }
+      ],
+      "func_impls": [
+        {
+          "id": 1,
+          "name": "__sputc",
+          "qualified_name": "__sputc 'int (int, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, FILE *)",
+          "range": {
+            "start": {
+              "line": 357,
+              "column": 36
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [
+            {
+              "id": 1,
+              "name": "__swbuf",
+              "qualified_name": "__swbuf 'int (int, FILE *)'",
+              "base_qualified_name": null,
+              "qual_type": "int (int, FILE *)",
+              "range": {
+                "start": {
+                  "line": 267,
+                  "column": 11
+                },
+                "end": {
+                  "line": 267,
+                  "column": 26
+                }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
+            }
+          ],
+          "virtual_func_calls": []
+        }
+      ],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 20,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h",
+      "last_analyzed": 1730679583,
+      "classes": [
+        {
+          "id": 11,
+          "name": "__sbuf",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 12,
+          "name": "__sFILEX",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 13,
+          "name": "__sFILE",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        }
+      ],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 21,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [
+        {
+          "id": 50,
+          "name": "__srget",
+          "qualified_name": "__srget 'int (FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *)",
+          "range": {
+            "start": {
+              "line": 252,
+              "column": 1
+            },
+            "end": {
+              "line": 252,
+              "column": 20
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 51,
+          "name": "__svfscanf",
+          "qualified_name": "__svfscanf 'int (FILE *, const char *, va_list)'",
+          "base_qualified_name": null,
+          "qual_type": "int (FILE *, const char *, va_list)",
+          "range": {
+            "start": {
+              "line": 253,
+              "column": 1
+            },
+            "end": {
+              "line": 0,
+              "column": 1
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        },
+        {
+          "id": 52,
+          "name": "__swbuf",
+          "qualified_name": "__swbuf 'int (int, FILE *)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, FILE *)",
+          "range": {
+            "start": {
+              "line": 254,
+              "column": 1
+            },
+            "end": {
+              "line": 254,
+              "column": 25
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": []
+        }
+      ],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 22,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_off_t.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    },
+    {
+      "id": 23,
+      "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h",
+      "last_analyzed": 1730679583,
+      "classes": [],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [
+        "./tests/playground/cStyleTests/printf/file.cpp"
+      ],
+      "file_is_header": true
+    }
+  ]
+}

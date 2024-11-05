@@ -19,6 +19,7 @@ mod tests {
         cpp_class.borrow_mut().add_func_decl(FuncCreationArgs {
             name: "add".to_string(),
             qualified_name: "__ZN3foo3addEii".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(11, 5, 11, 8),
         });
@@ -45,6 +46,7 @@ mod tests {
             .get_or_add_func_decl(FuncCreationArgs {
                 name: "add".to_string(),
                 qualified_name: "__ZN3foo3addEii".to_string(),
+                base_qualified_name: None,
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(11, 5, 11, 8),
             });
@@ -53,6 +55,7 @@ mod tests {
             .get_or_add_func_decl(FuncCreationArgs {
                 name: "add".to_string(),
                 qualified_name: "__ZN3foo3addEii".to_string(),
+                base_qualified_name: None,
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(11, 5, 11, 8),
             });
@@ -77,24 +80,28 @@ mod tests {
         cpp_class.borrow_mut().add_func_decl(FuncCreationArgs {
             name: "add".to_string(),
             qualified_name: "__ZN3foo3addEii".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(11, 5, 11, 8),
         });
         cpp_class.borrow_mut().add_func_decl(FuncCreationArgs {
             name: "sub".to_string(),
             qualified_name: "__ZN3foo3subEii".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(12, 5, 12, 8),
         });
         cpp_class.borrow_mut().add_func_decl(FuncCreationArgs {
             name: "multiply".to_string(),
             qualified_name: "__ZN3foo8multiplyEii".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(13, 5, 13, 13),
         });
         cpp_class.borrow_mut().add_func_decl(FuncCreationArgs {
             name: "divide".to_string(),
             qualified_name: "__ZN3foo6divideEii".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(14, 5, 14, 11),
         });
@@ -119,18 +126,21 @@ mod tests {
         cpp_class.borrow_mut().add_func_decl(FuncCreationArgs {
             name: "add".to_string(),
             qualified_name: "__ZN3foo3addEii".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(11, 5, 11, 8),
         });
         cpp_class.borrow_mut().add_func_decl(FuncCreationArgs {
             name: "sub".to_string(),
             qualified_name: "__ZN3foo3subEii".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(12, 5, 12, 8),
         });
         cpp_class.borrow_mut().add_func_decl(FuncCreationArgs {
             name: "multiply".to_string(),
             qualified_name: "__ZN3foo8multiplyEii".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(13, 5, 13, 13),
         });
@@ -155,6 +165,7 @@ mod tests {
         cpp_class.borrow_mut().add_func_decl(FuncCreationArgs {
             name: "multiply".to_string(),
             qualified_name: "__ZN3foo3addEii".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(11, 5, 11, 8),
         });
@@ -179,6 +190,7 @@ mod tests {
         cpp_class.borrow_mut().add_func_decl(FuncCreationArgs {
             name: "add".to_string(),
             qualified_name: "__ZN3foo3addEii".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(11, 6, 11, 8),
         });
@@ -203,6 +215,7 @@ mod tests {
         cpp_class.borrow_mut().add_func_decl(FuncCreationArgs {
             name: "add".to_string(),
             qualified_name: "__ZN3foo3addEii".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(11, 5, 11, 8),
         });

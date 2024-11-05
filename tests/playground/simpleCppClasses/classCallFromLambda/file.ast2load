@@ -1,0 +1,176 @@
+TranslationUnitDecl 0x145048e08 <<invalid sloc>> <invalid sloc>
+|-TypedefDecl 0x145049cf0 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+| `-BuiltinType 0x1450493d0 '__int128'
+|-TypedefDecl 0x145049d60 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+| `-BuiltinType 0x1450493f0 'unsigned __int128'
+|-TypedefDecl 0x145032720 <<invalid sloc>> <invalid sloc> implicit __NSConstantString '__NSConstantString_tag'
+| `-RecordType 0x145032490 '__NSConstantString_tag'
+|   `-CXXRecord 0x145032400 '__NSConstantString_tag'
+|-TypedefDecl 0x145032788 <<invalid sloc>> <invalid sloc> implicit __SVInt8_t '__SVInt8_t'
+| `-BuiltinType 0x1450495d0 '__SVInt8_t'
+|-TypedefDecl 0x1450327f0 <<invalid sloc>> <invalid sloc> implicit __SVInt16_t '__SVInt16_t'
+| `-BuiltinType 0x1450495f0 '__SVInt16_t'
+|-TypedefDecl 0x145032858 <<invalid sloc>> <invalid sloc> implicit __SVInt32_t '__SVInt32_t'
+| `-BuiltinType 0x145049610 '__SVInt32_t'
+|-TypedefDecl 0x1450328c0 <<invalid sloc>> <invalid sloc> implicit __SVInt64_t '__SVInt64_t'
+| `-BuiltinType 0x145049630 '__SVInt64_t'
+|-TypedefDecl 0x145032928 <<invalid sloc>> <invalid sloc> implicit __SVUint8_t '__SVUint8_t'
+| `-BuiltinType 0x145049650 '__SVUint8_t'
+|-TypedefDecl 0x145032990 <<invalid sloc>> <invalid sloc> implicit __SVUint16_t '__SVUint16_t'
+| `-BuiltinType 0x145049670 '__SVUint16_t'
+|-TypedefDecl 0x1450329f8 <<invalid sloc>> <invalid sloc> implicit __SVUint32_t '__SVUint32_t'
+| `-BuiltinType 0x145049690 '__SVUint32_t'
+|-TypedefDecl 0x145032a60 <<invalid sloc>> <invalid sloc> implicit __SVUint64_t '__SVUint64_t'
+| `-BuiltinType 0x1450496b0 '__SVUint64_t'
+|-TypedefDecl 0x145032ac8 <<invalid sloc>> <invalid sloc> implicit __SVFloat16_t '__SVFloat16_t'
+| `-BuiltinType 0x1450496d0 '__SVFloat16_t'
+|-TypedefDecl 0x145032b30 <<invalid sloc>> <invalid sloc> implicit __SVFloat32_t '__SVFloat32_t'
+| `-BuiltinType 0x1450496f0 '__SVFloat32_t'
+|-TypedefDecl 0x145032b98 <<invalid sloc>> <invalid sloc> implicit __SVFloat64_t '__SVFloat64_t'
+| `-BuiltinType 0x145049710 '__SVFloat64_t'
+|-TypedefDecl 0x145032c00 <<invalid sloc>> <invalid sloc> implicit __SVBFloat16_t '__SVBFloat16_t'
+| `-BuiltinType 0x145049730 '__SVBFloat16_t'
+|-TypedefDecl 0x145032c68 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x2_t '__clang_svint8x2_t'
+| `-BuiltinType 0x145049750 '__clang_svint8x2_t'
+|-TypedefDecl 0x145032cd0 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x2_t '__clang_svint16x2_t'
+| `-BuiltinType 0x145049770 '__clang_svint16x2_t'
+|-TypedefDecl 0x145032d38 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x2_t '__clang_svint32x2_t'
+| `-BuiltinType 0x145049790 '__clang_svint32x2_t'
+|-TypedefDecl 0x145032da0 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x2_t '__clang_svint64x2_t'
+| `-BuiltinType 0x1450497b0 '__clang_svint64x2_t'
+|-TypedefDecl 0x145032e08 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x2_t '__clang_svuint8x2_t'
+| `-BuiltinType 0x1450497d0 '__clang_svuint8x2_t'
+|-TypedefDecl 0x145032e70 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x2_t '__clang_svuint16x2_t'
+| `-BuiltinType 0x1450497f0 '__clang_svuint16x2_t'
+|-TypedefDecl 0x145032ed8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x2_t '__clang_svuint32x2_t'
+| `-BuiltinType 0x145049810 '__clang_svuint32x2_t'
+|-TypedefDecl 0x145032f40 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x2_t '__clang_svuint64x2_t'
+| `-BuiltinType 0x145049830 '__clang_svuint64x2_t'
+|-TypedefDecl 0x145032fa8 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x2_t '__clang_svfloat16x2_t'
+| `-BuiltinType 0x145049850 '__clang_svfloat16x2_t'
+|-TypedefDecl 0x145033010 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x2_t '__clang_svfloat32x2_t'
+| `-BuiltinType 0x145049870 '__clang_svfloat32x2_t'
+|-TypedefDecl 0x145033078 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x2_t '__clang_svfloat64x2_t'
+| `-BuiltinType 0x145049890 '__clang_svfloat64x2_t'
+|-TypedefDecl 0x1450330e0 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x2_t '__clang_svbfloat16x2_t'
+| `-BuiltinType 0x1450498b0 '__clang_svbfloat16x2_t'
+|-TypedefDecl 0x145033148 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x3_t '__clang_svint8x3_t'
+| `-BuiltinType 0x1450498d0 '__clang_svint8x3_t'
+|-TypedefDecl 0x1450331b0 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x3_t '__clang_svint16x3_t'
+| `-BuiltinType 0x1450498f0 '__clang_svint16x3_t'
+|-TypedefDecl 0x145033218 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x3_t '__clang_svint32x3_t'
+| `-BuiltinType 0x145049910 '__clang_svint32x3_t'
+|-TypedefDecl 0x145033280 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x3_t '__clang_svint64x3_t'
+| `-BuiltinType 0x145049930 '__clang_svint64x3_t'
+|-TypedefDecl 0x1450332e8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x3_t '__clang_svuint8x3_t'
+| `-BuiltinType 0x145049950 '__clang_svuint8x3_t'
+|-TypedefDecl 0x145033350 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x3_t '__clang_svuint16x3_t'
+| `-BuiltinType 0x145049970 '__clang_svuint16x3_t'
+|-TypedefDecl 0x145104800 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x3_t '__clang_svuint32x3_t'
+| `-BuiltinType 0x145049990 '__clang_svuint32x3_t'
+|-TypedefDecl 0x145104868 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x3_t '__clang_svuint64x3_t'
+| `-BuiltinType 0x1450499b0 '__clang_svuint64x3_t'
+|-TypedefDecl 0x1451048d0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x3_t '__clang_svfloat16x3_t'
+| `-BuiltinType 0x1450499d0 '__clang_svfloat16x3_t'
+|-TypedefDecl 0x145104938 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x3_t '__clang_svfloat32x3_t'
+| `-BuiltinType 0x1450499f0 '__clang_svfloat32x3_t'
+|-TypedefDecl 0x1451049a0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x3_t '__clang_svfloat64x3_t'
+| `-BuiltinType 0x145049a10 '__clang_svfloat64x3_t'
+|-TypedefDecl 0x145104a08 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x3_t '__clang_svbfloat16x3_t'
+| `-BuiltinType 0x145049a30 '__clang_svbfloat16x3_t'
+|-TypedefDecl 0x145104a70 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x4_t '__clang_svint8x4_t'
+| `-BuiltinType 0x145049a50 '__clang_svint8x4_t'
+|-TypedefDecl 0x145104ad8 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x4_t '__clang_svint16x4_t'
+| `-BuiltinType 0x145049a70 '__clang_svint16x4_t'
+|-TypedefDecl 0x145104b40 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x4_t '__clang_svint32x4_t'
+| `-BuiltinType 0x145049a90 '__clang_svint32x4_t'
+|-TypedefDecl 0x145104ba8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x4_t '__clang_svint64x4_t'
+| `-BuiltinType 0x145049ab0 '__clang_svint64x4_t'
+|-TypedefDecl 0x145104c10 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x4_t '__clang_svuint8x4_t'
+| `-BuiltinType 0x145049ad0 '__clang_svuint8x4_t'
+|-TypedefDecl 0x145104c78 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x4_t '__clang_svuint16x4_t'
+| `-BuiltinType 0x145049af0 '__clang_svuint16x4_t'
+|-TypedefDecl 0x145104ce0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x4_t '__clang_svuint32x4_t'
+| `-BuiltinType 0x145049b10 '__clang_svuint32x4_t'
+|-TypedefDecl 0x145104d48 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x4_t '__clang_svuint64x4_t'
+| `-BuiltinType 0x145049b30 '__clang_svuint64x4_t'
+|-TypedefDecl 0x145104db0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x4_t '__clang_svfloat16x4_t'
+| `-BuiltinType 0x145049b50 '__clang_svfloat16x4_t'
+|-TypedefDecl 0x145104e18 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x4_t '__clang_svfloat32x4_t'
+| `-BuiltinType 0x145049b70 '__clang_svfloat32x4_t'
+|-TypedefDecl 0x145104e80 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x4_t '__clang_svfloat64x4_t'
+| `-BuiltinType 0x145049b90 '__clang_svfloat64x4_t'
+|-TypedefDecl 0x145104ee8 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x4_t '__clang_svbfloat16x4_t'
+| `-BuiltinType 0x145049bb0 '__clang_svbfloat16x4_t'
+|-TypedefDecl 0x145104f50 <<invalid sloc>> <invalid sloc> implicit __SVBool_t '__SVBool_t'
+| `-BuiltinType 0x145049bd0 '__SVBool_t'
+|-TypedefDecl 0x145104fb8 <<invalid sloc>> <invalid sloc> implicit __clang_svboolx2_t '__clang_svboolx2_t'
+| `-BuiltinType 0x145049bf0 '__clang_svboolx2_t'
+|-TypedefDecl 0x145105020 <<invalid sloc>> <invalid sloc> implicit __clang_svboolx4_t '__clang_svboolx4_t'
+| `-BuiltinType 0x145049c10 '__clang_svboolx4_t'
+|-TypedefDecl 0x145105088 <<invalid sloc>> <invalid sloc> implicit __SVCount_t '__SVCount_t'
+| `-BuiltinType 0x145049c30 '__SVCount_t'
+|-TypedefDecl 0x145105128 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+| `-PointerType 0x1451050e0 'char *'
+|   `-BuiltinType 0x145048eb0 'char'
+|-TypedefDecl 0x145105198 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'char *'
+| `-PointerType 0x1451050e0 'char *'
+|   `-BuiltinType 0x145048eb0 'char'
+|-CXXRecordDecl 0x1451051f0 <./tests/playground/simpleCppClasses/classCallFromLambda/file.cpp:1:1, line:8:1> line:1:7 class TestClass definition
+| |-DefinitionData pass_in_registers empty aggregate standard_layout trivially_copyable pod trivial literal has_constexpr_non_copy_move_ctor can_const_default_init
+| | |-DefaultConstructor exists trivial constexpr needs_implicit defaulted_is_constexpr
+| | |-CopyConstructor simple trivial has_const_param needs_implicit implicit_has_const_param
+| | |-MoveConstructor exists simple trivial needs_implicit
+| | |-CopyAssignment simple trivial has_const_param needs_implicit implicit_has_const_param
+| | |-MoveAssignment exists simple trivial needs_implicit
+| | `-Destructor simple irrelevant trivial constexpr needs_implicit
+| |-CXXRecordDecl 0x145105308 <col:1, col:7> col:7 implicit class TestClass
+| |-AccessSpecDecl 0x145105398 <line:3:3, col:9> col:3 public
+| `-CXXMethodDecl 0x145105560 <line:4:5, line:7:5> line:4:16 used add 'int (int, int)' static implicit-inline
+|   |-ParmVarDecl 0x1451053d8 <col:20, col:24> col:24 used val1 'int'
+|   |-ParmVarDecl 0x145105458 <col:30, col:34> col:34 used val2 'int'
+|   `-CompoundStmt 0x1451056d0 <line:5:5, line:7:5>
+|     `-ReturnStmt 0x1451056c0 <line:6:9, col:23>
+|       `-BinaryOperator 0x1451056a0 <col:16, col:23> 'int' '+'
+|         |-ImplicitCastExpr 0x145105670 <col:16> 'int' <LValueToRValue>
+|         | `-DeclRefExpr 0x145105630 <col:16> 'int' lvalue ParmVar 0x1451053d8 'val1' 'int'
+|         `-ImplicitCastExpr 0x145105688 <col:23> 'int' <LValueToRValue>
+|           `-DeclRefExpr 0x145105650 <col:23> 'int' lvalue ParmVar 0x145105458 'val2' 'int'
+`-FunctionDecl 0x145123b50 <line:10:1, line:13:1> line:10:5 main 'int (int, char **)'
+  |-ParmVarDecl 0x145105700 <col:10, col:14> col:14 argc 'int'
+  |-ParmVarDecl 0x145123a30 <col:20, col:31> col:26 argv 'char **':'char **'
+  `-CompoundStmt 0x1451248c8 <line:11:1, line:13:1>
+    `-ReturnStmt 0x1451248b8 <line:12:5, col:50>
+      `-ExprWithCleanups 0x1451248a0 <col:12, col:50> 'int':'int'
+        `-CXXOperatorCallExpr 0x1451247b0 <col:12, col:50> 'int':'int' '()'
+          |-ImplicitCastExpr 0x145124730 <col:49, col:50> 'int (*)() const' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x1451246a8 <col:49, col:50> 'int () const' lvalue CXXMethod 0x145123e40 'operator()' 'int () const'
+          `-ImplicitCastExpr 0x145124798 <col:12, col:48> 'const (lambda at ./tests/playground/simpleCppClasses/classCallFromLambda/file.cpp:12:12)' lvalue <NoOp>
+            `-MaterializeTemporaryExpr 0x145124780 <col:12, col:48> '(lambda at ./tests/playground/simpleCppClasses/classCallFromLambda/file.cpp:12:12)' lvalue
+              `-LambdaExpr 0x145124540 <col:12, col:48> '(lambda at ./tests/playground/simpleCppClasses/classCallFromLambda/file.cpp:12:12)'
+                |-CXXRecordDecl 0x145123cf8 <col:12> col:12 implicit class definition
+                | |-DefinitionData lambda pass_in_registers empty standard_layout trivially_copyable trivial literal has_constexpr_non_copy_move_ctor can_const_default_init
+                | | |-DefaultConstructor exists trivial constexpr needs_implicit defaulted_is_constexpr
+                | | |-CopyConstructor simple trivial has_const_param needs_implicit implicit_has_const_param
+                | | |-MoveConstructor exists simple trivial needs_implicit
+                | | |-CopyAssignment simple trivial has_const_param needs_implicit implicit_has_const_param
+                | | |-MoveAssignment exists simple trivial needs_implicit
+                | | `-Destructor simple irrelevant trivial constexpr
+                | |-CXXMethodDecl 0x145123e40 <col:15, col:48> col:12 used constexpr operator() 'int () const' inline
+                | | `-CompoundStmt 0x1451241b8 <col:17, col:48>
+                | |   `-ReturnStmt 0x1451241a8 <col:19, col:45>
+                | |     `-CallExpr 0x145124008 <col:26, col:45> 'int'
+                | |       |-ImplicitCastExpr 0x145123ff0 <col:26, col:37> 'int (*)(int, int)' <FunctionToPointerDecay>
+                | |       | `-DeclRefExpr 0x145123f48 <col:26, col:37> 'int (int, int)' lvalue CXXMethod 0x145105560 'add' 'int (int, int)'
+                | |       |-IntegerLiteral 0x145123f78 <col:41> 'int' 1
+                | |       `-IntegerLiteral 0x145123f98 <col:44> 'int' 2
+                | |-CXXConversionDecl 0x1451243c8 <col:12, col:48> col:12 implicit constexpr operator int (*)() 'int (*() const noexcept)()' inline
+                | |-CXXMethodDecl 0x145124480 <col:12, col:48> col:12 implicit __invoke 'int ()' static inline
+                | `-CXXDestructorDecl 0x145124568 <col:12> col:12 implicit referenced constexpr ~(lambda at ./tests/playground/simpleCppClasses/classCallFromLambda/file.cpp:12:12) 'void () noexcept' inline default trivial
+                `-CompoundStmt 0x1451241b8 <col:17, col:48>
+                  `-ReturnStmt 0x1451241a8 <col:19, col:45>
+                    `-CallExpr 0x145124008 <col:26, col:45> 'int'
+                      |-ImplicitCastExpr 0x145123ff0 <col:26, col:37> 'int (*)(int, int)' <FunctionToPointerDecay>
+                      | `-DeclRefExpr 0x145123f48 <col:26, col:37> 'int (int, int)' lvalue CXXMethod 0x145105560 'add' 'int (int, int)'
+                      |-IntegerLiteral 0x145123f78 <col:41> 'int' 1
+                      `-IntegerLiteral 0x145123f98 <col:44> 'int' 2

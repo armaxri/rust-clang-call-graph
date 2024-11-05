@@ -5,11 +5,7 @@ mod tests {
     use crate::{
         call_graph::{
             data_structure::{
-                func_structure::FuncStructure,
-                helper::{
-                    func_creation_args::FuncCreationArgs,
-                    virtual_func_creation_args::VirtualFuncCreationArgs,
-                },
+                func_structure::FuncStructure, helper::func_creation_args::FuncCreationArgs,
                 FuncBasics, FuncImplBasics, MainDeclPosition, MatchingFuncs, VirtualFuncBasics,
             },
             database::database_sqlite::DatabaseSqlite,
@@ -26,20 +22,20 @@ mod tests {
 
         let func_decl = cpp_class
             .borrow_mut()
-            .add_virtual_func_decl(VirtualFuncCreationArgs {
+            .add_virtual_func_decl(FuncCreationArgs {
                 name: "func_decl".to_string(),
                 qualified_name: "func_decl".to_string(),
-                base_qualified_name: "func_decl".to_string(),
+                base_qualified_name: Some("func_decl".to_string()),
                 qualified_type: "int".to_string(),
                 range: Range::new(Position::new(1, 2), Position::new(1, 10)),
             });
 
         let func_impl = cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "func".to_string(),
                 qualified_name: "func".to_string(),
-                base_qualified_name: "func".to_string(),
+                base_qualified_name: Some("func".to_string()),
                 qualified_type: "int".to_string(),
                 range: Range::new(Position::new(3, 2), Position::new(3, 10)),
             });
@@ -73,20 +69,20 @@ mod tests {
 
         let func_decl = cpp_class
             .borrow_mut()
-            .add_virtual_func_decl(VirtualFuncCreationArgs {
+            .add_virtual_func_decl(FuncCreationArgs {
                 name: "func_decl".to_string(),
                 qualified_name: "func_decl".to_string(),
-                base_qualified_name: "func_decl".to_string(),
+                base_qualified_name: Some("func_decl".to_string()),
                 qualified_type: "int".to_string(),
                 range: Range::new(Position::new(1, 2), Position::new(1, 10)),
             });
 
         let func_impl = cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "func".to_string(),
                 qualified_name: "func".to_string(),
-                base_qualified_name: "func".to_string(),
+                base_qualified_name: Some("func".to_string()),
                 qualified_type: "int".to_string(),
                 range: Range::new(Position::new(3, 2), Position::new(3, 10)),
             });
@@ -120,20 +116,20 @@ mod tests {
 
         let func_decl = cpp_class
             .borrow_mut()
-            .add_virtual_func_decl(VirtualFuncCreationArgs {
+            .add_virtual_func_decl(FuncCreationArgs {
                 name: "func_decl".to_string(),
                 qualified_name: "func_decl".to_string(),
-                base_qualified_name: "func_decl".to_string(),
+                base_qualified_name: Some("func_decl".to_string()),
                 qualified_type: "int".to_string(),
                 range: Range::new(Position::new(1, 2), Position::new(1, 10)),
             });
 
         let func_impl = cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "func".to_string(),
                 qualified_name: "func".to_string(),
-                base_qualified_name: "func".to_string(),
+                base_qualified_name: Some("func".to_string()),
                 qualified_type: "int".to_string(),
                 range: Range::new(Position::new(3, 2), Position::new(3, 10)),
             });
@@ -168,16 +164,17 @@ mod tests {
         let func_decl = cpp_file.borrow_mut().add_func_decl(FuncCreationArgs {
             name: "func_decl".to_string(),
             qualified_name: "func_decl".to_string(),
+            base_qualified_name: None,
             qualified_type: "int".to_string(),
             range: Range::new(Position::new(1, 2), Position::new(1, 10)),
         });
 
         let func_impl = cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "func".to_string(),
                 qualified_name: "func".to_string(),
-                base_qualified_name: "func".to_string(),
+                base_qualified_name: Some("func".to_string()),
                 qualified_type: "int".to_string(),
                 range: Range::new(Position::new(3, 2), Position::new(3, 10)),
             });
@@ -220,20 +217,20 @@ mod tests {
 
         let func_decl = cpp_class
             .borrow_mut()
-            .add_virtual_func_decl(VirtualFuncCreationArgs {
+            .add_virtual_func_decl(FuncCreationArgs {
                 name: "func_decl".to_string(),
                 qualified_name: "func_decl".to_string(),
-                base_qualified_name: "func_decl".to_string(),
+                base_qualified_name: Some("func_decl".to_string()),
                 qualified_type: "int".to_string(),
                 range: Range::new(Position::new(1, 2), Position::new(1, 10)),
             });
 
         let func_impl = cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "func".to_string(),
                 qualified_name: "func".to_string(),
-                base_qualified_name: "func".to_string(),
+                base_qualified_name: Some("func".to_string()),
                 qualified_type: "int".to_string(),
                 range: Range::new(Position::new(3, 2), Position::new(3, 10)),
             });
@@ -268,20 +265,20 @@ mod tests {
 
         let func_decl = cpp_class
             .borrow_mut()
-            .add_virtual_func_decl(VirtualFuncCreationArgs {
+            .add_virtual_func_decl(FuncCreationArgs {
                 name: "func_decl".to_string(),
                 qualified_name: "func_decl".to_string(),
-                base_qualified_name: "func_decl".to_string(),
+                base_qualified_name: Some("func_decl".to_string()),
                 qualified_type: "int".to_string(),
                 range: Range::new(Position::new(1, 2), Position::new(1, 10)),
             });
 
         let func_impl = cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "func".to_string(),
                 qualified_name: "func".to_string(),
-                base_qualified_name: "func".to_string(),
+                base_qualified_name: Some("func".to_string()),
                 qualified_type: "int".to_string(),
                 range: Range::new(Position::new(3, 2), Position::new(3, 10)),
             });
@@ -316,20 +313,20 @@ mod tests {
 
         let func_decl = cpp_class
             .borrow_mut()
-            .add_virtual_func_decl(VirtualFuncCreationArgs {
+            .add_virtual_func_decl(FuncCreationArgs {
                 name: "func_decl".to_string(),
                 qualified_name: "func_decl".to_string(),
-                base_qualified_name: "func_decl".to_string(),
+                base_qualified_name: Some("func_decl".to_string()),
                 qualified_type: "int".to_string(),
                 range: Range::new(Position::new(1, 2), Position::new(1, 10)),
             });
 
         let func_impl = cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "func".to_string(),
                 qualified_name: "func".to_string(),
-                base_qualified_name: "func".to_string(),
+                base_qualified_name: Some("func".to_string()),
                 qualified_type: "int".to_string(),
                 range: Range::new(Position::new(3, 2), Position::new(3, 10)),
             });

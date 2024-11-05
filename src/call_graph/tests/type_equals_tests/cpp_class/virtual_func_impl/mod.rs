@@ -2,9 +2,7 @@
 mod tests {
     use crate::{
         call_graph::{
-            data_structure::{
-                helper::virtual_func_creation_args::VirtualFuncCreationArgs, MainDeclPosition,
-            },
+            data_structure::{helper::func_creation_args::FuncCreationArgs, MainDeclPosition},
             database::{database_content::DatabaseContent, database_sqlite::DatabaseSqlite},
         },
         file_in_directory, func_file_in_directory,
@@ -20,10 +18,10 @@ mod tests {
         let cpp_class = cpp_file.borrow_mut().add_class("FooClass");
         cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "add".to_string(),
                 qualified_name: "__ZN3foo3addEii".to_string(),
-                base_qualified_name: "__ZN3foo3addEii".to_string(),
+                base_qualified_name: Some("__ZN3foo3addEii".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(11, 5, 11, 8),
             });
@@ -47,19 +45,19 @@ mod tests {
         let cpp_class = cpp_file.borrow_mut().add_class("FooClass");
         cpp_class
             .borrow_mut()
-            .get_or_add_virtual_func_impl(VirtualFuncCreationArgs {
+            .get_or_add_virtual_func_impl(FuncCreationArgs {
                 name: "add".to_string(),
                 qualified_name: "__ZN3foo3addEii".to_string(),
-                base_qualified_name: "__ZN3foo3addEii".to_string(),
+                base_qualified_name: Some("__ZN3foo3addEii".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(11, 5, 11, 8),
             });
         cpp_class
             .borrow_mut()
-            .get_or_add_virtual_func_impl(VirtualFuncCreationArgs {
+            .get_or_add_virtual_func_impl(FuncCreationArgs {
                 name: "add".to_string(),
                 qualified_name: "__ZN3foo3addEii".to_string(),
-                base_qualified_name: "__ZN3foo3addEii".to_string(),
+                base_qualified_name: Some("__ZN3foo3addEii".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(11, 5, 11, 8),
             });
@@ -84,37 +82,37 @@ mod tests {
         let cpp_class = cpp_file.borrow_mut().add_class("FooClass");
         cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "add".to_string(),
                 qualified_name: "__ZN3foo3addEii".to_string(),
-                base_qualified_name: "__ZN3foo3addEii".to_string(),
+                base_qualified_name: Some("__ZN3foo3addEii".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(11, 5, 11, 8),
             });
         cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "sub".to_string(),
                 qualified_name: "__ZN3foo3subEii".to_string(),
-                base_qualified_name: "__ZN3foo3subEii".to_string(),
+                base_qualified_name: Some("__ZN3foo3subEii".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(12, 5, 12, 8),
             });
         cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "multiply".to_string(),
                 qualified_name: "__ZN3foo8multiplyEii".to_string(),
-                base_qualified_name: "__ZN3foo8multiplyEii".to_string(),
+                base_qualified_name: Some("__ZN3foo8multiplyEii".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(13, 5, 13, 13),
             });
         cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "divide".to_string(),
                 qualified_name: "__ZN3foo6divideEii".to_string(),
-                base_qualified_name: "__ZN3foo6divideEii".to_string(),
+                base_qualified_name: Some("__ZN3foo6divideEii".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(14, 5, 14, 11),
             });
@@ -139,28 +137,28 @@ mod tests {
         let cpp_class = cpp_file.borrow_mut().add_class("FooClass");
         cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "add".to_string(),
                 qualified_name: "__ZN3foo3addEii".to_string(),
-                base_qualified_name: "__ZN3foo3addEii".to_string(),
+                base_qualified_name: Some("__ZN3foo3addEii".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(11, 5, 11, 8),
             });
         cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "sub".to_string(),
                 qualified_name: "__ZN3foo3subEii".to_string(),
-                base_qualified_name: "__ZN3foo3subEii".to_string(),
+                base_qualified_name: Some("__ZN3foo3subEii".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(12, 5, 12, 8),
             });
         cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "multiply".to_string(),
                 qualified_name: "__ZN3foo8multiplyEii".to_string(),
-                base_qualified_name: "__ZN3foo8multiplyEii".to_string(),
+                base_qualified_name: Some("__ZN3foo8multiplyEii".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(13, 5, 13, 13),
             });
@@ -184,10 +182,10 @@ mod tests {
         let cpp_class = cpp_file.borrow_mut().add_class("FooClass");
         cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "multiply".to_string(),
                 qualified_name: "__ZN3foo3addEii".to_string(),
-                base_qualified_name: "__ZN3foo3addEii".to_string(),
+                base_qualified_name: Some("__ZN3foo3addEii".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(11, 5, 11, 8),
             });
@@ -211,10 +209,10 @@ mod tests {
         let cpp_class = cpp_file.borrow_mut().add_class("FooClass");
         cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "add".to_string(),
                 qualified_name: "__ZN3foo3addEii".to_string(),
-                base_qualified_name: "multi".to_string(),
+                base_qualified_name: Some("multi".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(11, 5, 11, 8),
             });
@@ -238,10 +236,10 @@ mod tests {
         let cpp_class = cpp_file.borrow_mut().add_class("FooClass");
         cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "add".to_string(),
                 qualified_name: "__ZN3foo3addEii".to_string(),
-                base_qualified_name: "__ZN3foo3addEii".to_string(),
+                base_qualified_name: Some("__ZN3foo3addEii".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(11, 6, 11, 8),
             });
@@ -265,10 +263,10 @@ mod tests {
         let cpp_class = cpp_file.borrow_mut().add_class("FooClass");
         cpp_class
             .borrow_mut()
-            .add_virtual_func_impl(VirtualFuncCreationArgs {
+            .add_virtual_func_impl(FuncCreationArgs {
                 name: "add".to_string(),
                 qualified_name: "__ZN3foo3addEii".to_string(),
-                base_qualified_name: "__ZN3foo3addEii".to_string(),
+                base_qualified_name: Some("__ZN3foo3addEii".to_string()),
                 qualified_type: "int (int, int)".to_string(),
                 range: Range::create(11, 5, 11, 8),
             });

@@ -1,7 +1,9 @@
-use std::path::PathBuf;
+use std::{cell::RefCell, path::PathBuf, rc::Rc};
 
 use clap::{Args, Parser, Subcommand};
-use rust_clang_call_graph::dry_run_ast_parser;
+use rust_clang_call_graph::{
+    call_graph::database::database_sqlite::DatabaseSqlite, run_ast_parser,
+};
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
@@ -24,6 +26,9 @@ struct NewDatabaseArgs {
     /// The SQLite database file to create
     #[arg(short, long, value_name = "FILE")]
     database_path: PathBuf,
+    /// The compile_commands.json file to use
+    #[arg(short, long, value_name = "FILE")]
+    compile_commands_json: PathBuf,
 }
 
 #[derive(Args)]
@@ -52,17 +57,32 @@ fn main() {
                     compile_commands_json.display()
                 );
 
-                dry_run_ast_parser(compile_commands_json);
+                run_ast_parser(compile_commands_json, None);
             }
             None => {
                 println!("No compile_commands_json file specified");
             }
         },
-        Commands::NewDatabase(new_database_args) => {
+        Commands::NewDatabase(args) => {
+            if !&args.compile_commands_json.exists() {
+                println!(
+                    "The file compile_commands.json file '{}' does not exist",
+                    &args.compile_commands_json.display()
+                );
+                return;
+            }
             println!(
-                "Creating new database at: {}",
-                new_database_args.database_path.display()
+                "Using compile_commands_json file: {}",
+                &args.compile_commands_json.display()
             );
+            println!("Creating new database at: {}", args.database_path.display());
+
+            let db = Rc::new(RefCell::new(DatabaseSqlite::create_database(
+                &args.database_path,
+                true,
+            )));
+
+            run_ast_parser(&args.compile_commands_json, Some(db));
         }
     }
 }

@@ -1,8 +1,12 @@
-use std::{path::PathBuf, time::Instant};
+use std::{cell::RefCell, path::PathBuf, rc::Rc, time::Instant};
 
 use ast_reader::{
     clang_ast_parser::{ClangAstParser, ClangAstParserImpl},
     compile_commands_reader::read_compile_commands_json_file,
+};
+use call_graph::{
+    ast_walker::clang_ast_walker::walk_ast_2_func_call_db,
+    database::database_sqlite::DatabaseSqlite,
 };
 use process::{
     clang_compile2ast_call::clang_compile2ast_call, terminal_process::TerminalProcess, Process,
@@ -15,7 +19,7 @@ pub mod macros;
 pub mod location;
 pub mod process;
 
-pub fn dry_run_ast_parser(compile_commands_json: &PathBuf) {
+pub fn run_ast_parser(compile_commands_json: &PathBuf, db: Option<Rc<RefCell<DatabaseSqlite>>>) {
     let start_time_all = Instant::now();
 
     let entries = if read_compile_commands_json_file(compile_commands_json).is_some() {
@@ -68,16 +72,22 @@ pub fn dry_run_ast_parser(compile_commands_json: &PathBuf) {
         let ast = parser.parse_ast();
 
         let elapsed_parser = sub_timer.elapsed();
+
+        sub_timer = Instant::now();
+
+        if let (Some(ast), Some(db_ref)) = (ast, db.as_ref()) {
+            walk_ast_2_func_call_db(&entry.file, ast, db_ref.clone());
+        }
+
+        let elapsed_walking = sub_timer.elapsed();
         let elapsed = timer.elapsed();
 
-        let ast_element_count = if ast.is_some() { ast.unwrap().len() } else { 0 };
-
         println!(
-            "Read {} AST Elements {} total, {} compiler and {} parsing of File: {}",
-            ast_element_count,
+            "Handled file in {} total, {} compiler, {} parsing and {} AST walking of File: {}",
             duration2str(elapsed),
             duration2str(elapsed_compiler),
             duration2str(elapsed_parser),
+            duration2str(elapsed_walking),
             entry.file
         );
     }

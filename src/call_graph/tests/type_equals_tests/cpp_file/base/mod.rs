@@ -63,6 +63,7 @@ mod tests {
         cpp_file.borrow_mut().add_func_decl(FuncCreationArgs::new(
             "add",
             "__ZN3foo3addEii",
+            None,
             "int (int, int)",
             Range::new(Position::new(11, 5), Position::new(11, 8)),
         ));
@@ -86,6 +87,7 @@ mod tests {
         cpp_file.borrow_mut().add_func_decl(FuncCreationArgs::new(
             "add",
             "__ZN3foo3addEii",
+            None,
             "int (int, int)",
             Range::new(Position::new(11, 5), Position::new(11, 8)),
         ));
