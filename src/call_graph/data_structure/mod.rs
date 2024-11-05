@@ -2,9 +2,7 @@ use std::{cell::RefCell, rc::Rc};
 
 use cpp_class::CppClass;
 use func_structure::{FuncMentionType, FuncStructure};
-use helper::{
-    func_creation_args::FuncCreationArgs, virtual_func_creation_args::VirtualFuncCreationArgs,
-};
+use helper::func_creation_args::FuncCreationArgs;
 
 use crate::location::{position::Position, range::Range};
 
@@ -50,14 +48,11 @@ pub trait VirtualFuncBasics: FuncBasics {
     fn convert_virtual_func2virtual_func_creation_args4call(
         &self,
         call_range: &Range,
-    ) -> VirtualFuncCreationArgs;
+    ) -> FuncCreationArgs;
 
     fn get_base_qualified_name(&self) -> &str;
 
-    fn equals_virtual_func_creation_args(
-        &self,
-        func_creation_args: &VirtualFuncCreationArgs,
-    ) -> bool;
+    fn equals_virtual_func_creation_args(&self, func_creation_args: &FuncCreationArgs) -> bool;
 }
 
 pub trait FuncImplBasics: FuncBasics + MatchingFuncs {
@@ -68,11 +63,11 @@ pub trait FuncImplBasics: FuncBasics + MatchingFuncs {
     fn get_virtual_func_calls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>>;
     fn add_virtual_func_call(
         &mut self,
-        virtual_func_call: &VirtualFuncCreationArgs,
+        virtual_func_call: &FuncCreationArgs,
     ) -> Rc<RefCell<FuncStructure>>;
     fn get_or_add_virtual_func_call(
         &mut self,
-        virtual_func_call: &VirtualFuncCreationArgs,
+        virtual_func_call: &FuncCreationArgs,
     ) -> Rc<RefCell<FuncStructure>>;
 }
 
@@ -145,6 +140,10 @@ pub trait MainDeclPosition: MatchingFuncs {
 
     fn get_func_impls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>>;
     fn add_func_impl(&mut self, creation_args: FuncCreationArgs) -> Rc<RefCell<FuncStructure>> {
+        if creation_args.is_virtual() {
+            return self.add_virtual_func_impl(creation_args);
+        }
+
         let new_func_impl = Rc::new(RefCell::new(FuncStructure::create_func_impl(
             &self.get_db_connection().unwrap(),
             &creation_args,
@@ -157,6 +156,10 @@ pub trait MainDeclPosition: MatchingFuncs {
         &mut self,
         creation_args: FuncCreationArgs,
     ) -> Rc<RefCell<FuncStructure>> {
+        if creation_args.is_virtual() {
+            return self.get_or_add_virtual_func_impl(creation_args);
+        }
+
         if self
             .get_func_impls()
             .iter()
@@ -175,8 +178,12 @@ pub trait MainDeclPosition: MatchingFuncs {
     fn get_virtual_func_impls(&mut self) -> &mut Vec<Rc<RefCell<FuncStructure>>>;
     fn add_virtual_func_impl(
         &mut self,
-        creation_args: VirtualFuncCreationArgs,
+        creation_args: FuncCreationArgs,
     ) -> Rc<RefCell<FuncStructure>> {
+        if !creation_args.is_virtual() {
+            return self.add_func_impl(creation_args);
+        }
+
         let new_virtual_func_impl = Rc::new(RefCell::new(FuncStructure::create_virtual_func_impl(
             &self.get_db_connection().unwrap(),
             &creation_args,
@@ -187,8 +194,12 @@ pub trait MainDeclPosition: MatchingFuncs {
     }
     fn get_or_add_virtual_func_impl(
         &mut self,
-        creation_args: VirtualFuncCreationArgs,
+        creation_args: FuncCreationArgs,
     ) -> Rc<RefCell<FuncStructure>> {
+        if !creation_args.is_virtual() {
+            return self.get_or_add_func_impl(creation_args);
+        }
+
         if self
             .get_virtual_func_impls()
             .iter()

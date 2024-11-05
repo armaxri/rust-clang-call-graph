@@ -9,12 +9,12 @@ use crate::location::range::Range;
 use super::super::database::database_sqlite_internal::DatabaseSqliteInternal;
 use super::func_structure::FuncMentionType;
 use super::func_structure::FuncStructure;
-use super::helper::virtual_func_creation_args::VirtualFuncCreationArgs;
+use super::helper::func_creation_args::FuncCreationArgs;
 
 impl FuncStructure {
     pub fn create_virtual_func_decl(
         db_connection: &DatabaseSqliteInternal,
-        args: &VirtualFuncCreationArgs,
+        args: &FuncCreationArgs,
         parent_id: (Option<u64>, Option<u64>, Option<u64>),
     ) -> Self {
         let mut stmt = db_connection
@@ -46,7 +46,7 @@ impl FuncStructure {
             Some(db_connection.clone()),
             args.name.clone(),
             args.qualified_name.clone(),
-            Some(args.base_qualified_name.clone()),
+            args.base_qualified_name.clone(),
             args.qualified_type.clone(),
             args.range.clone(),
             Some(FuncMentionType::VirtualFuncDecl),

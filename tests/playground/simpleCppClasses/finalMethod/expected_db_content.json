@@ -2,7 +2,7 @@
   "cpp_files": [
     {
       "id": 1,
-      "name": "./tests/playground/simpleCppClasses/inheritedVirtualMethod/file.cpp",
+      "name": "./tests/playground/simpleCppClasses/finalMethod/file.cpp",
       "last_analyzed": 1730795970,
       "classes": [
         {

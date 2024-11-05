@@ -2,12 +2,12 @@
   "cpp_files": [
     {
       "id": 1,
-      "name": "./tests/playground/simpleCppClasses/inheritedVirtualMethod/file.cpp",
-      "last_analyzed": 1730795970,
+      "name": "./tests/playground/simpleCppClasses/parentClassInNamespace/file.cpp",
+      "last_analyzed": 1730836829,
       "classes": [
         {
           "id": 1,
-          "name": "TestBaseClass",
+          "name": "TestNamespace::TestBaseClass",
           "parent_classes": [],
           "classes": [],
           "func_decls": [],
@@ -17,16 +17,16 @@
             {
               "id": 1,
               "name": "add",
-              "qualified_name": "TestBaseClass::add 'int (int, int)'",
-              "base_qualified_name": "TestBaseClass::add 'int (int, int)'",
+              "qualified_name": "TestNamespace::TestBaseClass::add 'int (int, int)'",
+              "base_qualified_name": "TestNamespace::TestBaseClass::add 'int (int, int)'",
               "qual_type": "int (int, int)",
               "range": {
                 "start": {
-                  "line": 4,
+                  "line": 6,
                   "column": 5
                 },
                 "end": {
-                  "line": 7,
+                  "line": 9,
                   "column": 6
                 }
               },
@@ -39,7 +39,7 @@
           "id": 2,
           "name": "TestClass",
           "parent_classes": [
-            "TestBaseClass"
+            "TestNamespace::TestBaseClass"
           ],
           "classes": [],
           "func_decls": [],
@@ -50,15 +50,15 @@
               "id": 2,
               "name": "add",
               "qualified_name": "TestClass::add 'int (int, int)'",
-              "base_qualified_name": "TestBaseClass::add 'int (int, int)'",
+              "base_qualified_name": "TestNamespace::TestBaseClass::add 'int (int, int)'",
               "qual_type": "int (int, int)",
               "range": {
                 "start": {
-                  "line": 13,
+                  "line": 18,
                   "column": 5
                 },
                 "end": {
-                  "line": 16,
+                  "line": 21,
                   "column": 6
                 }
               },
@@ -67,16 +67,16 @@
                 {
                   "id": 1,
                   "name": "add",
-                  "qualified_name": "TestBaseClass::add 'int (int, int)'",
-                  "base_qualified_name": "TestBaseClass::add 'int (int, int)'",
+                  "qualified_name": "TestNamespace::TestBaseClass::add 'int (int, int)'",
+                  "base_qualified_name": "TestNamespace::TestBaseClass::add 'int (int, int)'",
                   "qual_type": "int (int, int)",
                   "range": {
                     "start": {
-                      "line": 15,
+                      "line": 20,
                       "column": 16
                     },
                     "end": {
-                      "line": 15,
+                      "line": 20,
                       "column": 46
                     }
                   },
@@ -98,11 +98,11 @@
           "qual_type": "int (int, char **)",
           "range": {
             "start": {
-              "line": 19,
+              "line": 24,
               "column": 1
             },
             "end": {
-              "line": 23,
+              "line": 28,
               "column": 2
             }
           },
@@ -112,15 +112,15 @@
               "id": 2,
               "name": "add",
               "qualified_name": "TestClass::add 'int (int, int)'",
-              "base_qualified_name": "TestBaseClass::add 'int (int, int)'",
+              "base_qualified_name": "TestNamespace::TestBaseClass::add 'int (int, int)'",
               "qual_type": "int (int, int)",
               "range": {
                 "start": {
-                  "line": 22,
+                  "line": 27,
                   "column": 12
                 },
                 "end": {
-                  "line": 22,
+                  "line": 27,
                   "column": 31
                 }
               },

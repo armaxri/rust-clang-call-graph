@@ -192,6 +192,19 @@ impl ClangAstParserImpl {
             return Range::create(0, 0, 0, 0);
         }
 
+        if elements[0].starts_with("<line:") && elements[0].ends_with(">") {
+            let parts: Vec<&str> = elements[0][6..elements[0].len() - 1].split(':').collect();
+            if parts.len() == 2 {
+                if let Ok(line) = parts[0].parse::<usize>() {
+                    if let Ok(col) = parts[1].parse::<usize>() {
+                        self.last_seen_line = line;
+                        elements.remove(0);
+                        return Range::create(line, col, line, col);
+                    }
+                }
+            }
+        }
+
         if elements[0].starts_with("<col:") && elements[0].ends_with(">") {
             if let Some(col_str) = elements[0]
                 .strip_prefix("<col:")
@@ -501,6 +514,19 @@ mod tests {
         assert_eq!(element.range.end.column, 15);
         assert_eq!(element.inner.len(), 0);
         assert_eq!(element.attributes, "argc 'int'");
+
+        element = parser
+            .parse_ast_element("CXXMethodDecl 0x14b830080 <line:1:7> col:7 implicit constexpr operator= 'TestClass &(const TestClass &)' inline default noexcept-unevaluated 0x14b830080")
+            .unwrap();
+        assert_eq!(element.element_type, "CXXMethodDecl");
+        assert_eq!(element.element_id, 0x14b830080);
+        assert_eq!(element.file.as_ref(), "/Users/xxx/git/vscode-clang-call-graph/src/test/backendSuite/walkerTests/actualTests/cStyleTests/declInHeaderAndTwoCpps/main.cpp");
+        assert_eq!(element.range.start.line, 1);
+        assert_eq!(element.range.start.column, 7);
+        assert_eq!(element.range.end.line, 1);
+        assert_eq!(element.range.end.column, 7);
+        assert_eq!(element.inner.len(), 0);
+        assert_eq!(element.attributes, "implicit constexpr operator= 'TestClass &(const TestClass &)' inline default noexcept-unevaluated 0x14b830080");
     }
 
     #[test]

@@ -8,9 +8,9 @@ use crate::{
     ast_reader::clang_ast_element::ClangAstElement,
     call_graph::{
         data_structure::{
-            file_structure::FileStructure, func_structure::FuncStructure,
+            cpp_class::CppClass, file_structure::FileStructure, func_structure::FuncStructure,
             helper::func_creation_args::FuncCreationArgs, FuncBasics, FuncImplBasics,
-            MainDeclPosition,
+            MainDeclPosition, VirtualFuncBasics,
         },
         database::database_sqlite::DatabaseSqlite,
     },
@@ -22,6 +22,8 @@ struct ClangAstWalkerInternal {
     pub file_path: String,
     pub current_file: Rc<RefCell<FileStructure>>,
     pub known_func_decls_and_impls: HashMap<usize, Rc<RefCell<FuncStructure>>>,
+    pub known_classes: HashMap<String, Rc<RefCell<CppClass>>>,
+    pub current_class_stack: Vec<Rc<RefCell<CppClass>>>,
 }
 
 pub fn walk_ast_2_func_call_db(
@@ -38,6 +40,8 @@ pub fn walk_ast_2_func_call_db(
         file_path: file_path.to_string(),
         current_file: main_file.clone(),
         known_func_decls_and_impls: HashMap::new(),
+        known_classes: HashMap::new(),
+        current_class_stack: Vec::new(),
     };
 
     for ast_element in parsed_ast {
@@ -71,14 +75,96 @@ fn handle_ast_element(
         "FunctionDecl" => {
             handle_function_decl(ast_element, walker, name_prefix);
         }
+        "CXXMethodDecl" => {
+            handle_function_decl(ast_element, walker, name_prefix);
+        }
         "NamespaceDecl" => {
             handle_namespace_decl(ast_element, walker, name_prefix);
+        }
+        "CXXRecordDecl" => {
+            handle_cxx_record_decl(ast_element, walker, name_prefix);
         }
         _ => {
             for inner_element in &ast_element.inner {
                 handle_ast_element(inner_element, walker, name_prefix);
             }
         }
+    }
+}
+
+fn handle_cxx_record_decl(
+    ast_element: &ClangAstElement,
+    walker: &mut ClangAstWalkerInternal,
+    name_prefix: &str,
+) {
+    if ast_element.attributes.starts_with("implicit ") {
+        return;
+    }
+
+    let splitted_args: Vec<&str> = ast_element.attributes.split(" ").collect();
+
+    // This is maybe not the best solution, but it works for now.
+    let mut func_keyword_index = splitted_args.iter().position(|&attr| attr == "class");
+    if func_keyword_index.is_none() {
+        func_keyword_index = splitted_args.iter().position(|&attr| attr == "struct");
+    }
+
+    match func_keyword_index {
+        Some(index) => {
+            let class_name = splitted_args[index + 1];
+            let new_name_prefix = if name_prefix == "" {
+                format!("{}::", class_name)
+            } else {
+                format!("{}{}::", name_prefix, class_name)
+            };
+
+            let used_name = format!("{}{}", name_prefix, class_name);
+            let class = if walker.current_class_stack.len() > 0 {
+                walker
+                    .current_class_stack
+                    .last()
+                    .unwrap()
+                    .borrow_mut()
+                    .get_or_add_class(&used_name)
+            } else {
+                walker
+                    .current_file
+                    .borrow_mut()
+                    .get_or_add_class(&used_name)
+            };
+
+            walker.current_class_stack.push(class.clone());
+            walker.known_classes.insert(used_name, class.clone());
+
+            for inner_element in &ast_element.inner {
+                match inner_element.element_type.as_str() {
+                    "public" | "protected" | "private" => {
+                        let splitted_modifiers: Vec<&str> =
+                            inner_element.attributes.split("':'").collect();
+                        let parent_name = if splitted_modifiers.len() > 1 {
+                            splitted_modifiers[1][..splitted_modifiers[1].len() - 1].to_string()
+                        } else {
+                            "".to_string()
+                        };
+
+                        if parent_name != "" {
+                            let parent_class = walker.known_classes.get(&parent_name);
+                            if parent_class.is_some() {
+                                class.borrow_mut().add_parent_class(&parent_class.unwrap());
+                            } else {
+                                println!("Could not find parent class with name {}", parent_name);
+                            }
+                        }
+                    }
+                    _ => {
+                        handle_ast_element(inner_element, walker, &new_name_prefix);
+                    }
+                }
+            }
+
+            walker.current_class_stack.pop();
+        }
+        None => {}
     }
 }
 
@@ -91,7 +177,7 @@ fn handle_namespace_decl(
     let new_name_prefix = if name_prefix == "" {
         format!("{}::", namespace_str)
     } else {
-        format!("{}::{}::", name_prefix, namespace_str)
+        format!("{}{}::", name_prefix, namespace_str)
     };
 
     for inner_element in &ast_element.inner {
@@ -104,15 +190,32 @@ fn handle_function_decl(
     walker: &mut ClangAstWalkerInternal,
     name_prefix: &str,
 ) {
+    if ast_element
+        .attributes
+        .starts_with("<<invalid sloc>> <invalid sloc> implicit")
+        || ast_element.attributes.starts_with("implicit ")
+    {
+        return;
+    }
+
     let compound_stmt = get_compound_stmt(ast_element);
-    let func_creation_args = ast_element.create_func_creation_args(name_prefix);
+    let func_creation_args = ast_element.create_func_creation_args(Some(walker), name_prefix);
 
     match compound_stmt {
         Some(_compound_stmt) => {
-            let func_impl = walker
-                .current_file
-                .borrow_mut()
-                .get_or_add_func_impl(func_creation_args);
+            let func_impl = if walker.current_class_stack.len() > 0 {
+                walker
+                    .current_class_stack
+                    .last()
+                    .unwrap()
+                    .borrow_mut()
+                    .get_or_add_func_impl(func_creation_args)
+            } else {
+                walker
+                    .current_file
+                    .borrow_mut()
+                    .get_or_add_func_impl(func_creation_args)
+            };
             walker
                 .known_func_decls_and_impls
                 .insert(ast_element.element_id, func_impl.clone());
@@ -122,13 +225,34 @@ fn handle_function_decl(
             }
         }
         None => {
-            walker.known_func_decls_and_impls.insert(
-                ast_element.element_id,
-                walker
-                    .current_file
-                    .borrow_mut()
-                    .get_or_add_func_decl(func_creation_args),
-            );
+            if func_creation_args.is_virtual() {
+                walker.known_func_decls_and_impls.insert(
+                    ast_element.element_id,
+                    walker
+                        .current_class_stack
+                        .last()
+                        .unwrap()
+                        .borrow_mut()
+                        .get_or_add_virtual_func_decl(func_creation_args),
+                );
+            } else {
+                walker.known_func_decls_and_impls.insert(
+                    ast_element.element_id,
+                    if walker.current_class_stack.len() > 0 {
+                        walker
+                            .current_class_stack
+                            .last()
+                            .unwrap()
+                            .borrow_mut()
+                            .get_or_add_func_decl(func_creation_args)
+                    } else {
+                        walker
+                            .current_file
+                            .borrow_mut()
+                            .get_or_add_func_decl(func_creation_args)
+                    },
+                );
+            }
         }
     }
 }
@@ -143,9 +267,14 @@ fn walk_func_impl_inner(
     match ast_element.element_type.as_str() {
         "DeclRefExpr" => {
             let splitted_attributes: Vec<&str> = ast_element.attributes.split(" ").collect();
-            let func_keyword_index = splitted_attributes
+            let mut func_keyword_index = splitted_attributes
                 .iter()
                 .position(|&attr| attr == "Function");
+            if func_keyword_index.is_none() {
+                func_keyword_index = splitted_attributes
+                    .iter()
+                    .position(|&attr| attr == "CXXMethod");
+            }
             match func_keyword_index {
                 Some(index) => {
                     if splitted_attributes.len() >= index + 1
@@ -155,26 +284,51 @@ fn walk_func_impl_inner(
                             usize::from_str_radix(&splitted_attributes[index + 1][2..], 16)
                         {
                             let func_decl_id = hex_value as usize;
-                            let func_decl = walker
-                                .known_func_decls_and_impls
-                                .get(&func_decl_id)
-                                .expect(&format!(
+                            let func_decl = walker.known_func_decls_and_impls.get(&func_decl_id);
+
+                            if func_decl.is_some() {
+                                func_impl.borrow_mut().get_or_add_func_call(
+                                    &func_decl
+                                        .unwrap()
+                                        .borrow()
+                                        .convert_func2func_creation_args4call(used_current_range),
+                                );
+                            } else {
+                                println!(
                                     "Could not find function decl with id 0x{:x}",
                                     func_decl_id
-                                ));
-
-                            func_impl.borrow_mut().get_or_add_func_call(
-                                &func_decl
-                                    .borrow()
-                                    .convert_func2func_creation_args4call(used_current_range),
-                            );
+                                );
+                            }
                         }
                     }
                 }
                 None => {}
             }
         }
-        "CallExpr" => {
+        "MemberExpr" => {
+            let splitted_attributes: Vec<&str> = ast_element.attributes.split(" ").collect();
+
+            if splitted_attributes.last().unwrap().starts_with("0x") {
+                if let Ok(hex_value) =
+                    usize::from_str_radix(&splitted_attributes.last().unwrap()[2..], 16)
+                {
+                    let func_decl_id = hex_value as usize;
+                    let func_decl = walker.known_func_decls_and_impls.get(&func_decl_id);
+
+                    if func_decl.is_some() {
+                        func_impl.borrow_mut().get_or_add_func_call(
+                            &func_decl
+                                .unwrap()
+                                .borrow()
+                                .convert_func2func_creation_args4call(used_current_range),
+                        );
+                    } else {
+                        println!("Could not find function decl with id 0x{:x}", func_decl_id);
+                    }
+                }
+            }
+        }
+        "CallExpr" | "CXXMemberCallExpr" => {
             used_current_range = &ast_element.range;
         }
         _ => {}
@@ -195,27 +349,76 @@ fn get_compound_stmt(ast_element: &ClangAstElement) -> Option<&ClangAstElement> 
 }
 
 impl ClangAstElement {
-    fn create_func_creation_args(&self, name_prefix: &str) -> FuncCreationArgs {
+    fn create_func_creation_args(
+        &self,
+        walker: Option<&ClangAstWalkerInternal>,
+        name_prefix: &str,
+    ) -> FuncCreationArgs {
         let splitted_attributes: Vec<&str> = self.attributes.split(" ").collect();
         let start_index = get_in_function_qual_type_start_index(&splitted_attributes);
         let end_index = get_in_function_qual_type_end_index(&splitted_attributes);
         let binding = splitted_attributes[start_index..end_index + 1].join(" ");
         let qualified_type = binding.as_str();
+        let qualified_name = &format!(
+            "{}{}",
+            name_prefix,
+            splitted_attributes[start_index - 1..end_index + 1]
+                .join(" ")
+                .as_str()
+        );
+        let base_qualified_name: Option<String> = if splitted_attributes.len() >= end_index + 2
+            && splitted_attributes[end_index + 1] == "virtual"
+        {
+            Some(qualified_name.clone())
+        } else {
+            self.get_base_qualified_name_from_override(walker)
+        };
 
         FuncCreationArgs::new(
             splitted_attributes[start_index - 1],
-            &format!(
-                "{}{}",
-                name_prefix,
-                splitted_attributes[start_index - 1..end_index + 1]
-                    .join(" ")
-                    .as_str()
-            ),
+            qualified_name,
+            base_qualified_name,
             qualified_type[1..qualified_type.len() - 1]
                 .to_string()
                 .as_str(),
             self.range.clone(),
         )
+    }
+
+    fn get_base_qualified_name_from_override(
+        &self,
+        walker: Option<&ClangAstWalkerInternal>,
+    ) -> Option<String> {
+        for inner_element in &self.inner {
+            if inner_element.element_type == "Overrides" {
+                let splitted_attributes: Vec<&str> = inner_element.attributes.split(" ").collect();
+                if splitted_attributes.len() >= 1 && splitted_attributes[0].starts_with("0x") {
+                    if let Ok(hex_value) = usize::from_str_radix(&splitted_attributes[0][2..], 16) {
+                        let func_decl_id = hex_value as usize;
+                        let func_decl = walker
+                            .unwrap()
+                            .known_func_decls_and_impls
+                            .get(&func_decl_id);
+
+                        if func_decl.is_some() {
+                            return Some(
+                                func_decl
+                                    .unwrap()
+                                    .borrow()
+                                    .get_base_qualified_name()
+                                    .to_string(),
+                            );
+                        } else {
+                            println!("Could not find function decl with id 0x{:x}", func_decl_id);
+                        }
+                    }
+
+                    return Some(splitted_attributes[1..].join(" "));
+                }
+            }
+        }
+
+        None
     }
 }
 
@@ -281,11 +484,12 @@ mod tests {
             inner: VecDeque::new(),
             attributes: "add 'int (int, int)'".to_string(),
         };
-        let converted_args = input.create_func_creation_args("");
+        let converted_args = input.create_func_creation_args(None, "");
 
         let expected_args = FuncCreationArgs {
             name: "add".to_string(),
             qualified_name: "add 'int (int, int)'".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(1, 2, 3, 4),
         };
@@ -305,11 +509,12 @@ mod tests {
             inner: VecDeque::new(),
             attributes: "used add 'int (int, int)'".to_string(),
         };
-        let converted_args = input.create_func_creation_args("");
+        let converted_args = input.create_func_creation_args(None, "");
 
         let expected_args = FuncCreationArgs {
             name: "add".to_string(),
             qualified_name: "add 'int (int, int)'".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(1, 2, 3, 4),
         };
@@ -329,11 +534,12 @@ mod tests {
             inner: VecDeque::new(),
             attributes: "add 'int (int, int)' extern".to_string(),
         };
-        let converted_args = input.create_func_creation_args("");
+        let converted_args = input.create_func_creation_args(None, "");
 
         let expected_args = FuncCreationArgs {
             name: "add".to_string(),
             qualified_name: "add 'int (int, int)'".to_string(),
+            base_qualified_name: None,
             qualified_type: "int (int, int)".to_string(),
             range: Range::create(1, 2, 3, 4),
         };

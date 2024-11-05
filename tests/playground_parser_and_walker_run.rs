@@ -132,7 +132,6 @@ mod tests {
         use super::*;
 
         #[test]
-        #[ignore]
         fn class_call_from_lambda_test() {
             run_ast_parser_test(
                 "./tests/playground/simpleCppClasses/classCallFromLambda",
@@ -141,7 +140,6 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn class_in_class_test() {
             run_ast_parser_test(
                 "./tests/playground/simpleCppClasses/classInClass",
@@ -150,7 +148,6 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn class_raw_pointer_call_test() {
             run_ast_parser_test(
                 "./tests/playground/simpleCppClasses/classRawPointerCall",
@@ -168,7 +165,22 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
+        fn final_method_test() {
+            run_ast_parser_test(
+                "./tests/playground/simpleCppClasses/finalMethod",
+                vec!["file"],
+            );
+        }
+
+        #[test]
+        fn inheritance_chain_test() {
+            run_ast_parser_test(
+                "./tests/playground/simpleCppClasses/inheritanceChain",
+                vec!["file"],
+            );
+        }
+
+        #[test]
         fn inherited_virtual_method_test() {
             run_ast_parser_test(
                 "./tests/playground/simpleCppClasses/inheritedVirtualMethod",
@@ -177,13 +189,19 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn method_test() {
             run_ast_parser_test("./tests/playground/simpleCppClasses/method", vec!["file"]);
         }
 
         #[test]
-        #[ignore]
+        fn parent_class_in_namespace_test() {
+            run_ast_parser_test(
+                "./tests/playground/simpleCppClasses/parentClassInNamespace",
+                vec!["file"],
+            );
+        }
+
+        #[test]
         fn static_method_test() {
             run_ast_parser_test(
                 "./tests/playground/simpleCppClasses/staticMethod",
@@ -192,7 +210,6 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn struct_method_test() {
             run_ast_parser_test(
                 "./tests/playground/simpleCppClasses/structMethod",
@@ -201,7 +218,14 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
+        fn two_parent_classes_test() {
+            run_ast_parser_test(
+                "./tests/playground/simpleCppClasses/twoParentClasses",
+                vec!["file"],
+            );
+        }
+
+        #[test]
         fn virtual_method_test() {
             run_ast_parser_test(
                 "./tests/playground/simpleCppClasses/virtualMethod",

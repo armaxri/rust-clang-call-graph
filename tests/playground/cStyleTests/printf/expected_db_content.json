@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "./tests/playground/cStyleTests/printf/file.cpp",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [
@@ -57,7 +57,7 @@
     {
       "id": 1,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -71,7 +71,7 @@
     {
       "id": 2,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/_types.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -85,7 +85,7 @@
     {
       "id": 3,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -99,8 +99,109 @@
     {
       "id": 4,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h",
-      "last_analyzed": 1730595658,
-      "classes": [],
+      "last_analyzed": 1730679583,
+      "classes": [
+        {
+          "id": 1,
+          "name": "__darwin_pthread_handler_rec",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 2,
+          "name": "_opaque_pthread_attr_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 3,
+          "name": "_opaque_pthread_cond_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 4,
+          "name": "_opaque_pthread_condattr_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 5,
+          "name": "_opaque_pthread_mutex_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 6,
+          "name": "_opaque_pthread_mutexattr_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 7,
+          "name": "_opaque_pthread_once_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 8,
+          "name": "_opaque_pthread_rwlock_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 9,
+          "name": "_opaque_pthread_rwlockattr_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 10,
+          "name": "_opaque_pthread_t",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        }
+      ],
       "func_decls": [],
       "func_impls": [],
       "virtual_func_impls": [],
@@ -113,7 +214,7 @@
     {
       "id": 5,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -127,7 +228,7 @@
     {
       "id": 6,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int8_t.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -141,7 +242,7 @@
     {
       "id": 7,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int16_t.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -155,7 +256,7 @@
     {
       "id": 8,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int32_t.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -169,7 +270,7 @@
     {
       "id": 9,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int64_t.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -183,7 +284,7 @@
     {
       "id": 10,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int8_t.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -197,7 +298,7 @@
     {
       "id": 11,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int16_t.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -211,7 +312,7 @@
     {
       "id": 12,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int32_t.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -225,7 +326,7 @@
     {
       "id": 13,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int64_t.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -239,7 +340,7 @@
     {
       "id": 14,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/types.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -253,7 +354,7 @@
     {
       "id": 15,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_intptr_t.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -267,7 +368,7 @@
     {
       "id": 16,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -281,7 +382,7 @@
     {
       "id": 17,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_va_list.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -295,7 +396,7 @@
     {
       "id": 18,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -309,7 +410,7 @@
     {
       "id": 19,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [
         {
@@ -1903,8 +2004,39 @@
     {
       "id": 20,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h",
-      "last_analyzed": 1730595658,
-      "classes": [],
+      "last_analyzed": 1730679583,
+      "classes": [
+        {
+          "id": 11,
+          "name": "__sbuf",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 12,
+          "name": "__sFILEX",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        },
+        {
+          "id": 13,
+          "name": "__sFILE",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        }
+      ],
       "func_decls": [],
       "func_impls": [],
       "virtual_func_impls": [],
@@ -1917,7 +2049,7 @@
     {
       "id": 21,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [
         {
@@ -1989,7 +2121,7 @@
     {
       "id": 22,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_off_t.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -2003,7 +2135,7 @@
     {
       "id": 23,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h",
-      "last_analyzed": 1730595658,
+      "last_analyzed": 1730679583,
       "classes": [],
       "func_decls": [],
       "func_impls": [],

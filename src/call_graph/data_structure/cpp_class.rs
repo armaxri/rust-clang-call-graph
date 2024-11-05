@@ -9,7 +9,8 @@ use crate::location::position::Position;
 
 use super::super::database::database_sqlite_internal::DatabaseSqliteInternal;
 use super::func_structure::FuncStructure;
-use super::helper::virtual_func_creation_args::VirtualFuncCreationArgs;
+
+use super::helper::func_creation_args::FuncCreationArgs;
 use super::FuncBasics;
 use super::MainDeclPosition;
 use super::MatchingFuncs;
@@ -269,8 +270,12 @@ impl CppClass {
 
     pub fn add_virtual_func_decl(
         &mut self,
-        creation_args: VirtualFuncCreationArgs,
+        creation_args: FuncCreationArgs,
     ) -> Rc<RefCell<FuncStructure>> {
+        if !creation_args.is_virtual() {
+            return self.add_func_decl(creation_args);
+        }
+
         let new_virtual_func_decl = Rc::new(RefCell::new(FuncStructure::create_virtual_func_decl(
             &self.get_db_connection().unwrap(),
             &creation_args,
@@ -282,8 +287,12 @@ impl CppClass {
 
     pub fn get_or_add_virtual_func_decl(
         &mut self,
-        creation_args: VirtualFuncCreationArgs,
+        creation_args: FuncCreationArgs,
     ) -> Rc<RefCell<FuncStructure>> {
+        if !creation_args.is_virtual() {
+            return self.get_or_add_func_decl(creation_args);
+        }
+
         if self
             .get_virtual_func_decls()
             .iter()
