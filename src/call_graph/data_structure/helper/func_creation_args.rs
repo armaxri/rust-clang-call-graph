@@ -29,4 +29,8 @@ impl FuncCreationArgs {
     pub fn is_virtual(&self) -> bool {
         self.base_qualified_name.is_some()
     }
+
+    pub fn set_new_qualified_name(&mut self, new_qualified_name: String) {
+        self.qualified_name = new_qualified_name;
+    }
 }

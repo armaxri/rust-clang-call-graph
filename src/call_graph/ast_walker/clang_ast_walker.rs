@@ -24,6 +24,7 @@ struct ClangAstWalkerInternal {
     pub known_func_decls_and_impls: HashMap<usize, Rc<RefCell<FuncStructure>>>,
     pub known_classes: HashMap<String, Rc<RefCell<CppClass>>>,
     pub current_class_stack: Vec<Rc<RefCell<CppClass>>>,
+    pub open_func_call_connections: HashMap<usize, Vec<(Range, Rc<RefCell<FuncStructure>>)>>,
 }
 
 pub fn walk_ast_2_func_call_db(
@@ -42,6 +43,7 @@ pub fn walk_ast_2_func_call_db(
         known_func_decls_and_impls: HashMap::new(),
         known_classes: HashMap::new(),
         current_class_stack: Vec::new(),
+        open_func_call_connections: HashMap::new(),
     };
 
     for ast_element in parsed_ast {
@@ -73,10 +75,10 @@ fn handle_ast_element(
 ) {
     match ast_element.element_type.as_str() {
         "FunctionDecl" => {
-            handle_function_decl(ast_element, walker, name_prefix);
+            handle_function_decl(ast_element, walker, name_prefix, None);
         }
         "CXXMethodDecl" => {
-            handle_function_decl(ast_element, walker, name_prefix);
+            handle_function_decl(ast_element, walker, name_prefix, None);
         }
         "NamespaceDecl" => {
             handle_namespace_decl(ast_element, walker, name_prefix);
@@ -84,11 +86,130 @@ fn handle_ast_element(
         "CXXRecordDecl" => {
             handle_cxx_record_decl(ast_element, walker, name_prefix);
         }
+        "ClassTemplateDecl" => {
+            handle_class_template_decl(ast_element, walker, name_prefix);
+        }
+        "FunctionTemplateDecl" => {
+            handle_function_template_decl(ast_element, walker, name_prefix);
+        }
         _ => {
             for inner_element in &ast_element.inner {
                 handle_ast_element(inner_element, walker, name_prefix);
             }
         }
+    }
+}
+
+fn handle_function_template_decl(
+    ast_element: &ClangAstElement,
+    walker: &mut ClangAstWalkerInternal,
+    name_prefix: &str,
+) {
+    let template_func_name = &ast_element.attributes;
+
+    'func_decls_loop: for inner_element in &ast_element.inner {
+        if inner_element.element_type.as_str() == "FunctionDecl" {
+            for inner_inner_element in &inner_element.inner {
+                if inner_inner_element.element_type.as_str() == "TemplateArgument" {
+                    handle_function_decl(
+                        inner_element,
+                        walker,
+                        name_prefix,
+                        Some(template_func_name),
+                    );
+
+                    continue 'func_decls_loop;
+                }
+            }
+        }
+    }
+}
+
+fn handle_class_template_decl(
+    ast_element: &ClangAstElement,
+    walker: &mut ClangAstWalkerInternal,
+    name_prefix: &str,
+) {
+    let template_class_name = &ast_element.attributes;
+
+    let new_class = if walker.current_class_stack.len() > 0 {
+        walker
+            .current_class_stack
+            .last()
+            .unwrap()
+            .borrow_mut()
+            .get_or_add_class(template_class_name)
+    } else {
+        walker
+            .current_file
+            .borrow_mut()
+            .get_or_add_class(template_class_name)
+    };
+
+    walker.current_class_stack.push(new_class.clone());
+    walker
+        .known_classes
+        .insert(template_class_name.clone(), new_class.clone());
+
+    let new_name_prefix = if name_prefix == "" {
+        format!("{}::", template_class_name)
+    } else {
+        format!("{}{}::", name_prefix, template_class_name)
+    };
+
+    for inner_element in &ast_element.inner {
+        match inner_element.element_type.as_str() {
+            "CXXRecordDecl" => {
+                if inner_element
+                    .attributes
+                    .ends_with(format!("class {} definition", template_class_name).as_str())
+                {
+                    continue;
+                }
+                handle_cxx_record_decl(inner_element, walker, &new_name_prefix);
+            }
+            "ClassTemplateSpecializationDecl" => {
+                handle_class_template_specialization_decl(inner_element, walker, &new_name_prefix);
+            }
+            _ => {
+                handle_ast_element(inner_element, walker, &new_name_prefix);
+            }
+        }
+    }
+
+    walker.current_class_stack.pop();
+}
+
+fn collect_template_specialization(ast_element: &ClangAstElement) -> Vec<&str> {
+    let mut templates: Vec<&str> = Vec::new();
+
+    for inner_element in &ast_element.inner {
+        if inner_element.element_type.as_str() == "TemplateArgument" {
+            templates.push(
+                &inner_element.attributes["type '".len()..inner_element.attributes.len() - 1],
+            );
+        }
+    }
+
+    templates
+}
+
+fn handle_class_template_specialization_decl(
+    ast_element: &ClangAstElement,
+    walker: &mut ClangAstWalkerInternal,
+    name_prefix: &str,
+) {
+    let templates: Vec<&str> = collect_template_specialization(ast_element);
+
+    let template_string = templates.join(", ");
+    let new_name_prefix = format!(
+        "{}<{}>::",
+        &name_prefix[..name_prefix.len() - 2].to_string(),
+        template_string
+    );
+
+    for inner_element in &ast_element.inner {
+        handle_ast_element(inner_element, walker, &new_name_prefix);
     }
 }
 
@@ -189,6 +310,7 @@ fn handle_function_decl(
     ast_element: &ClangAstElement,
     walker: &mut ClangAstWalkerInternal,
     name_prefix: &str,
+    template_func_name: Option<&str>,
 ) {
     if ast_element
         .attributes
@@ -199,7 +321,19 @@ fn handle_function_decl(
     }
 
     let compound_stmt = get_compound_stmt(ast_element);
-    let func_creation_args = ast_element.create_func_creation_args(Some(walker), name_prefix);
+    let mut func_creation_args = ast_element.create_func_creation_args(Some(walker), name_prefix);
+
+    if template_func_name.is_some() {
+        let used_template_func_name = template_func_name.unwrap().to_string();
+        let templates: Vec<&str> = collect_template_specialization(ast_element);
+        func_creation_args.set_new_qualified_name(format!(
+            "{}{}<{}>{}",
+            name_prefix,
+            used_template_func_name,
+            templates.join(", "),
+            func_creation_args.qualified_name[used_template_func_name.len()..].to_string()
+        ));
+    }
 
     match compound_stmt {
         Some(_compound_stmt) => {
@@ -219,6 +353,26 @@ fn handle_function_decl(
             walker
                 .known_func_decls_and_impls
                 .insert(ast_element.element_id, func_impl.clone());
+
+            if walker
+                .open_func_call_connections
+                .contains_key(&ast_element.element_id)
+            {
+                for missing_connection in walker
+                    .open_func_call_connections
+                    .get(&ast_element.element_id)
+                    .unwrap()
+                {
+                    missing_connection.1.borrow_mut().get_or_add_func_call(
+                        &func_impl
+                            .borrow()
+                            .convert_func2func_creation_args4call(&missing_connection.0),
+                    );
+                }
+                walker
+                    .open_func_call_connections
+                    .remove(&ast_element.element_id);
+            }
 
             for inner_element in &ast_element.inner {
                 walk_func_impl_inner(inner_element, &func_impl, walker, &ast_element.range);
@@ -294,10 +448,21 @@ fn walk_func_impl_inner(
                                         .convert_func2func_creation_args4call(used_current_range),
                                 );
                             } else {
-                                println!(
-                                    "Could not find function decl with id 0x{:x}",
-                                    func_decl_id
-                                );
+                                match walker.open_func_call_connections.contains_key(&hex_value) {
+                                    true => {
+                                        walker
+                                            .open_func_call_connections
+                                            .get_mut(&hex_value)
+                                            .unwrap()
+                                            .push((used_current_range.clone(), func_impl.clone()));
+                                    }
+                                    false => {
+                                        walker.open_func_call_connections.insert(
+                                            hex_value,
+                                            vec![(used_current_range.clone(), func_impl.clone())],
+                                        );
+                                    }
+                                }
                             }
                         }
                     }
@@ -323,7 +488,21 @@ fn walk_func_impl_inner(
                                 .convert_func2func_creation_args4call(used_current_range),
                         );
                     } else {
-                        println!("Could not find function decl with id 0x{:x}", func_decl_id);
+                        match walker.open_func_call_connections.contains_key(&hex_value) {
+                            true => {
+                                walker
+                                    .open_func_call_connections
+                                    .get_mut(&hex_value)
+                                    .unwrap()
+                                    .push((used_current_range.clone(), func_impl.clone()));
+                            }
+                            false => {
+                                walker.open_func_call_connections.insert(
+                                    hex_value,
+                                    vec![(used_current_range.clone(), func_impl.clone())],
+                                );
+                            }
+                        }
                     }
                 }
             }

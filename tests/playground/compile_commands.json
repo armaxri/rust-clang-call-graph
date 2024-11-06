@@ -138,6 +138,12 @@
     "output": "./tests/playground/simpleTemplates/simpleTemplateClass/file.o"
   },
   {
+    "directory": "./tests/playground/simpleTemplates/doubleTemplateClass/",
+    "command": "clang++ -I./tests/playground/simpleTemplates/doubleTemplateClass/ -c ./tests/playground/simpleTemplates/doubleTemplateClass/file.cpp -o ./tests/playground/simpleTemplates/doubleTemplateClass/file.o -std=c++20",
+    "file": "./tests/playground/simpleTemplates/doubleTemplateClass/file.cpp",
+    "output": "./tests/playground/simpleTemplates/doubleTemplateClass/file.o"
+  },
+  {
     "directory": "./tests/playground/simpleTemplates/simpleTemplateWithTwoClasses/",
     "command": "clang++ -I./tests/playground/simpleTemplates/simpleTemplateWithTwoClasses/ -c ./tests/playground/simpleTemplates/simpleTemplateWithTwoClasses/file.cpp -o ./tests/playground/simpleTemplates/simpleTemplateWithTwoClasses/file.o -std=c++20",
     "file": "./tests/playground/simpleTemplates/simpleTemplateWithTwoClasses/file.cpp",
