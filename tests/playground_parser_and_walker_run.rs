@@ -239,7 +239,14 @@ mod tests {
         use super::*;
 
         #[test]
-        #[ignore]
+        fn double_template_class_test() {
+            run_ast_parser_test(
+                "./tests/playground/simpleTemplates/doubleTemplateClass",
+                vec!["file"],
+            );
+        }
+
+        #[test]
         fn simple_template_class_test() {
             run_ast_parser_test(
                 "./tests/playground/simpleTemplates/simpleTemplateClass",
@@ -248,7 +255,6 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn simple_template_class_virtual_func_test() {
             run_ast_parser_test(
                 "./tests/playground/simpleTemplates/simpleTemplateClassVirtualFunc",
@@ -266,7 +272,6 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn simple_template_with_two_classes_test() {
             run_ast_parser_test(
                 "./tests/playground/simpleTemplates/simpleTemplateWithTwoClasses",
