@@ -7,6 +7,30 @@
     {
       "type": "lldb",
       "request": "launch",
+      "name": "Debug new-database on test_compile_commands.json",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=rust-clang-call-graph",
+          "--package=rust-clang-call-graph"
+        ],
+        "filter": {
+          "name": "rust-clang-call-graph",
+          "kind": "bin"
+        }
+      },
+      "args": [
+        "new-database",
+        "-d",
+        "test_database.db",
+        "-c",
+        "test_compile_commands.json"
+      ],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
       "name": "Debug executable 'rust-clang-call-graph'",
       "cargo": {
         "args": [

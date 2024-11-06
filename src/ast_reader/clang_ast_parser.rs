@@ -269,6 +269,16 @@ impl ClangAstParserImpl {
                     }
                 }
             }
+            if parts.len() == 4 {
+                self.files.push(Rc::new([parts[0], parts[1]].join(":")));
+
+                if let Ok(line) = parts[2].parse::<usize>() {
+                    if let Ok(col) = parts[3].parse::<usize>() {
+                        self.last_seen_line = line;
+                        return Position::new(line, col);
+                    }
+                }
+            }
         }
 
         Position::new(0, 0)
@@ -383,6 +393,34 @@ mod tests {
             parser.files.last().unwrap().as_ref(),
             "/home/user/foo/bar.c"
         );
+        assert_eq!(parser.last_seen_line, 7);
+    }
+
+    #[test]
+    fn test_get_first_range_element_file_relative_path() {
+        let process = DummyProcess::new();
+        let mut parser = ClangAstParserImpl::new(Box::new(process));
+        parser.last_seen_line = 5;
+
+        let element = parser.get_first_range_element("<../foo/bar.c:7:8,");
+        assert_eq!(element.line, 7);
+        assert_eq!(element.column, 8);
+        assert_eq!(parser.files.len(), 2);
+        assert_eq!(parser.files.last().unwrap().as_ref(), "../foo/bar.c");
+        assert_eq!(parser.last_seen_line, 7);
+    }
+
+    #[test]
+    fn test_get_first_range_element_file_windows_path() {
+        let process = DummyProcess::new();
+        let mut parser = ClangAstParserImpl::new(Box::new(process));
+        parser.last_seen_line = 5;
+
+        let element = parser.get_first_range_element("<C:\\foo\\bar.c:7:8,");
+        assert_eq!(element.line, 7);
+        assert_eq!(element.column, 8);
+        assert_eq!(parser.files.len(), 2);
+        assert_eq!(parser.files.last().unwrap().as_ref(), "C:\\foo\\bar.c");
         assert_eq!(parser.last_seen_line, 7);
     }
 
