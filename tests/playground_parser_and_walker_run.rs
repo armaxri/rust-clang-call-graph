@@ -72,6 +72,14 @@ mod tests {
         use super::*;
 
         #[test]
+        fn anonymous_namespace_test() {
+            run_ast_parser_test(
+                "./tests/playground/c_style_tests/anonymous_namespace",
+                vec!["file"],
+            );
+        }
+
+        #[test]
         fn decl_in_header_and_2_cpps_test() {
             run_ast_parser_test(
                 "./tests/playground/c_style_tests/decl_in_header_and_two_cpps",
