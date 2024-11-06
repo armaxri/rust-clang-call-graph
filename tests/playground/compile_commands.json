@@ -84,6 +84,12 @@
     "output": "./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp/main.o"
   },
   {
+    "directory": "./tests/playground/c_style_tests/anonymous_namespace/",
+    "command": "clang++ -I./tests/playground/c_style_tests/anonymous_namespace/ -c ./tests/playground/c_style_tests/anonymous_namespace/file.cpp -o ./tests/playground/c_style_tests/anonymous_namespace/file.o -std=c++20",
+    "file": "./tests/playground/c_style_tests/anonymous_namespace/file.cpp",
+    "output": "./tests/playground/c_style_tests/anonymous_namespace/file.o"
+  },
+  {
     "directory": "./tests/playground/c_style_tests/func_call_in_func_call/",
     "command": "clang++ -I./tests/playground/c_style_tests/func_call_in_func_call/ -c ./tests/playground/c_style_tests/func_call_in_func_call/file.cpp -o ./tests/playground/c_style_tests/func_call_in_func_call/file.o -std=c++20",
     "file": "./tests/playground/c_style_tests/func_call_in_func_call/file.cpp",
