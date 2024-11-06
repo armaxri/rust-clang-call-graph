@@ -1,0 +1,140 @@
+{
+  "cpp_files": [
+    {
+      "id": 1,
+      "name": "./tests/playground/simple_cpp_classes/parent_class_in_namespace/file.cpp",
+      "last_analyzed": 1730836829,
+      "classes": [
+        {
+          "id": 1,
+          "name": "TestNamespace::TestBaseClass",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": [
+            {
+              "id": 1,
+              "name": "add",
+              "qualified_name": "TestNamespace::TestBaseClass::add 'int (int, int)'",
+              "base_qualified_name": "TestNamespace::TestBaseClass::add 'int (int, int)'",
+              "qual_type": "int (int, int)",
+              "range": {
+                "start": {
+                  "line": 6,
+                  "column": 5
+                },
+                "end": {
+                  "line": 9,
+                  "column": 6
+                }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "TestClass",
+          "parent_classes": [
+            "TestNamespace::TestBaseClass"
+          ],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": [
+            {
+              "id": 2,
+              "name": "add",
+              "qualified_name": "TestClass::add 'int (int, int)'",
+              "base_qualified_name": "TestNamespace::TestBaseClass::add 'int (int, int)'",
+              "qual_type": "int (int, int)",
+              "range": {
+                "start": {
+                  "line": 18,
+                  "column": 5
+                },
+                "end": {
+                  "line": 21,
+                  "column": 6
+                }
+              },
+              "func_calls": [],
+              "virtual_func_calls": [
+                {
+                  "id": 1,
+                  "name": "add",
+                  "qualified_name": "TestNamespace::TestBaseClass::add 'int (int, int)'",
+                  "base_qualified_name": "TestNamespace::TestBaseClass::add 'int (int, int)'",
+                  "qual_type": "int (int, int)",
+                  "range": {
+                    "start": {
+                      "line": 20,
+                      "column": 16
+                    },
+                    "end": {
+                      "line": 20,
+                      "column": 46
+                    }
+                  },
+                  "func_calls": [],
+                  "virtual_func_calls": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "func_decls": [],
+      "func_impls": [
+        {
+          "id": 1,
+          "name": "main",
+          "qualified_name": "main 'int (int, char **)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, char **)",
+          "range": {
+            "start": {
+              "line": 24,
+              "column": 1
+            },
+            "end": {
+              "line": 28,
+              "column": 2
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": [
+            {
+              "id": 2,
+              "name": "add",
+              "qualified_name": "TestClass::add 'int (int, int)'",
+              "base_qualified_name": "TestNamespace::TestBaseClass::add 'int (int, int)'",
+              "qual_type": "int (int, int)",
+              "range": {
+                "start": {
+                  "line": 27,
+                  "column": 12
+                },
+                "end": {
+                  "line": 27,
+                  "column": 31
+                }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
+            }
+          ]
+        }
+      ],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [],
+      "file_is_header": false
+    }
+  ],
+  "hpp_files": []
+}

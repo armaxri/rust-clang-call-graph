@@ -60,7 +60,10 @@ mod tests {
         #[test]
         #[ignore]
         fn simple_gtest_test() {
-            run_ast_parser_test("./tests/playground/complexCases/simpleGtest", vec!["file"]);
+            run_ast_parser_test(
+                "./tests/playground/complex_cases/simple_gtest",
+                vec!["file"],
+            );
         }
     }
 
@@ -71,7 +74,7 @@ mod tests {
         #[test]
         fn decl_in_header_and_2_cpps_test() {
             run_ast_parser_test(
-                "./tests/playground/cStyleTests/declInHeaderAndTwoCpps",
+                "./tests/playground/c_style_tests/decl_in_header_and_two_cpps",
                 vec!["impl", "main"],
             );
         }
@@ -79,20 +82,20 @@ mod tests {
         #[test]
         fn func_call_in_func_call_test() {
             run_ast_parser_test(
-                "./tests/playground/cStyleTests/funcCallInFuncCall",
+                "./tests/playground/c_style_tests/func_call_in_func_call",
                 vec!["file"],
             );
         }
 
         #[test]
         fn funcs_test() {
-            run_ast_parser_test("./tests/playground/cStyleTests/funcs", vec!["file"]);
+            run_ast_parser_test("./tests/playground/c_style_tests/funcs", vec!["file"]);
         }
 
         #[test]
         fn funcs_with_headers_test() {
             run_ast_parser_test(
-                "./tests/playground/cStyleTests/funcsWithHeaders",
+                "./tests/playground/c_style_tests/funcs_with_headers",
                 vec!["file"],
             );
         }
@@ -100,7 +103,7 @@ mod tests {
         #[test]
         fn multiline_func_call_in_func_call_test() {
             run_ast_parser_test(
-                "./tests/playground/cStyleTests/multilineFuncCallInFuncCall",
+                "./tests/playground/c_style_tests/multiline_func_call_in_func_call",
                 vec!["file"],
             );
         }
@@ -108,20 +111,20 @@ mod tests {
         #[test]
         fn only_decl_and_impl_without_calls_test() {
             run_ast_parser_test(
-                "./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls",
+                "./tests/playground/c_style_tests/only_decl_and_impl_without_calls",
                 vec!["file"],
             );
         }
 
         #[test]
         fn printf_test() {
-            run_ast_parser_test("./tests/playground/cStyleTests/printf", vec!["file"]);
+            run_ast_parser_test("./tests/playground/c_style_tests/printf", vec!["file"]);
         }
 
         #[test]
         fn simple_decl_in_header_impl_in_header_and_one_cpp_test() {
             run_ast_parser_test(
-                "./tests/playground/cStyleTests/simpleDeclInHeaderImplInHeaderAndOneCpp",
+                "./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp",
                 vec!["main"],
             );
         }
@@ -134,7 +137,7 @@ mod tests {
         #[test]
         fn class_call_from_lambda_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleCppClasses/classCallFromLambda",
+                "./tests/playground/simple_cpp_classes/class_call_from_lambda",
                 vec!["file"],
             );
         }
@@ -142,7 +145,7 @@ mod tests {
         #[test]
         fn class_in_class_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleCppClasses/classInClass",
+                "./tests/playground/simple_cpp_classes/class_in_class",
                 vec!["file"],
             );
         }
@@ -150,7 +153,7 @@ mod tests {
         #[test]
         fn class_raw_pointer_call_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleCppClasses/classRawPointerCall",
+                "./tests/playground/simple_cpp_classes/class_raw_pointer_call",
                 vec!["file"],
             );
         }
@@ -159,7 +162,7 @@ mod tests {
         #[ignore]
         fn class_unique_pointer_call_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleCppClasses/classUniquePointerCall",
+                "./tests/playground/simple_cpp_classes/class_unique_pointer_call",
                 vec!["file"],
             );
         }
@@ -167,7 +170,7 @@ mod tests {
         #[test]
         fn final_method_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleCppClasses/finalMethod",
+                "./tests/playground/simple_cpp_classes/final_method",
                 vec!["file"],
             );
         }
@@ -175,7 +178,7 @@ mod tests {
         #[test]
         fn inheritance_chain_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleCppClasses/inheritanceChain",
+                "./tests/playground/simple_cpp_classes/inheritance_chain",
                 vec!["file"],
             );
         }
@@ -183,20 +186,20 @@ mod tests {
         #[test]
         fn inherited_virtual_method_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleCppClasses/inheritedVirtualMethod",
+                "./tests/playground/simple_cpp_classes/inherited_virtual_method",
                 vec!["file"],
             );
         }
 
         #[test]
         fn method_test() {
-            run_ast_parser_test("./tests/playground/simpleCppClasses/method", vec!["file"]);
+            run_ast_parser_test("./tests/playground/simple_cpp_classes/method", vec!["file"]);
         }
 
         #[test]
         fn parent_class_in_namespace_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleCppClasses/parentClassInNamespace",
+                "./tests/playground/simple_cpp_classes/parent_class_in_namespace",
                 vec!["file"],
             );
         }
@@ -204,7 +207,7 @@ mod tests {
         #[test]
         fn static_method_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleCppClasses/staticMethod",
+                "./tests/playground/simple_cpp_classes/static_method",
                 vec!["file"],
             );
         }
@@ -212,7 +215,7 @@ mod tests {
         #[test]
         fn struct_method_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleCppClasses/structMethod",
+                "./tests/playground/simple_cpp_classes/struct_method",
                 vec!["file"],
             );
         }
@@ -220,7 +223,7 @@ mod tests {
         #[test]
         fn two_parent_classes_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleCppClasses/twoParentClasses",
+                "./tests/playground/simple_cpp_classes/two_parent_classes",
                 vec!["file"],
             );
         }
@@ -228,7 +231,7 @@ mod tests {
         #[test]
         fn virtual_method_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleCppClasses/virtualMethod",
+                "./tests/playground/simple_cpp_classes/virtual_method",
                 vec!["file"],
             );
         }
@@ -241,7 +244,7 @@ mod tests {
         #[test]
         fn double_template_class_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleTemplates/doubleTemplateClass",
+                "./tests/playground/simple_templates/double_template_class",
                 vec!["file"],
             );
         }
@@ -249,7 +252,7 @@ mod tests {
         #[test]
         fn simple_template_class_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleTemplates/simpleTemplateClass",
+                "./tests/playground/simple_templates/simple_template_class",
                 vec!["file"],
             );
         }
@@ -257,7 +260,7 @@ mod tests {
         #[test]
         fn simple_template_class_virtual_func_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleTemplates/simpleTemplateClassVirtualFunc",
+                "./tests/playground/simple_templates/simple_template_class_virtual_func",
                 vec!["file"],
             );
         }
@@ -266,7 +269,7 @@ mod tests {
         #[ignore]
         fn simple_template_function_with_class_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleTemplates/simpleTemplateFunctionWithClass",
+                "./tests/playground/simple_templates/simple_template_function_with_class",
                 vec!["file"],
             );
         }
@@ -274,7 +277,7 @@ mod tests {
         #[test]
         fn simple_template_with_two_classes_test() {
             run_ast_parser_test(
-                "./tests/playground/simpleTemplates/simpleTemplateWithTwoClasses",
+                "./tests/playground/simple_templates/simple_template_with_two_classes",
                 vec!["file"],
             );
         }

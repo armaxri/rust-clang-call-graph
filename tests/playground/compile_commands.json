@@ -1,170 +1,170 @@
 [
   {
-    "directory": "./tests/playground/simpleCppClasses/classUniquePointerCall/",
-    "command": "clang++ -I./tests/playground/simpleCppClasses/classUniquePointerCall/ -c ./tests/playground/simpleCppClasses/classUniquePointerCall/file.cpp -o ./tests/playground/simpleCppClasses/classUniquePointerCall/file.o -std=c++20",
-    "file": "./tests/playground/simpleCppClasses/classUniquePointerCall/file.cpp",
-    "output": "./tests/playground/simpleCppClasses/classUniquePointerCall/file.o"
+    "directory": "./tests/playground/simple_cpp_classes/class_unique_pointer_call/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/class_unique_pointer_call/ -c ./tests/playground/simple_cpp_classes/class_unique_pointer_call/file.cpp -o ./tests/playground/simple_cpp_classes/class_unique_pointer_call/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/class_unique_pointer_call/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/class_unique_pointer_call/file.o"
   },
   {
-    "directory": "./tests/playground/simpleCppClasses/classCallFromLambda/",
-    "command": "clang++ -I./tests/playground/simpleCppClasses/classCallFromLambda/ -c ./tests/playground/simpleCppClasses/classCallFromLambda/file.cpp -o ./tests/playground/simpleCppClasses/classCallFromLambda/file.o -std=c++20",
-    "file": "./tests/playground/simpleCppClasses/classCallFromLambda/file.cpp",
-    "output": "./tests/playground/simpleCppClasses/classCallFromLambda/file.o"
+    "directory": "./tests/playground/simple_cpp_classes/class_call_from_lambda/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/class_call_from_lambda/ -c ./tests/playground/simple_cpp_classes/class_call_from_lambda/file.cpp -o ./tests/playground/simple_cpp_classes/class_call_from_lambda/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/class_call_from_lambda/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/class_call_from_lambda/file.o"
   },
   {
-    "directory": "./tests/playground/simpleCppClasses/virtualMethod/",
-    "command": "clang++ -I./tests/playground/simpleCppClasses/virtualMethod/ -c ./tests/playground/simpleCppClasses/virtualMethod/file.cpp -o ./tests/playground/simpleCppClasses/virtualMethod/file.o -std=c++20",
-    "file": "./tests/playground/simpleCppClasses/virtualMethod/file.cpp",
-    "output": "./tests/playground/simpleCppClasses/virtualMethod/file.o"
+    "directory": "./tests/playground/simple_cpp_classes/virtual_method/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/virtual_method/ -c ./tests/playground/simple_cpp_classes/virtual_method/file.cpp -o ./tests/playground/simple_cpp_classes/virtual_method/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/virtual_method/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/virtual_method/file.o"
   },
   {
-    "directory": "./tests/playground/simpleCppClasses/classRawPointerCall/",
-    "command": "clang++ -I./tests/playground/simpleCppClasses/classRawPointerCall/ -c ./tests/playground/simpleCppClasses/classRawPointerCall/file.cpp -o ./tests/playground/simpleCppClasses/classRawPointerCall/file.o -std=c++20",
-    "file": "./tests/playground/simpleCppClasses/classRawPointerCall/file.cpp",
-    "output": "./tests/playground/simpleCppClasses/classRawPointerCall/file.o"
+    "directory": "./tests/playground/simple_cpp_classes/class_raw_pointer_call/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/class_raw_pointer_call/ -c ./tests/playground/simple_cpp_classes/class_raw_pointer_call/file.cpp -o ./tests/playground/simple_cpp_classes/class_raw_pointer_call/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/class_raw_pointer_call/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/class_raw_pointer_call/file.o"
   },
   {
-    "directory": "./tests/playground/simpleCppClasses/classInClass/",
-    "command": "clang++ -I./tests/playground/simpleCppClasses/classInClass/ -c ./tests/playground/simpleCppClasses/classInClass/file.cpp -o ./tests/playground/simpleCppClasses/classInClass/file.o -std=c++20",
-    "file": "./tests/playground/simpleCppClasses/classInClass/file.cpp",
-    "output": "./tests/playground/simpleCppClasses/classInClass/file.o"
+    "directory": "./tests/playground/simple_cpp_classes/class_in_class/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/class_in_class/ -c ./tests/playground/simple_cpp_classes/class_in_class/file.cpp -o ./tests/playground/simple_cpp_classes/class_in_class/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/class_in_class/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/class_in_class/file.o"
   },
   {
-    "directory": "./tests/playground/simpleCppClasses/structMethod/",
-    "command": "clang++ -I./tests/playground/simpleCppClasses/structMethod/ -c ./tests/playground/simpleCppClasses/structMethod/file.cpp -o ./tests/playground/simpleCppClasses/structMethod/file.o -std=c++20",
-    "file": "./tests/playground/simpleCppClasses/structMethod/file.cpp",
-    "output": "./tests/playground/simpleCppClasses/structMethod/file.o"
+    "directory": "./tests/playground/simple_cpp_classes/struct_method/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/struct_method/ -c ./tests/playground/simple_cpp_classes/struct_method/file.cpp -o ./tests/playground/simple_cpp_classes/struct_method/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/struct_method/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/struct_method/file.o"
   },
   {
-    "directory": "./tests/playground/simpleCppClasses/inheritedVirtualMethod/",
-    "command": "clang++ -I./tests/playground/simpleCppClasses/inheritedVirtualMethod/ -c ./tests/playground/simpleCppClasses/inheritedVirtualMethod/file.cpp -o ./tests/playground/simpleCppClasses/inheritedVirtualMethod/file.o -std=c++20",
-    "file": "./tests/playground/simpleCppClasses/inheritedVirtualMethod/file.cpp",
-    "output": "./tests/playground/simpleCppClasses/inheritedVirtualMethod/file.o"
+    "directory": "./tests/playground/simple_cpp_classes/inherited_virtual_method/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/inherited_virtual_method/ -c ./tests/playground/simple_cpp_classes/inherited_virtual_method/file.cpp -o ./tests/playground/simple_cpp_classes/inherited_virtual_method/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/inherited_virtual_method/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/inherited_virtual_method/file.o"
   },
   {
-    "directory": "./tests/playground/simpleCppClasses/finalMethod/",
-    "command": "clang++ -I./tests/playground/simpleCppClasses/finalMethod/ -c ./tests/playground/simpleCppClasses/finalMethod/file.cpp -o ./tests/playground/simpleCppClasses/finalMethod/file.o -std=c++20",
-    "file": "./tests/playground/simpleCppClasses/finalMethod/file.cpp",
-    "output": "./tests/playground/simpleCppClasses/finalMethod/file.o"
+    "directory": "./tests/playground/simple_cpp_classes/final_method/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/final_method/ -c ./tests/playground/simple_cpp_classes/final_method/file.cpp -o ./tests/playground/simple_cpp_classes/final_method/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/final_method/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/final_method/file.o"
   },
   {
-    "directory": "./tests/playground/simpleCppClasses/inheritanceChain/",
-    "command": "clang++ -I./tests/playground/simpleCppClasses/inheritanceChain/ -c ./tests/playground/simpleCppClasses/inheritanceChain/file.cpp -o ./tests/playground/simpleCppClasses/inheritanceChain/file.o -std=c++20",
-    "file": "./tests/playground/simpleCppClasses/inheritanceChain/file.cpp",
-    "output": "./tests/playground/simpleCppClasses/inheritanceChain/file.o"
+    "directory": "./tests/playground/simple_cpp_classes/inheritance_chain/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/inheritance_chain/ -c ./tests/playground/simple_cpp_classes/inheritance_chain/file.cpp -o ./tests/playground/simple_cpp_classes/inheritance_chain/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/inheritance_chain/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/inheritance_chain/file.o"
   },
   {
-    "directory": "./tests/playground/simpleCppClasses/parentClassInNamespace/",
-    "command": "clang++ -I./tests/playground/simpleCppClasses/parentClassInNamespace/ -c ./tests/playground/simpleCppClasses/parentClassInNamespace/file.cpp -o ./tests/playground/simpleCppClasses/parentClassInNamespace/file.o -std=c++20",
-    "file": "./tests/playground/simpleCppClasses/parentClassInNamespace/file.cpp",
-    "output": "./tests/playground/simpleCppClasses/parentClassInNamespace/file.o"
+    "directory": "./tests/playground/simple_cpp_classes/parent_class_in_namespace/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/parent_class_in_namespace/ -c ./tests/playground/simple_cpp_classes/parent_class_in_namespace/file.cpp -o ./tests/playground/simple_cpp_classes/parent_class_in_namespace/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/parent_class_in_namespace/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/parent_class_in_namespace/file.o"
   },
   {
-    "directory": "./tests/playground/simpleCppClasses/twoParentClasses/",
-    "command": "clang++ -I./tests/playground/simpleCppClasses/twoParentClasses/ -c ./tests/playground/simpleCppClasses/twoParentClasses/file.cpp -o ./tests/playground/simpleCppClasses/twoParentClasses/file.o -std=c++20",
-    "file": "./tests/playground/simpleCppClasses/twoParentClasses/file.cpp",
-    "output": "./tests/playground/simpleCppClasses/twoParentClasses/file.o"
+    "directory": "./tests/playground/simple_cpp_classes/two_parent_classes/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/two_parent_classes/ -c ./tests/playground/simple_cpp_classes/two_parent_classes/file.cpp -o ./tests/playground/simple_cpp_classes/two_parent_classes/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/two_parent_classes/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/two_parent_classes/file.o"
   },
   {
-    "directory": "./tests/playground/simpleCppClasses/staticMethod/",
-    "command": "clang++ -I./tests/playground/simpleCppClasses/staticMethod/ -c ./tests/playground/simpleCppClasses/staticMethod/file.cpp -o ./tests/playground/simpleCppClasses/staticMethod/file.o -std=c++20",
-    "file": "./tests/playground/simpleCppClasses/staticMethod/file.cpp",
-    "output": "./tests/playground/simpleCppClasses/staticMethod/file.o"
+    "directory": "./tests/playground/simple_cpp_classes/static_method/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/static_method/ -c ./tests/playground/simple_cpp_classes/static_method/file.cpp -o ./tests/playground/simple_cpp_classes/static_method/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/static_method/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/static_method/file.o"
   },
   {
-    "directory": "./tests/playground/simpleCppClasses/method/",
-    "command": "clang++ -I./tests/playground/simpleCppClasses/method/ -c ./tests/playground/simpleCppClasses/method/file.cpp -o ./tests/playground/simpleCppClasses/method/file.o -std=c++20",
-    "file": "./tests/playground/simpleCppClasses/method/file.cpp",
-    "output": "./tests/playground/simpleCppClasses/method/file.o"
+    "directory": "./tests/playground/simple_cpp_classes/method/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/method/ -c ./tests/playground/simple_cpp_classes/method/file.cpp -o ./tests/playground/simple_cpp_classes/method/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/method/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/method/file.o"
   },
   {
-    "directory": "./tests/playground/cStyleTests/simpleDeclInHeaderImplInHeaderAndOneCpp/",
-    "command": "clang++ -I./tests/playground/cStyleTests/simpleDeclInHeaderImplInHeaderAndOneCpp/ -c ./tests/playground/cStyleTests/simpleDeclInHeaderImplInHeaderAndOneCpp/main.cpp -o ./tests/playground/cStyleTests/simpleDeclInHeaderImplInHeaderAndOneCpp/main.o -std=c++20",
-    "file": "./tests/playground/cStyleTests/simpleDeclInHeaderImplInHeaderAndOneCpp/main.cpp",
-    "output": "./tests/playground/cStyleTests/simpleDeclInHeaderImplInHeaderAndOneCpp/main.o"
+    "directory": "./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp/",
+    "command": "clang++ -I./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp/ -c ./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp/main.cpp -o ./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp/main.o -std=c++20",
+    "file": "./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp/main.cpp",
+    "output": "./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp/main.o"
   },
   {
-    "directory": "./tests/playground/cStyleTests/funcCallInFuncCall/",
-    "command": "clang++ -I./tests/playground/cStyleTests/funcCallInFuncCall/ -c ./tests/playground/cStyleTests/funcCallInFuncCall/file.cpp -o ./tests/playground/cStyleTests/funcCallInFuncCall/file.o -std=c++20",
-    "file": "./tests/playground/cStyleTests/funcCallInFuncCall/file.cpp",
-    "output": "./tests/playground/cStyleTests/funcCallInFuncCall/file.o"
+    "directory": "./tests/playground/c_style_tests/func_call_in_func_call/",
+    "command": "clang++ -I./tests/playground/c_style_tests/func_call_in_func_call/ -c ./tests/playground/c_style_tests/func_call_in_func_call/file.cpp -o ./tests/playground/c_style_tests/func_call_in_func_call/file.o -std=c++20",
+    "file": "./tests/playground/c_style_tests/func_call_in_func_call/file.cpp",
+    "output": "./tests/playground/c_style_tests/func_call_in_func_call/file.o"
   },
   {
-    "directory": "./tests/playground/cStyleTests/multilineFuncCallInFuncCall/",
-    "command": "clang++ -I./tests/playground/cStyleTests/multilineFuncCallInFuncCall/ -c ./tests/playground/cStyleTests/multilineFuncCallInFuncCall/file.cpp -o ./tests/playground/cStyleTests/multilineFuncCallInFuncCall/file.o -std=c++20",
-    "file": "./tests/playground/cStyleTests/multilineFuncCallInFuncCall/file.cpp",
-    "output": "./tests/playground/cStyleTests/multilineFuncCallInFuncCall/file.o"
+    "directory": "./tests/playground/c_style_tests/multiline_func_call_in_func_call/",
+    "command": "clang++ -I./tests/playground/c_style_tests/multiline_func_call_in_func_call/ -c ./tests/playground/c_style_tests/multiline_func_call_in_func_call/file.cpp -o ./tests/playground/c_style_tests/multiline_func_call_in_func_call/file.o -std=c++20",
+    "file": "./tests/playground/c_style_tests/multiline_func_call_in_func_call/file.cpp",
+    "output": "./tests/playground/c_style_tests/multiline_func_call_in_func_call/file.o"
   },
   {
-    "directory": "./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/",
-    "command": "clang++ -I./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/ -c ./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/file.cpp -o ./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/file.o -std=c++20",
-    "file": "./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/file.cpp",
-    "output": "./tests/playground/cStyleTests/onlyDeclAndImplWithoutCalls/file.o"
+    "directory": "./tests/playground/c_style_tests/only_decl_and_impl_without_calls/",
+    "command": "clang++ -I./tests/playground/c_style_tests/only_decl_and_impl_without_calls/ -c ./tests/playground/c_style_tests/only_decl_and_impl_without_calls/file.cpp -o ./tests/playground/c_style_tests/only_decl_and_impl_without_calls/file.o -std=c++20",
+    "file": "./tests/playground/c_style_tests/only_decl_and_impl_without_calls/file.cpp",
+    "output": "./tests/playground/c_style_tests/only_decl_and_impl_without_calls/file.o"
   },
   {
-    "directory": "./tests/playground/cStyleTests/printf/",
-    "command": "clang++ -I./tests/playground/cStyleTests/printf/ -c ./tests/playground/cStyleTests/printf/file.cpp -o ./tests/playground/cStyleTests/printf/file.o -std=c++20",
-    "file": "./tests/playground/cStyleTests/printf/file.cpp",
-    "output": "./tests/playground/cStyleTests/printf/file.o"
+    "directory": "./tests/playground/c_style_tests/printf/",
+    "command": "clang++ -I./tests/playground/c_style_tests/printf/ -c ./tests/playground/c_style_tests/printf/file.cpp -o ./tests/playground/c_style_tests/printf/file.o -std=c++20",
+    "file": "./tests/playground/c_style_tests/printf/file.cpp",
+    "output": "./tests/playground/c_style_tests/printf/file.o"
   },
   {
-    "directory": "./tests/playground/cStyleTests/declInHeaderAndTwoCpps/",
-    "command": "clang++ -I./tests/playground/cStyleTests/declInHeaderAndTwoCpps/ -c ./tests/playground/cStyleTests/declInHeaderAndTwoCpps/impl.cpp -o ./tests/playground/cStyleTests/declInHeaderAndTwoCpps/impl.o -std=c++20",
-    "file": "./tests/playground/cStyleTests/declInHeaderAndTwoCpps/impl.cpp",
-    "output": "./tests/playground/cStyleTests/declInHeaderAndTwoCpps/impl.o"
+    "directory": "./tests/playground/c_style_tests/decl_in_header_and_two_cpps/",
+    "command": "clang++ -I./tests/playground/c_style_tests/decl_in_header_and_two_cpps/ -c ./tests/playground/c_style_tests/decl_in_header_and_two_cpps/impl.cpp -o ./tests/playground/c_style_tests/decl_in_header_and_two_cpps/impl.o -std=c++20",
+    "file": "./tests/playground/c_style_tests/decl_in_header_and_two_cpps/impl.cpp",
+    "output": "./tests/playground/c_style_tests/decl_in_header_and_two_cpps/impl.o"
   },
   {
-    "directory": "./tests/playground/cStyleTests/declInHeaderAndTwoCpps/",
-    "command": "clang++ -I./tests/playground/cStyleTests/declInHeaderAndTwoCpps/ -c ./tests/playground/cStyleTests/declInHeaderAndTwoCpps/main.cpp -o ./tests/playground/cStyleTests/declInHeaderAndTwoCpps/main.o -std=c++20",
-    "file": "./tests/playground/cStyleTests/declInHeaderAndTwoCpps/main.cpp",
-    "output": "./tests/playground/cStyleTests/declInHeaderAndTwoCpps/main.o"
+    "directory": "./tests/playground/c_style_tests/decl_in_header_and_two_cpps/",
+    "command": "clang++ -I./tests/playground/c_style_tests/decl_in_header_and_two_cpps/ -c ./tests/playground/c_style_tests/decl_in_header_and_two_cpps/main.cpp -o ./tests/playground/c_style_tests/decl_in_header_and_two_cpps/main.o -std=c++20",
+    "file": "./tests/playground/c_style_tests/decl_in_header_and_two_cpps/main.cpp",
+    "output": "./tests/playground/c_style_tests/decl_in_header_and_two_cpps/main.o"
   },
   {
-    "directory": "./tests/playground/cStyleTests/funcsWithHeaders/",
-    "command": "clang++ -I./tests/playground/cStyleTests/funcsWithHeaders/ -c ./tests/playground/cStyleTests/funcsWithHeaders/file.cpp -o ./tests/playground/cStyleTests/funcsWithHeaders/file.o -std=c++20",
-    "file": "./tests/playground/cStyleTests/funcsWithHeaders/file.cpp",
-    "output": "./tests/playground/cStyleTests/funcsWithHeaders/file.o"
+    "directory": "./tests/playground/c_style_tests/funcs_with_headers/",
+    "command": "clang++ -I./tests/playground/c_style_tests/funcs_with_headers/ -c ./tests/playground/c_style_tests/funcs_with_headers/file.cpp -o ./tests/playground/c_style_tests/funcs_with_headers/file.o -std=c++20",
+    "file": "./tests/playground/c_style_tests/funcs_with_headers/file.cpp",
+    "output": "./tests/playground/c_style_tests/funcs_with_headers/file.o"
   },
   {
-    "directory": "./tests/playground/cStyleTests/funcs/",
-    "command": "clang++ -I./tests/playground/cStyleTests/funcs/ -c ./tests/playground/cStyleTests/funcs/file.cpp -o ./tests/playground/cStyleTests/funcs/file.o -std=c++20",
-    "file": "./tests/playground/cStyleTests/funcs/file.cpp",
-    "output": "./tests/playground/cStyleTests/funcs/file.o"
+    "directory": "./tests/playground/c_style_tests/funcs/",
+    "command": "clang++ -I./tests/playground/c_style_tests/funcs/ -c ./tests/playground/c_style_tests/funcs/file.cpp -o ./tests/playground/c_style_tests/funcs/file.o -std=c++20",
+    "file": "./tests/playground/c_style_tests/funcs/file.cpp",
+    "output": "./tests/playground/c_style_tests/funcs/file.o"
   },
   {
-    "directory": "./tests/playground/simpleTemplates/simpleTemplateClass/",
-    "command": "clang++ -I./tests/playground/simpleTemplates/simpleTemplateClass/ -c ./tests/playground/simpleTemplates/simpleTemplateClass/file.cpp -o ./tests/playground/simpleTemplates/simpleTemplateClass/file.o -std=c++20",
-    "file": "./tests/playground/simpleTemplates/simpleTemplateClass/file.cpp",
-    "output": "./tests/playground/simpleTemplates/simpleTemplateClass/file.o"
+    "directory": "./tests/playground/simple_templates/simple_template_class/",
+    "command": "clang++ -I./tests/playground/simple_templates/simple_template_class/ -c ./tests/playground/simple_templates/simple_template_class/file.cpp -o ./tests/playground/simple_templates/simple_template_class/file.o -std=c++20",
+    "file": "./tests/playground/simple_templates/simple_template_class/file.cpp",
+    "output": "./tests/playground/simple_templates/simple_template_class/file.o"
   },
   {
-    "directory": "./tests/playground/simpleTemplates/doubleTemplateClass/",
-    "command": "clang++ -I./tests/playground/simpleTemplates/doubleTemplateClass/ -c ./tests/playground/simpleTemplates/doubleTemplateClass/file.cpp -o ./tests/playground/simpleTemplates/doubleTemplateClass/file.o -std=c++20",
-    "file": "./tests/playground/simpleTemplates/doubleTemplateClass/file.cpp",
-    "output": "./tests/playground/simpleTemplates/doubleTemplateClass/file.o"
+    "directory": "./tests/playground/simple_templates/double_template_class/",
+    "command": "clang++ -I./tests/playground/simple_templates/double_template_class/ -c ./tests/playground/simple_templates/double_template_class/file.cpp -o ./tests/playground/simple_templates/double_template_class/file.o -std=c++20",
+    "file": "./tests/playground/simple_templates/double_template_class/file.cpp",
+    "output": "./tests/playground/simple_templates/double_template_class/file.o"
   },
   {
-    "directory": "./tests/playground/simpleTemplates/simpleTemplateWithTwoClasses/",
-    "command": "clang++ -I./tests/playground/simpleTemplates/simpleTemplateWithTwoClasses/ -c ./tests/playground/simpleTemplates/simpleTemplateWithTwoClasses/file.cpp -o ./tests/playground/simpleTemplates/simpleTemplateWithTwoClasses/file.o -std=c++20",
-    "file": "./tests/playground/simpleTemplates/simpleTemplateWithTwoClasses/file.cpp",
-    "output": "./tests/playground/simpleTemplates/simpleTemplateWithTwoClasses/file.o"
+    "directory": "./tests/playground/simple_templates/simple_template_with_two_classes/",
+    "command": "clang++ -I./tests/playground/simple_templates/simple_template_with_two_classes/ -c ./tests/playground/simple_templates/simple_template_with_two_classes/file.cpp -o ./tests/playground/simple_templates/simple_template_with_two_classes/file.o -std=c++20",
+    "file": "./tests/playground/simple_templates/simple_template_with_two_classes/file.cpp",
+    "output": "./tests/playground/simple_templates/simple_template_with_two_classes/file.o"
   },
   {
-    "directory": "./tests/playground/simpleTemplates/simpleTemplateClassVirtualFunc/",
-    "command": "clang++ -I./tests/playground/simpleTemplates/simpleTemplateClassVirtualFunc/ -c ./tests/playground/simpleTemplates/simpleTemplateClassVirtualFunc/file.cpp -o ./tests/playground/simpleTemplates/simpleTemplateClassVirtualFunc/file.o -std=c++20",
-    "file": "./tests/playground/simpleTemplates/simpleTemplateClassVirtualFunc/file.cpp",
-    "output": "./tests/playground/simpleTemplates/simpleTemplateClassVirtualFunc/file.o"
+    "directory": "./tests/playground/simple_templates/simple_template_class_virtual_func/",
+    "command": "clang++ -I./tests/playground/simple_templates/simple_template_class_virtual_func/ -c ./tests/playground/simple_templates/simple_template_class_virtual_func/file.cpp -o ./tests/playground/simple_templates/simple_template_class_virtual_func/file.o -std=c++20",
+    "file": "./tests/playground/simple_templates/simple_template_class_virtual_func/file.cpp",
+    "output": "./tests/playground/simple_templates/simple_template_class_virtual_func/file.o"
   },
   {
-    "directory": "./tests/playground/simpleTemplates/simpleTemplateFunctionWithClass/",
-    "command": "clang++ -I./tests/playground/simpleTemplates/simpleTemplateFunctionWithClass/ -c ./tests/playground/simpleTemplates/simpleTemplateFunctionWithClass/file.cpp -o ./tests/playground/simpleTemplates/simpleTemplateFunctionWithClass/file.o -std=c++20",
-    "file": "./tests/playground/simpleTemplates/simpleTemplateFunctionWithClass/file.cpp",
-    "output": "./tests/playground/simpleTemplates/simpleTemplateFunctionWithClass/file.o"
+    "directory": "./tests/playground/simple_templates/simple_template_function_with_class/",
+    "command": "clang++ -I./tests/playground/simple_templates/simple_template_function_with_class/ -c ./tests/playground/simple_templates/simple_template_function_with_class/file.cpp -o ./tests/playground/simple_templates/simple_template_function_with_class/file.o -std=c++20",
+    "file": "./tests/playground/simple_templates/simple_template_function_with_class/file.cpp",
+    "output": "./tests/playground/simple_templates/simple_template_function_with_class/file.o"
   },
   {
-    "directory": "./tests/playground/complexCases/simpleGtest/",
-    "command": "clang++ -I./tests/playground/complexCases/simpleGtest/ -I./tests/playground/externalResources/googletest/googletest/include -c ./tests/playground/complexCases/simpleGtest/file.cpp -o ./tests/playground/complexCases/simpleGtest/file.o -std=c++20",
-    "file": "./tests/playground/complexCases/simpleGtest/file.cpp",
-    "output": "./tests/playground/complexCases/simpleGtest/file.o"
+    "directory": "./tests/playground/complex_cases/simple_gtest/",
+    "command": "clang++ -I./tests/playground/complex_cases/simple_gtest/ -I./tests/playground/external_resources/googletest/googletest/include -c ./tests/playground/complex_cases/simple_gtest/file.cpp -o ./tests/playground/complex_cases/simple_gtest/file.o -std=c++20",
+    "file": "./tests/playground/complex_cases/simple_gtest/file.cpp",
+    "output": "./tests/playground/complex_cases/simple_gtest/file.o"
   }
 ]

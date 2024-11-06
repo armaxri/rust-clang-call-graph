@@ -1,0 +1,233 @@
+TranslationUnitDecl 0x13c048e08 <<invalid sloc>> <invalid sloc>
+|-TypedefDecl 0x13c049cf0 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+| `-BuiltinType 0x13c0493d0 '__int128'
+|-TypedefDecl 0x13c049d60 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+| `-BuiltinType 0x13c0493f0 'unsigned __int128'
+|-TypedefDecl 0x13c80d120 <<invalid sloc>> <invalid sloc> implicit __NSConstantString '__NSConstantString_tag'
+| `-RecordType 0x13c80ce90 '__NSConstantString_tag'
+|   `-CXXRecord 0x13c80ce00 '__NSConstantString_tag'
+|-TypedefDecl 0x13c80d188 <<invalid sloc>> <invalid sloc> implicit __SVInt8_t '__SVInt8_t'
+| `-BuiltinType 0x13c0495d0 '__SVInt8_t'
+|-TypedefDecl 0x13c80d1f0 <<invalid sloc>> <invalid sloc> implicit __SVInt16_t '__SVInt16_t'
+| `-BuiltinType 0x13c0495f0 '__SVInt16_t'
+|-TypedefDecl 0x13c80d258 <<invalid sloc>> <invalid sloc> implicit __SVInt32_t '__SVInt32_t'
+| `-BuiltinType 0x13c049610 '__SVInt32_t'
+|-TypedefDecl 0x13c80d2c0 <<invalid sloc>> <invalid sloc> implicit __SVInt64_t '__SVInt64_t'
+| `-BuiltinType 0x13c049630 '__SVInt64_t'
+|-TypedefDecl 0x13c80d328 <<invalid sloc>> <invalid sloc> implicit __SVUint8_t '__SVUint8_t'
+| `-BuiltinType 0x13c049650 '__SVUint8_t'
+|-TypedefDecl 0x13c80d390 <<invalid sloc>> <invalid sloc> implicit __SVUint16_t '__SVUint16_t'
+| `-BuiltinType 0x13c049670 '__SVUint16_t'
+|-TypedefDecl 0x13c80d3f8 <<invalid sloc>> <invalid sloc> implicit __SVUint32_t '__SVUint32_t'
+| `-BuiltinType 0x13c049690 '__SVUint32_t'
+|-TypedefDecl 0x13c80d460 <<invalid sloc>> <invalid sloc> implicit __SVUint64_t '__SVUint64_t'
+| `-BuiltinType 0x13c0496b0 '__SVUint64_t'
+|-TypedefDecl 0x13c80d4c8 <<invalid sloc>> <invalid sloc> implicit __SVFloat16_t '__SVFloat16_t'
+| `-BuiltinType 0x13c0496d0 '__SVFloat16_t'
+|-TypedefDecl 0x13c80d530 <<invalid sloc>> <invalid sloc> implicit __SVFloat32_t '__SVFloat32_t'
+| `-BuiltinType 0x13c0496f0 '__SVFloat32_t'
+|-TypedefDecl 0x13c80d598 <<invalid sloc>> <invalid sloc> implicit __SVFloat64_t '__SVFloat64_t'
+| `-BuiltinType 0x13c049710 '__SVFloat64_t'
+|-TypedefDecl 0x13c80d600 <<invalid sloc>> <invalid sloc> implicit __SVBFloat16_t '__SVBFloat16_t'
+| `-BuiltinType 0x13c049730 '__SVBFloat16_t'
+|-TypedefDecl 0x13c80d668 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x2_t '__clang_svint8x2_t'
+| `-BuiltinType 0x13c049750 '__clang_svint8x2_t'
+|-TypedefDecl 0x13c80d6d0 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x2_t '__clang_svint16x2_t'
+| `-BuiltinType 0x13c049770 '__clang_svint16x2_t'
+|-TypedefDecl 0x13c80d738 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x2_t '__clang_svint32x2_t'
+| `-BuiltinType 0x13c049790 '__clang_svint32x2_t'
+|-TypedefDecl 0x13c80d7a0 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x2_t '__clang_svint64x2_t'
+| `-BuiltinType 0x13c0497b0 '__clang_svint64x2_t'
+|-TypedefDecl 0x13c80d808 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x2_t '__clang_svuint8x2_t'
+| `-BuiltinType 0x13c0497d0 '__clang_svuint8x2_t'
+|-TypedefDecl 0x13c80d870 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x2_t '__clang_svuint16x2_t'
+| `-BuiltinType 0x13c0497f0 '__clang_svuint16x2_t'
+|-TypedefDecl 0x13c80d8d8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x2_t '__clang_svuint32x2_t'
+| `-BuiltinType 0x13c049810 '__clang_svuint32x2_t'
+|-TypedefDecl 0x13c80d940 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x2_t '__clang_svuint64x2_t'
+| `-BuiltinType 0x13c049830 '__clang_svuint64x2_t'
+|-TypedefDecl 0x13c80d9a8 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x2_t '__clang_svfloat16x2_t'
+| `-BuiltinType 0x13c049850 '__clang_svfloat16x2_t'
+|-TypedefDecl 0x13c80da10 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x2_t '__clang_svfloat32x2_t'
+| `-BuiltinType 0x13c049870 '__clang_svfloat32x2_t'
+|-TypedefDecl 0x13c80da78 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x2_t '__clang_svfloat64x2_t'
+| `-BuiltinType 0x13c049890 '__clang_svfloat64x2_t'
+|-TypedefDecl 0x13c80dae0 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x2_t '__clang_svbfloat16x2_t'
+| `-BuiltinType 0x13c0498b0 '__clang_svbfloat16x2_t'
+|-TypedefDecl 0x13c80db48 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x3_t '__clang_svint8x3_t'
+| `-BuiltinType 0x13c0498d0 '__clang_svint8x3_t'
+|-TypedefDecl 0x13c80dbb0 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x3_t '__clang_svint16x3_t'
+| `-BuiltinType 0x13c0498f0 '__clang_svint16x3_t'
+|-TypedefDecl 0x13c80dc18 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x3_t '__clang_svint32x3_t'
+| `-BuiltinType 0x13c049910 '__clang_svint32x3_t'
+|-TypedefDecl 0x13c80dc80 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x3_t '__clang_svint64x3_t'
+| `-BuiltinType 0x13c049930 '__clang_svint64x3_t'
+|-TypedefDecl 0x13c80dce8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x3_t '__clang_svuint8x3_t'
+| `-BuiltinType 0x13c049950 '__clang_svuint8x3_t'
+|-TypedefDecl 0x13c80dd50 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x3_t '__clang_svuint16x3_t'
+| `-BuiltinType 0x13c049970 '__clang_svuint16x3_t'
+|-TypedefDecl 0x13c810600 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x3_t '__clang_svuint32x3_t'
+| `-BuiltinType 0x13c049990 '__clang_svuint32x3_t'
+|-TypedefDecl 0x13c810668 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x3_t '__clang_svuint64x3_t'
+| `-BuiltinType 0x13c0499b0 '__clang_svuint64x3_t'
+|-TypedefDecl 0x13c8106d0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x3_t '__clang_svfloat16x3_t'
+| `-BuiltinType 0x13c0499d0 '__clang_svfloat16x3_t'
+|-TypedefDecl 0x13c810738 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x3_t '__clang_svfloat32x3_t'
+| `-BuiltinType 0x13c0499f0 '__clang_svfloat32x3_t'
+|-TypedefDecl 0x13c8107a0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x3_t '__clang_svfloat64x3_t'
+| `-BuiltinType 0x13c049a10 '__clang_svfloat64x3_t'
+|-TypedefDecl 0x13c810808 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x3_t '__clang_svbfloat16x3_t'
+| `-BuiltinType 0x13c049a30 '__clang_svbfloat16x3_t'
+|-TypedefDecl 0x13c810870 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x4_t '__clang_svint8x4_t'
+| `-BuiltinType 0x13c049a50 '__clang_svint8x4_t'
+|-TypedefDecl 0x13c8108d8 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x4_t '__clang_svint16x4_t'
+| `-BuiltinType 0x13c049a70 '__clang_svint16x4_t'
+|-TypedefDecl 0x13c810940 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x4_t '__clang_svint32x4_t'
+| `-BuiltinType 0x13c049a90 '__clang_svint32x4_t'
+|-TypedefDecl 0x13c8109a8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x4_t '__clang_svint64x4_t'
+| `-BuiltinType 0x13c049ab0 '__clang_svint64x4_t'
+|-TypedefDecl 0x13c810a10 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x4_t '__clang_svuint8x4_t'
+| `-BuiltinType 0x13c049ad0 '__clang_svuint8x4_t'
+|-TypedefDecl 0x13c810a78 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x4_t '__clang_svuint16x4_t'
+| `-BuiltinType 0x13c049af0 '__clang_svuint16x4_t'
+|-TypedefDecl 0x13c810ae0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x4_t '__clang_svuint32x4_t'
+| `-BuiltinType 0x13c049b10 '__clang_svuint32x4_t'
+|-TypedefDecl 0x13c810b48 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x4_t '__clang_svuint64x4_t'
+| `-BuiltinType 0x13c049b30 '__clang_svuint64x4_t'
+|-TypedefDecl 0x13c810bb0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x4_t '__clang_svfloat16x4_t'
+| `-BuiltinType 0x13c049b50 '__clang_svfloat16x4_t'
+|-TypedefDecl 0x13c810c18 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x4_t '__clang_svfloat32x4_t'
+| `-BuiltinType 0x13c049b70 '__clang_svfloat32x4_t'
+|-TypedefDecl 0x13c810c80 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x4_t '__clang_svfloat64x4_t'
+| `-BuiltinType 0x13c049b90 '__clang_svfloat64x4_t'
+|-TypedefDecl 0x13c810ce8 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x4_t '__clang_svbfloat16x4_t'
+| `-BuiltinType 0x13c049bb0 '__clang_svbfloat16x4_t'
+|-TypedefDecl 0x13c810d50 <<invalid sloc>> <invalid sloc> implicit __SVBool_t '__SVBool_t'
+| `-BuiltinType 0x13c049bd0 '__SVBool_t'
+|-TypedefDecl 0x13c810db8 <<invalid sloc>> <invalid sloc> implicit __clang_svboolx2_t '__clang_svboolx2_t'
+| `-BuiltinType 0x13c049bf0 '__clang_svboolx2_t'
+|-TypedefDecl 0x13c810e20 <<invalid sloc>> <invalid sloc> implicit __clang_svboolx4_t '__clang_svboolx4_t'
+| `-BuiltinType 0x13c049c10 '__clang_svboolx4_t'
+|-TypedefDecl 0x13c810e88 <<invalid sloc>> <invalid sloc> implicit __SVCount_t '__SVCount_t'
+| `-BuiltinType 0x13c049c30 '__SVCount_t'
+|-TypedefDecl 0x13c810f28 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+| `-PointerType 0x13c810ee0 'char *'
+|   `-BuiltinType 0x13c048eb0 'char'
+|-TypedefDecl 0x13c810f98 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'char *'
+| `-PointerType 0x13c810ee0 'char *'
+|   `-BuiltinType 0x13c048eb0 'char'
+|-ClassTemplateDecl 0x13c811140 <./tests/playground/simple_templates/simple_template_with_two_classes/file.cpp:1:1, line:8:1> line:1:26 TemplateClass
+| |-TemplateTypeParmDecl 0x13c810ff0 <col:11, col:17> col:17 class depth 0 index 0 T
+| |-CXXRecordDecl 0x13c8110b0 <col:20, line:8:1> line:1:26 class TemplateClass definition
+| | |-DefinitionData empty aggregate standard_layout trivially_copyable pod trivial literal has_constexpr_non_copy_move_ctor can_const_default_init
+| | | |-DefaultConstructor exists trivial constexpr needs_implicit defaulted_is_constexpr
+| | | |-CopyConstructor simple trivial has_const_param needs_implicit implicit_has_const_param
+| | | |-MoveConstructor exists simple trivial needs_implicit
+| | | |-CopyAssignment simple trivial has_const_param needs_implicit implicit_has_const_param
+| | | |-MoveAssignment exists simple trivial needs_implicit
+| | | `-Destructor simple irrelevant trivial constexpr needs_implicit
+| | |-CXXRecordDecl 0x13c811380 <col:20, col:26> col:26 implicit class TemplateClass
+| | |-AccessSpecDecl 0x13c811410 <line:3:3, col:9> col:3 public
+| | `-CXXMethodDecl 0x13c8114c0 <line:4:5, line:7:5> line:4:16 foo 'int ()' static implicit-inline
+| |   `-CompoundStmt 0x13c830668 <line:5:5, line:7:5>
+| |     `-ReturnStmt 0x13c830658 <line:6:9, col:22>
+| |       `-CallExpr 0x13c830638 <col:16, col:22> '<dependent type>'
+| |         `-DependentScopeDeclRefExpr 0x13c830600 <col:16, col:19> '<dependent type>' lvalue
+| |-ClassTemplateSpecializationDecl 0x13c831080 <line:1:1, line:8:1> line:1:26 class TemplateClass definition
+| | |-DefinitionData pass_in_registers empty aggregate standard_layout trivially_copyable pod trivial literal has_constexpr_non_copy_move_ctor can_const_default_init
+| | | |-DefaultConstructor exists trivial constexpr defaulted_is_constexpr
+| | | |-CopyConstructor simple trivial has_const_param implicit_has_const_param
+| | | |-MoveConstructor exists simple trivial
+| | | |-CopyAssignment simple trivial has_const_param needs_implicit implicit_has_const_param
+| | | |-MoveAssignment exists simple trivial needs_implicit
+| | | `-Destructor simple irrelevant trivial constexpr needs_implicit
+| | |-TemplateArgument type 'SimpleClassA'
+| | | `-RecordType 0x13c830710 'SimpleClassA'
+| | |   `-CXXRecord 0x13c830680 'SimpleClassA'
+| | |-CXXRecordDecl 0x13c831300 <col:20, col:26> col:26 implicit class TemplateClass
+| | |-AccessSpecDecl 0x13c831390 <line:3:3, col:9> col:3 public
+| | |-CXXMethodDecl 0x13c8313b8 <line:4:5, line:7:5> line:4:16 used foo 'int ()' static implicit-inline
+| | | `-CompoundStmt 0x13c8375d8 <line:5:5, line:7:5>
+| | |   `-ReturnStmt 0x13c8375c8 <line:6:9, col:22>
+| | |     `-CallExpr 0x13c8375a8 <col:16, col:22> 'int'
+| | |       `-ImplicitCastExpr 0x13c837590 <col:16, col:19> 'int (*)()' <FunctionToPointerDecay>
+| | |         `-DeclRefExpr 0x13c837560 <col:16, col:19> 'int ()' lvalue CXXMethod 0x13c8308a8 'ba' 'int ()'
+| | |-CXXConstructorDecl 0x13c8314a0 <line:1:26> col:26 implicit used constexpr TemplateClass 'void () noexcept' inline default trivial
+| | | `-CompoundStmt 0x13c833b98 <col:26>
+| | |-CXXConstructorDecl 0x13c833800 <col:26> col:26 implicit constexpr TemplateClass 'void (const TemplateClass<SimpleClassA> &)' inline default trivial noexcept-unevaluated 0x13c833800
+| | | `-ParmVarDecl 0x13c833918 <col:26> col:26 'const TemplateClass<SimpleClassA> &'
+| | `-CXXConstructorDecl 0x13c8339c8 <col:26> col:26 implicit constexpr TemplateClass 'void (TemplateClass<SimpleClassA> &&)' inline default trivial noexcept-unevaluated 0x13c8339c8
+| |   `-ParmVarDecl 0x13c833ae8 <col:26> col:26 'TemplateClass<SimpleClassA> &&'
+| `-ClassTemplateSpecializationDecl 0x13c833d50 <col:1, line:8:1> line:1:26 class TemplateClass definition
+|   |-DefinitionData pass_in_registers empty aggregate standard_layout trivially_copyable pod trivial literal has_constexpr_non_copy_move_ctor can_const_default_init
+|   | |-DefaultConstructor exists trivial constexpr defaulted_is_constexpr
+|   | |-CopyConstructor simple trivial has_const_param implicit_has_const_param
+|   | |-MoveConstructor exists simple trivial
+|   | |-CopyAssignment simple trivial has_const_param needs_implicit implicit_has_const_param
+|   | |-MoveAssignment exists simple trivial needs_implicit
+|   | `-Destructor simple irrelevant trivial constexpr needs_implicit
+|   |-TemplateArgument type 'SimpleClassB'
+|   | `-RecordType 0x13c830a40 'SimpleClassB'
+|   |   `-CXXRecord 0x13c8309b0 'SimpleClassB'
+|   |-CXXRecordDecl 0x13c833fd0 <col:20, col:26> col:26 implicit class TemplateClass
+|   |-AccessSpecDecl 0x13c834060 <line:3:3, col:9> col:3 public
+|   |-CXXMethodDecl 0x13c834088 <line:4:5, line:7:5> line:4:16 used foo 'int ()' static implicit-inline
+|   | `-CompoundStmt 0x13c8376c8 <line:5:5, line:7:5>
+|   |   `-ReturnStmt 0x13c8376b8 <line:6:9, col:22>
+|   |     `-CallExpr 0x13c837698 <col:16, col:22> 'int'
+|   |       `-ImplicitCastExpr 0x13c837680 <col:16, col:19> 'int (*)()' <FunctionToPointerDecay>
+|   |         `-DeclRefExpr 0x13c837650 <col:16, col:19> 'int ()' lvalue CXXMethod 0x13c830bd8 'ba' 'int ()'
+|   |-CXXConstructorDecl 0x13c834170 <line:1:26> col:26 implicit used constexpr TemplateClass 'void () noexcept' inline default trivial
+|   | `-CompoundStmt 0x13c8345e8 <col:26>
+|   |-CXXConstructorDecl 0x13c834278 <col:26> col:26 implicit constexpr TemplateClass 'void (const TemplateClass<SimpleClassB> &)' inline default trivial noexcept-unevaluated 0x13c834278
+|   | `-ParmVarDecl 0x13c834398 <col:26> col:26 'const TemplateClass<SimpleClassB> &'
+|   `-CXXConstructorDecl 0x13c834448 <col:26> col:26 implicit constexpr TemplateClass 'void (TemplateClass<SimpleClassB> &&)' inline default trivial noexcept-unevaluated 0x13c834448
+|     `-ParmVarDecl 0x13c834568 <col:26> col:26 'TemplateClass<SimpleClassB> &&'
+|-CXXRecordDecl 0x13c830680 <line:10:1, line:17:1> line:10:7 referenced class SimpleClassA definition
+| |-DefinitionData pass_in_registers empty aggregate standard_layout trivially_copyable pod trivial literal has_constexpr_non_copy_move_ctor can_const_default_init
+| | |-DefaultConstructor exists trivial constexpr needs_implicit defaulted_is_constexpr
+| | |-CopyConstructor simple trivial has_const_param needs_implicit implicit_has_const_param
+| | |-MoveConstructor exists simple trivial needs_implicit
+| | |-CopyAssignment simple trivial has_const_param needs_implicit implicit_has_const_param
+| | |-MoveAssignment exists simple trivial needs_implicit
+| | `-Destructor simple irrelevant trivial constexpr needs_implicit
+| |-CXXRecordDecl 0x13c830798 <col:1, col:7> col:7 implicit class SimpleClassA
+| |-AccessSpecDecl 0x13c830828 <line:12:3, col:9> col:3 public
+| `-CXXMethodDecl 0x13c8308a8 <line:13:5, line:16:5> line:13:16 used ba 'int ()' static implicit-inline
+|   `-CompoundStmt 0x13c830998 <line:14:5, line:16:5>
+|     `-ReturnStmt 0x13c830988 <line:15:9, col:16>
+|       `-IntegerLiteral 0x13c830968 <col:16> 'int' 5
+|-CXXRecordDecl 0x13c8309b0 <line:19:1, line:26:1> line:19:7 referenced class SimpleClassB definition
+| |-DefinitionData pass_in_registers empty aggregate standard_layout trivially_copyable pod trivial literal has_constexpr_non_copy_move_ctor can_const_default_init
+| | |-DefaultConstructor exists trivial constexpr needs_implicit defaulted_is_constexpr
+| | |-CopyConstructor simple trivial has_const_param needs_implicit implicit_has_const_param
+| | |-MoveConstructor exists simple trivial needs_implicit
+| | |-CopyAssignment simple trivial has_const_param needs_implicit implicit_has_const_param
+| | |-MoveAssignment exists simple trivial needs_implicit
+| | `-Destructor simple irrelevant trivial constexpr needs_implicit
+| |-CXXRecordDecl 0x13c830ac8 <col:1, col:7> col:7 implicit class SimpleClassB
+| |-AccessSpecDecl 0x13c830b58 <line:21:3, col:9> col:3 public
+| `-CXXMethodDecl 0x13c830bd8 <line:22:5, line:25:5> line:22:16 used ba 'int ()' static implicit-inline
+|   `-CompoundStmt 0x13c830cc8 <line:23:5, line:25:5>
+|     `-ReturnStmt 0x13c830cb8 <line:24:9, col:16>
+|       `-IntegerLiteral 0x13c830c98 <col:16> 'int' 6
+`-FunctionDecl 0x13c830f40 <line:28:1, line:33:1> line:28:5 main 'int (int, char **)'
+  |-ParmVarDecl 0x13c830cf8 <col:10, col:14> col:14 argc 'int'
+  |-ParmVarDecl 0x13c830e20 <col:20, col:31> col:26 argv 'char **':'char **'
+  `-CompoundStmt 0x13c8374d8 <line:29:1, line:33:1>
+    |-DeclStmt 0x13c833cf8 <line:30:5, col:42>
+    | `-VarDecl 0x13c831230 <col:5, col:33> col:33 used instance1 'TemplateClass<SimpleClassA>':'TemplateClass<SimpleClassA>' callinit
+    |   `-CXXConstructExpr 0x13c833cd0 <col:33> 'TemplateClass<SimpleClassA>':'TemplateClass<SimpleClassA>' 'void () noexcept'
+    |-DeclStmt 0x13c834748 <line:31:5, col:42>
+    | `-VarDecl 0x13c833f00 <col:5, col:33> col:33 used instance2 'TemplateClass<SimpleClassB>':'TemplateClass<SimpleClassB>' callinit
+    |   `-CXXConstructExpr 0x13c834720 <col:33> 'TemplateClass<SimpleClassB>':'TemplateClass<SimpleClassB>' 'void () noexcept'
+    `-ReturnStmt 0x13c8374c8 <line:32:5, col:44>
+      `-BinaryOperator 0x13c8374a8 <col:12, col:44> 'int' '+'
+        |-CallExpr 0x13c837400 <col:12, col:26> 'int'
+        | `-ImplicitCastExpr 0x13c8347e0 <col:12, col:22> 'int (*)()' <FunctionToPointerDecay>
+        |   `-MemberExpr 0x13c834780 <col:12, col:22> 'int ()' lvalue .foo 0x13c8313b8
+        |     `-DeclRefExpr 0x13c834760 <col:12> 'TemplateClass<SimpleClassA>':'TemplateClass<SimpleClassA>' lvalue Var 0x13c831230 'instance1' 'TemplateClass<SimpleClassA>':'TemplateClass<SimpleClassA>'
+        `-CallExpr 0x13c837488 <col:30, col:44> 'int'
+          `-ImplicitCastExpr 0x13c837470 <col:30, col:40> 'int (*)()' <FunctionToPointerDecay>
+            `-MemberExpr 0x13c837440 <col:30, col:40> 'int ()' lvalue .foo 0x13c834088
+              `-DeclRefExpr 0x13c837420 <col:30> 'TemplateClass<SimpleClassB>':'TemplateClass<SimpleClassB>' lvalue Var 0x13c833f00 'instance2' 'TemplateClass<SimpleClassB>':'TemplateClass<SimpleClassB>'
