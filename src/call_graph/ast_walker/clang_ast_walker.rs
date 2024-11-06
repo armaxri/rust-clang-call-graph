@@ -75,10 +75,10 @@ fn handle_ast_element(
 ) {
     match ast_element.element_type.as_str() {
         "FunctionDecl" => {
-            handle_function_decl(ast_element, walker, name_prefix);
+            handle_function_decl(ast_element, walker, name_prefix, None);
         }
         "CXXMethodDecl" => {
-            handle_function_decl(ast_element, walker, name_prefix);
+            handle_function_decl(ast_element, walker, name_prefix, None);
         }
         "NamespaceDecl" => {
             handle_namespace_decl(ast_element, walker, name_prefix);
@@ -89,9 +89,37 @@ fn handle_ast_element(
         "ClassTemplateDecl" => {
             handle_class_template_decl(ast_element, walker, name_prefix);
         }
+        "FunctionTemplateDecl" => {
+            handle_function_template_decl(ast_element, walker, name_prefix);
+        }
         _ => {
             for inner_element in &ast_element.inner {
                 handle_ast_element(inner_element, walker, name_prefix);
+            }
+        }
+    }
+}
+
+fn handle_function_template_decl(
+    ast_element: &ClangAstElement,
+    walker: &mut ClangAstWalkerInternal,
+    name_prefix: &str,
+) {
+    let template_func_name = &ast_element.attributes;
+
+    'func_decls_loop: for inner_element in &ast_element.inner {
+        if inner_element.element_type.as_str() == "FunctionDecl" {
+            for inner_inner_element in &inner_element.inner {
+                if inner_inner_element.element_type.as_str() == "TemplateArgument" {
+                    handle_function_decl(
+                        inner_element,
+                        walker,
+                        name_prefix,
+                        Some(template_func_name),
+                    );
+
+                    continue 'func_decls_loop;
+                }
             }
         }
     }
@@ -152,11 +180,7 @@ fn handle_class_template_decl(
     walker.current_class_stack.pop();
 }
 
-fn handle_class_template_specialization_decl(
-    ast_element: &ClangAstElement,
-    walker: &mut ClangAstWalkerInternal,
-    name_prefix: &str,
-) {
+fn collect_template_specialization(ast_element: &ClangAstElement) -> Vec<&str> {
     let mut templates: Vec<&str> = Vec::new();
 
     for inner_element in &ast_element.inner {
@@ -166,6 +190,16 @@ fn handle_class_template_specialization_decl(
             );
         }
     }
+
+    templates
+}
+
+fn handle_class_template_specialization_decl(
+    ast_element: &ClangAstElement,
+    walker: &mut ClangAstWalkerInternal,
+    name_prefix: &str,
+) {
+    let templates: Vec<&str> = collect_template_specialization(ast_element);
 
     let template_string = templates.join(", ");
     let new_name_prefix = format!(
@@ -276,6 +310,7 @@ fn handle_function_decl(
     ast_element: &ClangAstElement,
     walker: &mut ClangAstWalkerInternal,
     name_prefix: &str,
+    template_func_name: Option<&str>,
 ) {
     if ast_element
         .attributes
@@ -286,7 +321,19 @@ fn handle_function_decl(
     }
 
     let compound_stmt = get_compound_stmt(ast_element);
-    let func_creation_args = ast_element.create_func_creation_args(Some(walker), name_prefix);
+    let mut func_creation_args = ast_element.create_func_creation_args(Some(walker), name_prefix);
+
+    if template_func_name.is_some() {
+        let used_template_func_name = template_func_name.unwrap().to_string();
+        let templates: Vec<&str> = collect_template_specialization(ast_element);
+        func_creation_args.set_new_qualified_name(format!(
+            "{}{}<{}>{}",
+            name_prefix,
+            used_template_func_name,
+            templates.join(", "),
+            func_creation_args.qualified_name[used_template_func_name.len()..].to_string()
+        ));
+    }
 
     match compound_stmt {
         Some(_compound_stmt) => {
