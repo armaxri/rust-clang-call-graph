@@ -130,6 +130,14 @@ mod tests {
         }
 
         #[test]
+        fn recursive_func_test() {
+            run_ast_parser_test(
+                "./tests/playground/c_style_tests/recursive_func",
+                vec!["file"],
+            );
+        }
+
+        #[test]
         fn simple_decl_in_header_impl_in_header_and_one_cpp_test() {
             run_ast_parser_test(
                 "./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp",

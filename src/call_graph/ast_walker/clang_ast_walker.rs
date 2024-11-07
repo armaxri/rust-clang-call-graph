@@ -25,6 +25,7 @@ struct ClangAstWalkerInternal {
     pub known_classes: HashMap<String, Rc<RefCell<CppClass>>>,
     pub current_class_stack: Vec<Rc<RefCell<CppClass>>>,
     pub open_func_call_connections: HashMap<usize, Vec<(Range, Rc<RefCell<FuncStructure>>)>>,
+    pub current_func_impl_ast_id: usize,
 }
 
 pub fn walk_ast_2_func_call_db(
@@ -44,6 +45,7 @@ pub fn walk_ast_2_func_call_db(
         known_classes: HashMap::new(),
         current_class_stack: Vec::new(),
         open_func_call_connections: HashMap::new(),
+        current_func_impl_ast_id: 0,
     };
 
     for ast_element in parsed_ast {
@@ -374,9 +376,11 @@ fn handle_function_decl(
                     .remove(&ast_element.element_id);
             }
 
+            walker.current_func_impl_ast_id = ast_element.element_id;
             for inner_element in &ast_element.inner {
                 walk_func_impl_inner(inner_element, &func_impl, walker, &ast_element.range);
             }
+            walker.current_func_impl_ast_id = 0;
         }
         None => {
             if func_creation_args.is_virtual() {
@@ -438,6 +442,15 @@ fn walk_func_impl_inner(
                             usize::from_str_radix(&splitted_attributes[index + 1][2..], 16)
                         {
                             let func_decl_id = hex_value as usize;
+
+                            if func_decl_id == walker.current_func_impl_ast_id {
+                                let creation_args = func_impl
+                                    .borrow()
+                                    .convert_func2func_creation_args4call(used_current_range);
+                                func_impl.borrow_mut().get_or_add_func_call(&creation_args);
+                                return;
+                            }
+
                             let func_decl = walker.known_func_decls_and_impls.get(&func_decl_id);
 
                             if func_decl.is_some() {

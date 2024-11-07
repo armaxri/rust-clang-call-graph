@@ -114,6 +114,12 @@
     "output": "./tests/playground/c_style_tests/printf/file.o"
   },
   {
+    "directory": "./tests/playground/c_style_tests/recursive_func/",
+    "command": "clang++ -I./tests/playground/c_style_tests/recursive_func/ -c ./tests/playground/c_style_tests/recursive_func/file.cpp -o ./tests/playground/c_style_tests/recursive_func/file.o -std=c++20",
+    "file": "./tests/playground/c_style_tests/recursive_func/file.cpp",
+    "output": "./tests/playground/c_style_tests/recursive_func/file.o"
+  },
+  {
     "directory": "./tests/playground/c_style_tests/decl_in_header_and_two_cpps/",
     "command": "clang++ -I./tests/playground/c_style_tests/decl_in_header_and_two_cpps/ -c ./tests/playground/c_style_tests/decl_in_header_and_two_cpps/impl.cpp -o ./tests/playground/c_style_tests/decl_in_header_and_two_cpps/impl.o -std=c++20",
     "file": "./tests/playground/c_style_tests/decl_in_header_and_two_cpps/impl.cpp",
