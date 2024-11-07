@@ -76,7 +76,15 @@ mod tests {
         assert!(process.process());
 
         assert!(process.has_next_line());
-        assert_eq!("Hello World!", process.get_next_line());
+        // The workaround with the split and collect is necessary because the line endings are different on different platforms.
+        assert_eq!(
+            "Hello World!",
+            process
+                .get_next_line()
+                .split(" ")
+                .collect::<Vec<&str>>()
+                .join(" ")
+        );
         assert!(!process.has_next_line());
 
         // Avoid unnecessary crashes.
@@ -91,11 +99,33 @@ mod tests {
         assert!(process.process());
 
         assert!(process.has_next_line());
-        assert_eq!("Hello World!", process.get_next_line());
+        // The workaround with the split and collect is necessary because the line endings are different on different platforms.
+        assert_eq!(
+            "Hello World!",
+            process
+                .get_next_line()
+                .split(" ")
+                .collect::<Vec<&str>>()
+                .join(" ")
+        );
         assert!(process.has_next_line());
-        assert_eq!("", process.get_next_line());
+        assert_eq!(
+            "",
+            process
+                .get_next_line()
+                .split(" ")
+                .collect::<Vec<&str>>()
+                .join(" ")
+        );
         assert!(process.has_next_line());
-        assert_eq!("How are you?", process.get_next_line());
+        assert_eq!(
+            "How are you?",
+            process
+                .get_next_line()
+                .split(" ")
+                .collect::<Vec<&str>>()
+                .join(" ")
+        );
         assert!(!process.has_next_line());
 
         // Avoid unnecessary crashes.
