@@ -186,7 +186,9 @@ fn collect_template_specialization(ast_element: &ClangAstElement) -> Vec<&str> {
     let mut templates: Vec<&str> = Vec::new();
 
     for inner_element in &ast_element.inner {
-        if inner_element.element_type.as_str() == "TemplateArgument" {
+        if inner_element.element_type.as_str() == "TemplateArgument"
+            && inner_element.attributes.starts_with("type '")
+        {
             templates.push(
                 &inner_element.attributes["type '".len()..inner_element.attributes.len() - 1],
             );

@@ -175,7 +175,6 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn class_unique_pointer_call_test() {
             run_ast_parser_test(
                 "./tests/playground/simple_cpp_classes/class_unique_pointer_call",
@@ -282,7 +281,6 @@ mod tests {
         }
 
         #[test]
-        #[ignore]
         fn simple_template_function_with_class_test() {
             run_ast_parser_test(
                 "./tests/playground/simple_templates/simple_template_function_with_class",
