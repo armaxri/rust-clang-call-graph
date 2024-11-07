@@ -162,10 +162,7 @@ impl ClangAstParserImpl {
 
         let range = self.get_range(&mut parts);
 
-        // May add this later as another element.
-        if parts.len() > 0 && (parts[0].starts_with("col:") || parts[0].starts_with("line:")) {
-            parts.remove(0);
-        }
+        drop_location(&mut parts);
 
         let remaining_parts = parts.join(" ");
         let file = self.files.last().unwrap();
@@ -311,6 +308,30 @@ impl ClangAstParserImpl {
 
         Position::new(0, 0)
     }
+}
+
+fn drop_location(parts: &mut Vec<&str>) {
+    if parts.len() < 1 {
+        return;
+    }
+
+    if parts[0].starts_with("col:") || parts[0].starts_with("line:") {
+        parts.remove(0);
+        return;
+    }
+
+    let candidate = parts[0].to_string();
+    let splitted_candidate: Vec<&str> = candidate.split(':').collect();
+    if (splitted_candidate.len() == 3 || splitted_candidate.len() == 4)
+        && is_number(splitted_candidate[splitted_candidate.len() - 1])
+        && is_number(splitted_candidate[splitted_candidate.len() - 2])
+    {
+        parts.remove(0);
+    }
+}
+
+fn is_number(s: &str) -> bool {
+    s.chars().all(|c| c.is_digit(10))
 }
 
 fn get_string_element_start(line: &str) -> usize {
@@ -672,8 +693,70 @@ mod tests {
         let process = DummyProcess::new();
         let mut parser = ClangAstParserImpl::new(Box::new(process));
 
-        let  element = parser
+        let element = parser
             .parse_ast_element("FunctionDecl 0x15591de00 prev 0x155904b98 <line:5:1, line:7:1> line:5:5 mult 'int (int, int)'")
+            .unwrap();
+        assert_eq!(element.element_type, "FunctionDecl");
+        assert_eq!(element.element_id, 0x15591de00);
+        assert_eq!(element.prev_element_id, 0x155904b98);
+        assert_eq!(element.file.as_ref(), "");
+        assert_eq!(element.range.start.line, 5);
+        assert_eq!(element.range.start.column, 1);
+        assert_eq!(element.range.end.line, 7);
+        assert_eq!(element.range.end.column, 2);
+        assert_eq!(element.inner.len(), 0);
+        assert_eq!(element.attributes, "mult 'int (int, int)'");
+    }
+
+    #[test]
+    fn remove_trailing_location() {
+        let process = DummyProcess::new();
+        let mut parser = ClangAstParserImpl::new(Box::new(process));
+
+        let mut element = parser
+            .parse_ast_element("FunctionDecl 0x15591de00 prev 0x155904b98 <line:5:1, line:7:1> col:5 mult 'int (int, int)'")
+            .unwrap();
+        assert_eq!(element.element_type, "FunctionDecl");
+        assert_eq!(element.element_id, 0x15591de00);
+        assert_eq!(element.prev_element_id, 0x155904b98);
+        assert_eq!(element.file.as_ref(), "");
+        assert_eq!(element.range.start.line, 5);
+        assert_eq!(element.range.start.column, 1);
+        assert_eq!(element.range.end.line, 7);
+        assert_eq!(element.range.end.column, 2);
+        assert_eq!(element.inner.len(), 0);
+        assert_eq!(element.attributes, "mult 'int (int, int)'");
+
+        element = parser
+            .parse_ast_element("FunctionDecl 0x15591de00 prev 0x155904b98 <line:5:1, line:7:1> line:5:5 mult 'int (int, int)'")
+            .unwrap();
+        assert_eq!(element.element_type, "FunctionDecl");
+        assert_eq!(element.element_id, 0x15591de00);
+        assert_eq!(element.prev_element_id, 0x155904b98);
+        assert_eq!(element.file.as_ref(), "");
+        assert_eq!(element.range.start.line, 5);
+        assert_eq!(element.range.start.column, 1);
+        assert_eq!(element.range.end.line, 7);
+        assert_eq!(element.range.end.column, 2);
+        assert_eq!(element.inner.len(), 0);
+        assert_eq!(element.attributes, "mult 'int (int, int)'");
+
+        element = parser
+            .parse_ast_element("FunctionDecl 0x15591de00 prev 0x155904b98 <line:5:1, line:7:1> /foo/ba.cpp:5:5 mult 'int (int, int)'")
+            .unwrap();
+        assert_eq!(element.element_type, "FunctionDecl");
+        assert_eq!(element.element_id, 0x15591de00);
+        assert_eq!(element.prev_element_id, 0x155904b98);
+        assert_eq!(element.file.as_ref(), "");
+        assert_eq!(element.range.start.line, 5);
+        assert_eq!(element.range.start.column, 1);
+        assert_eq!(element.range.end.line, 7);
+        assert_eq!(element.range.end.column, 2);
+        assert_eq!(element.inner.len(), 0);
+        assert_eq!(element.attributes, "mult 'int (int, int)'");
+
+        element = parser
+            .parse_ast_element("FunctionDecl 0x15591de00 prev 0x155904b98 <line:5:1, line:7:1> C:\\foo\\ba.cpp:5:5 mult 'int (int, int)'")
             .unwrap();
         assert_eq!(element.element_type, "FunctionDecl");
         assert_eq!(element.element_id, 0x15591de00);
