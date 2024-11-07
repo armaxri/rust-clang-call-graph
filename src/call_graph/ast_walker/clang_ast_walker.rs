@@ -325,7 +325,16 @@ fn handle_function_decl(
     }
 
     let compound_stmt = get_compound_stmt(ast_element);
-    let mut func_creation_args = ast_element.create_func_creation_args(Some(walker), name_prefix);
+    let mut func_creation_args = if ast_element.prev_element_id != 0 {
+        walker
+            .known_func_decls_and_impls
+            .get(&ast_element.prev_element_id)
+            .unwrap()
+            .borrow()
+            .convert_func2func_creation_args4call(&ast_element.range)
+    } else {
+        ast_element.create_func_creation_args(Some(walker), name_prefix)
+    };
 
     if template_func_name.is_some() {
         let used_template_func_name = template_func_name.unwrap().to_string();

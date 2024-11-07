@@ -212,6 +212,14 @@ mod tests {
         }
 
         #[test]
+        fn method_impl_outside_test() {
+            run_ast_parser_test(
+                "./tests/playground/simple_cpp_classes/method_impl_outside",
+                vec!["file"],
+            );
+        }
+
+        #[test]
         fn parent_class_in_namespace_test() {
             run_ast_parser_test(
                 "./tests/playground/simple_cpp_classes/parent_class_in_namespace",

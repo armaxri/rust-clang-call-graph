@@ -78,6 +78,12 @@
     "output": "./tests/playground/simple_cpp_classes/method/file.o"
   },
   {
+    "directory": "./tests/playground/simple_cpp_classes/method_impl_outside/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/method_impl_outside/ -c ./tests/playground/simple_cpp_classes/method_impl_outside/file.cpp -o ./tests/playground/simple_cpp_classes/method_impl_outside/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/method_impl_outside/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/method_impl_outside/file.o"
+  },
+  {
     "directory": "./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp/",
     "command": "clang++ -I./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp/ -c ./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp/main.cpp -o ./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp/main.o -std=c++20",
     "file": "./tests/playground/c_style_tests/simple_decl_in_header_impl_in_header_and_one_cpp/main.cpp",
