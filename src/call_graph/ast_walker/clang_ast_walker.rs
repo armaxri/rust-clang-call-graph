@@ -452,42 +452,12 @@ fn walk_func_impl_inner(
                         if let Ok(hex_value) =
                             usize::from_str_radix(&splitted_attributes[index + 1][2..], 16)
                         {
-                            let func_decl_id = hex_value as usize;
-
-                            if func_decl_id == walker.current_func_impl_ast_id {
-                                let creation_args = func_impl
-                                    .borrow()
-                                    .convert_func2func_creation_args4call(used_current_range);
-                                func_impl.borrow_mut().get_or_add_func_call(&creation_args);
-                                return;
-                            }
-
-                            let func_decl = walker.known_func_decls_and_impls.get(&func_decl_id);
-
-                            if func_decl.is_some() {
-                                func_impl.borrow_mut().get_or_add_func_call(
-                                    &func_decl
-                                        .unwrap()
-                                        .borrow()
-                                        .convert_func2func_creation_args4call(used_current_range),
-                                );
-                            } else {
-                                match walker.open_func_call_connections.contains_key(&hex_value) {
-                                    true => {
-                                        walker
-                                            .open_func_call_connections
-                                            .get_mut(&hex_value)
-                                            .unwrap()
-                                            .push((used_current_range.clone(), func_impl.clone()));
-                                    }
-                                    false => {
-                                        walker.open_func_call_connections.insert(
-                                            hex_value,
-                                            vec![(used_current_range.clone(), func_impl.clone())],
-                                        );
-                                    }
-                                }
-                            }
+                            walker_func_impl_inner_decl(
+                                func_impl,
+                                walker,
+                                hex_value,
+                                used_current_range,
+                            );
                         }
                     }
                 }
@@ -501,33 +471,7 @@ fn walk_func_impl_inner(
                 if let Ok(hex_value) =
                     usize::from_str_radix(&splitted_attributes.last().unwrap()[2..], 16)
                 {
-                    let func_decl_id = hex_value as usize;
-                    let func_decl = walker.known_func_decls_and_impls.get(&func_decl_id);
-
-                    if func_decl.is_some() {
-                        func_impl.borrow_mut().get_or_add_func_call(
-                            &func_decl
-                                .unwrap()
-                                .borrow()
-                                .convert_func2func_creation_args4call(used_current_range),
-                        );
-                    } else {
-                        match walker.open_func_call_connections.contains_key(&hex_value) {
-                            true => {
-                                walker
-                                    .open_func_call_connections
-                                    .get_mut(&hex_value)
-                                    .unwrap()
-                                    .push((used_current_range.clone(), func_impl.clone()));
-                            }
-                            false => {
-                                walker.open_func_call_connections.insert(
-                                    hex_value,
-                                    vec![(used_current_range.clone(), func_impl.clone())],
-                                );
-                            }
-                        }
-                    }
+                    walker_func_impl_inner_decl(func_impl, walker, hex_value, used_current_range);
                 }
             }
         }
@@ -539,6 +483,50 @@ fn walk_func_impl_inner(
 
     for inner_element in &ast_element.inner {
         walk_func_impl_inner(inner_element, func_impl, walker, used_current_range);
+    }
+}
+
+fn walker_func_impl_inner_decl(
+    func_impl: &Rc<RefCell<FuncStructure>>,
+    walker: &mut ClangAstWalkerInternal,
+    hex_value: usize,
+    used_current_range: &Range,
+) {
+    let func_decl_id = hex_value as usize;
+
+    if func_decl_id == walker.current_func_impl_ast_id {
+        let creation_args = func_impl
+            .borrow()
+            .convert_func2func_creation_args4call(used_current_range);
+        func_impl.borrow_mut().get_or_add_func_call(&creation_args);
+        return;
+    }
+
+    let func_decl = walker.known_func_decls_and_impls.get(&func_decl_id);
+
+    if func_decl.is_some() {
+        func_impl.borrow_mut().get_or_add_func_call(
+            &func_decl
+                .unwrap()
+                .borrow()
+                .convert_func2func_creation_args4call(used_current_range),
+        );
+    } else {
+        match walker.open_func_call_connections.contains_key(&hex_value) {
+            true => {
+                walker
+                    .open_func_call_connections
+                    .get_mut(&hex_value)
+                    .unwrap()
+                    .push((used_current_range.clone(), func_impl.clone()));
+            }
+            false => {
+                walker.open_func_call_connections.insert(
+                    hex_value,
+                    vec![(used_current_range.clone(), func_impl.clone())],
+                );
+            }
+        }
     }
 }
 
