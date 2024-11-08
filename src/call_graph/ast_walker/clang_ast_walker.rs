@@ -326,9 +326,15 @@ fn handle_function_decl(
 
     let compound_stmt = get_compound_stmt(ast_element);
     let mut func_creation_args = if ast_element.prev_element_id != 0 {
-        walker
+        let prev_decl = walker
             .known_func_decls_and_impls
-            .get(&ast_element.prev_element_id)
+            .get(&ast_element.prev_element_id);
+
+        if prev_decl.is_none() {
+            return;
+        }
+
+        prev_decl
             .unwrap()
             .borrow()
             .convert_func2func_creation_args4call(&ast_element.range)
@@ -395,11 +401,17 @@ fn handle_function_decl(
         }
         None => {
             if func_creation_args.is_virtual() {
+                let current_class = walker.current_class_stack.last();
+
+                // Strange case I cannot currently reproduce with small test cases.
+                // Maybe later this can be removed.
+                if current_class.is_none() {
+                    return;
+                }
+
                 walker.known_func_decls_and_impls.insert(
                     ast_element.element_id,
-                    walker
-                        .current_class_stack
-                        .last()
+                    current_class
                         .unwrap()
                         .borrow_mut()
                         .get_or_add_virtual_func_decl(func_creation_args),
