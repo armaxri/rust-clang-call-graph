@@ -226,7 +226,7 @@ impl FileStructure {
             std::time::SystemTime::now()
                 .duration_since(std::time::UNIX_EPOCH)
                 .unwrap()
-                .as_secs() as usize,
+                .as_millis() as usize,
         );
     }
 }

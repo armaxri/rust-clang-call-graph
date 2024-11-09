@@ -58,7 +58,6 @@ mod tests {
         use super::*;
 
         #[test]
-        #[ignore]
         fn simple_gtest_test() {
             run_ast_parser_test(
                 "./tests/playground/complex_cases/simple_gtest",
@@ -191,6 +190,14 @@ mod tests {
         }
 
         #[test]
+        fn ignore_class_forward_decl_test() {
+            run_ast_parser_test(
+                "./tests/playground/simple_cpp_classes/ignore_class_forward_decl",
+                vec!["file"],
+            );
+        }
+
+        #[test]
         fn inheritance_chain_test() {
             run_ast_parser_test(
                 "./tests/playground/simple_cpp_classes/inheritance_chain",
@@ -300,6 +307,14 @@ mod tests {
         fn simple_template_with_two_classes_test() {
             run_ast_parser_test(
                 "./tests/playground/simple_templates/simple_template_with_two_classes",
+                vec!["file"],
+            );
+        }
+
+        #[test]
+        fn template_inheritance_test() {
+            run_ast_parser_test(
+                "./tests/playground/simple_templates/template_inheritance",
                 vec!["file"],
             );
         }

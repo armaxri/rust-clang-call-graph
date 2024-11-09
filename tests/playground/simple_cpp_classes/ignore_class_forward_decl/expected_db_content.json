@@ -1,0 +1,48 @@
+{
+  "cpp_files": [
+    {
+      "id": 1,
+      "name": "./tests/playground/simple_cpp_classes/ignore_class_forward_decl/file.cpp",
+      "last_analyzed": 1731114311426,
+      "classes": [
+        {
+          "id": 1,
+          "name": "TestClass",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [
+            {
+              "id": 1,
+              "name": "foo",
+              "qualified_name": "TestClass::foo 'int (ForwardDeclClass)'",
+              "base_qualified_name": null,
+              "qual_type": "int (ForwardDeclClass)",
+              "range": {
+                "start": {
+                  "line": 6,
+                  "column": 5
+                },
+                "end": {
+                  "line": 6,
+                  "column": 36
+                }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
+            }
+          ],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": []
+        }
+      ],
+      "func_decls": [],
+      "func_impls": [],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [],
+      "file_is_header": false
+    }
+  ],
+  "hpp_files": []
+}
