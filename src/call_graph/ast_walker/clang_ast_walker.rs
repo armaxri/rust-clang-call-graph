@@ -94,6 +94,9 @@ fn handle_ast_element(
         "FunctionTemplateDecl" => {
             handle_function_template_decl(ast_element, walker, name_prefix);
         }
+        "TypedefDecl" | "ClassTemplateSpecializationDecl" => {
+            return;
+        }
         _ => {
             for inner_element in &ast_element.inner {
                 handle_ast_element(inner_element, walker, name_prefix);
