@@ -222,7 +222,7 @@ fn handle_cxx_record_decl(
     walker: &mut ClangAstWalkerInternal,
     name_prefix: &str,
 ) {
-    if ast_element.attributes.starts_with("implicit ") {
+    if ast_element.attributes.starts_with("implicit ") || ast_element.inner.len() == 0 {
         return;
     }
 

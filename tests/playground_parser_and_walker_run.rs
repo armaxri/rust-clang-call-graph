@@ -191,6 +191,14 @@ mod tests {
         }
 
         #[test]
+        fn ignore_class_forward_decl_test() {
+            run_ast_parser_test(
+                "./tests/playground/simple_cpp_classes/ignore_class_forward_decl",
+                vec!["file"],
+            );
+        }
+
+        #[test]
         fn inheritance_chain_test() {
             run_ast_parser_test(
                 "./tests/playground/simple_cpp_classes/inheritance_chain",
