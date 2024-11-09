@@ -58,7 +58,6 @@ mod tests {
         use super::*;
 
         #[test]
-        #[ignore]
         fn simple_gtest_test() {
             run_ast_parser_test(
                 "./tests/playground/complex_cases/simple_gtest",
