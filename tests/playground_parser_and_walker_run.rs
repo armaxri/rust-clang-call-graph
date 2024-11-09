@@ -303,5 +303,13 @@ mod tests {
                 vec!["file"],
             );
         }
+
+        #[test]
+        fn template_inheritance_test() {
+            run_ast_parser_test(
+                "./tests/playground/simple_templates/template_inheritance",
+                vec!["file"],
+            );
+        }
     }
 }

@@ -180,6 +180,12 @@
     "output": "./tests/playground/simple_templates/simple_template_function_with_class/file.o"
   },
   {
+    "directory": "./tests/playground/simple_templates/template_inheritance/",
+    "command": "clang++ -I./tests/playground/simple_templates/template_inheritance/ -c ./tests/playground/simple_templates/template_inheritance/file.cpp -o ./tests/playground/simple_templates/template_inheritance/file.o -std=c++20",
+    "file": "./tests/playground/simple_templates/template_inheritance/file.cpp",
+    "output": "./tests/playground/simple_templates/template_inheritance/file.o"
+  },
+  {
     "directory": "./tests/playground/complex_cases/simple_gtest/",
     "command": "clang++ -I./tests/playground/complex_cases/simple_gtest/ -I./tests/playground/external_resources/googletest/googletest/include -c ./tests/playground/complex_cases/simple_gtest/file.cpp -o ./tests/playground/complex_cases/simple_gtest/file.o -std=c++20",
     "file": "./tests/playground/complex_cases/simple_gtest/file.cpp",
