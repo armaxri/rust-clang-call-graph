@@ -110,28 +110,28 @@ mod tests {
         let timestamp1 = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
             .unwrap()
-            .as_secs() as usize;
+            .as_millis() as usize;
 
-        std::thread::sleep(std::time::Duration::from_secs(1));
+        std::thread::sleep(std::time::Duration::from_millis(100));
 
         let cpp_file = database_sqlite.get_or_add_cpp_file("empty.json");
-        std::thread::sleep(std::time::Duration::from_secs(1));
+        std::thread::sleep(std::time::Duration::from_millis(100));
         let timestamp2 = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
             .unwrap()
-            .as_secs() as usize;
+            .as_millis() as usize;
 
         assert!(cpp_file.borrow().get_last_analyzed() > timestamp1);
         assert!(cpp_file.borrow().get_last_analyzed() < timestamp2);
 
-        std::thread::sleep(std::time::Duration::from_secs(1));
+        std::thread::sleep(std::time::Duration::from_millis(100));
         cpp_file.borrow_mut().just_analyzed();
-        std::thread::sleep(std::time::Duration::from_secs(1));
+        std::thread::sleep(std::time::Duration::from_millis(100));
 
         let timestamp3 = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
             .unwrap()
-            .as_secs() as usize;
+            .as_millis() as usize;
 
         assert!(cpp_file.borrow().get_last_analyzed() > timestamp2);
         assert!(cpp_file.borrow().get_last_analyzed() < timestamp3);
