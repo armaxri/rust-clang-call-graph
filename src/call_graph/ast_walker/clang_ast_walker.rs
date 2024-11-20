@@ -277,7 +277,10 @@ fn handle_cxx_record_decl(
                             "".to_string()
                         };
 
-                        if parent_name != "" {
+                        if parent_name != ""
+                            && !parent_name.starts_with("std::")
+                            && !parent_name.starts_with("_")
+                        {
                             let parent_class = walker.known_classes.get(&parent_name);
                             if parent_class.is_some() {
                                 class.borrow_mut().add_parent_class(&parent_class.unwrap());
@@ -304,6 +307,11 @@ fn handle_namespace_decl(
     name_prefix: &str,
 ) {
     let namespace_str = ast_element.attributes.split(" ").last().unwrap();
+
+    if namespace_str == "std" || namespace_str.starts_with("_") {
+        return;
+    }
+
     let new_name_prefix = if name_prefix == "" {
         format!("{}::", namespace_str)
     } else {
