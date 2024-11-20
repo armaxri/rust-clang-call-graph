@@ -2,9 +2,10 @@ use std::collections::VecDeque;
 use std::rc::Rc;
 
 use super::super::location::range::Range;
+use super::clang_ast_element_type::ClangAstElementType;
 
 pub struct ClangAstElement {
-    pub element_type: String,
+    pub element_type: ClangAstElementType,
     pub element_id: usize,
     pub parent_element_id: usize,
     pub prev_element_id: usize,
@@ -16,7 +17,7 @@ pub struct ClangAstElement {
 
 impl ClangAstElement {
     pub fn new<'a>(
-        element_type: String,
+        element_type: ClangAstElementType,
         element_id: usize,
         parent_element_id: usize,
         prev_element_id: usize,
