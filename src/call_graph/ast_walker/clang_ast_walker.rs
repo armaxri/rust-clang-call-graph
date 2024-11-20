@@ -5,7 +5,7 @@ use std::{
 };
 
 use crate::{
-    ast_reader::clang_ast_element::ClangAstElement,
+    ast_reader::{clang_ast_element::ClangAstElement, clang_ast_element_type::ClangAstElementType},
     call_graph::{
         data_structure::{
             cpp_class::CppClass, file_structure::FileStructure, func_structure::FuncStructure,
@@ -75,26 +75,26 @@ fn handle_ast_element(
     walker: &mut ClangAstWalkerInternal,
     name_prefix: &str,
 ) {
-    match ast_element.element_type.as_str() {
-        "FunctionDecl" => {
+    match ast_element.element_type {
+        ClangAstElementType::FunctionDecl => {
             handle_function_decl(ast_element, walker, name_prefix, None);
         }
-        "CXXMethodDecl" => {
+        ClangAstElementType::CXXMethodDecl => {
             handle_function_decl(ast_element, walker, name_prefix, None);
         }
-        "NamespaceDecl" => {
+        ClangAstElementType::NamespaceDecl => {
             handle_namespace_decl(ast_element, walker, name_prefix);
         }
-        "CXXRecordDecl" => {
+        ClangAstElementType::CXXRecordDecl => {
             handle_cxx_record_decl(ast_element, walker, name_prefix);
         }
-        "ClassTemplateDecl" => {
+        ClangAstElementType::ClassTemplateDecl => {
             handle_class_template_decl(ast_element, walker, name_prefix);
         }
-        "FunctionTemplateDecl" => {
+        ClangAstElementType::FunctionTemplateDecl => {
             handle_function_template_decl(ast_element, walker, name_prefix);
         }
-        "TypedefDecl" | "ClassTemplateSpecializationDecl" => {
+        ClangAstElementType::TypedefDecl | ClangAstElementType::ClassTemplateSpecializationDecl => {
             return;
         }
         _ => {
@@ -113,9 +113,9 @@ fn handle_function_template_decl(
     let template_func_name = &ast_element.attributes;
 
     'func_decls_loop: for inner_element in &ast_element.inner {
-        if inner_element.element_type.as_str() == "FunctionDecl" {
+        if inner_element.element_type == ClangAstElementType::FunctionDecl {
             for inner_inner_element in &inner_element.inner {
-                if inner_inner_element.element_type.as_str() == "TemplateArgument" {
+                if inner_inner_element.element_type == ClangAstElementType::TemplateArgument {
                     handle_function_decl(
                         inner_element,
                         walker,
@@ -163,8 +163,8 @@ fn handle_class_template_decl(
     };
 
     for inner_element in &ast_element.inner {
-        match inner_element.element_type.as_str() {
-            "CXXRecordDecl" => {
+        match inner_element.element_type {
+            ClangAstElementType::CXXRecordDecl => {
                 if inner_element
                     .attributes
                     .ends_with(format!("class {} definition", template_class_name).as_str())
@@ -173,7 +173,7 @@ fn handle_class_template_decl(
                 }
                 handle_cxx_record_decl(inner_element, walker, &new_name_prefix);
             }
-            "ClassTemplateSpecializationDecl" => {
+            ClangAstElementType::ClassTemplateSpecializationDecl => {
                 handle_class_template_specialization_decl(inner_element, walker, &new_name_prefix);
             }
             _ => {
@@ -189,7 +189,7 @@ fn collect_template_specialization(ast_element: &ClangAstElement) -> Vec<&str> {
     let mut templates: Vec<&str> = Vec::new();
 
     for inner_element in &ast_element.inner {
-        if inner_element.element_type.as_str() == "TemplateArgument"
+        if inner_element.element_type == ClangAstElementType::TemplateArgument
             && inner_element.attributes.starts_with("type '")
         {
             templates.push(
@@ -265,8 +265,10 @@ fn handle_cxx_record_decl(
             walker.known_classes.insert(used_name, class.clone());
 
             for inner_element in &ast_element.inner {
-                match inner_element.element_type.as_str() {
-                    "public" | "protected" | "private" => {
+                match inner_element.element_type {
+                    ClangAstElementType::public
+                    | ClangAstElementType::protected
+                    | ClangAstElementType::private => {
                         let splitted_modifiers: Vec<&str> =
                             inner_element.attributes.split("':'").collect();
                         let parent_name = if splitted_modifiers.len() > 1 {
@@ -275,7 +277,10 @@ fn handle_cxx_record_decl(
                             "".to_string()
                         };
 
-                        if parent_name != "" {
+                        if parent_name != ""
+                            && !parent_name.starts_with("std::")
+                            && !parent_name.starts_with("_")
+                        {
                             let parent_class = walker.known_classes.get(&parent_name);
                             if parent_class.is_some() {
                                 class.borrow_mut().add_parent_class(&parent_class.unwrap());
@@ -302,6 +307,11 @@ fn handle_namespace_decl(
     name_prefix: &str,
 ) {
     let namespace_str = ast_element.attributes.split(" ").last().unwrap();
+
+    if namespace_str == "std" || namespace_str.starts_with("_") {
+        return;
+    }
+
     let new_name_prefix = if name_prefix == "" {
         format!("{}::", namespace_str)
     } else {
@@ -448,8 +458,8 @@ fn walk_func_impl_inner(
     current_range: &Range,
 ) {
     let mut used_current_range = current_range;
-    match ast_element.element_type.as_str() {
-        "DeclRefExpr" => {
+    match ast_element.element_type {
+        ClangAstElementType::DeclRefExpr => {
             let splitted_attributes: Vec<&str> = ast_element.attributes.split(" ").collect();
             let mut func_keyword_index = splitted_attributes
                 .iter()
@@ -479,7 +489,7 @@ fn walk_func_impl_inner(
                 None => {}
             }
         }
-        "MemberExpr" => {
+        ClangAstElementType::MemberExpr => {
             let splitted_attributes: Vec<&str> = ast_element.attributes.split(" ").collect();
 
             if splitted_attributes.last().unwrap().starts_with("0x") {
@@ -490,7 +500,7 @@ fn walk_func_impl_inner(
                 }
             }
         }
-        "CallExpr" | "CXXMemberCallExpr" => {
+        ClangAstElementType::CallExpr | ClangAstElementType::CXXMemberCallExpr => {
             used_current_range = &ast_element.range;
         }
         _ => {}
@@ -547,7 +557,7 @@ fn walker_func_impl_inner_decl(
 
 fn get_compound_stmt(ast_element: &ClangAstElement) -> Option<&ClangAstElement> {
     for child in &ast_element.inner {
-        if child.element_type == "CompoundStmt" {
+        if child.element_type == ClangAstElementType::CompoundStmt {
             return Some(child);
         }
     }
@@ -596,7 +606,7 @@ impl ClangAstElement {
         walker: Option<&ClangAstWalkerInternal>,
     ) -> Option<String> {
         for inner_element in &self.inner {
-            if inner_element.element_type == "Overrides" {
+            if inner_element.element_type == ClangAstElementType::Overrides {
                 let splitted_attributes: Vec<&str> = inner_element.attributes.split(" ").collect();
                 if splitted_attributes.len() >= 1 && splitted_attributes[0].starts_with("0x") {
                     if let Ok(hex_value) = usize::from_str_radix(&splitted_attributes[0][2..], 16) {
@@ -681,7 +691,7 @@ mod tests {
     #[test]
     fn create_func_creation_args_test() {
         let input = ClangAstElement {
-            element_type: "FunctionDecl".to_string(),
+            element_type: ClangAstElementType::FunctionDecl,
             element_id: 0x123011160,
             parent_element_id: 0,
             prev_element_id: 0,
@@ -706,7 +716,7 @@ mod tests {
     #[test]
     fn create_func_creation_args_test_with_used() {
         let input = ClangAstElement {
-            element_type: "FunctionDecl".to_string(),
+            element_type: ClangAstElementType::FunctionDecl,
             element_id: 0x123011160,
             parent_element_id: 0,
             prev_element_id: 0,
@@ -731,7 +741,7 @@ mod tests {
     #[test]
     fn create_func_creation_args_test_with_extern() {
         let input = ClangAstElement {
-            element_type: "FunctionDecl".to_string(),
+            element_type: ClangAstElementType::FunctionDecl,
             element_id: 0x123011160,
             parent_element_id: 0,
             prev_element_id: 0,
