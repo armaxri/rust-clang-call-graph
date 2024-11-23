@@ -68,6 +68,39 @@ pub fn walk_ast_2_func_call_db(
 
         handle_ast_element(&ast_element, &mut walker, "");
     }
+
+    map_open_func_call_connections(&mut walker);
+}
+
+fn map_open_func_call_connections(walker: &mut ClangAstWalkerInternal) {
+    let mut sorted_keys: Vec<_> = walker.open_func_call_connections.keys().collect();
+    sorted_keys.sort();
+
+    for func_decl_id in sorted_keys {
+        let open_connections = &walker.open_func_call_connections[func_decl_id];
+        let func_decl = walker.known_func_decls_and_impls.get(func_decl_id);
+
+        if func_decl.is_none() {
+            println!("Could not find function decl with id 0x{:x}", func_decl_id);
+            continue;
+        }
+
+        for (range, func_impl) in open_connections {
+            if func_impl == func_decl.unwrap() {
+                let creation_args = func_impl
+                    .borrow()
+                    .convert_func2func_creation_args4call(range);
+                func_impl.borrow_mut().get_or_add_func_call(&creation_args);
+            } else {
+                func_impl.borrow_mut().get_or_add_func_call(
+                    &func_decl
+                        .unwrap()
+                        .borrow()
+                        .convert_func2func_creation_args4call(range),
+                );
+            }
+        }
+    }
 }
 
 fn handle_ast_element(
@@ -385,26 +418,6 @@ fn handle_function_decl(
             walker
                 .known_func_decls_and_impls
                 .insert(ast_element.element_id, func_impl.clone());
-
-            if walker
-                .open_func_call_connections
-                .contains_key(&ast_element.element_id)
-            {
-                for missing_connection in walker
-                    .open_func_call_connections
-                    .get(&ast_element.element_id)
-                    .unwrap()
-                {
-                    missing_connection.1.borrow_mut().get_or_add_func_call(
-                        &func_impl
-                            .borrow()
-                            .convert_func2func_creation_args4call(&missing_connection.0),
-                    );
-                }
-                walker
-                    .open_func_call_connections
-                    .remove(&ast_element.element_id);
-            }
 
             walker.current_func_impl_ast_id = ast_element.element_id;
             for inner_element in &ast_element.inner {

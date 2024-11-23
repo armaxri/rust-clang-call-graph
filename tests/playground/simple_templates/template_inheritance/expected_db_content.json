@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "./tests/playground/simple_templates/template_inheritance/file.cpp",
-      "last_analyzed": 1731113081238,
+      "last_analyzed": 1732320497170,
       "classes": [
         {
           "id": 1,
@@ -30,7 +30,7 @@
               },
               "func_calls": [
                 {
-                  "id": 2,
+                  "id": 3,
                   "name": "ba",
                   "qualified_name": "SimpleClass::ba 'int ()'",
                   "base_qualified_name": null,
@@ -156,7 +156,7 @@
           },
           "func_calls": [
             {
-              "id": 3,
+              "id": 2,
               "name": "foo",
               "qualified_name": "ChildTemplateClass<SimpleClass>::foo 'int ()'",
               "base_qualified_name": null,
