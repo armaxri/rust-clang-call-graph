@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "./tests/playground/complex_cases/simple_gtest/file.cpp",
-      "last_analyzed": 1732131461139,
+      "last_analyzed": 1732321490769,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17,7 +17,7 @@
     {
       "id": 1,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config",
-      "last_analyzed": 1732131461140,
+      "last_analyzed": 1732321490770,
       "classes": [],
       "func_decls": [
         {
@@ -260,7 +260,7 @@
     {
       "id": 2,
       "name": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stddef.h",
-      "last_analyzed": 1732131461141,
+      "last_analyzed": 1732321490771,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -274,7 +274,7 @@
     {
       "id": 3,
       "name": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/__stddef_max_align_t.h",
-      "last_analyzed": 1732131461142,
+      "last_analyzed": 1732321490772,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -288,7 +288,7 @@
     {
       "id": 4,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h",
-      "last_analyzed": 1732131461143,
+      "last_analyzed": 1732321490773,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -302,7 +302,7 @@
     {
       "id": 5,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef",
-      "last_analyzed": 1732131461144,
+      "last_analyzed": 1732321490773,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -316,7 +316,7 @@
     {
       "id": 6,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int8_t.h",
-      "last_analyzed": 1732131461144,
+      "last_analyzed": 1732321490774,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -330,7 +330,7 @@
     {
       "id": 7,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int16_t.h",
-      "last_analyzed": 1732131461145,
+      "last_analyzed": 1732321490775,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -344,7 +344,7 @@
     {
       "id": 8,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int32_t.h",
-      "last_analyzed": 1732131461146,
+      "last_analyzed": 1732321490775,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -358,7 +358,7 @@
     {
       "id": 9,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int64_t.h",
-      "last_analyzed": 1732131461146,
+      "last_analyzed": 1732321490776,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -372,7 +372,7 @@
     {
       "id": 10,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint8_t.h",
-      "last_analyzed": 1732131461147,
+      "last_analyzed": 1732321490777,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -386,7 +386,7 @@
     {
       "id": 11,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint16_t.h",
-      "last_analyzed": 1732131461148,
+      "last_analyzed": 1732321490778,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -400,7 +400,7 @@
     {
       "id": 12,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint32_t.h",
-      "last_analyzed": 1732131461148,
+      "last_analyzed": 1732321490779,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -414,7 +414,7 @@
     {
       "id": 13,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint64_t.h",
-      "last_analyzed": 1732131461149,
+      "last_analyzed": 1732321490779,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -428,7 +428,7 @@
     {
       "id": 14,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdint.h",
-      "last_analyzed": 1732131461150,
+      "last_analyzed": 1732321490780,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -442,7 +442,7 @@
     {
       "id": 15,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_types.h",
-      "last_analyzed": 1732131461151,
+      "last_analyzed": 1732321490781,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -456,7 +456,7 @@
     {
       "id": 16,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h",
-      "last_analyzed": 1732131461151,
+      "last_analyzed": 1732321490782,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -470,7 +470,7 @@
     {
       "id": 17,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h",
-      "last_analyzed": 1732131461152,
+      "last_analyzed": 1732321490783,
       "classes": [
         {
           "id": 1,
@@ -585,7 +585,7 @@
     {
       "id": 18,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_intptr_t.h",
-      "last_analyzed": 1732131461156,
+      "last_analyzed": 1732321490788,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -599,7 +599,7 @@
     {
       "id": 19,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h",
-      "last_analyzed": 1732131461157,
+      "last_analyzed": 1732321490788,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -613,7 +613,7 @@
     {
       "id": 20,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_intmax_t.h",
-      "last_analyzed": 1732131461157,
+      "last_analyzed": 1732321490789,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -627,7 +627,7 @@
     {
       "id": 21,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h",
-      "last_analyzed": 1732131461158,
+      "last_analyzed": 1732321490790,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -641,7 +641,7 @@
     {
       "id": 22,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/limits",
-      "last_analyzed": 1732131461159,
+      "last_analyzed": 1732321490790,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -655,7 +655,7 @@
     {
       "id": 23,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/conditional.h",
-      "last_analyzed": 1732131461160,
+      "last_analyzed": 1732321490791,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -669,7 +669,7 @@
     {
       "id": 24,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/type_list.h",
-      "last_analyzed": 1732131461161,
+      "last_analyzed": 1732321490792,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -683,7 +683,7 @@
     {
       "id": 25,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/apply_cv.h",
-      "last_analyzed": 1732131461161,
+      "last_analyzed": 1732321490793,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -697,7 +697,7 @@
     {
       "id": 26,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/exception.h",
-      "last_analyzed": 1732131461164,
+      "last_analyzed": 1732321490796,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -711,7 +711,7 @@
     {
       "id": 27,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types.h",
-      "last_analyzed": 1732131461165,
+      "last_analyzed": 1732321490797,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -725,7 +725,7 @@
     {
       "id": 28,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/wait.h",
-      "last_analyzed": 1732131461166,
+      "last_analyzed": 1732321490798,
       "classes": [],
       "func_decls": [
         {
@@ -835,7 +835,7 @@
     {
       "id": 29,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_pid_t.h",
-      "last_analyzed": 1732131461166,
+      "last_analyzed": 1732321490798,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -849,7 +849,7 @@
     {
       "id": 30,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_id_t.h",
-      "last_analyzed": 1732131461167,
+      "last_analyzed": 1732321490799,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -863,7 +863,7 @@
     {
       "id": 31,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/signal.h",
-      "last_analyzed": 1732131461167,
+      "last_analyzed": 1732321490799,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -877,7 +877,7 @@
     {
       "id": 32,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int8_t.h",
-      "last_analyzed": 1732131461168,
+      "last_analyzed": 1732321490800,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -891,7 +891,7 @@
     {
       "id": 33,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int16_t.h",
-      "last_analyzed": 1732131461169,
+      "last_analyzed": 1732321490801,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -905,7 +905,7 @@
     {
       "id": 34,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int32_t.h",
-      "last_analyzed": 1732131461170,
+      "last_analyzed": 1732321490802,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -919,7 +919,7 @@
     {
       "id": 35,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int64_t.h",
-      "last_analyzed": 1732131461170,
+      "last_analyzed": 1732321490803,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -933,7 +933,7 @@
     {
       "id": 36,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/types.h",
-      "last_analyzed": 1732131461171,
+      "last_analyzed": 1732321490803,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -947,7 +947,7 @@
     {
       "id": 37,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h",
-      "last_analyzed": 1732131461172,
+      "last_analyzed": 1732321490804,
       "classes": [
         {
           "id": 11,
@@ -1102,7 +1102,7 @@
     {
       "id": 38,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_mcontext.h",
-      "last_analyzed": 1732131461177,
+      "last_analyzed": 1732321490809,
       "classes": [
         {
           "id": 24,
@@ -1127,7 +1127,7 @@
     {
       "id": 39,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_attr_t.h",
-      "last_analyzed": 1732131461179,
+      "last_analyzed": 1732321490812,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1141,7 +1141,7 @@
     {
       "id": 40,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_sigaltstack.h",
-      "last_analyzed": 1732131461180,
+      "last_analyzed": 1732321490812,
       "classes": [
         {
           "id": 26,
@@ -1166,7 +1166,7 @@
     {
       "id": 41,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ucontext.h",
-      "last_analyzed": 1732131461180,
+      "last_analyzed": 1732321490813,
       "classes": [
         {
           "id": 27,
@@ -1191,7 +1191,7 @@
     {
       "id": 42,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_sigset_t.h",
-      "last_analyzed": 1732131461182,
+      "last_analyzed": 1732321490814,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1205,7 +1205,7 @@
     {
       "id": 43,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_uid_t.h",
-      "last_analyzed": 1732131461182,
+      "last_analyzed": 1732321490815,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1219,7 +1219,7 @@
     {
       "id": 44,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h",
-      "last_analyzed": 1732131461183,
+      "last_analyzed": 1732321490816,
       "classes": [
         {
           "id": 28,
@@ -1314,7 +1314,7 @@
     {
       "id": 45,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval.h",
-      "last_analyzed": 1732131461186,
+      "last_analyzed": 1732321490819,
       "classes": [
         {
           "id": 34,
@@ -1339,7 +1339,7 @@
     {
       "id": 46,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h",
-      "last_analyzed": 1732131461187,
+      "last_analyzed": 1732321490820,
       "classes": [
         {
           "id": 35,
@@ -1588,7 +1588,7 @@
     {
       "id": 47,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libkern/arm/_OSByteOrder.h",
-      "last_analyzed": 1732131461193,
+      "last_analyzed": 1732321490826,
       "classes": [],
       "func_decls": [],
       "func_impls": [
@@ -1660,7 +1660,7 @@
     {
       "id": 48,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/alloca.h",
-      "last_analyzed": 1732131461196,
+      "last_analyzed": 1732321490829,
       "classes": [],
       "func_decls": [
         {
@@ -1694,7 +1694,7 @@
     {
       "id": 49,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ct_rune_t.h",
-      "last_analyzed": 1732131461197,
+      "last_analyzed": 1732321490830,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1708,7 +1708,7 @@
     {
       "id": 50,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rune_t.h",
-      "last_analyzed": 1732131461198,
+      "last_analyzed": 1732321490831,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1722,7 +1722,7 @@
     {
       "id": 51,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h",
-      "last_analyzed": 1732131461199,
+      "last_analyzed": 1732321490832,
       "classes": [],
       "func_decls": [
         {
@@ -3713,7 +3713,7 @@
     {
       "id": 52,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc_type.h",
-      "last_analyzed": 1732131461200,
+      "last_analyzed": 1732321490832,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -3727,7 +3727,7 @@
     {
       "id": 53,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h",
-      "last_analyzed": 1732131461200,
+      "last_analyzed": 1732321490833,
       "classes": [],
       "func_decls": [
         {
@@ -6155,7 +6155,7 @@
     {
       "id": 54,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h",
-      "last_analyzed": 1732131461205,
+      "last_analyzed": 1732321490838,
       "classes": [],
       "func_decls": [
         {
@@ -6303,7 +6303,7 @@
     {
       "id": 55,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h",
-      "last_analyzed": 1732131461208,
+      "last_analyzed": 1732321490841,
       "classes": [],
       "func_decls": [
         {
@@ -6508,7 +6508,7 @@
     {
       "id": 56,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_abort.h",
-      "last_analyzed": 1732131461209,
+      "last_analyzed": 1732321490842,
       "classes": [],
       "func_decls": [
         {
@@ -6542,7 +6542,7 @@
     {
       "id": 57,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h",
-      "last_analyzed": 1732131461219,
+      "last_analyzed": 1732321490851,
       "classes": [],
       "func_decls": [
         {
@@ -11655,7 +11655,7 @@
     {
       "id": 58,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_dev_t.h",
-      "last_analyzed": 1732131461232,
+      "last_analyzed": 1732321490864,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -11669,7 +11669,7 @@
     {
       "id": 59,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_mode_t.h",
-      "last_analyzed": 1732131461233,
+      "last_analyzed": 1732321490865,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -11683,7 +11683,7 @@
     {
       "id": 60,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stdlib.h",
-      "last_analyzed": 1732131461249,
+      "last_analyzed": 1732321490884,
       "classes": [],
       "func_decls": [],
       "func_impls": [
@@ -11871,7 +11871,7 @@
     {
       "id": 61,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/new",
-      "last_analyzed": 1732131461253,
+      "last_analyzed": 1732321490887,
       "classes": [],
       "func_decls": [],
       "func_impls": [
@@ -11962,7 +11962,7 @@
     {
       "id": 62,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/pointer_traits.h",
-      "last_analyzed": 1732131461260,
+      "last_analyzed": 1732321490893,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -11976,7 +11976,7 @@
     {
       "id": 63,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_valid_expansion.h",
-      "last_analyzed": 1732131461262,
+      "last_analyzed": 1732321490896,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -11990,7 +11990,7 @@
     {
       "id": 64,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/tuple_element.h",
-      "last_analyzed": 1732131461264,
+      "last_analyzed": 1732321490898,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -12004,7 +12004,7 @@
     {
       "id": 65,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list",
-      "last_analyzed": 1732131461265,
+      "last_analyzed": 1732321490899,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -12018,7 +12018,7 @@
     {
       "id": 66,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/iter_swap.h",
-      "last_analyzed": 1732131461266,
+      "last_analyzed": 1732321490900,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -12032,7 +12032,7 @@
     {
       "id": 67,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/unreachable.h",
-      "last_analyzed": 1732131461267,
+      "last_analyzed": 1732321490901,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -12046,7 +12046,7 @@
     {
       "id": 68,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/make_tuple_types.h",
-      "last_analyzed": 1732131461268,
+      "last_analyzed": 1732321490902,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -12060,7 +12060,7 @@
     {
       "id": 69,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/min_element.h",
-      "last_analyzed": 1732131461269,
+      "last_analyzed": 1732321490904,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -12074,7 +12074,7 @@
     {
       "id": 70,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/min.h",
-      "last_analyzed": 1732131461270,
+      "last_analyzed": 1732321490905,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -12088,7 +12088,7 @@
     {
       "id": 71,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy.h",
-      "last_analyzed": 1732131461271,
+      "last_analyzed": 1732321490905,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -12102,7 +12102,7 @@
     {
       "id": 72,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_string.h",
-      "last_analyzed": 1732131461273,
+      "last_analyzed": 1732321490907,
       "classes": [],
       "func_decls": [
         {
@@ -12915,7 +12915,7 @@
     {
       "id": 73,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h",
-      "last_analyzed": 1732131461283,
+      "last_analyzed": 1732321490917,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -12929,7 +12929,7 @@
     {
       "id": 74,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h",
-      "last_analyzed": 1732131461288,
+      "last_analyzed": 1732321490921,
       "classes": [],
       "func_decls": [
         {
@@ -13191,7 +13191,7 @@
     {
       "id": 75,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/string.h",
-      "last_analyzed": 1732131461292,
+      "last_analyzed": 1732321490926,
       "classes": [],
       "func_decls": [],
       "func_impls": [
@@ -13396,7 +13396,7 @@
     {
       "id": 76,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/hash.h",
-      "last_analyzed": 1732131461296,
+      "last_analyzed": 1732321490930,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -13410,7 +13410,7 @@
     {
       "id": 77,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo",
-      "last_analyzed": 1732131461298,
+      "last_analyzed": 1732321490931,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -13424,7 +13424,7 @@
     {
       "id": 78,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/math.h",
-      "last_analyzed": 1732131461299,
+      "last_analyzed": 1732321490933,
       "classes": [
         {
           "id": 45,
@@ -17339,7 +17339,7 @@
     {
       "id": 79,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/abs.h",
-      "last_analyzed": 1732131461378,
+      "last_analyzed": 1732321491010,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17353,7 +17353,7 @@
     {
       "id": 80,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/copysign.h",
-      "last_analyzed": 1732131461378,
+      "last_analyzed": 1732321491011,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17367,7 +17367,7 @@
     {
       "id": 81,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/min_max.h",
-      "last_analyzed": 1732131461379,
+      "last_analyzed": 1732321491012,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17381,7 +17381,7 @@
     {
       "id": 82,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/roots.h",
-      "last_analyzed": 1732131461380,
+      "last_analyzed": 1732321491013,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17395,7 +17395,7 @@
     {
       "id": 83,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/rounding_functions.h",
-      "last_analyzed": 1732131461381,
+      "last_analyzed": 1732321491014,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17409,7 +17409,7 @@
     {
       "id": 84,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/traits.h",
-      "last_analyzed": 1732131461382,
+      "last_analyzed": 1732321491015,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17423,7 +17423,7 @@
     {
       "id": 85,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h",
-      "last_analyzed": 1732131461383,
+      "last_analyzed": 1732321491016,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17437,7 +17437,7 @@
     {
       "id": 86,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/operations.h",
-      "last_analyzed": 1732131461385,
+      "last_analyzed": 1732321491017,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17451,7 +17451,7 @@
     {
       "id": 87,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/exception_ptr.h",
-      "last_analyzed": 1732131461386,
+      "last_analyzed": 1732321491018,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17465,7 +17465,7 @@
     {
       "id": 88,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/nested_exception.h",
-      "last_analyzed": 1732131461387,
+      "last_analyzed": 1732321491019,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17479,7 +17479,7 @@
     {
       "id": 89,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/terminate.h",
-      "last_analyzed": 1732131461388,
+      "last_analyzed": 1732321491020,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17493,7 +17493,7 @@
     {
       "id": 90,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_mbstate_t.h",
-      "last_analyzed": 1732131461389,
+      "last_analyzed": 1732321491021,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17507,7 +17507,7 @@
     {
       "id": 91,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__atomic/is_always_lock_free.h",
-      "last_analyzed": 1732131461390,
+      "last_analyzed": 1732321491023,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17521,7 +17521,7 @@
     {
       "id": 92,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/time_point.h",
-      "last_analyzed": 1732131461392,
+      "last_analyzed": 1732321491025,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17535,7 +17535,7 @@
     {
       "id": 93,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_clock_t.h",
-      "last_analyzed": 1732131461392,
+      "last_analyzed": 1732321491026,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17549,7 +17549,7 @@
     {
       "id": 94,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_time_t.h",
-      "last_analyzed": 1732131461393,
+      "last_analyzed": 1732321491028,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -17563,7 +17563,7 @@
     {
       "id": 95,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_timespec.h",
-      "last_analyzed": 1732131461394,
+      "last_analyzed": 1732321491028,
       "classes": [
         {
           "id": 47,
@@ -17588,7 +17588,7 @@
     {
       "id": 96,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_time.h",
-      "last_analyzed": 1732131461396,
+      "last_analyzed": 1732321491030,
       "classes": [
         {
           "id": 48,
@@ -18032,7 +18032,7 @@
     {
       "id": 97,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/errno.h",
-      "last_analyzed": 1732131461409,
+      "last_analyzed": 1732321491040,
       "classes": [],
       "func_decls": [
         {
@@ -18066,7 +18066,7 @@
     {
       "id": 98,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread/sched.h",
-      "last_analyzed": 1732131461410,
+      "last_analyzed": 1732321491041,
       "classes": [
         {
           "id": 49,
@@ -18149,7 +18149,7 @@
     {
       "id": 99,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_cond_t.h",
-      "last_analyzed": 1732131461412,
+      "last_analyzed": 1732321491043,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18163,7 +18163,7 @@
     {
       "id": 100,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h",
-      "last_analyzed": 1732131461413,
+      "last_analyzed": 1732321491043,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18177,7 +18177,7 @@
     {
       "id": 101,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_key_t.h",
-      "last_analyzed": 1732131461413,
+      "last_analyzed": 1732321491044,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18191,7 +18191,7 @@
     {
       "id": 102,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h",
-      "last_analyzed": 1732131461414,
+      "last_analyzed": 1732321491045,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18205,7 +18205,7 @@
     {
       "id": 103,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h",
-      "last_analyzed": 1732131461415,
+      "last_analyzed": 1732321491045,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18219,7 +18219,7 @@
     {
       "id": 104,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_once_t.h",
-      "last_analyzed": 1732131461416,
+      "last_analyzed": 1732321491046,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18233,7 +18233,7 @@
     {
       "id": 105,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h",
-      "last_analyzed": 1732131461416,
+      "last_analyzed": 1732321491047,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18247,7 +18247,7 @@
     {
       "id": 106,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h",
-      "last_analyzed": 1732131461417,
+      "last_analyzed": 1732321491048,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18261,7 +18261,7 @@
     {
       "id": 107,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_t.h",
-      "last_analyzed": 1732131461417,
+      "last_analyzed": 1732321491048,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18275,7 +18275,7 @@
     {
       "id": 108,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread/qos.h",
-      "last_analyzed": 1732131461420,
+      "last_analyzed": 1732321491051,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18289,7 +18289,7 @@
     {
       "id": 109,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_mach_port_t.h",
-      "last_analyzed": 1732131461421,
+      "last_analyzed": 1732321491052,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18303,7 +18303,7 @@
     {
       "id": 110,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h",
-      "last_analyzed": 1732131461433,
+      "last_analyzed": 1732321491063,
       "classes": [],
       "func_decls": [
         {
@@ -18337,7 +18337,7 @@
     {
       "id": 111,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__threading_support",
-      "last_analyzed": 1732131461451,
+      "last_analyzed": 1732321491082,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18351,7 +18351,7 @@
     {
       "id": 112,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__availability",
-      "last_analyzed": 1732131461452,
+      "last_analyzed": 1732321491083,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18365,7 +18365,7 @@
     {
       "id": 113,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h",
-      "last_analyzed": 1732131461454,
+      "last_analyzed": 1732321491084,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18379,7 +18379,7 @@
     {
       "id": 114,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/variant",
-      "last_analyzed": 1732131461455,
+      "last_analyzed": 1732321491085,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18393,7 +18393,7 @@
     {
       "id": 115,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept",
-      "last_analyzed": 1732131461457,
+      "last_analyzed": 1732321491087,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18407,7 +18407,7 @@
     {
       "id": 116,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/max_element.h",
-      "last_analyzed": 1732131461458,
+      "last_analyzed": 1732321491088,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18421,7 +18421,7 @@
     {
       "id": 117,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/max.h",
-      "last_analyzed": 1732131461459,
+      "last_analyzed": 1732321491089,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18435,7 +18435,7 @@
     {
       "id": 118,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_wint_t.h",
-      "last_analyzed": 1732131461460,
+      "last_analyzed": 1732321491090,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18449,7 +18449,7 @@
     {
       "id": 119,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/runetype.h",
-      "last_analyzed": 1732131461461,
+      "last_analyzed": 1732321491091,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18463,7 +18463,7 @@
     {
       "id": 120,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctype.h",
-      "last_analyzed": 1732131461462,
+      "last_analyzed": 1732321491092,
       "classes": [],
       "func_decls": [
         {
@@ -18592,7 +18592,7 @@
     {
       "id": 121,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_wctrans_t.h",
-      "last_analyzed": 1732131461486,
+      "last_analyzed": 1732321491110,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18606,7 +18606,7 @@
     {
       "id": 122,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_wctype_t.h",
-      "last_analyzed": 1732131461488,
+      "last_analyzed": 1732321491113,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18620,7 +18620,7 @@
     {
       "id": 123,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/___wctype.h",
-      "last_analyzed": 1732131461499,
+      "last_analyzed": 1732321491126,
       "classes": [],
       "func_decls": [
         {
@@ -18654,7 +18654,7 @@
     {
       "id": 124,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_wctype.h",
-      "last_analyzed": 1732131461506,
+      "last_analyzed": 1732321491133,
       "classes": [],
       "func_decls": [
         {
@@ -18726,7 +18726,7 @@
     {
       "id": 125,
       "name": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdarg.h",
-      "last_analyzed": 1732131461507,
+      "last_analyzed": 1732321491135,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18740,7 +18740,7 @@
     {
       "id": 126,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_va_list.h",
-      "last_analyzed": 1732131461508,
+      "last_analyzed": 1732321491136,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -18754,7 +18754,7 @@
     {
       "id": 127,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/stdio.h",
-      "last_analyzed": 1732131461509,
+      "last_analyzed": 1732321491137,
       "classes": [],
       "func_decls": [
         {
@@ -18826,7 +18826,7 @@
     {
       "id": 128,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_printf.h",
-      "last_analyzed": 1732131461510,
+      "last_analyzed": 1732321491139,
       "classes": [],
       "func_decls": [
         {
@@ -18860,7 +18860,7 @@
     {
       "id": 129,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h",
-      "last_analyzed": 1732131461511,
+      "last_analyzed": 1732321491140,
       "classes": [
         {
           "id": 50,
@@ -20207,7 +20207,7 @@
     {
       "id": 130,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctermid.h",
-      "last_analyzed": 1732131461534,
+      "last_analyzed": 1732321491162,
       "classes": [],
       "func_decls": [
         {
@@ -20241,7 +20241,7 @@
     {
       "id": 131,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_off_t.h",
-      "last_analyzed": 1732131461546,
+      "last_analyzed": 1732321491174,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -20255,7 +20255,7 @@
     {
       "id": 132,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_wchar.h",
-      "last_analyzed": 1732131461556,
+      "last_analyzed": 1732321491185,
       "classes": [],
       "func_decls": [
         {
@@ -21657,7 +21657,7 @@
     {
       "id": 133,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/wchar.h",
-      "last_analyzed": 1732131461579,
+      "last_analyzed": 1732321491206,
       "classes": [],
       "func_decls": [],
       "func_impls": [
@@ -22257,7 +22257,7 @@
     {
       "id": 134,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar",
-      "last_analyzed": 1732131461591,
+      "last_analyzed": 1732321491217,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22271,7 +22271,7 @@
     {
       "id": 135,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/find.h",
-      "last_analyzed": 1732131461592,
+      "last_analyzed": 1732321491219,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22285,7 +22285,7 @@
     {
       "id": 136,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/find_if.h",
-      "last_analyzed": 1732131461593,
+      "last_analyzed": 1732321491221,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22299,7 +22299,7 @@
     {
       "id": 137,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy_n.h",
-      "last_analyzed": 1732131461594,
+      "last_analyzed": 1732321491222,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22313,7 +22313,7 @@
     {
       "id": 138,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/fill_n.h",
-      "last_analyzed": 1732131461595,
+      "last_analyzed": 1732321491223,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22327,7 +22327,7 @@
     {
       "id": 139,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/find_end.h",
-      "last_analyzed": 1732131461596,
+      "last_analyzed": 1732321491224,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22341,7 +22341,7 @@
     {
       "id": 140,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/find_first_of.h",
-      "last_analyzed": 1732131461597,
+      "last_analyzed": 1732321491225,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22355,7 +22355,7 @@
     {
       "id": 141,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/adjacent_find.h",
-      "last_analyzed": 1732131461598,
+      "last_analyzed": 1732321491227,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22369,7 +22369,7 @@
     {
       "id": 142,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/all_of.h",
-      "last_analyzed": 1732131461599,
+      "last_analyzed": 1732321491228,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22383,7 +22383,7 @@
     {
       "id": 143,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/any_of.h",
-      "last_analyzed": 1732131461600,
+      "last_analyzed": 1732321491229,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22397,7 +22397,7 @@
     {
       "id": 144,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/lower_bound.h",
-      "last_analyzed": 1732131461601,
+      "last_analyzed": 1732321491230,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22411,7 +22411,7 @@
     {
       "id": 145,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/binary_search.h",
-      "last_analyzed": 1732131461602,
+      "last_analyzed": 1732321491231,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22425,7 +22425,7 @@
     {
       "id": 146,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/clamp.h",
-      "last_analyzed": 1732131461602,
+      "last_analyzed": 1732321491232,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22439,7 +22439,7 @@
     {
       "id": 147,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/count.h",
-      "last_analyzed": 1732131461603,
+      "last_analyzed": 1732321491233,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22453,7 +22453,7 @@
     {
       "id": 148,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/count_if.h",
-      "last_analyzed": 1732131461604,
+      "last_analyzed": 1732321491234,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22467,7 +22467,7 @@
     {
       "id": 149,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/equal.h",
-      "last_analyzed": 1732131461605,
+      "last_analyzed": 1732321491234,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22481,7 +22481,7 @@
     {
       "id": 150,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/upper_bound.h",
-      "last_analyzed": 1732131461606,
+      "last_analyzed": 1732321491235,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22495,7 +22495,7 @@
     {
       "id": 151,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/find_if_not.h",
-      "last_analyzed": 1732131461607,
+      "last_analyzed": 1732321491236,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22509,7 +22509,7 @@
     {
       "id": 152,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/optional",
-      "last_analyzed": 1732131461607,
+      "last_analyzed": 1732321491237,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22523,7 +22523,7 @@
     {
       "id": 153,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/includes.h",
-      "last_analyzed": 1732131461609,
+      "last_analyzed": 1732321491238,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22537,7 +22537,7 @@
     {
       "id": 154,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/rotate.h",
-      "last_analyzed": 1732131461610,
+      "last_analyzed": 1732321491240,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22551,7 +22551,7 @@
     {
       "id": 155,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/is_heap_until.h",
-      "last_analyzed": 1732131461611,
+      "last_analyzed": 1732321491241,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22565,7 +22565,7 @@
     {
       "id": 156,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/is_heap.h",
-      "last_analyzed": 1732131461612,
+      "last_analyzed": 1732321491241,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22579,7 +22579,7 @@
     {
       "id": 157,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/is_permutation.h",
-      "last_analyzed": 1732131461613,
+      "last_analyzed": 1732321491242,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22593,7 +22593,7 @@
     {
       "id": 158,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/is_sorted_until.h",
-      "last_analyzed": 1732131461613,
+      "last_analyzed": 1732321491243,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22607,7 +22607,7 @@
     {
       "id": 159,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/is_sorted.h",
-      "last_analyzed": 1732131461614,
+      "last_analyzed": 1732321491244,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22621,7 +22621,7 @@
     {
       "id": 160,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/lexicographical_compare.h",
-      "last_analyzed": 1732131461615,
+      "last_analyzed": 1732321491245,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22635,7 +22635,7 @@
     {
       "id": 161,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/minmax_element.h",
-      "last_analyzed": 1732131461616,
+      "last_analyzed": 1732321491246,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22649,7 +22649,7 @@
     {
       "id": 162,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/minmax.h",
-      "last_analyzed": 1732131461617,
+      "last_analyzed": 1732321491247,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22663,7 +22663,7 @@
     {
       "id": 163,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/mismatch.h",
-      "last_analyzed": 1732131461618,
+      "last_analyzed": 1732321491247,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22677,7 +22677,7 @@
     {
       "id": 164,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/reverse.h",
-      "last_analyzed": 1732131461618,
+      "last_analyzed": 1732321491248,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22691,7 +22691,7 @@
     {
       "id": 165,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/none_of.h",
-      "last_analyzed": 1732131461619,
+      "last_analyzed": 1732321491249,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22705,7 +22705,7 @@
     {
       "id": 166,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/search_n.h",
-      "last_analyzed": 1732131461621,
+      "last_analyzed": 1732321491251,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22719,7 +22719,7 @@
     {
       "id": 167,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/unique.h",
-      "last_analyzed": 1732131461623,
+      "last_analyzed": 1732321491253,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -22733,7 +22733,7 @@
     {
       "id": 168,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_locale.h",
-      "last_analyzed": 1732131461625,
+      "last_analyzed": 1732321491255,
       "classes": [
         {
           "id": 52,
@@ -22778,7 +22778,7 @@
     {
       "id": 169,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/locale.h",
-      "last_analyzed": 1732131461627,
+      "last_analyzed": 1732321491256,
       "classes": [],
       "func_decls": [
         {
@@ -22812,7 +22812,7 @@
     {
       "id": 170,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_mb_cur_max.h",
-      "last_analyzed": 1732131461628,
+      "last_analyzed": 1732321491258,
       "classes": [],
       "func_decls": [
         {
@@ -22846,7 +22846,7 @@
     {
       "id": 171,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/__xlocale.h",
-      "last_analyzed": 1732131461629,
+      "last_analyzed": 1732321491259,
       "classes": [],
       "func_decls": [
         {
@@ -22880,7 +22880,7 @@
     {
       "id": 172,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_xlocale.h",
-      "last_analyzed": 1732131461630,
+      "last_analyzed": 1732321491260,
       "classes": [],
       "func_decls": [
         {
@@ -22971,7 +22971,7 @@
     {
       "id": 173,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_ctype.h",
-      "last_analyzed": 1732131461635,
+      "last_analyzed": 1732321491264,
       "classes": [],
       "func_decls": [
         {
@@ -23062,7 +23062,7 @@
     {
       "id": 174,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/___wctype.h",
-      "last_analyzed": 1732131461670,
+      "last_analyzed": 1732321491295,
       "classes": [],
       "func_decls": [
         {
@@ -23096,7 +23096,7 @@
     {
       "id": 175,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_stdio.h",
-      "last_analyzed": 1732131461671,
+      "last_analyzed": 1732321491296,
       "classes": [],
       "func_decls": [
         {
@@ -23453,7 +23453,7 @@
     {
       "id": 176,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_stdlib.h",
-      "last_analyzed": 1732131461678,
+      "last_analyzed": 1732321491303,
       "classes": [],
       "func_decls": [
         {
@@ -23810,7 +23810,7 @@
     {
       "id": 177,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_string.h",
-      "last_analyzed": 1732131461686,
+      "last_analyzed": 1732321491308,
       "classes": [],
       "func_decls": [
         {
@@ -23920,7 +23920,7 @@
     {
       "id": 178,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_time.h",
-      "last_analyzed": 1732131461689,
+      "last_analyzed": 1732321491311,
       "classes": [],
       "func_decls": [
         {
@@ -23973,7 +23973,7 @@
     {
       "id": 179,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_wchar.h",
-      "last_analyzed": 1732131461691,
+      "last_analyzed": 1732321491312,
       "classes": [],
       "func_decls": [
         {
@@ -24862,7 +24862,7 @@
     {
       "id": 180,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_wctype.h",
-      "last_analyzed": 1732131461714,
+      "last_analyzed": 1732321491338,
       "classes": [],
       "func_decls": [
         {
@@ -24934,7 +24934,7 @@
     {
       "id": 181,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_char.h",
-      "last_analyzed": 1732131461716,
+      "last_analyzed": 1732321491340,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -24948,7 +24948,7 @@
     {
       "id": 182,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_short.h",
-      "last_analyzed": 1732131461717,
+      "last_analyzed": 1732321491341,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -24962,7 +24962,7 @@
     {
       "id": 183,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int.h",
-      "last_analyzed": 1732131461718,
+      "last_analyzed": 1732321491342,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -24976,7 +24976,7 @@
     {
       "id": 184,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/types.h",
-      "last_analyzed": 1732131461719,
+      "last_analyzed": 1732321491343,
       "classes": [],
       "func_decls": [],
       "func_impls": [
@@ -25048,7 +25048,7 @@
     {
       "id": 185,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_caddr_t.h",
-      "last_analyzed": 1732131461719,
+      "last_analyzed": 1732321491343,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25062,7 +25062,7 @@
     {
       "id": 186,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_blkcnt_t.h",
-      "last_analyzed": 1732131461720,
+      "last_analyzed": 1732321491344,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25076,7 +25076,7 @@
     {
       "id": 187,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_blksize_t.h",
-      "last_analyzed": 1732131461721,
+      "last_analyzed": 1732321491345,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25090,7 +25090,7 @@
     {
       "id": 188,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_gid_t.h",
-      "last_analyzed": 1732131461722,
+      "last_analyzed": 1732321491346,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25104,7 +25104,7 @@
     {
       "id": 189,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_addr_t.h",
-      "last_analyzed": 1732131461723,
+      "last_analyzed": 1732321491347,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25118,7 +25118,7 @@
     {
       "id": 190,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_port_t.h",
-      "last_analyzed": 1732131461723,
+      "last_analyzed": 1732321491347,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25132,7 +25132,7 @@
     {
       "id": 191,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ino_t.h",
-      "last_analyzed": 1732131461724,
+      "last_analyzed": 1732321491348,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25146,7 +25146,7 @@
     {
       "id": 192,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ino64_t.h",
-      "last_analyzed": 1732131461725,
+      "last_analyzed": 1732321491349,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25160,7 +25160,7 @@
     {
       "id": 193,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_key_t.h",
-      "last_analyzed": 1732131461726,
+      "last_analyzed": 1732321491350,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25174,7 +25174,7 @@
     {
       "id": 194,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_nlink_t.h",
-      "last_analyzed": 1732131461727,
+      "last_analyzed": 1732321491351,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25188,7 +25188,7 @@
     {
       "id": 195,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_useconds_t.h",
-      "last_analyzed": 1732131461729,
+      "last_analyzed": 1732321491353,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25202,7 +25202,7 @@
     {
       "id": 196,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_suseconds_t.h",
-      "last_analyzed": 1732131461730,
+      "last_analyzed": 1732321491353,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25216,7 +25216,7 @@
     {
       "id": 197,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h",
-      "last_analyzed": 1732131461730,
+      "last_analyzed": 1732321491354,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25230,7 +25230,7 @@
     {
       "id": 198,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h",
-      "last_analyzed": 1732131461731,
+      "last_analyzed": 1732321491355,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25244,7 +25244,7 @@
     {
       "id": 199,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_def.h",
-      "last_analyzed": 1732131461732,
+      "last_analyzed": 1732321491356,
       "classes": [
         {
           "id": 53,
@@ -25289,7 +25289,7 @@
     {
       "id": 200,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsblkcnt_t.h",
-      "last_analyzed": 1732131461742,
+      "last_analyzed": 1732321491365,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25303,7 +25303,7 @@
     {
       "id": 201,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h",
-      "last_analyzed": 1732131461743,
+      "last_analyzed": 1732321491366,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25317,7 +25317,7 @@
     {
       "id": 202,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/nl_types.h",
-      "last_analyzed": 1732131461743,
+      "last_analyzed": 1732321491367,
       "classes": [
         {
           "id": 54,
@@ -25400,7 +25400,7 @@
     {
       "id": 203,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h",
-      "last_analyzed": 1732131461745,
+      "last_analyzed": 1732321491368,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25414,7 +25414,7 @@
     {
       "id": 204,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/stat.h",
-      "last_analyzed": 1732131461752,
+      "last_analyzed": 1732321491376,
       "classes": [
         {
           "id": 55,
@@ -25982,7 +25982,7 @@
     {
       "id": 205,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_filesec_t.h",
-      "last_analyzed": 1732131461759,
+      "last_analyzed": 1732321491383,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -25996,7 +25996,7 @@
     {
       "id": 206,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/unistd.h",
-      "last_analyzed": 1732131461764,
+      "last_analyzed": 1732321491388,
       "classes": [
         {
           "id": 57,
@@ -26212,7 +26212,7 @@
     {
       "id": 207,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h",
-      "last_analyzed": 1732131461768,
+      "last_analyzed": 1732321491393,
       "classes": [],
       "func_decls": [
         {
@@ -29001,7 +29001,7 @@
     {
       "id": 208,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/select.h",
-      "last_analyzed": 1732131461799,
+      "last_analyzed": 1732321491427,
       "classes": [],
       "func_decls": [
         {
@@ -29035,7 +29035,7 @@
     {
       "id": 209,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_select.h",
-      "last_analyzed": 1732131461801,
+      "last_analyzed": 1732321491428,
       "classes": [],
       "func_decls": [
         {
@@ -29069,7 +29069,7 @@
     {
       "id": 210,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_uuid_t.h",
-      "last_analyzed": 1732131461802,
+      "last_analyzed": 1732321491430,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -29083,7 +29083,7 @@
     {
       "id": 211,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/gethostuuid.h",
-      "last_analyzed": 1732131461806,
+      "last_analyzed": 1732321491434,
       "classes": [],
       "func_decls": [
         {
@@ -29117,7 +29117,7 @@
     {
       "id": 212,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_regex.h",
-      "last_analyzed": 1732131461837,
+      "last_analyzed": 1732321491466,
       "classes": [
         {
           "id": 58,
@@ -29333,7 +29333,7 @@
     {
       "id": 213,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_regex.h",
-      "last_analyzed": 1732131461842,
+      "last_analyzed": 1732321491471,
       "classes": [],
       "func_decls": [
         {
@@ -29424,7 +29424,7 @@
     {
       "id": 214,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/internal/gtest-port.h",
-      "last_analyzed": 1732131461845,
+      "last_analyzed": 1732321491474,
       "classes": [
         {
           "id": 59,
@@ -29536,7 +29536,27 @@
                   "column": 4
                 }
               },
-              "func_calls": [],
+              "func_calls": [
+                {
+                  "id": 333,
+                  "name": "FullMatch",
+                  "qualified_name": "testing::internal::RE::FullMatch 'bool (const char *, const RE &)'",
+                  "base_qualified_name": null,
+                  "qual_type": "bool (const char *, const RE &)",
+                  "range": {
+                    "start": {
+                      "line": 1026,
+                      "column": 12
+                    },
+                    "end": {
+                      "line": 1026,
+                      "column": 38
+                    }
+                  },
+                  "func_calls": [],
+                  "virtual_func_calls": []
+                }
+              ],
               "virtual_func_calls": []
             },
             {
@@ -29555,7 +29575,27 @@
                   "column": 4
                 }
               },
-              "func_calls": [],
+              "func_calls": [
+                {
+                  "id": 334,
+                  "name": "PartialMatch",
+                  "qualified_name": "testing::internal::RE::PartialMatch 'bool (const char *, const RE &)'",
+                  "base_qualified_name": null,
+                  "qual_type": "bool (const char *, const RE &)",
+                  "range": {
+                    "start": {
+                      "line": 1029,
+                      "column": 12
+                    },
+                    "end": {
+                      "line": 1029,
+                      "column": 41
+                    }
+                  },
+                  "func_calls": [],
+                  "virtual_func_calls": []
+                }
+              ],
               "virtual_func_calls": []
             }
           ],
@@ -32044,7 +32084,7 @@
     {
       "id": 215,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/any",
-      "last_analyzed": 1732131461896,
+      "last_analyzed": 1732321491530,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -32058,7 +32098,7 @@
     {
       "id": 216,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/gtest-message.h",
-      "last_analyzed": 1732131461903,
+      "last_analyzed": 1732321491538,
       "classes": [
         {
           "id": 73,
@@ -32297,7 +32337,7 @@
     {
       "id": 217,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/gtest-assertion-result.h",
-      "last_analyzed": 1732131461908,
+      "last_analyzed": 1732321491543,
       "classes": [
         {
           "id": 74,
@@ -32361,7 +32401,27 @@
                   "column": 4
                 }
               },
-              "func_calls": [],
+              "func_calls": [
+                {
+                  "id": 344,
+                  "name": "swap",
+                  "qualified_name": "testing::AssertionResult::swap 'void (AssertionResult &)'",
+                  "base_qualified_name": null,
+                  "qual_type": "void (AssertionResult &)",
+                  "range": {
+                    "start": {
+                      "line": 169,
+                      "column": 5
+                    },
+                    "end": {
+                      "line": 169,
+                      "column": 16
+                    }
+                  },
+                  "func_calls": [],
+                  "virtual_func_calls": []
+                }
+              ],
               "virtual_func_calls": []
             },
             {
@@ -32459,7 +32519,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 172,
+                  "id": 343,
                   "name": "AppendMessage",
                   "qualified_name": "testing::AssertionResult::AppendMessage 'void (const Message &)'",
                   "base_qualified_name": null,
@@ -32498,7 +32558,7 @@
               },
               "func_calls": [
                 {
-                  "id": 173,
+                  "id": 172,
                   "name": "GetString",
                   "qualified_name": "testing::Message::GetString 'std::string () const'",
                   "base_qualified_name": null,
@@ -32594,7 +32654,7 @@
     {
       "id": 218,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/internal/gtest-string.h",
-      "last_analyzed": 1732131461914,
+      "last_analyzed": 1732321491549,
       "classes": [
         {
           "id": 75,
@@ -32868,7 +32928,7 @@
     {
       "id": 219,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/internal/gtest-filepath.h",
-      "last_analyzed": 1732131461919,
+      "last_analyzed": 1732321491554,
       "classes": [
         {
           "id": 76,
@@ -33238,7 +33298,7 @@
               },
               "func_calls": [
                 {
-                  "id": 174,
+                  "id": 335,
                   "name": "Set",
                   "qualified_name": "testing::internal::FilePath::Set 'void (const FilePath &)'",
                   "base_qualified_name": null,
@@ -33371,7 +33431,7 @@
     {
       "id": 220,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cxxabi.h",
-      "last_analyzed": 1732131461928,
+      "last_analyzed": 1732321491562,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -33385,7 +33445,7 @@
     {
       "id": 221,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/internal/gtest-type-util.h",
-      "last_analyzed": 1732131461929,
+      "last_analyzed": 1732321491563,
       "classes": [
         {
           "id": 77,
@@ -33566,7 +33626,7 @@
           },
           "func_calls": [
             {
-              "id": 175,
+              "id": 173,
               "name": "strlen",
               "qualified_name": "strlen 'size_t (const char *)'",
               "base_qualified_name": null,
@@ -33585,7 +33645,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 176,
+              "id": 174,
               "name": "strlen",
               "qualified_name": "strlen 'size_t (const char *)'",
               "base_qualified_name": null,
@@ -33604,7 +33664,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 177,
+              "id": 175,
               "name": "strlen",
               "qualified_name": "strlen 'size_t (const char *)'",
               "base_qualified_name": null,
@@ -33623,7 +33683,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 178,
+              "id": 176,
               "name": "strlen",
               "qualified_name": "strlen 'size_t (const char *)'",
               "base_qualified_name": null,
@@ -33642,7 +33702,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 179,
+              "id": 177,
               "name": "strlen",
               "qualified_name": "strlen 'size_t (const char *)'",
               "base_qualified_name": null,
@@ -33681,7 +33741,7 @@
           },
           "func_calls": [
             {
-              "id": 180,
+              "id": 178,
               "name": "free",
               "qualified_name": "free 'void (void *)'",
               "base_qualified_name": null,
@@ -33700,7 +33760,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 181,
+              "id": 179,
               "name": "CanonicalizeForStdLibVersioning",
               "qualified_name": "testing::internal::CanonicalizeForStdLibVersioning 'std::string (std::string)'",
               "base_qualified_name": null,
@@ -33732,7 +33792,7 @@
     {
       "id": 222,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/internal/gtest-internal.h",
-      "last_analyzed": 1732131461942,
+      "last_analyzed": 1732321491575,
       "classes": [
         {
           "id": 92,
@@ -33905,7 +33965,7 @@
                   },
                   "func_calls": [
                     {
-                      "id": 182,
+                      "id": 180,
                       "name": "IsTrue",
                       "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                       "base_qualified_name": null,
@@ -33924,7 +33984,7 @@
                       "virtual_func_calls": []
                     },
                     {
-                      "id": 183,
+                      "id": 181,
                       "name": "GetStream",
                       "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                       "base_qualified_name": null,
@@ -33963,7 +34023,7 @@
                   },
                   "func_calls": [
                     {
-                      "id": 184,
+                      "id": 182,
                       "name": "IsTrue",
                       "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                       "base_qualified_name": null,
@@ -33982,7 +34042,7 @@
                       "virtual_func_calls": []
                     },
                     {
-                      "id": 185,
+                      "id": 183,
                       "name": "GetStream",
                       "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                       "base_qualified_name": null,
@@ -34028,7 +34088,7 @@
               },
               "func_calls": [
                 {
-                  "id": 186,
+                  "id": 184,
                   "name": "GetNotDefaultOrNull",
                   "qualified_name": "testing::internal::GetNotDefaultOrNull 'SetUpTearDownSuiteFuncType (SetUpTearDownSuiteFuncType, SetUpTearDownSuiteFuncType)'",
                   "base_qualified_name": null,
@@ -34047,7 +34107,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 187,
+                  "id": 185,
                   "name": "GetNotDefaultOrNull",
                   "qualified_name": "testing::internal::GetNotDefaultOrNull 'SetUpTearDownSuiteFuncType (SetUpTearDownSuiteFuncType, SetUpTearDownSuiteFuncType)'",
                   "base_qualified_name": null,
@@ -34066,7 +34126,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 188,
+                  "id": 186,
                   "name": "IsTrue",
                   "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                   "base_qualified_name": null,
@@ -34085,7 +34145,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 189,
+                  "id": 187,
                   "name": "GetStream",
                   "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                   "base_qualified_name": null,
@@ -34104,7 +34164,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 319,
+                  "id": 336,
                   "name": "SetUpTestSuite",
                   "qualified_name": "testing::Test::SetUpTestSuite 'void ()'",
                   "base_qualified_name": null,
@@ -34123,7 +34183,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 322,
+                  "id": 339,
                   "name": "SetUpTestCase",
                   "qualified_name": "testing::Test::SetUpTestCase 'void ()'",
                   "base_qualified_name": null,
@@ -34162,7 +34222,7 @@
               },
               "func_calls": [
                 {
-                  "id": 190,
+                  "id": 188,
                   "name": "GetNotDefaultOrNull",
                   "qualified_name": "testing::internal::GetNotDefaultOrNull 'SetUpTearDownSuiteFuncType (SetUpTearDownSuiteFuncType, SetUpTearDownSuiteFuncType)'",
                   "base_qualified_name": null,
@@ -34181,7 +34241,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 191,
+                  "id": 189,
                   "name": "GetNotDefaultOrNull",
                   "qualified_name": "testing::internal::GetNotDefaultOrNull 'SetUpTearDownSuiteFuncType (SetUpTearDownSuiteFuncType, SetUpTearDownSuiteFuncType)'",
                   "base_qualified_name": null,
@@ -34200,7 +34260,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 192,
+                  "id": 190,
                   "name": "IsTrue",
                   "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                   "base_qualified_name": null,
@@ -34219,7 +34279,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 193,
+                  "id": 191,
                   "name": "GetStream",
                   "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                   "base_qualified_name": null,
@@ -34238,7 +34298,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 320,
+                  "id": 337,
                   "name": "TearDownTestSuite",
                   "qualified_name": "testing::Test::TearDownTestSuite 'void ()'",
                   "base_qualified_name": null,
@@ -34257,7 +34317,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 321,
+                  "id": 338,
                   "name": "TearDownTestCase",
                   "qualified_name": "testing::Test::TearDownTestCase 'void ()'",
                   "base_qualified_name": null,
@@ -34327,7 +34387,7 @@
               },
               "func_calls": [
                 {
-                  "id": 194,
+                  "id": 192,
                   "name": "fprintf",
                   "qualified_name": "fprintf 'int (FILE *, const char *, ...)'",
                   "base_qualified_name": null,
@@ -34346,7 +34406,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 195,
+                  "id": 193,
                   "name": "FormatFileLocation",
                   "qualified_name": "testing::internal::FormatFileLocation '::std::string (const char *, int)'",
                   "base_qualified_name": null,
@@ -34365,7 +34425,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 196,
+                  "id": 194,
                   "name": "fflush",
                   "qualified_name": "fflush 'int (FILE *)'",
                   "base_qualified_name": null,
@@ -34384,7 +34444,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 197,
+                  "id": 195,
                   "name": "Abort",
                   "qualified_name": "testing::internal::posix::Abort 'void ()'",
                   "base_qualified_name": null,
@@ -34442,7 +34502,7 @@
               },
               "func_calls": [
                 {
-                  "id": 198,
+                  "id": 196,
                   "name": "IsTrue",
                   "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                   "base_qualified_name": null,
@@ -34461,7 +34521,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 199,
+                  "id": 197,
                   "name": "GetStream",
                   "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                   "base_qualified_name": null,
@@ -35465,7 +35525,7 @@
           },
           "func_calls": [
             {
-              "id": 270,
+              "id": 345,
               "name": "Print",
               "qualified_name": "testing::internal::UniversalTersePrinter<long long>::Print 'void (const long long &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -35504,7 +35564,7 @@
           },
           "func_calls": [
             {
-              "id": 272,
+              "id": 348,
               "name": "Print",
               "qualified_name": "testing::internal::UniversalTersePrinter<int>::Print 'void (const int &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -35562,7 +35622,7 @@
           },
           "func_calls": [
             {
-              "id": 200,
+              "id": 198,
               "name": "strchr",
               "qualified_name": "strchr 'const char *(const char *, int)'",
               "base_qualified_name": null,
@@ -35581,7 +35641,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 201,
+              "id": 199,
               "name": "IsSpace",
               "qualified_name": "testing::internal::IsSpace 'bool (char)'",
               "base_qualified_name": null,
@@ -35620,7 +35680,7 @@
           },
           "func_calls": [
             {
-              "id": 202,
+              "id": 200,
               "name": "strchr",
               "qualified_name": "strchr 'const char *(const char *, int)'",
               "base_qualified_name": null,
@@ -35697,7 +35757,7 @@
           },
           "func_calls": [
             {
-              "id": 203,
+              "id": 201,
               "name": "AlwaysTrue",
               "qualified_name": "testing::internal::AlwaysTrue 'bool ()'",
               "base_qualified_name": null,
@@ -35833,7 +35893,7 @@
           },
           "func_calls": [
             {
-              "id": 360,
+              "id": 331,
               "name": "operator=",
               "qualified_name": "testing::internal::AssertHelper::operator= 'void (const Message &) const'",
               "base_qualified_name": null,
@@ -35852,7 +35912,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 361,
+              "id": 332,
               "name": "failure_message",
               "qualified_name": "testing::AssertionResult::failure_message 'const char *() const'",
               "base_qualified_name": null,
@@ -35883,7 +35943,7 @@
     {
       "id": 223,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/gtest-printers.h",
-      "last_analyzed": 1732131461994,
+      "last_analyzed": 1732321491629,
       "classes": [
         {
           "id": 130,
@@ -36021,7 +36081,7 @@
               },
               "func_calls": [
                 {
-                  "id": 204,
+                  "id": 202,
                   "name": "UniversalPrint",
                   "qualified_name": "testing::internal::UniversalPrint<std::string_view>nal::UniversalPrint 'void (const std::string_view &, ::std::ostream *)'",
                   "base_qualified_name": null,
@@ -36112,7 +36172,7 @@
               },
               "func_calls": [
                 {
-                  "id": 205,
+                  "id": 203,
                   "name": "PrintToString",
                   "qualified_name": "testing::PrintToString<long long>tToString '::std::string (const long long &)'",
                   "base_qualified_name": null,
@@ -36151,7 +36211,7 @@
               },
               "func_calls": [
                 {
-                  "id": 206,
+                  "id": 204,
                   "name": "PrintToString",
                   "qualified_name": "testing::PrintToString<int>tToString '::std::string (const int &)'",
                   "base_qualified_name": null,
@@ -36201,7 +36261,7 @@
               },
               "func_calls": [
                 {
-                  "id": 257,
+                  "id": 351,
                   "name": "PrintTo",
                   "qualified_name": "testing::internal::PrintTo 'void (const ::std::string &, ::std::ostream *)'",
                   "base_qualified_name": null,
@@ -36240,7 +36300,7 @@
               },
               "func_calls": [
                 {
-                  "id": 267,
+                  "id": 356,
                   "name": "PrintTo",
                   "qualified_name": "testing::internal::PrintTo 'void (internal::StringView, ::std::ostream *)'",
                   "base_qualified_name": null,
@@ -36279,7 +36339,7 @@
               },
               "func_calls": [
                 {
-                  "id": 259,
+                  "id": 352,
                   "name": "PrintTo",
                   "qualified_name": "testing::internal::PrintTo 'void (const ::std::u8string &, ::std::ostream *)'",
                   "base_qualified_name": null,
@@ -36318,7 +36378,7 @@
               },
               "func_calls": [
                 {
-                  "id": 261,
+                  "id": 353,
                   "name": "PrintTo",
                   "qualified_name": "testing::internal::PrintTo 'void (const ::std::u16string &, ::std::ostream *)'",
                   "base_qualified_name": null,
@@ -36357,7 +36417,7 @@
               },
               "func_calls": [
                 {
-                  "id": 263,
+                  "id": 354,
                   "name": "PrintTo",
                   "qualified_name": "testing::internal::PrintTo 'void (const ::std::u32string &, ::std::ostream *)'",
                   "base_qualified_name": null,
@@ -36396,7 +36456,7 @@
               },
               "func_calls": [
                 {
-                  "id": 265,
+                  "id": 355,
                   "name": "PrintTo",
                   "qualified_name": "testing::internal::PrintTo 'void (const ::std::wstring &, ::std::ostream *)'",
                   "base_qualified_name": null,
@@ -36435,7 +36495,7 @@
               },
               "func_calls": [
                 {
-                  "id": 228,
+                  "id": 347,
                   "name": "PrintTo",
                   "qualified_name": "testing::internal::PrintTo<long long>::internal::PrintTo 'void (const long long &, ::std::ostream *)'",
                   "base_qualified_name": null,
@@ -36474,7 +36534,7 @@
               },
               "func_calls": [
                 {
-                  "id": 230,
+                  "id": 350,
                   "name": "PrintTo",
                   "qualified_name": "testing::internal::PrintTo<int>::internal::PrintTo 'void (const int &, ::std::ostream *)'",
                   "base_qualified_name": null,
@@ -36534,7 +36594,7 @@
               },
               "func_calls": [
                 {
-                  "id": 271,
+                  "id": 252,
                   "name": "UniversalPrint",
                   "qualified_name": "testing::internal::UniversalPrint<long long>nal::UniversalPrint 'void (const long long &, ::std::ostream *)'",
                   "base_qualified_name": null,
@@ -36573,7 +36633,7 @@
               },
               "func_calls": [
                 {
-                  "id": 273,
+                  "id": 253,
                   "name": "UniversalPrint",
                   "qualified_name": "testing::internal::UniversalPrint<int>nal::UniversalPrint 'void (const int &, ::std::ostream *)'",
                   "base_qualified_name": null,
@@ -37304,7 +37364,7 @@
           },
           "func_calls": [
             {
-              "id": 220,
+              "id": 362,
               "name": "Print",
               "qualified_name": "testing::internal::UniversalPrinter<std::string_view>::Print 'void (const std::string_view &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -37343,7 +37403,7 @@
           },
           "func_calls": [
             {
-              "id": 219,
+              "id": 359,
               "name": "Print",
               "qualified_name": "testing::internal::UniversalPrinter<std::string>::Print 'void (const std::string &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -37382,7 +37442,7 @@
           },
           "func_calls": [
             {
-              "id": 221,
+              "id": 363,
               "name": "Print",
               "qualified_name": "testing::internal::UniversalPrinter<std::u8string>::Print 'void (const std::u8string &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -37421,7 +37481,7 @@
           },
           "func_calls": [
             {
-              "id": 222,
+              "id": 364,
               "name": "Print",
               "qualified_name": "testing::internal::UniversalPrinter<std::u16string>::Print 'void (const std::u16string &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -37460,7 +37520,7 @@
           },
           "func_calls": [
             {
-              "id": 223,
+              "id": 365,
               "name": "Print",
               "qualified_name": "testing::internal::UniversalPrinter<std::u32string>::Print 'void (const std::u32string &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -37499,7 +37559,7 @@
           },
           "func_calls": [
             {
-              "id": 224,
+              "id": 366,
               "name": "Print",
               "qualified_name": "testing::internal::UniversalPrinter<std::wstring>::Print 'void (const std::wstring &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -37538,7 +37598,7 @@
           },
           "func_calls": [
             {
-              "id": 225,
+              "id": 346,
               "name": "Print",
               "qualified_name": "testing::internal::UniversalPrinter<long long>::Print 'void (const long long &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -37577,7 +37637,7 @@
           },
           "func_calls": [
             {
-              "id": 226,
+              "id": 349,
               "name": "Print",
               "qualified_name": "testing::internal::UniversalPrinter<int>::Print 'void (const int &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -37692,7 +37752,7 @@
           },
           "func_calls": [
             {
-              "id": 207,
+              "id": 205,
               "name": "PrintToString",
               "qualified_name": "testing::PrintToString<const void *>tToString '::std::string (const void *const &)'",
               "base_qualified_name": null,
@@ -37731,7 +37791,7 @@
           },
           "func_calls": [
             {
-              "id": 208,
+              "id": 206,
               "name": "PrintToString",
               "qualified_name": "testing::PrintToString<const void *>tToString '::std::string (const void *const &)'",
               "base_qualified_name": null,
@@ -37770,7 +37830,7 @@
           },
           "func_calls": [
             {
-              "id": 209,
+              "id": 207,
               "name": "PrintToString",
               "qualified_name": "testing::PrintToString<const void *>tToString '::std::string (const void *const &)'",
               "base_qualified_name": null,
@@ -37809,7 +37869,7 @@
           },
           "func_calls": [
             {
-              "id": 210,
+              "id": 208,
               "name": "PrintToString",
               "qualified_name": "testing::PrintToString<const void *>tToString '::std::string (const void *const &)'",
               "base_qualified_name": null,
@@ -37848,7 +37908,7 @@
           },
           "func_calls": [
             {
-              "id": 211,
+              "id": 209,
               "name": "PrintToString",
               "qualified_name": "testing::PrintToString<const void *>tToString '::std::string (const void *const &)'",
               "base_qualified_name": null,
@@ -37887,7 +37947,7 @@
           },
           "func_calls": [
             {
-              "id": 212,
+              "id": 210,
               "name": "PrintToString",
               "qualified_name": "testing::PrintToString<const void *>tToString '::std::string (const void *const &)'",
               "base_qualified_name": null,
@@ -37926,7 +37986,7 @@
           },
           "func_calls": [
             {
-              "id": 213,
+              "id": 211,
               "name": "PrintToString",
               "qualified_name": "testing::PrintToString<const void *>tToString '::std::string (const void *const &)'",
               "base_qualified_name": null,
@@ -37965,7 +38025,7 @@
           },
           "func_calls": [
             {
-              "id": 214,
+              "id": 212,
               "name": "PrintToString",
               "qualified_name": "testing::PrintToString<const void *>tToString '::std::string (const void *const &)'",
               "base_qualified_name": null,
@@ -38004,7 +38064,7 @@
           },
           "func_calls": [
             {
-              "id": 215,
+              "id": 213,
               "name": "PrintToString",
               "qualified_name": "testing::PrintToString<const void *>tToString '::std::string (const void *const &)'",
               "base_qualified_name": null,
@@ -38043,7 +38103,7 @@
           },
           "func_calls": [
             {
-              "id": 216,
+              "id": 214,
               "name": "PrintToString",
               "qualified_name": "testing::PrintToString<const void *>tToString '::std::string (const void *const &)'",
               "base_qualified_name": null,
@@ -38082,7 +38142,7 @@
           },
           "func_calls": [
             {
-              "id": 217,
+              "id": 215,
               "name": "Format",
               "qualified_name": "testing::internal::FormatForComparison<long long, long long>::Format '::std::string (const long long &)'",
               "base_qualified_name": null,
@@ -38121,7 +38181,7 @@
           },
           "func_calls": [
             {
-              "id": 218,
+              "id": 216,
               "name": "Format",
               "qualified_name": "testing::internal::FormatForComparison<int, int>::Format '::std::string (const int &)'",
               "base_qualified_name": null,
@@ -38160,7 +38220,7 @@
           },
           "func_calls": [
             {
-              "id": 227,
+              "id": 217,
               "name": "PrintWithFallback",
               "qualified_name": "testing::internal::PrintWithFallback<const void *>::PrintWithFallback 'void (const void *const &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38199,7 +38259,7 @@
           },
           "func_calls": [
             {
-              "id": 229,
+              "id": 218,
               "name": "PrintWithFallback",
               "qualified_name": "testing::internal::PrintWithFallback<long long>::PrintWithFallback 'void (const long long &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38238,7 +38298,7 @@
           },
           "func_calls": [
             {
-              "id": 231,
+              "id": 219,
               "name": "PrintWithFallback",
               "qualified_name": "testing::internal::PrintWithFallback<int>::PrintWithFallback 'void (const int &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38277,7 +38337,7 @@
           },
           "func_calls": [
             {
-              "id": 232,
+              "id": 220,
               "name": "PrintTo",
               "qualified_name": "testing::internal::PrintTo 'void (unsigned char, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38335,7 +38395,7 @@
           },
           "func_calls": [
             {
-              "id": 233,
+              "id": 221,
               "name": "PrintTo",
               "qualified_name": "testing::internal::PrintTo 'void (char32_t, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38354,7 +38414,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 234,
+              "id": 222,
               "name": "ImplicitCast_",
               "qualified_name": "testing::internal::ImplicitCast_<char32_t>rnal::ImplicitCast_ 'char32_t (char32_t)'",
               "base_qualified_name": null,
@@ -38393,7 +38453,7 @@
           },
           "func_calls": [
             {
-              "id": 235,
+              "id": 223,
               "name": "PrintTo",
               "qualified_name": "testing::internal::PrintTo 'void (char32_t, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38412,7 +38472,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 236,
+              "id": 224,
               "name": "ImplicitCast_",
               "qualified_name": "testing::internal::ImplicitCast_<char32_t>rnal::ImplicitCast_ 'char32_t (char32_t)'",
               "base_qualified_name": null,
@@ -38489,7 +38549,7 @@
           },
           "func_calls": [
             {
-              "id": 237,
+              "id": 225,
               "name": "AppropriateResolution",
               "qualified_name": "testing::internal::AppropriateResolution<float>propriateResolution 'int (float)'",
               "base_qualified_name": null,
@@ -38528,7 +38588,7 @@
           },
           "func_calls": [
             {
-              "id": 238,
+              "id": 226,
               "name": "AppropriateResolution",
               "qualified_name": "testing::internal::AppropriateResolution<double>propriateResolution 'int (double)'",
               "base_qualified_name": null,
@@ -38567,7 +38627,7 @@
           },
           "func_calls": [
             {
-              "id": 239,
+              "id": 227,
               "name": "PrintTo",
               "qualified_name": "testing::internal::PrintTo 'void (const char *, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38586,7 +38646,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 240,
+              "id": 228,
               "name": "ImplicitCast_",
               "qualified_name": "testing::internal::ImplicitCast_<const char *>rnal::ImplicitCast_ 'const char *(const char *)'",
               "base_qualified_name": null,
@@ -38625,7 +38685,7 @@
           },
           "func_calls": [
             {
-              "id": 241,
+              "id": 229,
               "name": "PrintTo",
               "qualified_name": "testing::internal::PrintTo<const void *>::internal::PrintTo 'void (const void *const &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38644,7 +38704,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 242,
+              "id": 230,
               "name": "ImplicitCast_",
               "qualified_name": "testing::internal::ImplicitCast_<const void *>rnal::ImplicitCast_ 'const void *(const void *)'",
               "base_qualified_name": null,
@@ -38683,7 +38743,7 @@
           },
           "func_calls": [
             {
-              "id": 243,
+              "id": 231,
               "name": "PrintTo",
               "qualified_name": "testing::internal::PrintTo<const void *>::internal::PrintTo 'void (const void *const &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38702,7 +38762,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 244,
+              "id": 232,
               "name": "ImplicitCast_",
               "qualified_name": "testing::internal::ImplicitCast_<const void *>rnal::ImplicitCast_ 'const void *(const void *)'",
               "base_qualified_name": null,
@@ -38741,7 +38801,7 @@
           },
           "func_calls": [
             {
-              "id": 245,
+              "id": 233,
               "name": "PrintTo",
               "qualified_name": "testing::internal::PrintTo<const void *>::internal::PrintTo 'void (const void *const &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38760,7 +38820,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 246,
+              "id": 234,
               "name": "ImplicitCast_",
               "qualified_name": "testing::internal::ImplicitCast_<const void *>rnal::ImplicitCast_ 'const void *(const void *)'",
               "base_qualified_name": null,
@@ -38799,7 +38859,7 @@
           },
           "func_calls": [
             {
-              "id": 247,
+              "id": 235,
               "name": "PrintTo",
               "qualified_name": "testing::internal::PrintTo<const void *>::internal::PrintTo 'void (const void *const &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38818,7 +38878,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 248,
+              "id": 236,
               "name": "ImplicitCast_",
               "qualified_name": "testing::internal::ImplicitCast_<const void *>rnal::ImplicitCast_ 'const void *(const void *)'",
               "base_qualified_name": null,
@@ -38857,7 +38917,7 @@
           },
           "func_calls": [
             {
-              "id": 249,
+              "id": 237,
               "name": "PrintTo",
               "qualified_name": "testing::internal::PrintTo 'void (const char8_t *, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38876,7 +38936,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 250,
+              "id": 238,
               "name": "ImplicitCast_",
               "qualified_name": "testing::internal::ImplicitCast_<const char8_t *>rnal::ImplicitCast_ 'const char8_t *(const char8_t *)'",
               "base_qualified_name": null,
@@ -38915,7 +38975,7 @@
           },
           "func_calls": [
             {
-              "id": 251,
+              "id": 239,
               "name": "PrintTo",
               "qualified_name": "testing::internal::PrintTo 'void (const char16_t *, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38934,7 +38994,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 252,
+              "id": 240,
               "name": "ImplicitCast_",
               "qualified_name": "testing::internal::ImplicitCast_<const char16_t *>rnal::ImplicitCast_ 'const char16_t *(const char16_t *)'",
               "base_qualified_name": null,
@@ -38973,7 +39033,7 @@
           },
           "func_calls": [
             {
-              "id": 253,
+              "id": 241,
               "name": "PrintTo",
               "qualified_name": "testing::internal::PrintTo 'void (const char32_t *, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -38992,7 +39052,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 254,
+              "id": 242,
               "name": "ImplicitCast_",
               "qualified_name": "testing::internal::ImplicitCast_<const char32_t *>rnal::ImplicitCast_ 'const char32_t *(const char32_t *)'",
               "base_qualified_name": null,
@@ -39031,7 +39091,7 @@
           },
           "func_calls": [
             {
-              "id": 255,
+              "id": 243,
               "name": "PrintTo",
               "qualified_name": "testing::internal::PrintTo 'void (const wchar_t *, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -39050,7 +39110,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 256,
+              "id": 244,
               "name": "ImplicitCast_",
               "qualified_name": "testing::internal::ImplicitCast_<const wchar_t *>rnal::ImplicitCast_ 'const wchar_t *(const wchar_t *)'",
               "base_qualified_name": null,
@@ -39089,7 +39149,7 @@
           },
           "func_calls": [
             {
-              "id": 258,
+              "id": 245,
               "name": "PrintStringTo",
               "qualified_name": "testing::internal::PrintStringTo 'void (const ::std::string &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -39128,7 +39188,7 @@
           },
           "func_calls": [
             {
-              "id": 260,
+              "id": 246,
               "name": "PrintU8StringTo",
               "qualified_name": "testing::internal::PrintU8StringTo 'void (const ::std::u8string &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -39167,7 +39227,7 @@
           },
           "func_calls": [
             {
-              "id": 262,
+              "id": 247,
               "name": "PrintU16StringTo",
               "qualified_name": "testing::internal::PrintU16StringTo 'void (const ::std::u16string &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -39206,7 +39266,7 @@
           },
           "func_calls": [
             {
-              "id": 264,
+              "id": 248,
               "name": "PrintU32StringTo",
               "qualified_name": "testing::internal::PrintU32StringTo 'void (const ::std::u32string &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -39245,7 +39305,7 @@
           },
           "func_calls": [
             {
-              "id": 266,
+              "id": 249,
               "name": "PrintWideStringTo",
               "qualified_name": "testing::internal::PrintWideStringTo 'void (const ::std::wstring &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -39284,7 +39344,7 @@
           },
           "func_calls": [
             {
-              "id": 268,
+              "id": 250,
               "name": "PrintTo",
               "qualified_name": "testing::internal::PrintTo 'void (const ::std::string &, ::std::ostream *)'",
               "base_qualified_name": null,
@@ -39342,7 +39402,7 @@
           },
           "func_calls": [
             {
-              "id": 269,
+              "id": 251,
               "name": "GetTypeName",
               "qualified_name": "testing::internal::GetTypeName 'std::string (const std::type_info &)'",
               "base_qualified_name": null,
@@ -39545,7 +39605,7 @@
     {
       "id": 224,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/gtest-matchers.h",
-      "last_analyzed": 1732131462065,
+      "last_analyzed": 1732321491695,
       "classes": [
         {
           "id": 148,
@@ -40787,7 +40847,7 @@
               },
               "func_calls": [
                 {
-                  "id": 278,
+                  "id": 258,
                   "name": "IsShared",
                   "qualified_name": "testing::internal::MatcherBase<const std::string &>::IsShared 'bool () const'",
                   "base_qualified_name": null,
@@ -40806,7 +40866,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 279,
+                  "id": 259,
                   "name": "Unref",
                   "qualified_name": "testing::internal::SharedPayloadBase::Unref 'bool ()'",
                   "base_qualified_name": null,
@@ -40864,7 +40924,7 @@
               },
               "func_calls": [
                 {
-                  "id": 284,
+                  "id": 264,
                   "name": "IsShared",
                   "qualified_name": "testing::internal::MatcherBase<std::string>::IsShared 'bool () const'",
                   "base_qualified_name": null,
@@ -40883,7 +40943,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 285,
+                  "id": 265,
                   "name": "Unref",
                   "qualified_name": "testing::internal::SharedPayloadBase::Unref 'bool ()'",
                   "base_qualified_name": null,
@@ -40941,7 +41001,7 @@
               },
               "func_calls": [
                 {
-                  "id": 290,
+                  "id": 270,
                   "name": "IsShared",
                   "qualified_name": "testing::internal::MatcherBase<const std::string_view &>::IsShared 'bool () const'",
                   "base_qualified_name": null,
@@ -40960,7 +41020,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 291,
+                  "id": 271,
                   "name": "Unref",
                   "qualified_name": "testing::internal::SharedPayloadBase::Unref 'bool ()'",
                   "base_qualified_name": null,
@@ -41018,7 +41078,7 @@
               },
               "func_calls": [
                 {
-                  "id": 296,
+                  "id": 276,
                   "name": "IsShared",
                   "qualified_name": "testing::internal::MatcherBase<std::string_view>::IsShared 'bool () const'",
                   "base_qualified_name": null,
@@ -41037,7 +41097,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 297,
+                  "id": 277,
                   "name": "Unref",
                   "qualified_name": "testing::internal::SharedPayloadBase::Unref 'bool ()'",
                   "base_qualified_name": null,
@@ -41079,7 +41139,7 @@
               },
               "func_calls": [
                 {
-                  "id": 274,
+                  "id": 254,
                   "name": "IsTrue",
                   "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                   "base_qualified_name": null,
@@ -41098,7 +41158,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 275,
+                  "id": 255,
                   "name": "GetStream",
                   "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                   "base_qualified_name": null,
@@ -41137,7 +41197,7 @@
               },
               "func_calls": [
                 {
-                  "id": 276,
+                  "id": 256,
                   "name": "IsTrue",
                   "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                   "base_qualified_name": null,
@@ -41156,7 +41216,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 277,
+                  "id": 257,
                   "name": "GetStream",
                   "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                   "base_qualified_name": null,
@@ -41195,7 +41255,7 @@
               },
               "func_calls": [
                 {
-                  "id": 280,
+                  "id": 260,
                   "name": "IsTrue",
                   "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                   "base_qualified_name": null,
@@ -41214,7 +41274,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 281,
+                  "id": 261,
                   "name": "GetStream",
                   "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                   "base_qualified_name": null,
@@ -41253,7 +41313,7 @@
               },
               "func_calls": [
                 {
-                  "id": 282,
+                  "id": 262,
                   "name": "IsTrue",
                   "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                   "base_qualified_name": null,
@@ -41272,7 +41332,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 283,
+                  "id": 263,
                   "name": "GetStream",
                   "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                   "base_qualified_name": null,
@@ -41311,7 +41371,7 @@
               },
               "func_calls": [
                 {
-                  "id": 286,
+                  "id": 266,
                   "name": "IsTrue",
                   "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                   "base_qualified_name": null,
@@ -41330,7 +41390,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 287,
+                  "id": 267,
                   "name": "GetStream",
                   "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                   "base_qualified_name": null,
@@ -41369,7 +41429,7 @@
               },
               "func_calls": [
                 {
-                  "id": 288,
+                  "id": 268,
                   "name": "IsTrue",
                   "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                   "base_qualified_name": null,
@@ -41388,7 +41448,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 289,
+                  "id": 269,
                   "name": "GetStream",
                   "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                   "base_qualified_name": null,
@@ -41427,7 +41487,7 @@
               },
               "func_calls": [
                 {
-                  "id": 292,
+                  "id": 272,
                   "name": "IsTrue",
                   "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                   "base_qualified_name": null,
@@ -41446,7 +41506,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 293,
+                  "id": 273,
                   "name": "GetStream",
                   "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                   "base_qualified_name": null,
@@ -41485,7 +41545,7 @@
               },
               "func_calls": [
                 {
-                  "id": 294,
+                  "id": 274,
                   "name": "IsTrue",
                   "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                   "base_qualified_name": null,
@@ -41504,7 +41564,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 295,
+                  "id": 275,
                   "name": "GetStream",
                   "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                   "base_qualified_name": null,
@@ -41569,7 +41629,7 @@
                   },
                   "func_calls": [
                     {
-                      "id": 298,
+                      "id": 357,
                       "name": "DescribeTo",
                       "qualified_name": "testing::internal::MatchesRegexMatcher::DescribeTo 'void (::std::ostream *) const'",
                       "base_qualified_name": null,
@@ -41608,7 +41668,7 @@
                   },
                   "func_calls": [
                     {
-                      "id": 301,
+                      "id": 358,
                       "name": "DescribeNegationTo",
                       "qualified_name": "testing::internal::MatchesRegexMatcher::DescribeNegationTo 'void (::std::ostream *) const'",
                       "base_qualified_name": null,
@@ -41809,7 +41869,7 @@
               },
               "func_calls": [
                 {
-                  "id": 299,
+                  "id": 278,
                   "name": "Print",
                   "qualified_name": "testing::internal::UniversalPrinter<std::string>::Print 'void (const std::string &, ::std::ostream *)'",
                   "base_qualified_name": null,
@@ -41828,7 +41888,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 300,
+                  "id": 279,
                   "name": "pattern",
                   "qualified_name": "testing::internal::RE::pattern 'const char *() const'",
                   "base_qualified_name": null,
@@ -41867,7 +41927,7 @@
               },
               "func_calls": [
                 {
-                  "id": 302,
+                  "id": 280,
                   "name": "Print",
                   "qualified_name": "testing::internal::UniversalPrinter<std::string>::Print 'void (const std::string &, ::std::ostream *)'",
                   "base_qualified_name": null,
@@ -41886,7 +41946,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 303,
+                  "id": 281,
                   "name": "pattern",
                   "qualified_name": "testing::internal::RE::pattern 'const char *() const'",
                   "base_qualified_name": null,
@@ -41951,7 +42011,7 @@
           },
           "func_calls": [
             {
-              "id": 304,
+              "id": 282,
               "name": "MakePolymorphicMatcher",
               "qualified_name": "testing::MakePolymorphicMatcher<testing::internal::MatchesRegexMatcher>icMatcher 'PolymorphicMatcher<MatchesRegexMatcher> (const testing::internal::MatchesRegexMatcher &)'",
               "base_qualified_name": null,
@@ -41990,7 +42050,7 @@
           },
           "func_calls": [
             {
-              "id": 305,
+              "id": 283,
               "name": "MakePolymorphicMatcher",
               "qualified_name": "testing::MakePolymorphicMatcher<testing::internal::MatchesRegexMatcher>icMatcher 'PolymorphicMatcher<MatchesRegexMatcher> (const testing::internal::MatchesRegexMatcher &)'",
               "base_qualified_name": null,
@@ -42029,7 +42089,7 @@
           },
           "func_calls": [
             {
-              "id": 306,
+              "id": 284,
               "name": "ContainsRegex",
               "qualified_name": "testing::ContainsRegex 'PolymorphicMatcher<internal::MatchesRegexMatcher> (const internal::RE *)'",
               "base_qualified_name": null,
@@ -42068,7 +42128,7 @@
           },
           "func_calls": [
             {
-              "id": 307,
+              "id": 285,
               "name": "ContainsRegex",
               "qualified_name": "testing::ContainsRegex 'PolymorphicMatcher<internal::MatchesRegexMatcher> (const internal::RE *)'",
               "base_qualified_name": null,
@@ -42100,7 +42160,7 @@
     {
       "id": 225,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h",
-      "last_analyzed": 1732131462129,
+      "last_analyzed": 1732321491761,
       "classes": [
         {
           "id": 173,
@@ -42526,7 +42586,7 @@
           },
           "func_calls": [
             {
-              "id": 308,
+              "id": 286,
               "name": "ContainsRegex",
               "qualified_name": "testing::ContainsRegex<const char *>ainsRegex 'PolymorphicMatcher<internal::MatchesRegexMatcher> (const internal::StringLike<const char *> &)'",
               "base_qualified_name": null,
@@ -42545,7 +42605,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 309,
+              "id": 287,
               "name": "pattern",
               "qualified_name": "testing::internal::RE::pattern 'const char *() const'",
               "base_qualified_name": null,
@@ -42584,7 +42644,7 @@
           },
           "func_calls": [
             {
-              "id": 310,
+              "id": 288,
               "name": "ContainsRegex",
               "qualified_name": "testing::ContainsRegex<const char *>ainsRegex 'PolymorphicMatcher<internal::MatchesRegexMatcher> (const internal::StringLike<const char *> &)'",
               "base_qualified_name": null,
@@ -42623,7 +42683,7 @@
           },
           "func_calls": [
             {
-              "id": 311,
+              "id": 289,
               "name": "ContainsRegex",
               "qualified_name": "testing::ContainsRegex<std::string>ainsRegex 'PolymorphicMatcher<internal::MatchesRegexMatcher> (const internal::StringLike<string> &)'",
               "base_qualified_name": null,
@@ -42674,7 +42734,7 @@
     {
       "id": 226,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/gtest-death-test.h",
-      "last_analyzed": 1732131462149,
+      "last_analyzed": 1732321491782,
       "classes": [
         {
           "id": 178,
@@ -42788,7 +42848,7 @@
     {
       "id": 227,
       "name": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h",
-      "last_analyzed": 1732131462152,
+      "last_analyzed": 1732321491785,
       "classes": [],
       "func_decls": [
         {
@@ -42822,7 +42882,7 @@
     {
       "id": 228,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/gtest-test-part.h",
-      "last_analyzed": 1732131462154,
+      "last_analyzed": 1732321491786,
       "classes": [
         {
           "id": 180,
@@ -43040,7 +43100,7 @@
               },
               "func_calls": [
                 {
-                  "id": 312,
+                  "id": 290,
                   "name": "fatally_failed",
                   "qualified_name": "testing::TestPartResult::fatally_failed 'bool () const'",
                   "base_qualified_name": null,
@@ -43059,7 +43119,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 313,
+                  "id": 291,
                   "name": "nonfatally_failed",
                   "qualified_name": "testing::TestPartResult::nonfatally_failed 'bool () const'",
                   "base_qualified_name": null,
@@ -43306,7 +43366,7 @@
     {
       "id": 229,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/internal/gtest-param-util.h",
-      "last_analyzed": 1732131462165,
+      "last_analyzed": 1732321491797,
       "classes": [
         {
           "id": 184,
@@ -43690,7 +43750,7 @@
                   },
                   "func_calls": [
                     {
-                      "id": 314,
+                      "id": 292,
                       "name": "IsTrue",
                       "qualified_name": "testing::internal::IsTrue 'bool (bool)'",
                       "base_qualified_name": null,
@@ -43709,7 +43769,7 @@
                       "virtual_func_calls": []
                     },
                     {
-                      "id": 315,
+                      "id": 293,
                       "name": "GetStream",
                       "qualified_name": "testing::internal::GTestLog::GetStream '::std::ostream &()'",
                       "base_qualified_name": null,
@@ -43728,7 +43788,7 @@
                       "virtual_func_calls": []
                     },
                     {
-                      "id": 316,
+                      "id": 294,
                       "name": "CheckedDowncastToActualType",
                       "qualified_name": "testing::internal::CheckedDowncastToActualType<const testing::internal::ValuesInIteratorRangeGenerator<bool>::Iterator, const testing::internal::ParamIteratorInterface<bool>>owncastToActualType 'const testing::internal::ValuesInIteratorRangeGenerator<bool>::Iterator *(const testing::internal::ParamIteratorInterface<bool> *)'",
                       "base_qualified_name": null,
@@ -44252,7 +44312,7 @@
           },
           "func_calls": [
             {
-              "id": 317,
+              "id": 342,
               "name": "ValuesIn",
               "qualified_name": "testing::ValuesIn<std::__bit_iterator<std::vector<bool>, true>>:ValuesIn 'internal::ParamGenerator<typename std::iterator_traits<__bit_iterator<vector<bool, allocator<bool>>, true, 0>>::value_type> (std::__bit_iterator<std::vector<bool>, true>, std::__bit_iterator<std::vector<bool>, true>)'",
               "base_qualified_name": null,
@@ -44284,7 +44344,7 @@
     {
       "id": 230,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/gtest-param-test.h",
-      "last_analyzed": 1732131462201,
+      "last_analyzed": 1732321491836,
       "classes": [],
       "func_decls": [],
       "func_impls": [
@@ -44344,7 +44404,7 @@
           },
           "func_calls": [
             {
-              "id": 318,
+              "id": 295,
               "name": "Values",
               "qualified_name": "testing::Values<>g::Values 'internal::ValueArray<bool, bool> (bool, bool)'",
               "base_qualified_name": null,
@@ -44376,7 +44436,7 @@
     {
       "id": 231,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/gtest_pred_impl.h",
-      "last_analyzed": 1732131462203,
+      "last_analyzed": 1732321491838,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -44390,7 +44450,7 @@
     {
       "id": 232,
       "name": "./tests/playground/external_resources/googletest/googletest/include/gtest/gtest.h",
-      "last_analyzed": 1732131462212,
+      "last_analyzed": 1732321491847,
       "classes": [
         {
           "id": 208,
@@ -44668,7 +44728,7 @@
               },
               "func_calls": [
                 {
-                  "id": 323,
+                  "id": 296,
                   "name": "HasFatalFailure",
                   "qualified_name": "testing::Test::HasFatalFailure 'bool ()'",
                   "base_qualified_name": null,
@@ -44687,7 +44747,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 324,
+                  "id": 297,
                   "name": "HasNonfatalFailure",
                   "qualified_name": "testing::Test::HasNonfatalFailure 'bool ()'",
                   "base_qualified_name": null,
@@ -45167,7 +45227,46 @@
                   "column": 58
                 }
               },
-              "func_calls": [],
+              "func_calls": [
+                {
+                  "id": 360,
+                  "name": "Skipped",
+                  "qualified_name": "testing::TestResult::Skipped 'bool () const'",
+                  "base_qualified_name": null,
+                  "qual_type": "bool () const",
+                  "range": {
+                    "start": {
+                      "line": 415,
+                      "column": 33
+                    },
+                    "end": {
+                      "line": 415,
+                      "column": 42
+                    }
+                  },
+                  "func_calls": [],
+                  "virtual_func_calls": []
+                },
+                {
+                  "id": 361,
+                  "name": "Failed",
+                  "qualified_name": "testing::TestResult::Failed 'bool () const'",
+                  "base_qualified_name": null,
+                  "qual_type": "bool () const",
+                  "range": {
+                    "start": {
+                      "line": 415,
+                      "column": 47
+                    },
+                    "end": {
+                      "line": 415,
+                      "column": 55
+                    }
+                  },
+                  "func_calls": [],
+                  "virtual_func_calls": []
+                }
+              ],
               "virtual_func_calls": []
             },
             {
@@ -45447,7 +45546,7 @@
               },
               "func_calls": [
                 {
-                  "id": 325,
+                  "id": 298,
                   "name": "test_suite_name",
                   "qualified_name": "testing::TestInfo::test_suite_name 'const char *() const'",
                   "base_qualified_name": null,
@@ -45657,7 +45756,7 @@
               },
               "func_calls": [
                 {
-                  "id": 326,
+                  "id": 299,
                   "name": "increment_death_test_count",
                   "qualified_name": "testing::TestResult::increment_death_test_count 'int ()'",
                   "base_qualified_name": null,
@@ -45696,7 +45795,7 @@
               },
               "func_calls": [
                 {
-                  "id": 327,
+                  "id": 300,
                   "name": "Clear",
                   "qualified_name": "testing::TestResult::Clear 'void ()'",
                   "base_qualified_name": null,
@@ -46127,7 +46226,7 @@
               },
               "func_calls": [
                 {
-                  "id": 328,
+                  "id": 340,
                   "name": "Failed",
                   "qualified_name": "testing::TestSuite::Failed 'bool () const'",
                   "base_qualified_name": null,
@@ -46166,7 +46265,7 @@
               },
               "func_calls": [
                 {
-                  "id": 329,
+                  "id": 301,
                   "name": "failed_test_count",
                   "qualified_name": "testing::TestSuite::failed_test_count 'int () const'",
                   "base_qualified_name": null,
@@ -46185,7 +46284,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 330,
+                  "id": 302,
                   "name": "Failed",
                   "qualified_name": "testing::TestResult::Failed 'bool () const'",
                   "base_qualified_name": null,
@@ -46204,7 +46303,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 331,
+                  "id": 341,
                   "name": "ad_hoc_test_result",
                   "qualified_name": "testing::TestSuite::ad_hoc_test_result 'const TestResult &() const'",
                   "base_qualified_name": null,
@@ -46357,7 +46456,7 @@
               },
               "func_calls": [
                 {
-                  "id": 332,
+                  "id": 303,
                   "name": "ClearResult",
                   "qualified_name": "testing::TestSuite::ClearResult 'void ()'",
                   "base_qualified_name": null,
@@ -46434,7 +46533,7 @@
               },
               "func_calls": [
                 {
-                  "id": 333,
+                  "id": 304,
                   "name": "should_run",
                   "qualified_name": "testing::TestInfo::should_run 'bool () const'",
                   "base_qualified_name": null,
@@ -46453,7 +46552,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 334,
+                  "id": 305,
                   "name": "Passed",
                   "qualified_name": "testing::TestResult::Passed 'bool () const'",
                   "base_qualified_name": null,
@@ -46472,7 +46571,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 335,
+                  "id": 306,
                   "name": "result",
                   "qualified_name": "testing::TestInfo::result 'const TestResult *() const'",
                   "base_qualified_name": null,
@@ -46511,7 +46610,7 @@
               },
               "func_calls": [
                 {
-                  "id": 336,
+                  "id": 307,
                   "name": "should_run",
                   "qualified_name": "testing::TestInfo::should_run 'bool () const'",
                   "base_qualified_name": null,
@@ -46530,7 +46629,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 337,
+                  "id": 308,
                   "name": "Skipped",
                   "qualified_name": "testing::TestResult::Skipped 'bool () const'",
                   "base_qualified_name": null,
@@ -46549,7 +46648,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 338,
+                  "id": 309,
                   "name": "result",
                   "qualified_name": "testing::TestInfo::result 'const TestResult *() const'",
                   "base_qualified_name": null,
@@ -46588,7 +46687,7 @@
               },
               "func_calls": [
                 {
-                  "id": 339,
+                  "id": 310,
                   "name": "should_run",
                   "qualified_name": "testing::TestInfo::should_run 'bool () const'",
                   "base_qualified_name": null,
@@ -46607,7 +46706,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 340,
+                  "id": 311,
                   "name": "Failed",
                   "qualified_name": "testing::TestResult::Failed 'bool () const'",
                   "base_qualified_name": null,
@@ -46626,7 +46725,7 @@
                   "virtual_func_calls": []
                 },
                 {
-                  "id": 341,
+                  "id": 312,
                   "name": "result",
                   "qualified_name": "testing::TestInfo::result 'const TestResult *() const'",
                   "base_qualified_name": null,
@@ -46665,7 +46764,7 @@
               },
               "func_calls": [
                 {
-                  "id": 342,
+                  "id": 313,
                   "name": "is_reportable",
                   "qualified_name": "testing::TestInfo::is_reportable 'bool () const'",
                   "base_qualified_name": null,
@@ -46723,7 +46822,7 @@
               },
               "func_calls": [
                 {
-                  "id": 343,
+                  "id": 314,
                   "name": "is_reportable",
                   "qualified_name": "testing::TestInfo::is_reportable 'bool () const'",
                   "base_qualified_name": null,
@@ -46762,7 +46861,7 @@
               },
               "func_calls": [
                 {
-                  "id": 344,
+                  "id": 315,
                   "name": "should_run",
                   "qualified_name": "testing::TestInfo::should_run 'bool () const'",
                   "base_qualified_name": null,
@@ -48672,7 +48771,7 @@
               },
               "func_calls": [
                 {
-                  "id": 357,
+                  "id": 328,
                   "name": "CmpHelperEQ",
                   "qualified_name": "testing::internal::CmpHelperEQ<long long, long long>ternal::CmpHelperEQ 'AssertionResult (const char *, const char *, const long long &, const long long &)'",
                   "base_qualified_name": null,
@@ -49362,7 +49461,7 @@
           },
           "func_calls": [
             {
-              "id": 345,
+              "id": 316,
               "name": "AddEnvironment",
               "qualified_name": "testing::UnitTest::AddEnvironment 'Environment *(Environment *)'",
               "base_qualified_name": null,
@@ -49381,7 +49480,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 346,
+              "id": 317,
               "name": "GetInstance",
               "qualified_name": "testing::UnitTest::GetInstance 'UnitTest *()'",
               "base_qualified_name": null,
@@ -49420,7 +49519,7 @@
           },
           "func_calls": [
             {
-              "id": 347,
+              "id": 318,
               "name": "EqFailure",
               "qualified_name": "testing::internal::EqFailure 'AssertionResult (const char *, const char *, const std::string &, const std::string &, bool)'",
               "base_qualified_name": null,
@@ -49439,7 +49538,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 348,
+              "id": 319,
               "name": "FormatForComparisonFailureMessage",
               "qualified_name": "testing::internal::FormatForComparisonFailureMessage<long long, long long>risonFailureMessage 'std::string (const long long &, const long long &)'",
               "base_qualified_name": null,
@@ -49458,7 +49557,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 349,
+              "id": 320,
               "name": "FormatForComparisonFailureMessage",
               "qualified_name": "testing::internal::FormatForComparisonFailureMessage<long long, long long>risonFailureMessage 'std::string (const long long &, const long long &)'",
               "base_qualified_name": null,
@@ -49497,7 +49596,7 @@
           },
           "func_calls": [
             {
-              "id": 350,
+              "id": 321,
               "name": "EqFailure",
               "qualified_name": "testing::internal::EqFailure 'AssertionResult (const char *, const char *, const std::string &, const std::string &, bool)'",
               "base_qualified_name": null,
@@ -49516,7 +49615,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 351,
+              "id": 322,
               "name": "FormatForComparisonFailureMessage",
               "qualified_name": "testing::internal::FormatForComparisonFailureMessage<int, int>risonFailureMessage 'std::string (const int &, const int &)'",
               "base_qualified_name": null,
@@ -49535,7 +49634,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 352,
+              "id": 323,
               "name": "FormatForComparisonFailureMessage",
               "qualified_name": "testing::internal::FormatForComparisonFailureMessage<int, int>risonFailureMessage 'std::string (const int &, const int &)'",
               "base_qualified_name": null,
@@ -49612,7 +49711,7 @@
           },
           "func_calls": [
             {
-              "id": 353,
+              "id": 324,
               "name": "AssertionSuccess",
               "qualified_name": "testing::AssertionSuccess 'AssertionResult ()'",
               "base_qualified_name": null,
@@ -49631,7 +49730,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 354,
+              "id": 325,
               "name": "CmpHelperEQFailure",
               "qualified_name": "testing::internal::CmpHelperEQFailure<long long, long long>:CmpHelperEQFailure 'AssertionResult (const char *, const char *, const long long &, const long long &)'",
               "base_qualified_name": null,
@@ -49670,7 +49769,7 @@
           },
           "func_calls": [
             {
-              "id": 355,
+              "id": 326,
               "name": "AssertionSuccess",
               "qualified_name": "testing::AssertionSuccess 'AssertionResult ()'",
               "base_qualified_name": null,
@@ -49689,7 +49788,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 356,
+              "id": 327,
               "name": "CmpHelperEQFailure",
               "qualified_name": "testing::internal::CmpHelperEQFailure<int, int>:CmpHelperEQFailure 'AssertionResult (const char *, const char *, const int &, const int &)'",
               "base_qualified_name": null,
@@ -49728,7 +49827,7 @@
           },
           "func_calls": [
             {
-              "id": 358,
+              "id": 329,
               "name": "Run",
               "qualified_name": "testing::UnitTest::Run 'int ()'",
               "base_qualified_name": null,
@@ -49747,7 +49846,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 359,
+              "id": 330,
               "name": "GetInstance",
               "qualified_name": "testing::UnitTest::GetInstance 'UnitTest *()'",
               "base_qualified_name": null,
