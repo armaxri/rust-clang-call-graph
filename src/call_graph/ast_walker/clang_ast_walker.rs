@@ -86,12 +86,19 @@ fn map_open_func_call_connections(walker: &mut ClangAstWalkerInternal) {
         }
 
         for (range, func_impl) in open_connections {
-            func_impl.borrow_mut().get_or_add_func_call(
-                &func_decl
-                    .unwrap()
+            if func_impl == func_decl.unwrap() {
+                let creation_args = func_impl
                     .borrow()
-                    .convert_func2func_creation_args4call(range),
-            );
+                    .convert_func2func_creation_args4call(range);
+                func_impl.borrow_mut().get_or_add_func_call(&creation_args);
+            } else {
+                func_impl.borrow_mut().get_or_add_func_call(
+                    &func_decl
+                        .unwrap()
+                        .borrow()
+                        .convert_func2func_creation_args4call(range),
+                );
+            }
         }
     }
 }
