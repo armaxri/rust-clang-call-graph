@@ -30,7 +30,7 @@ struct NewDatabaseArgs {
     #[arg(short, long, value_name = "FILE")]
     compile_commands_json: PathBuf,
     /// Namespaces to ignore
-    #[arg(short, long, value_name = "NAMESPACE", default_values_t = ["std".to_string(), "boost".to_string()])]
+    #[arg(short, long, value_name = "NAMESPACE", default_values_t = ["std".to_string(), "boost".to_string(), "mpl_".to_string()])]
     ignored_namespaces: Vec<String>,
 }
 
