@@ -540,30 +540,19 @@ fn walker_func_impl_inner_decl(
         return;
     }
 
-    let func_decl = walker.known_func_decls_and_impls.get(&func_decl_id);
-
-    if func_decl.is_some() {
-        func_impl.borrow_mut().get_or_add_func_call(
-            &func_decl
+    match walker.open_func_call_connections.contains_key(&hex_value) {
+        true => {
+            walker
+                .open_func_call_connections
+                .get_mut(&hex_value)
                 .unwrap()
-                .borrow()
-                .convert_func2func_creation_args4call(used_current_range),
-        );
-    } else {
-        match walker.open_func_call_connections.contains_key(&hex_value) {
-            true => {
-                walker
-                    .open_func_call_connections
-                    .get_mut(&hex_value)
-                    .unwrap()
-                    .push((used_current_range.clone(), func_impl.clone()));
-            }
-            false => {
-                walker.open_func_call_connections.insert(
-                    hex_value,
-                    vec![(used_current_range.clone(), func_impl.clone())],
-                );
-            }
+                .push((used_current_range.clone(), func_impl.clone()));
+        }
+        false => {
+            walker.open_func_call_connections.insert(
+                hex_value,
+                vec![(used_current_range.clone(), func_impl.clone())],
+            );
         }
     }
 }

@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "./tests/playground/simple_templates/simple_template_with_two_classes/file.cpp",
-      "last_analyzed": 1732321487016,
+      "last_analyzed": 1732408514897,
       "classes": [
         {
           "id": 1,
@@ -30,7 +30,7 @@
               },
               "func_calls": [
                 {
-                  "id": 3,
+                  "id": 1,
                   "name": "ba",
                   "qualified_name": "SimpleClassA::ba 'int ()'",
                   "base_qualified_name": null,
@@ -69,7 +69,7 @@
               },
               "func_calls": [
                 {
-                  "id": 4,
+                  "id": 2,
                   "name": "ba",
                   "qualified_name": "SimpleClassB::ba 'int ()'",
                   "base_qualified_name": null,
@@ -175,7 +175,7 @@
           },
           "func_calls": [
             {
-              "id": 1,
+              "id": 3,
               "name": "foo",
               "qualified_name": "TemplateClass<SimpleClassA>::foo 'int ()'",
               "base_qualified_name": null,
@@ -194,7 +194,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 2,
+              "id": 4,
               "name": "foo",
               "qualified_name": "TemplateClass<SimpleClassB>::foo 'int ()'",
               "base_qualified_name": null,
