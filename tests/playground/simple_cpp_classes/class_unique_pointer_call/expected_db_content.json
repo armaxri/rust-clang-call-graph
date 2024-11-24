@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "./tests/playground/simple_cpp_classes/class_unique_pointer_call/file.cpp",
-      "last_analyzed": 1732131458130,
+      "last_analyzed": 1732408515601,
       "classes": [
         {
           "id": 52,
@@ -88,7 +88,7 @@
     {
       "id": 1,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config",
-      "last_analyzed": 1732131458131,
+      "last_analyzed": 1732408515602,
       "classes": [],
       "func_decls": [
         {
@@ -331,7 +331,7 @@
     {
       "id": 2,
       "name": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stddef.h",
-      "last_analyzed": 1732131458132,
+      "last_analyzed": 1732408515603,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -345,7 +345,7 @@
     {
       "id": 3,
       "name": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/__stddef_max_align_t.h",
-      "last_analyzed": 1732131458132,
+      "last_analyzed": 1732408515604,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -359,7 +359,7 @@
     {
       "id": 4,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h",
-      "last_analyzed": 1732131458133,
+      "last_analyzed": 1732408515604,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -373,7 +373,7 @@
     {
       "id": 5,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef",
-      "last_analyzed": 1732131458134,
+      "last_analyzed": 1732408515605,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -387,7 +387,7 @@
     {
       "id": 6,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/conditional.h",
-      "last_analyzed": 1732131458135,
+      "last_analyzed": 1732408515606,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -401,7 +401,7 @@
     {
       "id": 7,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/exception.h",
-      "last_analyzed": 1732131458136,
+      "last_analyzed": 1732408515607,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -415,7 +415,7 @@
     {
       "id": 8,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/_types.h",
-      "last_analyzed": 1732131458137,
+      "last_analyzed": 1732408515608,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -429,7 +429,7 @@
     {
       "id": 9,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types.h",
-      "last_analyzed": 1732131458137,
+      "last_analyzed": 1732408515609,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -443,7 +443,7 @@
     {
       "id": 10,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h",
-      "last_analyzed": 1732131458138,
+      "last_analyzed": 1732408515609,
       "classes": [
         {
           "id": 1,
@@ -558,7 +558,7 @@
     {
       "id": 11,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types.h",
-      "last_analyzed": 1732131458143,
+      "last_analyzed": 1732408515614,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -572,7 +572,7 @@
     {
       "id": 12,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/wait.h",
-      "last_analyzed": 1732131458144,
+      "last_analyzed": 1732408515615,
       "classes": [],
       "func_decls": [
         {
@@ -682,7 +682,7 @@
     {
       "id": 13,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_pid_t.h",
-      "last_analyzed": 1732131458144,
+      "last_analyzed": 1732408515615,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -696,7 +696,7 @@
     {
       "id": 14,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_id_t.h",
-      "last_analyzed": 1732131458145,
+      "last_analyzed": 1732408515616,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -710,7 +710,7 @@
     {
       "id": 15,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/signal.h",
-      "last_analyzed": 1732131458146,
+      "last_analyzed": 1732408515617,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -724,7 +724,7 @@
     {
       "id": 16,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int8_t.h",
-      "last_analyzed": 1732131458147,
+      "last_analyzed": 1732408515618,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -738,7 +738,7 @@
     {
       "id": 17,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int16_t.h",
-      "last_analyzed": 1732131458148,
+      "last_analyzed": 1732408515618,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -752,7 +752,7 @@
     {
       "id": 18,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int32_t.h",
-      "last_analyzed": 1732131458148,
+      "last_analyzed": 1732408515619,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -766,7 +766,7 @@
     {
       "id": 19,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int64_t.h",
-      "last_analyzed": 1732131458149,
+      "last_analyzed": 1732408515620,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -780,7 +780,7 @@
     {
       "id": 20,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int8_t.h",
-      "last_analyzed": 1732131458150,
+      "last_analyzed": 1732408515621,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -794,7 +794,7 @@
     {
       "id": 21,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int16_t.h",
-      "last_analyzed": 1732131458151,
+      "last_analyzed": 1732408515622,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -808,7 +808,7 @@
     {
       "id": 22,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int32_t.h",
-      "last_analyzed": 1732131458152,
+      "last_analyzed": 1732408515622,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -822,7 +822,7 @@
     {
       "id": 23,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int64_t.h",
-      "last_analyzed": 1732131458153,
+      "last_analyzed": 1732408515623,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -836,7 +836,7 @@
     {
       "id": 24,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/types.h",
-      "last_analyzed": 1732131458153,
+      "last_analyzed": 1732408515624,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -850,7 +850,7 @@
     {
       "id": 25,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_intptr_t.h",
-      "last_analyzed": 1732131458154,
+      "last_analyzed": 1732408515625,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -864,7 +864,7 @@
     {
       "id": 26,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h",
-      "last_analyzed": 1732131458155,
+      "last_analyzed": 1732408515626,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -878,7 +878,7 @@
     {
       "id": 27,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h",
-      "last_analyzed": 1732131458156,
+      "last_analyzed": 1732408515626,
       "classes": [
         {
           "id": 11,
@@ -1023,7 +1023,7 @@
     {
       "id": 28,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/_mcontext.h",
-      "last_analyzed": 1732131458161,
+      "last_analyzed": 1732408515633,
       "classes": [
         {
           "id": 23,
@@ -1048,7 +1048,7 @@
     {
       "id": 29,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_attr_t.h",
-      "last_analyzed": 1732131458163,
+      "last_analyzed": 1732408515635,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1062,7 +1062,7 @@
     {
       "id": 30,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_sigaltstack.h",
-      "last_analyzed": 1732131458164,
+      "last_analyzed": 1732408515636,
       "classes": [
         {
           "id": 25,
@@ -1087,7 +1087,7 @@
     {
       "id": 31,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ucontext.h",
-      "last_analyzed": 1732131458165,
+      "last_analyzed": 1732408515637,
       "classes": [
         {
           "id": 26,
@@ -1112,7 +1112,7 @@
     {
       "id": 32,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_sigset_t.h",
-      "last_analyzed": 1732131458167,
+      "last_analyzed": 1732408515638,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1126,7 +1126,7 @@
     {
       "id": 33,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uid_t.h",
-      "last_analyzed": 1732131458167,
+      "last_analyzed": 1732408515639,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1140,7 +1140,7 @@
     {
       "id": 34,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/signal.h",
-      "last_analyzed": 1732131458168,
+      "last_analyzed": 1732408515640,
       "classes": [
         {
           "id": 27,
@@ -1235,7 +1235,7 @@
     {
       "id": 35,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uint8_t.h",
-      "last_analyzed": 1732131458171,
+      "last_analyzed": 1732408515643,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1249,7 +1249,7 @@
     {
       "id": 36,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uint16_t.h",
-      "last_analyzed": 1732131458172,
+      "last_analyzed": 1732408515644,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1263,7 +1263,7 @@
     {
       "id": 37,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uint32_t.h",
-      "last_analyzed": 1732131458172,
+      "last_analyzed": 1732408515644,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1277,7 +1277,7 @@
     {
       "id": 38,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uint64_t.h",
-      "last_analyzed": 1732131458173,
+      "last_analyzed": 1732408515645,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1291,7 +1291,7 @@
     {
       "id": 39,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdint.h",
-      "last_analyzed": 1732131458174,
+      "last_analyzed": 1732408515646,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1305,7 +1305,7 @@
     {
       "id": 40,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_intmax_t.h",
-      "last_analyzed": 1732131458174,
+      "last_analyzed": 1732408515646,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1319,7 +1319,7 @@
     {
       "id": 41,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h",
-      "last_analyzed": 1732131458175,
+      "last_analyzed": 1732408515647,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1333,7 +1333,7 @@
     {
       "id": 42,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval.h",
-      "last_analyzed": 1732131458176,
+      "last_analyzed": 1732408515648,
       "classes": [
         {
           "id": 33,
@@ -1358,7 +1358,7 @@
     {
       "id": 43,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/resource.h",
-      "last_analyzed": 1732131458177,
+      "last_analyzed": 1732408515649,
       "classes": [
         {
           "id": 34,
@@ -1607,7 +1607,7 @@
     {
       "id": 44,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libkern/_OSByteOrder.h",
-      "last_analyzed": 1732131458183,
+      "last_analyzed": 1732408515656,
       "classes": [
         {
           "id": 44,
@@ -1717,7 +1717,7 @@
           },
           "func_calls": [
             {
-              "id": 1,
+              "id": 6,
               "name": "_OSSwapInt16",
               "qualified_name": "_OSSwapInt16 'uint16_t (uint16_t)'",
               "base_qualified_name": null,
@@ -1756,7 +1756,7 @@
           },
           "func_calls": [
             {
-              "id": 2,
+              "id": 8,
               "name": "_OSSwapInt32",
               "qualified_name": "_OSSwapInt32 'uint32_t (uint32_t)'",
               "base_qualified_name": null,
@@ -1795,7 +1795,7 @@
           },
           "func_calls": [
             {
-              "id": 3,
+              "id": 4,
               "name": "_OSSwapInt64",
               "qualified_name": "_OSSwapInt64 'uint64_t (uint64_t)'",
               "base_qualified_name": null,
@@ -1834,7 +1834,7 @@
           },
           "func_calls": [
             {
-              "id": 4,
+              "id": 7,
               "name": "_OSSwapInt16",
               "qualified_name": "_OSSwapInt16 'uint16_t (uint16_t)'",
               "base_qualified_name": null,
@@ -1873,7 +1873,7 @@
           },
           "func_calls": [
             {
-              "id": 5,
+              "id": 9,
               "name": "_OSSwapInt32",
               "qualified_name": "_OSSwapInt32 'uint32_t (uint32_t)'",
               "base_qualified_name": null,
@@ -1912,7 +1912,7 @@
           },
           "func_calls": [
             {
-              "id": 6,
+              "id": 5,
               "name": "_OSSwapInt64",
               "qualified_name": "_OSSwapInt64 'uint64_t (uint64_t)'",
               "base_qualified_name": null,
@@ -1944,7 +1944,7 @@
     {
       "id": 45,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/alloca.h",
-      "last_analyzed": 1732131458191,
+      "last_analyzed": 1732408515663,
       "classes": [],
       "func_decls": [
         {
@@ -1978,7 +1978,7 @@
     {
       "id": 46,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ct_rune_t.h",
-      "last_analyzed": 1732131458192,
+      "last_analyzed": 1732408515664,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -1992,7 +1992,7 @@
     {
       "id": 47,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_rune_t.h",
-      "last_analyzed": 1732131458193,
+      "last_analyzed": 1732408515665,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -2006,7 +2006,7 @@
     {
       "id": 48,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdlib.h",
-      "last_analyzed": 1732131458193,
+      "last_analyzed": 1732408515665,
       "classes": [],
       "func_decls": [
         {
@@ -3978,7 +3978,7 @@
     {
       "id": 49,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc_type.h",
-      "last_analyzed": 1732131458194,
+      "last_analyzed": 1732408515666,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -3992,7 +3992,7 @@
     {
       "id": 50,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h",
-      "last_analyzed": 1732131458195,
+      "last_analyzed": 1732408515667,
       "classes": [],
       "func_decls": [
         {
@@ -6401,7 +6401,7 @@
     {
       "id": 51,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h",
-      "last_analyzed": 1732131458199,
+      "last_analyzed": 1732408515672,
       "classes": [],
       "func_decls": [
         {
@@ -6549,7 +6549,7 @@
     {
       "id": 52,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h",
-      "last_analyzed": 1732131458202,
+      "last_analyzed": 1732408515676,
       "classes": [],
       "func_decls": [
         {
@@ -6716,7 +6716,7 @@
     {
       "id": 53,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h",
-      "last_analyzed": 1732131458211,
+      "last_analyzed": 1732408515686,
       "classes": [],
       "func_decls": [
         {
@@ -7366,7 +7366,7 @@
           },
           "func_calls": [
             {
-              "id": 9,
+              "id": 1,
               "name": "__inline_isfinitef",
               "qualified_name": "__inline_isfinitef 'int (float)'",
               "base_qualified_name": null,
@@ -7554,7 +7554,7 @@
     {
       "id": 54,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_dev_t.h",
-      "last_analyzed": 1732131458223,
+      "last_analyzed": 1732408515700,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -7568,7 +7568,7 @@
     {
       "id": 55,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_mode_t.h",
-      "last_analyzed": 1732131458224,
+      "last_analyzed": 1732408515701,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -7582,7 +7582,7 @@
     {
       "id": 56,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdlib.h",
-      "last_analyzed": 1732131458238,
+      "last_analyzed": 1732408515717,
       "classes": [],
       "func_decls": [],
       "func_impls": [
@@ -7699,7 +7699,7 @@
           },
           "func_calls": [
             {
-              "id": 7,
+              "id": 10,
               "name": "ldiv",
               "qualified_name": "ldiv 'ldiv_t (long, long)'",
               "base_qualified_name": null,
@@ -7738,7 +7738,7 @@
           },
           "func_calls": [
             {
-              "id": 8,
+              "id": 11,
               "name": "lldiv",
               "qualified_name": "lldiv 'lldiv_t (long long, long long)'",
               "base_qualified_name": null,
@@ -7770,7 +7770,7 @@
     {
       "id": 57,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new",
-      "last_analyzed": 1732131458242,
+      "last_analyzed": 1732408515720,
       "classes": [],
       "func_decls": [],
       "func_impls": [
@@ -7861,7 +7861,7 @@
     {
       "id": 58,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/operations.h",
-      "last_analyzed": 1732131458254,
+      "last_analyzed": 1732408515727,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -7875,7 +7875,7 @@
     {
       "id": 59,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/exception_ptr.h",
-      "last_analyzed": 1732131458255,
+      "last_analyzed": 1732408515728,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -7889,7 +7889,7 @@
     {
       "id": 60,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/nested_exception.h",
-      "last_analyzed": 1732131458256,
+      "last_analyzed": 1732408515729,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -7903,7 +7903,7 @@
     {
       "id": 61,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/terminate.h",
-      "last_analyzed": 1732131458257,
+      "last_analyzed": 1732408515730,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -7917,7 +7917,7 @@
     {
       "id": 62,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/type_list.h",
-      "last_analyzed": 1732131458258,
+      "last_analyzed": 1732408515731,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -7931,7 +7931,7 @@
     {
       "id": 63,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/apply_cv.h",
-      "last_analyzed": 1732131458259,
+      "last_analyzed": 1732408515732,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -7945,7 +7945,7 @@
     {
       "id": 64,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits",
-      "last_analyzed": 1732131458260,
+      "last_analyzed": 1732408515733,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -7959,7 +7959,7 @@
     {
       "id": 65,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_valid_expansion.h",
-      "last_analyzed": 1732131458261,
+      "last_analyzed": 1732408515734,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -7973,7 +7973,7 @@
     {
       "id": 66,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/tuple_element.h",
-      "last_analyzed": 1732131458262,
+      "last_analyzed": 1732408515735,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -7987,7 +7987,7 @@
     {
       "id": 67,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list",
-      "last_analyzed": 1732131458263,
+      "last_analyzed": 1732408515736,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -8001,7 +8001,7 @@
     {
       "id": 68,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/unreachable.h",
-      "last_analyzed": 1732131458264,
+      "last_analyzed": 1732408515737,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -8015,7 +8015,7 @@
     {
       "id": 69,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/make_tuple_types.h",
-      "last_analyzed": 1732131458265,
+      "last_analyzed": 1732408515739,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -8029,7 +8029,7 @@
     {
       "id": 70,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/string.h",
-      "last_analyzed": 1732131458267,
+      "last_analyzed": 1732408515740,
       "classes": [],
       "func_decls": [
         {
@@ -8842,7 +8842,7 @@
     {
       "id": 71,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h",
-      "last_analyzed": 1732131458278,
+      "last_analyzed": 1732408515751,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -8856,7 +8856,7 @@
     {
       "id": 72,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/strings.h",
-      "last_analyzed": 1732131458283,
+      "last_analyzed": 1732408515757,
       "classes": [],
       "func_decls": [
         {
@@ -9118,7 +9118,7 @@
     {
       "id": 73,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/string.h",
-      "last_analyzed": 1732131458288,
+      "last_analyzed": 1732408515762,
       "classes": [],
       "func_decls": [],
       "func_impls": [
@@ -9323,7 +9323,7 @@
     {
       "id": 74,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/hash.h",
-      "last_analyzed": 1732131458293,
+      "last_analyzed": 1732408515768,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -9337,7 +9337,7 @@
     {
       "id": 75,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_mbstate_t.h",
-      "last_analyzed": 1732131458294,
+      "last_analyzed": 1732408515769,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -9351,7 +9351,7 @@
     {
       "id": 76,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept",
-      "last_analyzed": 1732131458294,
+      "last_analyzed": 1732408515770,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -9365,7 +9365,7 @@
     {
       "id": 77,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo",
-      "last_analyzed": 1732131458295,
+      "last_analyzed": 1732408515771,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -9379,7 +9379,7 @@
     {
       "id": 78,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__availability",
-      "last_analyzed": 1732131458297,
+      "last_analyzed": 1732408515772,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -9393,7 +9393,7 @@
     {
       "id": 79,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h",
-      "last_analyzed": 1732131458297,
+      "last_analyzed": 1732408515773,
       "classes": [
         {
           "id": 47,
@@ -13009,7 +13009,7 @@
           },
           "func_calls": [
             {
-              "id": 10,
+              "id": 2,
               "name": "__inline_isfinited",
               "qualified_name": "__inline_isfinited 'int (double)'",
               "base_qualified_name": null,
@@ -13048,7 +13048,7 @@
           },
           "func_calls": [
             {
-              "id": 11,
+              "id": 3,
               "name": "__inline_isfinitel",
               "qualified_name": "__inline_isfinitel 'int (long double)'",
               "base_qualified_name": null,
@@ -13080,7 +13080,7 @@
     {
       "id": 80,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h",
-      "last_analyzed": 1732131458375,
+      "last_analyzed": 1732408515859,
       "classes": [],
       "func_decls": [
         {
@@ -15357,7 +15357,7 @@
     {
       "id": 81,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__atomic/is_always_lock_free.h",
-      "last_analyzed": 1732131458420,
+      "last_analyzed": 1732408515904,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -15371,7 +15371,7 @@
     {
       "id": 82,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/time_point.h",
-      "last_analyzed": 1732131458422,
+      "last_analyzed": 1732408515906,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -15385,7 +15385,7 @@
     {
       "id": 83,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_clock_t.h",
-      "last_analyzed": 1732131458422,
+      "last_analyzed": 1732408515907,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -15399,7 +15399,7 @@
     {
       "id": 84,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_time_t.h",
-      "last_analyzed": 1732131458423,
+      "last_analyzed": 1732408515908,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -15413,7 +15413,7 @@
     {
       "id": 85,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timespec.h",
-      "last_analyzed": 1732131458424,
+      "last_analyzed": 1732408515908,
       "classes": [
         {
           "id": 49,
@@ -15438,7 +15438,7 @@
     {
       "id": 86,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h",
-      "last_analyzed": 1732131458425,
+      "last_analyzed": 1732408515909,
       "classes": [
         {
           "id": 50,
@@ -15882,7 +15882,7 @@
     {
       "id": 87,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/errno.h",
-      "last_analyzed": 1732131458434,
+      "last_analyzed": 1732408515920,
       "classes": [],
       "func_decls": [
         {
@@ -15916,7 +15916,7 @@
     {
       "id": 88,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/sched.h",
-      "last_analyzed": 1732131458435,
+      "last_analyzed": 1732408515921,
       "classes": [
         {
           "id": 51,
@@ -15999,7 +15999,7 @@
     {
       "id": 89,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_cond_t.h",
-      "last_analyzed": 1732131458437,
+      "last_analyzed": 1732408515923,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -16013,7 +16013,7 @@
     {
       "id": 90,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h",
-      "last_analyzed": 1732131458438,
+      "last_analyzed": 1732408515924,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -16027,7 +16027,7 @@
     {
       "id": 91,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_key_t.h",
-      "last_analyzed": 1732131458439,
+      "last_analyzed": 1732408515925,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -16041,7 +16041,7 @@
     {
       "id": 92,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h",
-      "last_analyzed": 1732131458440,
+      "last_analyzed": 1732408515925,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -16055,7 +16055,7 @@
     {
       "id": 93,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h",
-      "last_analyzed": 1732131458441,
+      "last_analyzed": 1732408515926,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -16069,7 +16069,7 @@
     {
       "id": 94,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_once_t.h",
-      "last_analyzed": 1732131458442,
+      "last_analyzed": 1732408515927,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -16083,7 +16083,7 @@
     {
       "id": 95,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h",
-      "last_analyzed": 1732131458443,
+      "last_analyzed": 1732408515928,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -16097,7 +16097,7 @@
     {
       "id": 96,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h",
-      "last_analyzed": 1732131458444,
+      "last_analyzed": 1732408515928,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -16111,7 +16111,7 @@
     {
       "id": 97,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_t.h",
-      "last_analyzed": 1732131458445,
+      "last_analyzed": 1732408515929,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -16125,7 +16125,7 @@
     {
       "id": 98,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h",
-      "last_analyzed": 1732131458449,
+      "last_analyzed": 1732408515932,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -16139,7 +16139,7 @@
     {
       "id": 99,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_mach_port_t.h",
-      "last_analyzed": 1732131458451,
+      "last_analyzed": 1732408515934,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -16153,7 +16153,7 @@
     {
       "id": 100,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h",
-      "last_analyzed": 1732131458463,
+      "last_analyzed": 1732408515949,
       "classes": [],
       "func_decls": [
         {
@@ -16187,7 +16187,7 @@
     {
       "id": 101,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__threading_support",
-      "last_analyzed": 1732131458487,
+      "last_analyzed": 1732408515977,
       "classes": [],
       "func_decls": [],
       "func_impls": [],
@@ -16201,7 +16201,7 @@
     {
       "id": 102,
       "name": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant",
-      "last_analyzed": 1732131458489,
+      "last_analyzed": 1732408515979,
       "classes": [],
       "func_decls": [],
       "func_impls": [],

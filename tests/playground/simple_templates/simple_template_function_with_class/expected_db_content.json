@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "./tests/playground/simple_templates/simple_template_function_with_class/file.cpp",
-      "last_analyzed": 1732320497151,
+      "last_analyzed": 1732408514891,
       "classes": [
         {
           "id": 1,
@@ -56,7 +56,7 @@
           },
           "func_calls": [
             {
-              "id": 2,
+              "id": 1,
               "name": "ba",
               "qualified_name": "SimpleClass::ba 'int ()'",
               "base_qualified_name": null,
@@ -95,7 +95,7 @@
           },
           "func_calls": [
             {
-              "id": 1,
+              "id": 2,
               "name": "foo",
               "qualified_name": "foo<SimpleClass> 'int ()'",
               "base_qualified_name": null,

@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "./tests/playground/c_style_tests/funcs/file.cpp",
-      "last_analyzed": 1730594067,
+      "last_analyzed": 1732408514785,
       "classes": [],
       "func_decls": [
         {
@@ -141,6 +141,25 @@
             },
             {
               "id": 2,
+              "name": "divide",
+              "qualified_name": "divide 'int (int, int)'",
+              "base_qualified_name": null,
+              "qual_type": "int (int, int)",
+              "range": {
+                "start": {
+                  "line": 28,
+                  "column": 9
+                },
+                "end": {
+                  "line": 29,
+                  "column": 18
+                }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
+            },
+            {
+              "id": 3,
               "name": "add",
               "qualified_name": "foo::add 'int (int, int)'",
               "base_qualified_name": null,
@@ -159,7 +178,7 @@
               "virtual_func_calls": []
             },
             {
-              "id": 3,
+              "id": 4,
               "name": "sub",
               "qualified_name": "sub 'int (int, int)'",
               "base_qualified_name": null,
@@ -172,25 +191,6 @@
                 "end": {
                   "line": 27,
                   "column": 19
-                }
-              },
-              "func_calls": [],
-              "virtual_func_calls": []
-            },
-            {
-              "id": 4,
-              "name": "divide",
-              "qualified_name": "divide 'int (int, int)'",
-              "base_qualified_name": null,
-              "qual_type": "int (int, int)",
-              "range": {
-                "start": {
-                  "line": 28,
-                  "column": 9
-                },
-                "end": {
-                  "line": 29,
-                  "column": 18
                 }
               },
               "func_calls": [],
