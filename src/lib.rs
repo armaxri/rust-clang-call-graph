@@ -80,7 +80,7 @@ pub fn run_ast_parser(
         sub_timer = Instant::now();
 
         if let (Some(ast), Some(db_ref)) = (ast, db.as_ref()) {
-            walk_ast_2_func_call_db(&entry.file, ast, db_ref.clone());
+            walk_ast_2_func_call_db(&entry.file, ast, db_ref.clone(), ignored_namespaces);
         }
 
         let elapsed_walking = sub_timer.elapsed();

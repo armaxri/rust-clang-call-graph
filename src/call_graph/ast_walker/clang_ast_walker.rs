@@ -26,12 +26,14 @@ struct ClangAstWalkerInternal {
     pub current_class_stack: Vec<Rc<RefCell<CppClass>>>,
     pub open_func_call_connections: HashMap<usize, Vec<(Range, Rc<RefCell<FuncStructure>>)>>,
     pub current_func_impl_ast_id: usize,
+    pub ignored_namespaces: Vec<String>,
 }
 
 pub fn walk_ast_2_func_call_db(
     file_path: &str,
     parsed_ast: VecDeque<ClangAstElement>,
     db: Rc<RefCell<DatabaseSqlite>>,
+    ignored_namespaces: &Vec<String>,
 ) {
     // Make sure that the file is in the database, so that we can reference it.
     let main_file = db.borrow().get_or_add_cpp_file(&file_path);
@@ -46,6 +48,7 @@ pub fn walk_ast_2_func_call_db(
         current_class_stack: Vec::new(),
         open_func_call_connections: HashMap::new(),
         current_func_impl_ast_id: 0,
+        ignored_namespaces: ignored_namespaces.clone(),
     };
 
     for ast_element in parsed_ast {
@@ -310,8 +313,11 @@ fn handle_cxx_record_decl(
                             "".to_string()
                         };
 
+                        let name_elements: Vec<&str> = parent_name.split("::").collect();
                         if parent_name != ""
-                            && !parent_name.starts_with("std::")
+                            && !walker
+                                .ignored_namespaces
+                                .contains(&name_elements[0].to_string())
                             && !parent_name.starts_with("_")
                         {
                             let parent_class = walker.known_classes.get(&parent_name);
@@ -341,7 +347,11 @@ fn handle_namespace_decl(
 ) {
     let namespace_str = ast_element.attributes.split(" ").last().unwrap();
 
-    if namespace_str == "std" || namespace_str.starts_with("_") {
+    if walker
+        .ignored_namespaces
+        .contains(&namespace_str.to_string())
+        || namespace_str.starts_with("_")
+    {
         return;
     }
 
