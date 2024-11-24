@@ -19,7 +19,11 @@ pub mod macros;
 pub mod location;
 pub mod process;
 
-pub fn run_ast_parser(compile_commands_json: &PathBuf, db: Option<Rc<RefCell<DatabaseSqlite>>>) {
+pub fn run_ast_parser(
+    compile_commands_json: &PathBuf,
+    db: Option<Rc<RefCell<DatabaseSqlite>>>,
+    ignored_namespaces: &Vec<String>,
+) {
     let start_time_all = Instant::now();
 
     let entries = if read_compile_commands_json_file(compile_commands_json).is_some() {
