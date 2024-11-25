@@ -18,7 +18,11 @@ mod tests {
     #[test]
     fn dry_run_ast_parser_test() {
         let compile_commands_json = PathBuf::from("tests/playground/compile_commands.json");
-        run_ast_parser(&compile_commands_json, None);
+        run_ast_parser(
+            &compile_commands_json,
+            None,
+            &vec!["std".to_string(), "boost".to_string()],
+        );
     }
 
     #[test]

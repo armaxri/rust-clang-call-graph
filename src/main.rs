@@ -29,6 +29,9 @@ struct NewDatabaseArgs {
     /// The compile_commands.json file to use
     #[arg(short, long, value_name = "FILE")]
     compile_commands_json: PathBuf,
+    /// Namespaces to ignore
+    #[arg(short, long, value_name = "NAMESPACE", default_values_t = ["std".to_string(), "boost".to_string(), "mpl_".to_string()])]
+    ignored_namespaces: Vec<String>,
 }
 
 #[derive(Args)]
@@ -57,7 +60,7 @@ fn main() {
                     compile_commands_json.display()
                 );
 
-                run_ast_parser(compile_commands_json, None);
+                run_ast_parser(compile_commands_json, None, &vec![]);
             }
             None => {
                 println!("No compile_commands_json file specified");
@@ -82,7 +85,11 @@ fn main() {
                 true,
             )));
 
-            run_ast_parser(&args.compile_commands_json, Some(db));
+            run_ast_parser(
+                &args.compile_commands_json,
+                Some(db),
+                args.ignored_namespaces.as_ref(),
+            );
         }
     }
 }

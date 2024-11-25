@@ -34,6 +34,7 @@ mod tests {
                         &cpp_file.to_str().unwrap(),
                         ast,
                         database_sqlite.clone(),
+                        &vec!["std".to_string()],
                     );
                 }
                 None => {
