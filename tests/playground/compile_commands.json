@@ -60,6 +60,12 @@
     "output": "./tests/playground/simple_cpp_classes/ignore_class_forward_decl/file.o"
   },
   {
+    "directory": "./tests/playground/simple_cpp_classes/only_virtual_keyword/",
+    "command": "clang++ -I./tests/playground/simple_cpp_classes/only_virtual_keyword/ -c ./tests/playground/simple_cpp_classes/only_virtual_keyword/file.cpp -o ./tests/playground/simple_cpp_classes/only_virtual_keyword/file.o -std=c++20",
+    "file": "./tests/playground/simple_cpp_classes/only_virtual_keyword/file.cpp",
+    "output": "./tests/playground/simple_cpp_classes/only_virtual_keyword/file.o"
+  },
+  {
     "directory": "./tests/playground/simple_cpp_classes/parent_class_in_namespace/",
     "command": "clang++ -I./tests/playground/simple_cpp_classes/parent_class_in_namespace/ -c ./tests/playground/simple_cpp_classes/parent_class_in_namespace/file.cpp -o ./tests/playground/simple_cpp_classes/parent_class_in_namespace/file.o -std=c++20",
     "file": "./tests/playground/simple_cpp_classes/parent_class_in_namespace/file.cpp",

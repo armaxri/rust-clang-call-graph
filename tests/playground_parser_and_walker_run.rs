@@ -228,6 +228,14 @@ mod tests {
         }
 
         #[test]
+        fn only_virtual_keyword_test() {
+            run_ast_parser_test(
+                "./tests/playground/simple_cpp_classes/only_virtual_keyword",
+                vec!["file"],
+            );
+        }
+
+        #[test]
         fn parent_class_in_namespace_test() {
             run_ast_parser_test(
                 "./tests/playground/simple_cpp_classes/parent_class_in_namespace",

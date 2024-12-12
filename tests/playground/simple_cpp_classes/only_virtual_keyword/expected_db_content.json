@@ -1,0 +1,140 @@
+{
+  "cpp_files": [
+    {
+      "id": 1,
+      "name": "./tests/playground/simple_cpp_classes/only_virtual_keyword/file.cpp",
+      "last_analyzed": 1734042568909,
+      "classes": [
+        {
+          "id": 1,
+          "name": "TestBaseClass",
+          "parent_classes": [],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": [
+            {
+              "id": 1,
+              "name": "add",
+              "qualified_name": "TestBaseClass::add 'int (int, int)'",
+              "base_qualified_name": "TestBaseClass::add 'int (int, int)'",
+              "qual_type": "int (int, int)",
+              "range": {
+                "start": {
+                  "line": 4,
+                  "column": 5
+                },
+                "end": {
+                  "line": 7,
+                  "column": 6
+                }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "TestClass",
+          "parent_classes": [
+            "TestBaseClass"
+          ],
+          "classes": [],
+          "func_decls": [],
+          "func_impls": [],
+          "virtual_func_decls": [],
+          "virtual_func_impls": [
+            {
+              "id": 2,
+              "name": "add",
+              "qualified_name": "TestClass::add 'int (int, int)'",
+              "base_qualified_name": "TestBaseClass::add 'int (int, int)'",
+              "qual_type": "int (int, int)",
+              "range": {
+                "start": {
+                  "line": 13,
+                  "column": 5
+                },
+                "end": {
+                  "line": 16,
+                  "column": 6
+                }
+              },
+              "func_calls": [],
+              "virtual_func_calls": [
+                {
+                  "id": 1,
+                  "name": "add",
+                  "qualified_name": "TestBaseClass::add 'int (int, int)'",
+                  "base_qualified_name": "TestBaseClass::add 'int (int, int)'",
+                  "qual_type": "int (int, int)",
+                  "range": {
+                    "start": {
+                      "line": 15,
+                      "column": 16
+                    },
+                    "end": {
+                      "line": 15,
+                      "column": 46
+                    }
+                  },
+                  "func_calls": [],
+                  "virtual_func_calls": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "func_decls": [],
+      "func_impls": [
+        {
+          "id": 1,
+          "name": "main",
+          "qualified_name": "main 'int (int, char **)'",
+          "base_qualified_name": null,
+          "qual_type": "int (int, char **)",
+          "range": {
+            "start": {
+              "line": 19,
+              "column": 1
+            },
+            "end": {
+              "line": 23,
+              "column": 2
+            }
+          },
+          "func_calls": [],
+          "virtual_func_calls": [
+            {
+              "id": 2,
+              "name": "add",
+              "qualified_name": "TestClass::add 'int (int, int)'",
+              "base_qualified_name": "TestBaseClass::add 'int (int, int)'",
+              "qual_type": "int (int, int)",
+              "range": {
+                "start": {
+                  "line": 22,
+                  "column": 12
+                },
+                "end": {
+                  "line": 22,
+                  "column": 31
+                }
+              },
+              "func_calls": [],
+              "virtual_func_calls": []
+            }
+          ]
+        }
+      ],
+      "virtual_func_impls": [],
+      "referenced_from_header_files": [],
+      "referenced_from_source_files": [],
+      "file_is_header": false
+    }
+  ],
+  "hpp_files": []
+}
