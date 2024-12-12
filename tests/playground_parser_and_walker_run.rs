@@ -117,6 +117,14 @@ mod tests {
         }
 
         #[test]
+        fn nested_namespace_test() {
+            run_ast_parser_test(
+                "./tests/playground/c_style_tests/nested_namespace",
+                vec!["file"],
+            );
+        }
+
+        #[test]
         fn only_decl_and_impl_without_calls_test() {
             run_ast_parser_test(
                 "./tests/playground/c_style_tests/only_decl_and_impl_without_calls",

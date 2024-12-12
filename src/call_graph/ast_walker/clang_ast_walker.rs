@@ -345,7 +345,8 @@ fn handle_namespace_decl(
     walker: &mut ClangAstWalkerInternal,
     name_prefix: &str,
 ) {
-    let namespace_str = ast_element.attributes.split(" ").last().unwrap();
+    let splitted_attributes: Vec<&str> = ast_element.attributes.split(" ").collect();
+    let namespace_str = splitted_attributes.first().unwrap();
 
     if walker
         .ignored_namespaces
