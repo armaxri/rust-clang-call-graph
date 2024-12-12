@@ -594,13 +594,14 @@ impl ClangAstElement {
                 .join(" ")
                 .as_str()
         );
-        let base_qualified_name: Option<String> = if splitted_attributes.len() >= end_index + 2
+
+        let mut base_qualified_name = self.get_base_qualified_name_from_override(walker);
+        if base_qualified_name.is_none()
+            && splitted_attributes.len() >= end_index + 2
             && splitted_attributes[end_index + 1] == "virtual"
         {
-            Some(qualified_name.clone())
-        } else {
-            self.get_base_qualified_name_from_override(walker)
-        };
+            base_qualified_name = Some(qualified_name.clone())
+        }
 
         FuncCreationArgs::new(
             splitted_attributes[start_index - 1],
@@ -617,32 +618,37 @@ impl ClangAstElement {
         &self,
         walker: Option<&ClangAstWalkerInternal>,
     ) -> Option<String> {
-        for inner_element in &self.inner {
-            if inner_element.element_type == ClangAstElementType::Overrides {
-                let splitted_attributes: Vec<&str> = inner_element.attributes.split(" ").collect();
-                if splitted_attributes.len() >= 1 && splitted_attributes[0].starts_with("0x") {
-                    if let Ok(hex_value) = usize::from_str_radix(&splitted_attributes[0][2..], 16) {
-                        let func_decl_id = hex_value as usize;
-                        let func_decl = walker
-                            .unwrap()
-                            .known_func_decls_and_impls
-                            .get(&func_decl_id);
+        // Override is always the first member of the inner elements.
+        let inner_element = &self.inner.front();
+        if inner_element.is_none() {
+            return None;
+        }
+        let inner_element = inner_element.unwrap();
 
-                        if func_decl.is_some() {
-                            return Some(
-                                func_decl
-                                    .unwrap()
-                                    .borrow()
-                                    .get_base_qualified_name()
-                                    .to_string(),
-                            );
-                        } else {
-                            println!("Could not find function decl with id 0x{:x}", func_decl_id);
-                        }
+        if inner_element.element_type == ClangAstElementType::Overrides {
+            let splitted_attributes: Vec<&str> = inner_element.attributes.split(" ").collect();
+            if splitted_attributes.len() >= 1 && splitted_attributes[0].starts_with("0x") {
+                if let Ok(hex_value) = usize::from_str_radix(&splitted_attributes[0][2..], 16) {
+                    let func_decl_id = hex_value as usize;
+                    let func_decl = walker
+                        .unwrap()
+                        .known_func_decls_and_impls
+                        .get(&func_decl_id);
+
+                    if func_decl.is_some() {
+                        return Some(
+                            func_decl
+                                .unwrap()
+                                .borrow()
+                                .get_base_qualified_name()
+                                .to_string(),
+                        );
+                    } else {
+                        println!("Could not find function decl with id 0x{:x}", func_decl_id);
                     }
-
-                    return Some(splitted_attributes[1..].join(" "));
                 }
+
+                return Some(splitted_attributes[1..].join(" "));
             }
         }
 
